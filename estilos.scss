@@ -1,0 +1,65 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display             : flex;
+    justify-content     : center;
+    background-color    : red;
+    line-height         : 1.5
+}
+
+
+
+#main{
+    width               : 100%; // espalha por toda a largura do container
+    max-width           : 160rem; //mas nao mais que 160rem
+    //border: 5px double black
+}
+
+img {
+    display      : block;
+    max-width    : 100%;
+}
+
+#sector1 {
+    background-color    : orangered;
+}
+
+#s1-barra-txt-topo{
+    height              : 24px; //altura fixa em todos os cenários
+}
+
+#s1-imagem{
+    width               : 100%; //ocupa todo o conteiner
+    min-height          : 430px; //não encolhe mais que 430px
+    object-fit          : cover; //faz clip à imagem qd muito apertada
+}
+
+#s1-barra-txt-fundo{
+    height              : 224px; //altura fixa em todos os cenários
+}
+
+
+#sector2 {
+    display : flex;
+    justify-content     : center;
+
+    background-color    : white;
+}
+
+#s2-cards-topo{
+    height : 261.6px;
+    border: 5px double blue;
+}
+
+#s2-galeria {
+    display             : grid;
+    grid-template-rows  : 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+#s2-img1{
+    grid-column: 1/3;
+}
