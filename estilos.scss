@@ -19,8 +19,10 @@ body {
 }
 
 img {
-    display      : block;
-    max-width    : 100%;
+    display     : block;
+    min-height  : 100%;
+    width       : 100%;
+    object-fit  : cover;
 }
 
 #sector1 {
@@ -43,23 +45,39 @@ img {
 
 
 #sector2 {
-    display : flex;
-    justify-content     : center;
-
+    display             : flex;
+    flex-direction      : column;
+    align-items         : center;
     background-color    : white;
 }
 
 #s2-cards-topo{
     height : 261.6px;
-    border: 5px double blue;
+    padding-top: 5rem
+    //border: 5px double blue;
 }
 
 #s2-galeria {
-    display             : grid;
-    grid-template-rows  : 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-}
+    max-height              : 1750px;
+    max-width               : 1440px;
+    margin                  : 0 80px 80px 80px;
 
-#s2-img1{
-    grid-column: 1/3;
+    display                 : grid;
+    grid-template-rows      : 1.09fr 1fr 1fr;
+    grid-template-columns   : 1fr 1fr;
+
+    //Column gap muda no primeiro break
+    //column-gap              : 16px;
+    column-gap              : 24px;
+    row-gap                 : 40px;
+
+    img{
+        border-radius: 12px;
+    }
+
+    #s2-img1 {
+        max-height  : 100%;
+        grid-column : 1/3;
+        grid-row    : 1/2;
+    }
 }
