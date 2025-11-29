@@ -1,3 +1,15 @@
+/*
+#################
+### VARIAVEIS ###
+#################
+*/
+
+//SETUP
+
+//COLOUR PALETTE
+$sixt-orange : #ff5000;
+
+
 * {
     margin: 0px;
     padding: 0px;
@@ -6,7 +18,7 @@
 body {
     display             : flex;
     justify-content     : center;
-    background-color    : red;
+    background-color    : green;
     line-height         : 1.5
 }
 
@@ -15,61 +27,79 @@ body {
 #main{
     width               : 100%; // espalha por toda a largura do container
     max-width           : 160rem; //mas nao mais que 160rem
+    max-height          : 100vh;
     //border: 5px double black
 }
 
 img {
     display     : block;
-    min-height  : 100%;
+    height      : 100%;
     width       : 100%;
     object-fit  : cover;
 }
 
 #sector1 {
-    background-color    : orangered;
+    display: flex;
+    flex-direction: column;
+    background-color    : $sixt-orange;
+    //height: ;
 }
 
 #s1-barra-txt-topo{
+    order: 1;
     height              : 24px; //altura fixa em todos os cenários
+    background-color    : $sixt-orange;
+    z-index: 5;
 }
 
 #s1-imagem{
-    width               : 100%; //ocupa todo o conteiner
-    min-height          : 430px; //não encolhe mais que 430px
+    order:2;
+    margin-top: -135px;
+    height: 100%;
     object-fit          : cover; //faz clip à imagem qd muito apertada
 }
 
 #s1-barra-txt-fundo{
-    height              : 224px; //altura fixa em todos os cenários
+    order: 3;
+    height              : 14rem; //altura fixa em todos os cenários
 }
 
 
 #sector2 {
-    display             : flex;
-    flex-direction      : column;
+    display: block;
     align-items         : center;
+    width               : 100%;
     background-color    : white;
+    //padding: 5rem;
 }
 
 #s2-cards-topo{
-    height : 261.6px;
-    padding-top: 5rem
+    display: flex;
+    height : 100px;
+    width: 100%;
+    padding: 5rem;
+    background-color: aqua;
+
+    > div {
+        flex-grow: 1;
+        border: 1px solid red;
+    }
     //border: 5px double blue;
 }
 
 #s2-galeria {
-    max-height              : 1750px;
-    max-width               : 1440px;
-    margin                  : 0 80px 80px 80px;
-
+    max-height              : 109rem;
+    max-width               : 90rem;
+    margin-bottom: 5rem;
+    padding: 0 5rem;
     display                 : grid;
     grid-template-rows      : 1.09fr 1fr 1fr;
     grid-template-columns   : 1fr 1fr;
 
     //Column gap muda no primeiro break
-    //column-gap              : 16px;
-    column-gap              : 24px;
-    row-gap                 : 40px;
+    //column-gap              : 1rem;
+    column-gap              : 1.5rem;
+    row-gap                 : 2.5rem;
 
     img{
         border-radius: 12px;

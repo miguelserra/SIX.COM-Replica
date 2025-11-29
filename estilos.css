@@ -1,3 +1,8 @@
+/*
+#################
+### VARIAVEIS ###
+#################
+*/
 * {
   margin: 0px;
   padding: 0px;
@@ -6,64 +11,80 @@
 body {
   display: flex;
   justify-content: center;
-  background-color: red;
+  background-color: green;
   line-height: 1.5;
 }
 
 #main {
   width: 100%;
   max-width: 160rem;
+  max-height: 100vh;
 }
 
 img {
   display: block;
-  min-height: 100%;
+  height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 #sector1 {
-  background-color: orangered;
+  display: flex;
+  flex-direction: column;
+  background-color: #ff5000;
 }
 
 #s1-barra-txt-topo {
+  order: 1;
   height: 24px;
+  background-color: #ff5000;
+  z-index: 5;
 }
 
 #s1-imagem {
-  width: 100%;
-  min-height: 430px;
+  order: 2;
+  margin-top: -135px;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 #s1-barra-txt-fundo {
-  height: 224px;
+  order: 3;
+  height: 14rem;
 }
 
 #sector2 {
-  display: flex;
-  flex-direction: column;
+  display: block;
   align-items: center;
+  width: 100%;
   background-color: white;
 }
 
 #s2-cards-topo {
-  height: 261.6px;
-  padding-top: 5rem;
+  display: flex;
+  height: 100px;
+  width: 100%;
+  padding: 5rem;
+  background-color: aqua;
+}
+#s2-cards-topo > div {
+  flex-grow: 1;
+  border: 1px solid red;
 }
 
 #s2-galeria {
-  max-height: 1750px;
-  max-width: 1440px;
-  margin: 0 80px 80px 80px;
+  max-height: 109rem;
+  max-width: 90rem;
+  margin-bottom: 5rem;
+  padding: 0 5rem;
   display: grid;
   grid-template-rows: 1.09fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
-  -moz-column-gap: 24px;
-       column-gap: 24px;
-  row-gap: 40px;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+  row-gap: 2.5rem;
 }
 #s2-galeria img {
   border-radius: 12px;
