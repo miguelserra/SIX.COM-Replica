@@ -33,6 +33,7 @@ img {
   display: flex;
   flex-direction: column;
   background-color: #ff5000;
+  overflow: hidden;
 }
 
 #s1-barra-txt-topo {
@@ -56,17 +57,18 @@ img {
 }
 
 #sector2 {
-  display: block;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  align-items: stretch;
   background-color: white;
 }
 
 #s2-cards-topo {
   display: flex;
   height: 100px;
-  width: 100%;
   padding: 5rem;
+  margin: 5rem;
   background-color: aqua;
 }
 #s2-cards-topo > div {
@@ -74,9 +76,27 @@ img {
   border: 1px solid red;
 }
 
+.s2-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+.s2-card .s2-card-title {
+  font-size: 1rem;
+}
+.s2-card .s2-card-txt {
+  font-size: 1.375rem;
+}
+.s2-card .s2-card-icon {
+  height: 2rem;
+  padding-right: 12px;
+}
+.s2-card .s2-card-icon svg {
+  width: 2rem;
+  height: auto;
+}
+
 #s2-galeria {
   max-height: 109rem;
-  max-width: 90rem;
   margin-bottom: 5rem;
   padding: 0 5rem;
   display: grid;
@@ -87,7 +107,7 @@ img {
   row-gap: 2.5rem;
 }
 #s2-galeria img {
-  border-radius: 12px;
+  border-radius: 1rem;
 }
 #s2-galeria #s2-img1 {
   max-height: 100%;

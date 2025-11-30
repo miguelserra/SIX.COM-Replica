@@ -42,6 +42,7 @@ img {
     display: flex;
     flex-direction: column;
     background-color    : $sixt-orange;
+    overflow: hidden;
     //height: ;
 }
 
@@ -66,9 +67,10 @@ img {
 
 
 #sector2 {
-    display: block;
-    align-items         : center;
-    width               : 100%;
+    display             : flex;
+    flex-direction      : column;
+    width: 100%;
+    align-items         : stretch;
     background-color    : white;
     //padding: 5rem;
 }
@@ -76,8 +78,8 @@ img {
 #s2-cards-topo{
     display: flex;
     height : 100px;
-    width: 100%;
     padding: 5rem;
+    margin: 5rem;
     background-color: aqua;
 
     > div {
@@ -87,11 +89,37 @@ img {
     //border: 5px double blue;
 }
 
+.s2-card{
+    display : flex;
+    flex-wrap: wrap;
+    
+
+    .s2-card-title{
+        font-size: 1rem;
+    }
+
+    .s2-card-txt{
+        font-size: 1.375rem;
+    }
+
+    .s2-card-icon {
+        height: 2rem;
+        padding-right: 12px;
+        svg{
+            width: 2rem;
+            height: auto;
+    }
+}
+
+}
+
+
+
+
 #s2-galeria {
     max-height              : 109rem;
-    max-width               : 90rem;
-    margin-bottom: 5rem;
-    padding: 0 5rem;
+    margin-bottom           : 5rem;
+    padding                 : 0 5rem;
     display                 : grid;
     grid-template-rows      : 1.09fr 1fr 1fr;
     grid-template-columns   : 1fr 1fr;
@@ -102,7 +130,7 @@ img {
     row-gap                 : 2.5rem;
 
     img{
-        border-radius: 12px;
+        border-radius: 0.8rem;
     }
 
     #s2-img1 {
