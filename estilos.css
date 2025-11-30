@@ -37,14 +37,14 @@ img {
 
 #s1-barra-txt-topo {
   order: 1;
-  height: 24px;
+  height: 1.5rem;
   background-color: #ff5000;
   z-index: 5;
 }
 
 #s1-imagem {
   order: 2;
-  margin-top: -135px;
+  margin-top: -8.5rem;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;

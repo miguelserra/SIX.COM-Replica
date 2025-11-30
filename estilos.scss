@@ -47,14 +47,14 @@ img {
 
 #s1-barra-txt-topo{
     order: 1;
-    height              : 24px; //altura fixa em todos os cenários
+    height              : 1.5rem; //altura fixa em todos os cenários
     background-color    : $sixt-orange;
     z-index: 5;
 }
 
 #s1-imagem{
     order:2;
-    margin-top: -135px;
+    margin-top: -8.5rem;
     height: 100%;
     object-fit          : cover; //faz clip à imagem qd muito apertada
 }
