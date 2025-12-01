@@ -37,22 +37,19 @@ img {
 }
 
 #s1-barra-txt-topo {
-  order: 1;
   height: 1.5rem;
   background-color: #ff5000;
-  z-index: 5;
+  z-index: 2;
 }
 
 #s1-imagem {
-  order: 2;
-  margin-top: -8.5rem;
+  max-height: 32rem;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: crop;
+     object-fit: crop;
 }
 
 #s1-barra-txt-fundo {
-  order: 3;
   height: 14rem;
 }
 
@@ -66,13 +63,11 @@ img {
 
 #s2-cards-topo {
   display: flex;
-  height: 100px;
   padding: 5rem;
-  margin: 5rem;
   background-color: aqua;
 }
 #s2-cards-topo > div {
-  flex-grow: 1;
+  height: 6.3rem;
   border: 1px solid red;
 }
 
@@ -106,11 +101,14 @@ img {
        column-gap: 1.5rem;
   row-gap: 2.5rem;
 }
-#s2-galeria img {
-  border-radius: 1rem;
-}
-#s2-galeria #s2-img1 {
-  max-height: 100%;
+#s2-galeria div:first-child {
   grid-column: 1/3;
   grid-row: 1/2;
+}
+#s2-galeria .s2-img-container {
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+#s2-galeria #s2-img1 img {
+  transform: scale(1.375) translateX(-13.5%);
 }/*# sourceMappingURL=estilos.css.map */
