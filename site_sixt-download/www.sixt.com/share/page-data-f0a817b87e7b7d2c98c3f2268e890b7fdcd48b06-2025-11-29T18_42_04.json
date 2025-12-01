@@ -1,0 +1,1993 @@
+{
+    "url": "share",
+    "pageId": "shortcodeshare_home",
+    "template": "/libraries/sixt/sitegen-common/src/ui/templates/ShortcodePageTemplate/index.ts",
+    "data": {
+        "pageSpecificConfiguration": {
+            "hydra": {
+                "acceptLanguage": [
+                    "en-US",
+                    "en"
+                ],
+                "countryAlpha2": "US",
+                "countryAlpha3": "USA",
+                "defaultCurrency": "USD",
+                "langAlpha2": "en",
+                "langAlpha3": "eng",
+                "formats": {
+                    "time": "hh:mm",
+                    "decimalSeperator": ".",
+                    "date": "MM/DD/YYYY",
+                    "nameDate": "MMM DD",
+                    "measureOfLength": "mi",
+                    "hour12Format": true,
+                    "isFirstDaySunday": true
+                },
+                "homePageUrl": "/",
+                "pageHyphenLocale": "en-US",
+                "pageLocale": "en_US",
+                "tenantId": "6",
+                "userCentricsId": "LHOLXat-d",
+                "pageId": "shortcodeshare_home",
+                "hydraTranslations": {
+                    "Back": "Back",
+                    "CarouselControls": "Slide controls",
+                    "CarouselNextSlide": "Next slide",
+                    "CarouselPause": "Pause carousel",
+                    "CarouselPlay": "Play carousel",
+                    "CarouselPrevSlide": "Previous slide",
+                    "Close": "Close",
+                    "getCarouselIndicatorButton": "Go to slide {{_1_}} of {{_2_}}"
+                }
+            },
+            "chatbot": {
+                "cognigyConfigUrl": {
+                    "prod": "https://endpoint-sixt.cognigy.cloud/3761c008fd9cdc76560eac946fd6e42927a0dc1c5996ca516c0340df1fd68548",
+                    "stage": "https://endpoint-sixt.cognigy.cloud/8e5428025b606e69e9f4168e86b88a257c21b6f487c4e5aecd7ea3e0016ae168"
+                }
+            },
+            "customersettings": {
+                "corporateLink": "https://corporate.sixt.com/",
+                "privacyLink": "/privacy/",
+                "tcLink": "/terms-conditions/",
+                "accountBasePath": "/account",
+                "bookingProfileLink": "/account/#/profiles",
+                "listBookingsLink": "/account/#/bookings",
+                "loyaltyDetailsLink": "/account/#/loyalty-details",
+                "manageMyBookingLink": "/account/#/manage-my-booking-info",
+                "manageSubscriptionsLink": "/account/#/subscriptions",
+                "personalDataLink": "/account/#/account",
+                "openHelpCenterEntryPoint": true,
+                "enableSocialLogin": true,
+                "enableLoyalty": true,
+                "signupLink": "/services/#/signup",
+                "p100Header": true,
+                "helpCenterLink": "/help-center/",
+                "registrationSource": "share"
+            },
+            "fleetslider": {}
+        },
+        "ssrOnly": {
+            "structuredData": [
+                "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What is SIXT share?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"SIXT share is a mobility service that offers a flexible mobility services: from bikes, mopeds, scooters to shared cars. You can book shared car from a minute up to several days. Simply book a vehicle in the business area with your smartphone, open it and drive off. All vehicles can be found in the SIXT app.\"}},{\"@type\":\"Question\",\"name\":\"How does SIXT share work?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"To use SIXT share, you always need the latest version of the SIXT app. There you can see all available vehicles in the business area. You can reserve these for up to 15 minutes free of charge via the app and drive off straight away. You can end the rental within the SIXT share business area for free or at one of our 500 SIXT stations across Germany for a fee.\"}},{\"@type\":\"Question\",\"name\":\"Where is SIXT share available?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"You can find SIXT share in Germany, as well as in the Netherlands, France, Spain, Italy and Belgium. Find out where you can find us on the respective country pages or directly in the SIXT app. You only have to register once and can use all of SIXT services, no matter where you are.\"}},{\"@type\":\"Question\",\"name\":\"What are the advantages of SIXT share?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"1)Flexibility: Hourly, daily or kilometer based packages for our car sharing.2) Stay mobile while abroad: Use SIXT share while visiting Belgium, France, Germany, Italy, the Netherlands or Spain.3)All products in 1 app: The SIXT app gives you access to thousands of e-mopeds, shared cars and bikes.\"}}]}"
+            ],
+            "fontFaceDeclarations": {
+                "RobotoArial": {
+                    "family": "RobotoArial",
+                    "configs": [
+                        {
+                            "src": [
+                                {
+                                    "local": "Arial"
+                                }
+                            ],
+                            "style": "normal",
+                            "weight": 400,
+                            "sizeAdjust": "108%",
+                            "ascentOverride": "88%",
+                            "descentOverride": "19%"
+                        }
+                    ]
+                },
+                "RobotoCondensedArial": {
+                    "family": "RobotoCondensedArial",
+                    "configs": [
+                        {
+                            "src": [
+                                {
+                                    "local": "Arial"
+                                }
+                            ],
+                            "style": "normal",
+                            "weight": 700,
+                            "sizeAdjust": "104%"
+                        }
+                    ]
+                },
+                "Roboto": {
+                    "family": "Roboto",
+                    "configs": [
+                        {
+                            "src": [
+                                {
+                                    "local": "Roboto"
+                                },
+                                {
+                                    "local": "Roboto-Regular"
+                                },
+                                {
+                                    "fileName": "roboto-v30-latin-ext_latin-regular.woff2",
+                                    "shouldPreload": true,
+                                    "type": "woff2"
+                                }
+                            ],
+                            "style": "normal",
+                            "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF",
+                            "weight": 400
+                        },
+                        {
+                            "src": [
+                                {
+                                    "local": "Roboto Bold"
+                                },
+                                {
+                                    "local": "Roboto-Bold"
+                                },
+                                {
+                                    "fileName": "roboto-v30-latin-ext_latin-700.woff2",
+                                    "shouldPreload": true,
+                                    "type": "woff2"
+                                }
+                            ],
+                            "style": "normal",
+                            "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF",
+                            "weight": 700
+                        }
+                    ]
+                },
+                "RobotoCondensed": {
+                    "family": "Roboto Condensed",
+                    "configs": [
+                        {
+                            "src": [
+                                {
+                                    "local": "Roboto Condensed Bold"
+                                },
+                                {
+                                    "local": "RobotoCondensed-Bold"
+                                },
+                                {
+                                    "fileName": "roboto-condensed-v25-latin-ext_latin-700.woff2",
+                                    "shouldPreload": true,
+                                    "type": "woff2"
+                                }
+                            ],
+                            "style": "normal",
+                            "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF",
+                            "weight": 700
+                        }
+                    ]
+                },
+                "HelveticaNow": {
+                    "family": "HelveticaNow",
+                    "configs": [
+                        {
+                            "src": [
+                                {
+                                    "fileName": "HelveticaNowTextRegular.woff2",
+                                    "shouldPreload": true,
+                                    "type": "woff2"
+                                }
+                            ],
+                            "style": "normal",
+                            "weight": 400
+                        },
+                        {
+                            "src": [
+                                {
+                                    "fileName": "HelveticaNowTextBold.woff2",
+                                    "shouldPreload": true,
+                                    "type": "woff2"
+                                }
+                            ],
+                            "style": "normal",
+                            "weight": 700
+                        },
+                        {
+                            "src": [
+                                {
+                                    "fileName": "HelveticaNowDisplayCondensedBlack.woff2",
+                                    "shouldPreload": true,
+                                    "type": "woff2"
+                                }
+                            ],
+                            "style": "normal",
+                            "weight": 900
+                        }
+                    ]
+                }
+            },
+            "cssVars": ":root { \n            --typo-display-large-font: 400 3.5rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-large-heavy-font: 900 3.75rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-display-medium-font: 400 2.875rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-medium-heavy-font: 900 3rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-display-small-font: 400 2.25rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-small-heavy-font: 900 2.5rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-large-font: 400 1.875rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-large-heavy-font: 900 2.125rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-medium-font: 400 1.5rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-medium-heavy-font: 900 1.75rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-small-font: 400 1.25rem / 1.2 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-small-heavy-font: 700 1.25rem / 1.2 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-copy-large-font: 400 1rem / 1.5 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-copy-large-heavy-font: 700 1rem / 1.5 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-copy-medium-23-font: 400 0.875rem / 1.5 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-copy-medium-heavy-font: 700 0.875rem / 1.5 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-copy-small-23-font: 400 0.75rem / 1.5 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-copy-small-heavy-font: 700 0.75rem / 1.5 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-copy-x-large-font: 400 1.375rem / 1.5 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-copy-x-large-heavy-font: 700 1.375rem / 1.5 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-display-large-heavy-transform: uppercase;--typo-display-medium-heavy-transform: uppercase;--typo-display-small-heavy-transform: uppercase;--typo-title-large-heavy-transform: uppercase;--typo-title-medium-heavy-transform: uppercase;--typo-display-large-heavy-letter-spacing: 0.025em;--typo-display-medium-heavy-letter-spacing: 0.0313em;--typo-display-small-heavy-letter-spacing: 0.0375em;--typo-title-large-heavy-letter-spacing: 0.03em;--typo-title-medium-heavy-letter-spacing: 0.036em;--typo-title-small-heavy-letter-spacing: 0.0125em;--typo-copy-large-letter-spacing: 0.0067em;--typo-copy-large-heavy-letter-spacing: 0.0067em;--typo-copy-medium-23-letter-spacing: 0.0086em;--typo-copy-medium-heavy-letter-spacing: 0.0086em;--typo-copy-small-23-letter-spacing: 0.001em;--typo-copy-small-heavy-letter-spacing: 0.001em;--typo-copy-x-large-letter-spacing: 0.0055em;--typo-copy-x-large-heavy-letter-spacing: 0.0055em;@media (min-width: 780px) {--typo-display-large-font: 400 4rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-large-heavy-font: 900 4.25rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-display-medium-font: 400 3.375rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-medium-heavy-font: 900 3.5rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-display-small-font: 400 2.75rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-small-heavy-font: 900 2.875rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-large-font: 400 2.125rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-large-heavy-font: 900 2.25rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-medium-font: 400 1.75rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-medium-heavy-font: 900 1.75rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-small-font: 400 1.375rem / 1.2 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-small-heavy-font: 700 1.375rem / 1.2 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;}@media (min-width: 992px) {--typo-display-large-font: 400 4.5rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-large-heavy-font: 900 4.5rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-display-medium-font: 400 3.75rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-medium-heavy-font: 900 3.75rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-display-small-font: 400 3rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-small-heavy-font: 900 3.125rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-large-font: 400 2.5rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-large-heavy-font: 900 2.5rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-medium-font: 400 1.875rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-medium-heavy-font: 900 1.875rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-small-font: 400 1.5rem / 1.2 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-small-heavy-font: 700 1.5rem / 1.2 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;}--border-radius-xs:0.25rem;--border-radius-s:0.5rem;--border-radius-m:0.75rem;--border-radius-l:1rem;--border-radius-xl:1.5rem;--color-prime-brand: rgba(255,80,0,1); --color-prime-brand-rgb: 255, 80, 0; --color-prime-on-brand: rgba(255,255,255,1); --color-prime-on-brand-rgb: 255, 255, 255; --color-prime-primary: rgba(26, 26, 26, 1); --color-prime-primary-rgb: 26, 26, 26; --color-prime-on-primary: rgba(255,255,255,1); --color-prime-on-primary-rgb: 255, 255, 255; --color-prime-secondary: rgba(101, 106, 111, 1); --color-prime-secondary-rgb: 101, 106, 111; --color-prime-on-secondary: rgba(255,255,255,1); --color-prime-on-secondary-rgb: 255, 255, 255; --color-prime-tertiary: rgba(215, 218, 220, 1); --color-prime-tertiary-rgb: 215, 218, 220; --color-prime-on-tertiary: rgba(255,255,255,1); --color-prime-on-tertiary-rgb: 255, 255, 255; --color-prime-positive: rgba(34, 197, 94, 1); --color-prime-positive-rgb: 34, 197, 94; --color-prime-on-positive: rgba(255,255,255,1); --color-prime-on-positive-rgb: 255, 255, 255; --color-prime-cautious: rgba(255, 188, 31, 1); --color-prime-cautious-rgb: 255, 188, 31; --color-prime-on-cautious: rgba(25,25,25,1); --color-prime-on-cautious-rgb: 25, 25, 25; --color-prime-negative: rgba(215, 0, 21, 1); --color-prime-negative-rgb: 215, 0, 21; --color-prime-on-negative: rgba(255,255,255,1); --color-prime-on-negative-rgb: 255, 255, 255; --color-prime-canvas-1: rgba(255,255,255,1); --color-prime-canvas-1-rgb: 255, 255, 255; --color-prime-canvas-2: rgba(233, 235, 238, 1); --color-prime-canvas-2-rgb: 233, 235, 238; --color-prime-canvas-3: rgba(255,255,255,1); --color-prime-canvas-3-rgb: 255, 255, 255; --color-prime-container-1: rgba(255,255,255,1); --color-prime-container-1-rgb: 255, 255, 255; --color-prime-container-2: rgba(244, 245, 246, 1); --color-prime-container-2-rgb: 244, 245, 246; --color-prime-special-1: rgba(246, 227, 255, 1); --color-prime-special-1-rgb: 246, 227, 255; --color-prime-special-2: rgba(191, 242, 255, 1); --color-prime-special-2-rgb: 191, 242, 255; --color-prime-special-3: rgba(171, 255, 178, 1); --color-prime-special-3-rgb: 171, 255, 178; --color-prime-special-4: rgba(255, 251, 171, 1); --color-prime-special-4-rgb: 255, 251, 171; --color-prime-hover-state: rgba(25,25,25,0.04); --color-prime-hover-state-rgb: 25, 25, 25, 0.04; --color-prime-focus-state: rgba(255,80,0,1); --color-prime-focus-state-rgb: 255, 80, 0; --color-prime-pressed-state: rgba(25,25,25,0.08); --color-prime-pressed-state-rgb: 25, 25, 25, 0.08; --color-prime-disabled-state: rgba(255,255,255,0.4); --color-prime-disabled-state-rgb: 255, 255, 255, 0.4; --color-prime-error-state: rgba(201, 32, 17, 0.05); --color-prime-error-state-rgb: 201, 32, 17, 0.05; --color-prime-success-state: rgba(14, 115, 87, 0.1); --color-prime-success-state-rgb: 14, 115, 87, 0.1; --color-prime-silver: rgba(217, 217, 217, 1); --color-prime-silver-rgb: 217, 217, 217; --color-prime-gold: rgba(200, 140, 24, 1); --color-prime-gold-rgb: 200, 140, 24; --color-prime-platinum: rgba(146, 136, 201, 1); --color-prime-platinum-rgb: 146, 136, 201; --color-prime-diamond: rgba(85, 158, 200, 1); --color-prime-diamond-rgb: 85, 158, 200; --color-prime-glass-ultra-thin: rgba(255,255,255,0.2); --color-prime-glass-ultra-thin-rgb: 255, 255, 255, 0.2; --color-prime-glass-thin: rgba(255,255,255,0.4); --color-prime-glass-thin-rgb: 255, 255, 255, 0.4; --color-prime-glass-regular: rgba(255,255,255,0.6); --color-prime-glass-regular-rgb: 255, 255, 255, 0.6; --color-prime-glass-thick: rgba(255,255,255,0.8); --color-prime-glass-thick-rgb: 255, 255, 255, 0.8; --color-prime-warning: rgba(255, 188, 31, 0.13); --color-prime-warning-rgb: 255, 188, 31, 0.13; --color-option-brand: rgba(255,80,0,1); --color-option-brand-rgb: 255, 80, 0; --color-option-on-brand: rgba(255,255,255,1); --color-option-on-brand-rgb: 255, 255, 255; --color-option-primary: rgba(255,255,255,1); --color-option-primary-rgb: 255, 255, 255; --color-option-on-primary: rgba(26, 26, 26, 1); --color-option-on-primary-rgb: 26, 26, 26; --color-option-secondary: rgba(141, 146, 153, 1); --color-option-secondary-rgb: 141, 146, 153; --color-option-on-secondary: rgba(255,255,255,1); --color-option-on-secondary-rgb: 255, 255, 255; --color-option-tertiary: rgba(49, 50, 52, 1); --color-option-tertiary-rgb: 49, 50, 52; --color-option-on-tertiary: rgba(255,255,255,1); --color-option-on-tertiary-rgb: 255, 255, 255; --color-option-positive: rgba(34, 197, 94, 1); --color-option-positive-rgb: 34, 197, 94; --color-option-on-positive: rgba(255,255,255,1); --color-option-on-positive-rgb: 255, 255, 255; --color-option-cautious: rgba(255, 188, 31, 1); --color-option-cautious-rgb: 255, 188, 31; --color-option-on-cautious: rgba(25,25,25,1); --color-option-on-cautious-rgb: 25, 25, 25; --color-option-negative: rgba(255, 85, 86, 1); --color-option-negative-rgb: 255, 85, 86; --color-option-on-negative: rgba(255,255,255,1); --color-option-on-negative-rgb: 255, 255, 255; --color-option-canvas-1: rgba(26, 26, 26, 1); --color-option-canvas-1-rgb: 26, 26, 26; --color-option-canvas-2: rgba(30, 30, 31, 1); --color-option-canvas-2-rgb: 30, 30, 31; --color-option-canvas-3: rgba(0,0,0,1); --color-option-canvas-3-rgb: 0, 0, 0; --color-option-container-1: rgba(33, 34, 35, 1); --color-option-container-1-rgb: 33, 34, 35; --color-option-container-2: rgba(39, 40, 41, 1); --color-option-container-2-rgb: 39, 40, 41; --color-option-special-1: rgba(246, 227, 255, 1); --color-option-special-1-rgb: 246, 227, 255; --color-option-special-2: rgba(191, 242, 255, 1); --color-option-special-2-rgb: 191, 242, 255; --color-option-special-3: rgba(171, 255, 178, 1); --color-option-special-3-rgb: 171, 255, 178; --color-option-special-4: rgba(255, 251, 171, 1); --color-option-special-4-rgb: 255, 251, 171; --color-option-hover-state: rgba(25,25,25,0.04); --color-option-hover-state-rgb: 25, 25, 25, 0.04; --color-option-focus-state: rgba(255,80,0,1); --color-option-focus-state-rgb: 255, 80, 0; --color-option-pressed-state: rgba(25,25,25,0.08); --color-option-pressed-state-rgb: 25, 25, 25, 0.08; --color-option-disabled-state: rgba(255,255,255,0.4); --color-option-disabled-state-rgb: 255, 255, 255, 0.4; --color-option-error-state: rgba(255, 105, 97, 0.05); --color-option-error-state-rgb: 255, 105, 97, 0.05; --color-option-success-state: rgba(29, 195, 126, 0.1); --color-option-success-state-rgb: 29, 195, 126, 0.1; --color-option-silver: rgba(217, 217, 217, 1); --color-option-silver-rgb: 217, 217, 217; --color-option-gold: rgba(200, 140, 24, 1); --color-option-gold-rgb: 200, 140, 24; --color-option-platinum: rgba(146, 136, 201, 1); --color-option-platinum-rgb: 146, 136, 201; --color-option-diamond: rgba(85, 158, 200, 1); --color-option-diamond-rgb: 85, 158, 200; --color-option-glass-ultra-thin: rgba(26, 26, 26, 0.2); --color-option-glass-ultra-thin-rgb: 26, 26, 26, 0.2; --color-option-glass-thin: rgba(26, 26, 26, 0.4); --color-option-glass-thin-rgb: 26, 26, 26, 0.4; --color-option-glass-regular: rgba(26, 26, 26, 0.6); --color-option-glass-regular-rgb: 26, 26, 26, 0.6; --color-option-glass-thick: rgba(26, 26, 26, 0.8); --color-option-glass-thick-rgb: 26, 26, 26, 0.8; --color-option-warning: rgba(255, 188, 31, 0.13); --color-option-warning-rgb: 255, 188, 31, 0.13; --color-accent-brand: rgba(255,255,255,1); --color-accent-brand-rgb: 255, 255, 255; --color-accent-on-brand: rgba(26, 26, 26, 1); --color-accent-on-brand-rgb: 26, 26, 26; --color-accent-primary: rgba(26, 26, 26, 1); --color-accent-primary-rgb: 26, 26, 26; --color-accent-on-primary: rgba(255,255,255,1); --color-accent-on-primary-rgb: 255, 255, 255; --color-accent-secondary: rgba(26, 26, 26, 1); --color-accent-secondary-rgb: 26, 26, 26; --color-accent-on-secondary: rgba(255,255,255,1); --color-accent-on-secondary-rgb: 255, 255, 255; --color-accent-tertiary: rgba(26, 26, 26, 1); --color-accent-tertiary-rgb: 26, 26, 26; --color-accent-on-tertiary: rgba(255,255,255,1); --color-accent-on-tertiary-rgb: 255, 255, 255; --color-accent-positive: rgba(34, 197, 94, 1); --color-accent-positive-rgb: 34, 197, 94; --color-accent-on-positive: rgba(255,255,255,1); --color-accent-on-positive-rgb: 255, 255, 255; --color-accent-cautious: rgba(255, 188, 31, 1); --color-accent-cautious-rgb: 255, 188, 31; --color-accent-on-cautious: rgba(25,25,25,1); --color-accent-on-cautious-rgb: 25, 25, 25; --color-accent-negative: rgba(215, 0, 21, 1); --color-accent-negative-rgb: 215, 0, 21; --color-accent-on-negative: rgba(255,255,255,1); --color-accent-on-negative-rgb: 255, 255, 255; --color-accent-canvas-1: rgba(255,80,0,1); --color-accent-canvas-1-rgb: 255, 80, 0; --color-accent-canvas-2: rgba(255,80,0,1); --color-accent-canvas-2-rgb: 255, 80, 0; --color-accent-canvas-3: rgba(255,80,0,1); --color-accent-canvas-3-rgb: 255, 80, 0; --color-accent-container-1: rgba(255,80,0,1); --color-accent-container-1-rgb: 255, 80, 0; --color-accent-container-2: rgba(255,255,255,1); --color-accent-container-2-rgb: 255, 255, 255; --color-accent-special-1: rgba(246, 227, 255, 1); --color-accent-special-1-rgb: 246, 227, 255; --color-accent-special-2: rgba(191, 242, 255, 1); --color-accent-special-2-rgb: 191, 242, 255; --color-accent-special-3: rgba(171, 255, 178, 1); --color-accent-special-3-rgb: 171, 255, 178; --color-accent-special-4: rgba(255, 251, 171, 1); --color-accent-special-4-rgb: 255, 251, 171; --color-accent-hover-state: rgba(25,25,25,0.04); --color-accent-hover-state-rgb: 25, 25, 25, 0.04; --color-accent-focus-state: rgba(255,80,0,1); --color-accent-focus-state-rgb: 255, 80, 0; --color-accent-pressed-state: rgba(25,25,25,0.08); --color-accent-pressed-state-rgb: 25, 25, 25, 0.08; --color-accent-disabled-state: rgba(255,255,255,0.4); --color-accent-disabled-state-rgb: 255, 255, 255, 0.4; --color-accent-error-state: rgba(201, 32, 17, 0.05); --color-accent-error-state-rgb: 201, 32, 17, 0.05; --color-accent-success-state: rgba(14, 115, 87, 0.1); --color-accent-success-state-rgb: 14, 115, 87, 0.1; --color-accent-silver: rgba(217, 217, 217, 1); --color-accent-silver-rgb: 217, 217, 217; --color-accent-gold: rgba(200, 140, 24, 1); --color-accent-gold-rgb: 200, 140, 24; --color-accent-platinum: rgba(146, 136, 201, 1); --color-accent-platinum-rgb: 146, 136, 201; --color-accent-diamond: rgba(85, 158, 200, 1); --color-accent-diamond-rgb: 85, 158, 200; --color-accent-glass-ultra-thin: rgba(255,80,0,0.2); --color-accent-glass-ultra-thin-rgb: 255, 80, 0, 0.2; --color-accent-glass-thin: rgba(255,80,0,0.4); --color-accent-glass-thin-rgb: 255, 80, 0, 0.4; --color-accent-glass-regular: rgba(255,80,0,0.6); --color-accent-glass-regular-rgb: 255, 80, 0, 0.6; --color-accent-glass-thick: rgba(255,80,0,0.8); --color-accent-glass-thick-rgb: 255, 80, 0, 0.8; --color-accent-warning: rgba(255, 188, 31, 0.13); --color-accent-warning-rgb: 255, 188, 31, 0.13;\n     } body { \n    \n                --color-highlight: var(--color-prime-highlight);\n                --color-highlight-rgb: var(--color-prime-highlight-rgb);\n                 \n                --color-primary: var(--color-prime-primary);\n                --color-primary-rgb: var(--color-prime-primary-rgb);\n                 \n                --color-secondary: var(--color-prime-secondary);\n                --color-secondary-rgb: var(--color-prime-secondary-rgb);\n                 \n                --color-tertiary: var(--color-prime-tertiary);\n                --color-tertiary-rgb: var(--color-prime-tertiary-rgb);\n                 \n                --color-error: var(--color-prime-error);\n                --color-error-rgb: var(--color-prime-error-rgb);\n                 \n                --color-on-primary: var(--color-prime-on-primary);\n                --color-on-primary-rgb: var(--color-prime-on-primary-rgb);\n                 \n                --color-on-secondary: var(--color-prime-on-secondary);\n                --color-on-secondary-rgb: var(--color-prime-on-secondary-rgb);\n                 \n                --color-on-tertiary: var(--color-prime-on-tertiary);\n                --color-on-tertiary-rgb: var(--color-prime-on-tertiary-rgb);\n                 \n                --color-on-highlight: var(--color-prime-on-highlight);\n                --color-on-highlight-rgb: var(--color-prime-on-highlight-rgb);\n                 \n                --color-on-error: var(--color-prime-on-error);\n                --color-on-error-rgb: var(--color-prime-on-error-rgb);\n                 \n                --color-background: var(--color-prime-background);\n                --color-background-rgb: var(--color-prime-background-rgb);\n                 \n                --color-background-variant: var(--color-prime-background-variant);\n                --color-background-variant-rgb: var(--color-prime-background-variant-rgb);\n                 \n                --color-background-emphasized: var(--color-prime-background-emphasized);\n                --color-background-emphasized-rgb: var(--color-prime-background-emphasized-rgb);\n                 \n                --color-focus-state: var(--color-prime-focus-state);\n                --color-focus-state-rgb: var(--color-prime-focus-state-rgb);\n                 \n                --color-special-1: var(--color-prime-special-1);\n                --color-special-1-rgb: var(--color-prime-special-1-rgb);\n                 \n                --color-special-2: var(--color-prime-special-2);\n                --color-special-2-rgb: var(--color-prime-special-2-rgb);\n                 \n                --color-special-3: var(--color-prime-special-3);\n                --color-special-3-rgb: var(--color-prime-special-3-rgb);\n                 \n                --color-special-4: var(--color-prime-special-4);\n                --color-special-4-rgb: var(--color-prime-special-4-rgb);\n                 \n                --color-brand: var(--color-prime-brand);\n                --color-brand-rgb: var(--color-prime-brand-rgb);\n                 \n                --color-on-brand: var(--color-prime-on-brand);\n                --color-on-brand-rgb: var(--color-prime-on-brand-rgb);\n                 \n                --color-positive: var(--color-prime-positive);\n                --color-positive-rgb: var(--color-prime-positive-rgb);\n                 \n                --color-on-positive: var(--color-prime-on-positive);\n                --color-on-positive-rgb: var(--color-prime-on-positive-rgb);\n                 \n                --color-cautious: var(--color-prime-cautious);\n                --color-cautious-rgb: var(--color-prime-cautious-rgb);\n                 \n                --color-on-cautious: var(--color-prime-on-cautious);\n                --color-on-cautious-rgb: var(--color-prime-on-cautious-rgb);\n                 \n                --color-negative: var(--color-prime-negative);\n                --color-negative-rgb: var(--color-prime-negative-rgb);\n                 \n                --color-on-negative: var(--color-prime-on-negative);\n                --color-on-negative-rgb: var(--color-prime-on-negative-rgb);\n                 \n                --color-canvas-1: var(--color-prime-canvas-1);\n                --color-canvas-1-rgb: var(--color-prime-canvas-1-rgb);\n                 \n                --color-canvas-2: var(--color-prime-canvas-2);\n                --color-canvas-2-rgb: var(--color-prime-canvas-2-rgb);\n                 \n                --color-canvas-3: var(--color-prime-canvas-3);\n                --color-canvas-3-rgb: var(--color-prime-canvas-3-rgb);\n                 \n                --color-container-1: var(--color-prime-container-1);\n                --color-container-1-rgb: var(--color-prime-container-1-rgb);\n                 \n                --color-container-2: var(--color-prime-container-2);\n                --color-container-2-rgb: var(--color-prime-container-2-rgb);\n                 \n                --color-hover-state: var(--color-prime-hover-state);\n                --color-hover-state-rgb: var(--color-prime-hover-state-rgb);\n                 \n                --color-pressed-state: var(--color-prime-pressed-state);\n                --color-pressed-state-rgb: var(--color-prime-pressed-state-rgb);\n                 \n                --color-disabled-state: var(--color-prime-disabled-state);\n                --color-disabled-state-rgb: var(--color-prime-disabled-state-rgb);\n                 \n                --color-error-state: var(--color-prime-error-state);\n                --color-error-state-rgb: var(--color-prime-error-state-rgb);\n                 \n                --color-success-state: var(--color-prime-success-state);\n                --color-success-state-rgb: var(--color-prime-success-state-rgb);\n                 \n                --color-silver: var(--color-prime-silver);\n                --color-silver-rgb: var(--color-prime-silver-rgb);\n                 \n                --color-gold: var(--color-prime-gold);\n                --color-gold-rgb: var(--color-prime-gold-rgb);\n                 \n                --color-platinum: var(--color-prime-platinum);\n                --color-platinum-rgb: var(--color-prime-platinum-rgb);\n                 \n                --color-diamond: var(--color-prime-diamond);\n                --color-diamond-rgb: var(--color-prime-diamond-rgb);\n                 \n                --color-glass-ultra-thin: var(--color-prime-glass-ultra-thin);\n                --color-glass-ultra-thin-rgb: var(--color-prime-glass-ultra-thin-rgb);\n                 \n                --color-glass-thin: var(--color-prime-glass-thin);\n                --color-glass-thin-rgb: var(--color-prime-glass-thin-rgb);\n                 \n                --color-glass-regular: var(--color-prime-glass-regular);\n                --color-glass-regular-rgb: var(--color-prime-glass-regular-rgb);\n                 \n                --color-glass-thick: var(--color-prime-glass-thick);\n                --color-glass-thick-rgb: var(--color-prime-glass-thick-rgb);\n                 \n                --color-warning: var(--color-prime-warning);\n                --color-warning-rgb: var(--color-prime-warning-rgb);\n                \n\n    background-color: rgb(var(--color-canvas-1-rgb));\n    color: rgb(var(--color-primary-rgb));\n    accent-color: rgb(var(--color-brand-rgb));\n }"
+        },
+        "meta": {
+            "title": "All SIXT share services in one app | SIXT share",
+            "description": "Looking for a convenient way to get around Germany, Belgium, Italy, Spain, France or the Netherlands? Discover SIXT share car sharing, e-scooters, e-mopeds and bikes. Download the SIXT app and register for free.",
+            "entityIdRefs": [
+                {
+                    "name": "locale",
+                    "id": "en_US"
+                }
+            ],
+            "pageId": "shortcodeshare_home",
+            "noIndexNoFollow": false,
+            "canonicalUrl": "https://www.sixt.com/share/",
+            "hasCanonicalUrl": false,
+            "splitTestVariation": "default",
+            "alternates": [
+                {
+                    "url": "https://www.sixt.be/share/",
+                    "locale": "nl_BE"
+                },
+                {
+                    "url": "https://www.sixt.com/share/",
+                    "locale": "en_US"
+                },
+                {
+                    "url": "https://www.sixt.de/share/",
+                    "locale": "de_DE"
+                },
+                {
+                    "url": "https://www.sixt.es/share/",
+                    "locale": "es_ES"
+                },
+                {
+                    "url": "https://www.sixt.fr/share/",
+                    "locale": "fr_FR"
+                },
+                {
+                    "url": "https://www.sixt.it/share/",
+                    "locale": "it_IT"
+                },
+                {
+                    "url": "https://www.sixt.nl/share/",
+                    "locale": "nl_NL"
+                }
+            ],
+            "abVariation": "",
+            "locale": "en_US",
+            "pageBuildId": "2025-11-29T18:42:04",
+            "pageVersion": "f0a817b87e7b7d2c98c3f2268e890b7fdcd48b06",
+            "isPreview": false
+        },
+        "thirdPartyKeys": {
+            "instana": {
+                "dev": "UNqZBRfKRlOV7aj-4hGL_A",
+                "stage": "UNqZBRfKRlOV7aj-4hGL_A",
+                "prod": "LRZPqrMVS1OBdVJmly5mmA"
+            },
+            "sourceDefense": {
+                "prod": {
+                    "accountId": "f53de06e-703f-4d86-adfd-c25c30871685",
+                    "siteId": "39315920-c083-4720-a4d5-ed8f1bee5649"
+                },
+                "internal": {
+                    "accountId": "f53de06e-703f-4d86-adfd-c25c30871685",
+                    "siteId": "8158596c-8ef8-46d6-aa6f-5042d7083a30"
+                }
+            }
+        },
+        "productLine": "share",
+        "gtmData": {
+            "consentId": "GTM-NQBW5W7",
+            "unifiedId": "GTM-WG9TDF3J"
+        },
+        "legalFooter": {
+            "links": [
+                {
+                    "text": "Imprint & privacy",
+                    "href": "/privacy/",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "text": "Do not share or sell my personal information",
+                    "href": "onclick:cookie_settings",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "text": "Contacts",
+                    "href": "https://www.sixt.com/share/contacts/",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "text": "Terms & conditions",
+                    "href": "/pages/terms-conditions/",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "text": "Cookie Settings",
+                    "href": "onclick:cookie_settings",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "text": "SIXT for business",
+                    "href": "https://www.sixt.com/business/?utm_source=sixt.com&utm_medium=retail-website-referral&utm_campaign=US_US_btob_SHARE-FOOTER-RT_ALL_GT_ENG&utm_content=Textlink-BusinessCustomer&utm_term=b2b_ref",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "text": "Accessibility",
+                    "href": "/pages/accessibility-improvements/",
+                    "shouldOpenInNewTab": false
+                }
+            ]
+        },
+        "isEmbedded": false,
+        "drawerNavigation": {
+            "headingTranslations": "SIXT Product Menu",
+            "ariaLabelOpen": "Open global navigation menu",
+            "ariaLabelClose": "Close global navigation menu",
+            "links": [
+                {
+                    "text": "Car rental",
+                    "subtext": "",
+                    "href": "/",
+                    "isCurrent": false
+                },
+                {
+                    "text": "Truck rental",
+                    "subtext": "",
+                    "href": "/truck-rental/",
+                    "isCurrent": false
+                },
+                {
+                    "text": "Share",
+                    "subtext": "",
+                    "href": "https://www.sixt.com/share/",
+                    "isCurrent": true
+                },
+                {
+                    "text": "Ride",
+                    "subtext": "",
+                    "href": "https://www.sixt.com/ride/?utm_source=share_hp_referral_ride&utm_medium=sixt_referral&utm_campaign=menu&promo_name=share_hp_referral_ride&promo_creative=menu&promo_position=sixt.com",
+                    "isCurrent": false
+                },
+                {
+                    "text": "SIXT+",
+                    "subtext": "car subscription",
+                    "href": "https://www.sixt.com/plus/",
+                    "isCurrent": false
+                },
+                {
+                    "text": "Business",
+                    "subtext": "",
+                    "href": "https://corporate.sixt.com/?utm_source=sixt.com&utm_medium=retail-website-referral&utm_campaign=US_US_btob_SHARE-BURGER_ALL_GT_ENG&utm_content=Zen-Menue&utm_term=b2b_ref&promo_name=share_hp_referral&promo_creative=menu&promo_position=sixt.com",
+                    "isCurrent": false
+                }
+            ]
+        },
+        "sixtNavigationFooter": {
+            "navigation": [
+                {
+                    "heading": "SIXT Share",
+                    "links": [
+                        {
+                            "href": "https://www.sixt.com/share/car-sharing/",
+                            "text": "Car sharing"
+                        },
+                        {
+                            "href": "https://www.sixt.com/share/e-moped/",
+                            "text": "E-moped"
+                        },
+                        {
+                            "href": "https://www.sixt.com/share/bike/",
+                            "text": "Bike"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Info & Help",
+                    "links": [
+                        {
+                            "href": "https://www.sixt.com/share/rates/",
+                            "text": "*Rates"
+                        },
+                        {
+                            "href": "https://www.sixt.com/share/faqs/",
+                            "text": "FAQ"
+                        },
+                        {
+                            "href": "https://www.sixt.com/share/fleet/",
+                            "text": "Fleet"
+                        },
+                        {
+                            "href": "https://www.sixt.com/share/car-sharing-offers/",
+                            "text": "Offers"
+                        },
+                        {
+                            "href": "https://www.sixt.com/share/car-sharing-offers/loyalty-program/",
+                            "text": "Loyalty Program"
+                        },
+                        {
+                            "href": "https://www.sixt.com/share/registration/",
+                            "text": "Registration"
+                        },
+                        {
+                            "href": "https://www.sixt.com/share/faqs/parking-business-area/",
+                            "text": "Parking"
+                        }
+                    ]
+                },
+                {
+                    "heading": "About us",
+                    "links": [
+                        {
+                            "href": "https://about.sixt.com/",
+                            "text": "SIXT group"
+                        },
+                        {
+                            "href": "https://about.sixt.com/en/newsroom/",
+                            "text": "Press"
+                        },
+                        {
+                            "href": "https://about.sixt.com/en/investor-relations/",
+                            "text": "Investor Relations"
+                        },
+                        {
+                            "href": "https://www.sixt.jobs/us",
+                            "text": "Careers"
+                        },
+                        {
+                            "href": "https://drying-little-tears.org/en/",
+                            "text": "Regine Sixt Children’s Aid Foundation"
+                        }
+                    ]
+                }
+            ],
+            "socialMedia": [
+                {
+                    "href": "https://www.instagram.com/sixt/",
+                    "text": "instagram",
+                    "network": "instagram"
+                },
+                {
+                    "href": "https://www.linkedin.com/company/sixt/?originalSubdomain=de",
+                    "text": "linkedin",
+                    "network": "linkedin"
+                }
+            ],
+            "mobileAppStoreLinks": [
+                {
+                    "href": "https://sixt.go.link/share?adj_t=f1ztwl6&adj_engagement_type=fallback_click&adj_deep_link=sixt%3A%2F%2Fwww.sixt.com%2Frent&adj_campaign=us&adj_adgroup=sixtrent&adj_creative=footerAppStore",
+                    "imageSource": "/shared/icons/store-badges/app_store_black_en.svg",
+                    "alt": "Download the latest version of the SIXT app from Apple App Store",
+                    "width": 120,
+                    "height": 40
+                },
+                {
+                    "href": "https://sixt.go.link/share?adj_t=f1ztwl6&adj_engagement_type=fallback_click&adj_deep_link=sixt%3A%2F%2Fwww.sixt.com%2Frent&adj_campaign=us&adj_adgroup=sixtrent&adj_creative=footerPlayStore&adj_fallback=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.sixt.reservation",
+                    "imageSource": "/shared/icons/store-badges/google_play_en.svg",
+                    "alt": "Download the latest version of the SIXT app from Google Play Store",
+                    "width": 135,
+                    "height": 40
+                }
+            ]
+        },
+        "alertBanner": null,
+        "appLinks": [
+            {
+                "href": "https://sixt.go.link/share?adj_t=f1ztwl6&adj_engagement_type=fallback_click&adj_deep_link=sixt%3A%2F%2Fwww.sixt.com%2Fshare&adj_campaign=us&adj_adgroup=sixtshare&adj_creative=home",
+                "imageSource": "/shared/icons/store-badges/app_store_black_en.svg",
+                "alt": "Download the latest version of the SIXT app from Apple App Store",
+                "width": 120,
+                "height": 40
+            },
+            {
+                "href": "https://sixt.go.link/share?adj_t=f1ztwl6&adj_engagement_type=fallback_click&adj_deep_link=sixt%3A%2F%2Fwww.sixt.com%2Fshare&adj_campaign=us&adj_adgroup=sixtshare&adj_creative=home&adj_fallback=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.sixt.reservation",
+                "imageSource": "/shared/icons/store-badges/google_play_en.svg",
+                "alt": "Download the latest version of the SIXT app from Google Play Store",
+                "width": 135,
+                "height": 40
+            }
+        ],
+        "ibe": null,
+        "shortcode": {
+            "status": "published",
+            "page_id": "home",
+            "product_line": "share",
+            "locale": "en_US",
+            "meta_title": "All SIXT share services in one app | SIXT share",
+            "meta_description": "Looking for a convenient way to get around Germany, Belgium, Italy, Spain, France or the Netherlands? Discover SIXT share car sharing, e-scooters, e-mopeds and bikes. Download the SIXT app and register for free.",
+            "canonical": null,
+            "no_index": false,
+            "slug": "/",
+            "hero_section": "rich-hero",
+            "hero_heading": "SIXT SHARE mobility services",
+            "hero_subheading": "Car sharing, bikes & e-mopeds - all in one app",
+            "hero_cta": null,
+            "shortcode_text": "[section heading=\"DOWNLOAD APP. REGISTER. DRIVE.\"]\n[grid]\n\n[column]\nWith SIXT share, we offer you a variety of mobility services to get from A to B. Simply open the SIXT app on your smartphone and quickly book a car in Germany or the Netherlands. Electric mopeds are available in Spain, France and Germany. Bikes are bookable in the selected cities in Germany. Choose an available vehicle from the app at any time, day or night. To end the rental, simply park in the business area and lock the vehicle using the app. \n\n[_cta:Register & Get 10€*](https://sixt.go.link/share?adj_t=f1ztwl6&adj_engagement_type=fallback_click&adj_deep_link=sixt%3A%2F%2Fwww.sixt.com%2Fshare&adj_campaign=us&adj_adgroup=sixtshare&adj_creative=home&adj_fallback=https%3A%2F%2Fwww.sixt.com%2Fshare%2Fregistration%2F&adj_redirect_macos=https%3A%2F%2Fwww.sixt.com%2Fshare%2Fregistration%2F)\n[/column]\n\n[column]\n[image src=\"126c2ac1-5413-4919-aa45-d3eec941ccf5.jpg\" alt=\"SIXT Share registration\"]\n[/image]\n[/column]\n[/grid]\n[/section]\n\n\n[section heading=\"New: Our airport package – to the airport at a fixed price\" theme=\"option\"]\n[grid]\n[column]\n[image src=\"f00afb4f-d956-4b47-9697-5ff3d357e02e.jpg\"  alt=\"Super Image\"]\n[/image]\n[/column]\n[column]\n✔ Fixed all-in price – no hidden costs\n\n✔ Up to 2 hours of driving time – full flexibility, even in traffic\n\n✔ Sufficient kilometers included:\n• **Hamburg**: 40 km from €14.99\n• **Berlin**: 60 km from €19.99\n• **Munich**: 70 km from €24.99\n\n[_cta:More Information](https://www.sixt.com/share/rates/germany/)\n\n[/column]\n[/grid]\n[/section]\n\n\n[section heading=\"ALWAYS MOBILE WITH SIXT SHARE\" theme=\"prime\"]\n[moresixt]\n \n[item src=\"e17452e0-986d-4b6c-99b3-5ef46dde0385.png\"]\n# Car sharing\nFree floating car sharing in Germany and the Netherlands\n[Car sharing](https://www.sixt.com/share/car-sharing/)\n[/item]\n\n[item src=\"fe6755e8-bebd-40dc-b578-b0bb28d19798.png\"]\n# E-Mopeds\nAvailable in selected cities in Germany, France & Spain\n \n[E-mopeds](https://www.sixt.com/share/e-moped/)\n[/item]\n\n[item src=\"6328fe0c-f4ee-47b6-870a-9acffd8b7263.png\"]\n# Bikes\nAvailable in Germany via the SIXT app\n \n[Bikes](https://www.sixt.com/share/bike/)\n[/item]\n[/moresixt]\n[/section]\n\n[section heading=\"USE CAR SHARING FOR CITY HOPPING!\" theme=\"option\"]\nExperience city-to-city car sharing with SIXT share in Germany or the Netherlands. Find out more about using car sharing to travel between cities within one country.\n\n[_cta: Car sharing city to city](https://www.sixt.com/share/car-sharing-from-city-to-city/)\n[/section]\n\n[directus id=\"share_com_registration_element\" /]\n\n\n[directus id=\"share_com_usp\" /]\n\n[directus id=\"share_com_deals\" /]\n\n[section heading=\"Frequently asked Questions\" theme=\"prime\"]\n\n# WHERE IS SIXT SHARE AVAILABLE?\nYou can find SIXT share in Germany, as well as in the Netherlands, France, Spain, Italy and Belgium. Find out where you can find us on the respective country pages or directly in the SIXT app. You only have to register once and can use all of SIXT services, no matter where you are. \n\n- [Belgium](https://www.sixt.com/share/belgium/)\n- [France](https://www.sixt.com/share/france/)\n- [Germany](https://www.sixt.com/share/germany/)\n- [Italy](https://www.sixt.com/share/italy/)\n- [Netherlands](https://www.sixt.com/share/netherlands/)\n- [Spain](https://www.sixt.com/share/spain/)\n[grid]\n[column]\n[accordion]\n# What is SIXT share?\nSIXT share is a mobility service that offers a flexible mobility services: from bikes, mopeds, scooters to shared cars. You can book shared car from a minute up to 7 days.  Simply book a vehicle in the business area with your smartphone, open it and drive off. All vehicles can be found in the SIXT app.\n\n# How does SIXT share work?\nTo use SIXT share, you always need the latest version of the SIXT app. There you can see all available vehicles in the business area. You can reserve these for up to 15 minutes free of charge via the app and drive off straight away. You can end the rental within the SIXT share business area for free or at one of our 500 SIXT stations across Germany for a fee.\n[/accordion]\n[/column]\n[/grid]\n[/section]\n[section theme=\"prime\"]\n[_cta:More questions](https://www.sixt.com/share/help-center/)\n[/section]\n\n\n[directus id=\"share_com_footer_home\" /]\n",
+            "breadcrumb_display_name": null,
+            "schema": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"FAQPage\",\n  \"mainEntity\": [{\n    \"@type\": \"Question\",\n    \"name\": \"What is SIXT share?\",\n    \"acceptedAnswer\": {\n      \"@type\": \"Answer\",\n      \"text\": \"SIXT share is a mobility service that offers a flexible mobility services: from bikes, mopeds, scooters to shared cars. You can book shared car from a minute up to several days. Simply book a vehicle in the business area with your smartphone, open it and drive off. All vehicles can be found in the SIXT app.\"\n    }\n  },{\n    \"@type\": \"Question\",\n    \"name\": \"How does SIXT share work?\",\n    \"acceptedAnswer\": {\n      \"@type\": \"Answer\",\n      \"text\": \"To use SIXT share, you always need the latest version of the SIXT app. There you can see all available vehicles in the business area. You can reserve these for up to 15 minutes free of charge via the app and drive off straight away. You can end the rental within the SIXT share business area for free or at one of our 500 SIXT stations across Germany for a fee.\"\n    }\n  },{\n    \"@type\": \"Question\",\n    \"name\": \"Where is SIXT share available?\",\n    \"acceptedAnswer\": {\n      \"@type\": \"Answer\",\n      \"text\": \"You can find SIXT share in Germany, as well as in the Netherlands, France, Spain, Italy and Belgium. Find out where you can find us on the respective country pages or directly in the SIXT app. You only have to register once and can use all of SIXT services, no matter where you are.\"\n    }\n  },{\n    \"@type\": \"Question\",\n    \"name\": \"What are the advantages of SIXT share?\",\n    \"acceptedAnswer\": {\n      \"@type\": \"Answer\",\n      \"text\": \"1)Flexibility: Hourly, daily or kilometer based packages for our car sharing.2) Stay mobile while abroad: Use SIXT share while visiting Belgium, France, Germany, Italy, the Netherlands or Spain.3)All products in 1 app: The SIXT app gives you access to thousands of e-mopeds, shared cars and bikes.\"\n      }\n  }]\n}",
+            "parent_id": null,
+            "hero_banner_desktop": {
+                "filename_disk": "170aa7bf-7466-4f8f-b4bf-489d82c93823.jpg",
+                "width": 1600,
+                "height": 686
+            },
+            "hero_banner_mobile": {
+                "filename_disk": "170aa7bf-7466-4f8f-b4bf-489d82c93823.jpg",
+                "width": 1600,
+                "height": 686
+            }
+        },
+        "content": [
+            {
+                "id": "4b95b95f-01a9-4072-8527-027421eb87fc",
+                "type": "section",
+                "attributes": {
+                    "heading": "DOWNLOAD APP. REGISTER. DRIVE."
+                },
+                "childItems": [
+                    {
+                        "id": "ddff1655-5867-4ba0-b19f-3822a6a9baa3",
+                        "type": "grid",
+                        "attributes": null,
+                        "childItems": [
+                            {
+                                "id": "633a7762-873f-4500-9528-922cbca3b2a4",
+                                "type": "column",
+                                "attributes": null,
+                                "childItems": [
+                                    {
+                                        "id": "bd479623-a04a-446f-a9ab-f66d073bcda6",
+                                        "type": "IPARAGRAPH",
+                                        "attributes": null,
+                                        "text": [
+                                            {
+                                                "heading": [],
+                                                "content": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "With SIXT share, we offer you a variety of mobility services to get from A to B. Simply open the SIXT app on your smartphone and quickly book a car in Germany or the Netherlands. Electric mopeds are available in Spain, France and Germany. Bikes are bookable in the selected cities in Germany. Choose an available vehicle from the app at any time, day or night. To end the rental, simply park in the business area and lock the vehicle using the app."
+                                                                }
+                                                            ]
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "Cta",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Cta",
+                                                                    "content": "Register & Get 10€*",
+                                                                    "url": "https://sixt.go.link/share?adj_t=f1ztwl6&adj_engagement_type=fallback_click&adj_deep_link=sixt%3A%2F%2Fwww.sixt.com%2Fshare&adj_campaign=us&adj_adgroup=sixtshare&adj_creative=home&adj_fallback=https%3A%2F%2Fwww.sixt.com%2Fshare%2Fregistration%2F&adj_redirect_macos=https%3A%2F%2Fwww.sixt.com%2Fshare%2Fregistration%2F",
+                                                                    "title": "",
+                                                                    "target": "_self",
+                                                                    "isInternalLink": false
+                                                                }
+                                                            ]
+                                                        ]
+                                                    }
+                                                ],
+                                                "childParagraphs": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "e645b179-0895-4bec-adc2-49cdfe7d3814",
+                                "type": "column",
+                                "attributes": null,
+                                "childItems": [
+                                    {
+                                        "id": "3a1ed007-34b9-4e22-97c5-ba227dcb0c5d",
+                                        "type": "image",
+                                        "attributes": {
+                                            "src": "126c2ac1-5413-4919-aa45-d3eec941ccf5.jpg",
+                                            "alt": "SIXT Share registration"
+                                        },
+                                        "childItems": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "f403f7f6-4d05-442e-ad83-e9c140499147",
+                "type": "section",
+                "attributes": {
+                    "heading": "New: Our airport package – to the airport at a fixed price",
+                    "theme": "option"
+                },
+                "childItems": [
+                    {
+                        "id": "b3930d0d-5e65-4868-8771-64d6a745b964",
+                        "type": "grid",
+                        "attributes": null,
+                        "childItems": [
+                            {
+                                "id": "a3965dc0-c399-4152-b245-413b8ddbcde0",
+                                "type": "column",
+                                "attributes": null,
+                                "childItems": [
+                                    {
+                                        "id": "baf205dc-a244-4ee9-979f-cb21f971de54",
+                                        "type": "image",
+                                        "attributes": {
+                                            "src": "f00afb4f-d956-4b47-9697-5ff3d357e02e.jpg",
+                                            "alt": "Super Image"
+                                        },
+                                        "childItems": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "5ae2db5a-4810-46b2-8d82-233c96a82f2a",
+                                "type": "column",
+                                "attributes": null,
+                                "childItems": [
+                                    {
+                                        "id": "5ec7ec66-1f30-4bdb-bdc7-51168d678436",
+                                        "type": "IPARAGRAPH",
+                                        "attributes": null,
+                                        "text": [
+                                            {
+                                                "heading": [],
+                                                "content": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "✔ Fixed all-in price – no hidden costs"
+                                                                }
+                                                            ]
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "✔ Up to 2 hours of driving time – full flexibility, even in traffic"
+                                                                }
+                                                            ]
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "✔ Sufficient kilometers included:"
+                                                                }
+                                                            ],
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "• "
+                                                                },
+                                                                {
+                                                                    "type": "Bold",
+                                                                    "content": "Hamburg"
+                                                                },
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": ": 40 km from €14.99"
+                                                                }
+                                                            ],
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "• "
+                                                                },
+                                                                {
+                                                                    "type": "Bold",
+                                                                    "content": "Berlin"
+                                                                },
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": ": 60 km from €19.99"
+                                                                }
+                                                            ],
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "• "
+                                                                },
+                                                                {
+                                                                    "type": "Bold",
+                                                                    "content": "Munich"
+                                                                },
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": ": 70 km from €24.99"
+                                                                }
+                                                            ]
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "Cta",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Cta",
+                                                                    "content": "More Information",
+                                                                    "url": "https://www.sixt.com/share/rates/germany/",
+                                                                    "title": "",
+                                                                    "target": "_self",
+                                                                    "isInternalLink": false
+                                                                }
+                                                            ]
+                                                        ]
+                                                    }
+                                                ],
+                                                "childParagraphs": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "499903af-cb1b-4ec6-807d-3986adc59a52",
+                "type": "section",
+                "attributes": {
+                    "heading": "ALWAYS MOBILE WITH SIXT SHARE",
+                    "theme": "prime"
+                },
+                "childItems": [
+                    {
+                        "id": "c62adf0c-534e-41b7-82c1-9b3e622d9cc3",
+                        "type": "moresixt",
+                        "attributes": null,
+                        "childItems": [
+                            {
+                                "id": "14dea805-6306-4e10-856c-aa1776114543",
+                                "type": "item",
+                                "attributes": {
+                                    "src": "e17452e0-986d-4b6c-99b3-5ef46dde0385.png"
+                                },
+                                "childItems": [
+                                    {
+                                        "id": "baa92a78-3d66-4f28-94e6-d0d3b674badf",
+                                        "type": "IPARAGRAPH",
+                                        "attributes": null,
+                                        "text": [
+                                            {
+                                                "heading": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": "Car sharing"
+                                                    }
+                                                ],
+                                                "content": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "Free floating car sharing in Germany and the Netherlands"
+                                                                }
+                                                            ],
+                                                            [
+                                                                {
+                                                                    "type": "Link",
+                                                                    "content": "Car sharing",
+                                                                    "url": "https://www.sixt.com/share/car-sharing/",
+                                                                    "target": "_self",
+                                                                    "title": "",
+                                                                    "isInternalLink": false
+                                                                }
+                                                            ]
+                                                        ]
+                                                    }
+                                                ],
+                                                "childParagraphs": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "2a24e9ef-3e8d-4b57-9bae-c10f0c657258",
+                                "type": "item",
+                                "attributes": {
+                                    "src": "fe6755e8-bebd-40dc-b578-b0bb28d19798.png"
+                                },
+                                "childItems": [
+                                    {
+                                        "id": "d142afe3-a2f0-4bf7-bcf8-2415b3034e26",
+                                        "type": "IPARAGRAPH",
+                                        "attributes": null,
+                                        "text": [
+                                            {
+                                                "heading": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": "E-Mopeds"
+                                                    }
+                                                ],
+                                                "content": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "Available in selected cities in Germany, France & Spain"
+                                                                }
+                                                            ]
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Link",
+                                                                    "content": "E-mopeds",
+                                                                    "url": "https://www.sixt.com/share/e-moped/",
+                                                                    "target": "_self",
+                                                                    "title": "",
+                                                                    "isInternalLink": false
+                                                                }
+                                                            ]
+                                                        ]
+                                                    }
+                                                ],
+                                                "childParagraphs": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "bfe2b0a5-01d3-4bc7-a038-1a0a4526a099",
+                                "type": "item",
+                                "attributes": {
+                                    "src": "6328fe0c-f4ee-47b6-870a-9acffd8b7263.png"
+                                },
+                                "childItems": [
+                                    {
+                                        "id": "08e0a160-4699-4b13-9a39-1f90e300317e",
+                                        "type": "IPARAGRAPH",
+                                        "attributes": null,
+                                        "text": [
+                                            {
+                                                "heading": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": "Bikes"
+                                                    }
+                                                ],
+                                                "content": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "Available in Germany via the SIXT app"
+                                                                }
+                                                            ]
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Link",
+                                                                    "content": "Bikes",
+                                                                    "url": "https://www.sixt.com/share/bike/",
+                                                                    "target": "_self",
+                                                                    "title": "",
+                                                                    "isInternalLink": false
+                                                                }
+                                                            ]
+                                                        ]
+                                                    }
+                                                ],
+                                                "childParagraphs": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "9179e62e-b28a-4608-a5e2-ae7aab1d6a92",
+                "type": "section",
+                "attributes": {
+                    "heading": "USE CAR SHARING FOR CITY HOPPING!",
+                    "theme": "option"
+                },
+                "childItems": [
+                    {
+                        "id": "ec719fc8-9762-492f-ada0-7b16dd3841cc",
+                        "type": "IPARAGRAPH",
+                        "attributes": null,
+                        "text": [
+                            {
+                                "heading": [],
+                                "content": [
+                                    {
+                                        "type": "Text",
+                                        "content": [
+                                            [
+                                                {
+                                                    "type": "Text",
+                                                    "content": "Experience city-to-city car sharing with SIXT share in Germany or the Netherlands. Find out more about using car sharing to travel between cities within one country."
+                                                }
+                                            ]
+                                        ]
+                                    },
+                                    {
+                                        "type": "Cta",
+                                        "content": [
+                                            [
+                                                {
+                                                    "type": "Cta",
+                                                    "content": " Car sharing city to city",
+                                                    "url": "https://www.sixt.com/share/car-sharing-from-city-to-city/",
+                                                    "title": "",
+                                                    "target": "_self",
+                                                    "isInternalLink": false
+                                                }
+                                            ]
+                                        ]
+                                    }
+                                ],
+                                "childParagraphs": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "952dffc3-1713-4982-901b-551769091e41",
+                "type": "section",
+                "attributes": {
+                    "heading": "IT'S AS SIMPLE AS THAT"
+                },
+                "childItems": [
+                    {
+                        "id": "ceb6a48b-6d1c-4257-9ee1-4fb50cbfb243",
+                        "type": "grid",
+                        "attributes": null,
+                        "childItems": [
+                            {
+                                "id": "0f6dcae3-a4ac-49db-a98d-383b20ddd92b",
+                                "type": "column",
+                                "attributes": null,
+                                "childItems": [
+                                    {
+                                        "id": "414a92e8-fd3d-4486-a59d-9d33435719fc",
+                                        "type": "IPARAGRAPH",
+                                        "attributes": null,
+                                        "text": [
+                                            {
+                                                "heading": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": "Download the app"
+                                                    }
+                                                ],
+                                                "content": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "Download the latest version of the SIXT App."
+                                                                }
+                                                            ]
+                                                        ]
+                                                    }
+                                                ],
+                                                "childParagraphs": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "942d617e-c119-4ab9-9c4c-070dc6839137",
+                                        "type": "appcta",
+                                        "attributes": null,
+                                        "childItems": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "ef5b7cd2-f68e-457f-a00f-445ea1dea980",
+                                "type": "column",
+                                "attributes": null,
+                                "childItems": [
+                                    {
+                                        "id": "f89020d8-5ab1-4757-b3d7-d1a79cf0aef4",
+                                        "type": "IPARAGRAPH",
+                                        "attributes": null,
+                                        "text": [
+                                            {
+                                                "heading": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": "Register"
+                                                    }
+                                                ],
+                                                "content": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Link",
+                                                                    "content": "Register",
+                                                                    "url": "https://www.sixt.com/share/registration/",
+                                                                    "target": "_self",
+                                                                    "title": "",
+                                                                    "isInternalLink": false
+                                                                },
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": " in the SIXT App and upload your data. Your account will be activated within the shortest time."
+                                                                }
+                                                            ]
+                                                        ]
+                                                    }
+                                                ],
+                                                "childParagraphs": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "23bb49a6-ce95-4ff6-95a3-3cc9064cdf4b",
+                                "type": "column",
+                                "attributes": null,
+                                "childItems": [
+                                    {
+                                        "id": "1f312e35-2f63-4799-813e-555886eeed6f",
+                                        "type": "IPARAGRAPH",
+                                        "attributes": null,
+                                        "text": [
+                                            {
+                                                "heading": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": "Drive"
+                                                    }
+                                                ],
+                                                "content": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "Choose your vehicle on the map, unlock it through the app and off you go!"
+                                                                }
+                                                            ]
+                                                        ]
+                                                    }
+                                                ],
+                                                "childParagraphs": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "5299d523-cf1c-45af-918a-bb9e3b1ffb30",
+                "type": "section",
+                "attributes": {
+                    "theme": "option",
+                    "heading": "ENDLESS MOBILITY: THE ADVANTAGES OF SIXT SHARE"
+                },
+                "childItems": [
+                    {
+                        "id": "7a6aae47-bd13-4676-8b9c-318d030045b5",
+                        "type": "usp",
+                        "attributes": null,
+                        "childItems": [
+                            {
+                                "id": "a245d735-12e1-45d3-9264-6bb53ce8656f",
+                                "type": "item",
+                                "attributes": {
+                                    "src": "access_time"
+                                },
+                                "childItems": [
+                                    {
+                                        "id": "3b9171c9-1082-45e9-ae7a-8a287370e0ef",
+                                        "type": "IPARAGRAPH",
+                                        "attributes": null,
+                                        "text": [
+                                            {
+                                                "heading": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": "FLEXIBILITY ON THE GO"
+                                                    }
+                                                ],
+                                                "content": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "Hourly, daily or kilometer based packages for our car sharing."
+                                                                }
+                                                            ]
+                                                        ]
+                                                    }
+                                                ],
+                                                "childParagraphs": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "a7258fa6-81f9-4f4c-9d3b-91dba231624a",
+                                "type": "item",
+                                "attributes": {
+                                    "src": "public"
+                                },
+                                "childItems": [
+                                    {
+                                        "id": "e2a52cc9-2466-4841-9346-1b5a8788fac0",
+                                        "type": "IPARAGRAPH",
+                                        "attributes": null,
+                                        "text": [
+                                            {
+                                                "heading": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": "STAY MOBILE WHILE ABROAD"
+                                                    }
+                                                ],
+                                                "content": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "Use SIXT share while visiting Belgium, France, Germany, Italy, the Netherlands or Spain."
+                                                                }
+                                                            ]
+                                                        ]
+                                                    }
+                                                ],
+                                                "childParagraphs": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "312e1c37-d1cf-461d-b576-7675baa53807",
+                                "type": "item",
+                                "attributes": {
+                                    "src": "car_and_truck"
+                                },
+                                "childItems": [
+                                    {
+                                        "id": "4a21fd72-644a-4ba6-9e54-bcf5a5385af6",
+                                        "type": "IPARAGRAPH",
+                                        "attributes": null,
+                                        "text": [
+                                            {
+                                                "heading": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": "ALL PRODUCTS IN ONE APP"
+                                                    }
+                                                ],
+                                                "content": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "The SIXT app gives you access to thousands of e-mopeds, shared cars and bikes."
+                                                                }
+                                                            ]
+                                                        ]
+                                                    }
+                                                ],
+                                                "childParagraphs": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "f749a950-0042-4275-aca7-7ed363e92bda",
+                "type": "section",
+                "attributes": {
+                    "heading": "OUR SPECIAL OFFERS"
+                },
+                "childItems": [
+                    {
+                        "id": "97df26e4-d427-4beb-89a7-e20d1e58462a",
+                        "type": "deals",
+                        "attributes": null,
+                        "childItems": [
+                            {
+                                "id": "095f9cc0-dd50-4a26-a3e9-82c2d26d1109",
+                                "type": "item",
+                                "attributes": {
+                                    "src": "d2df05dd-d434-4979-af67-078ada1fcf20.jpg",
+                                    "label": "More information",
+                                    "link": "https://www.sixt.com/share/car-sharing-offers/loyalty-program/"
+                                },
+                                "childItems": [
+                                    {
+                                        "id": "41764065-db53-4445-abc8-bce389f1ec0f",
+                                        "type": "IPARAGRAPH",
+                                        "attributes": null,
+                                        "text": [
+                                            {
+                                                "heading": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": "LOYALTY PROGRAM"
+                                                    }
+                                                ],
+                                                "content": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "SIXT share rewards you for your loyalty"
+                                                                }
+                                                            ]
+                                                        ]
+                                                    }
+                                                ],
+                                                "childParagraphs": [
+                                                    {
+                                                        "heading": [
+                                                            {
+                                                                "type": "Text",
+                                                                "content": "Receive up to"
+                                                            }
+                                                        ],
+                                                        "content": [
+                                                            {
+                                                                "type": "Text",
+                                                                "content": [
+                                                                    [
+                                                                        {
+                                                                            "type": "Text",
+                                                                            "content": "5 €"
+                                                                        }
+                                                                    ],
+                                                                    [
+                                                                        {
+                                                                            "type": "Text",
+                                                                            "content": "/from 250 points"
+                                                                        }
+                                                                    ]
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "childParagraphs": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "25e20ebf-db60-44cc-8ed1-553513886ce0",
+                                "type": "item",
+                                "attributes": {
+                                    "src": "9bc232d2-0fad-467f-b4bb-fe1c00df18c2.jpg",
+                                    "label": "More information",
+                                    "link": "https://www.sixt.com/share/faqs/refueling-charging/"
+                                },
+                                "childItems": [
+                                    {
+                                        "id": "41642d97-10f4-4c6a-b27b-56a252f878ce",
+                                        "type": "IPARAGRAPH",
+                                        "attributes": null,
+                                        "text": [
+                                            {
+                                                "heading": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": "CHARGE ELECTRIC CAR"
+                                                    }
+                                                ],
+                                                "content": [
+                                                    {
+                                                        "type": "Text",
+                                                        "content": [
+                                                            [
+                                                                {
+                                                                    "type": "Text",
+                                                                    "content": "Charge our electric cars and you'll be rewarded with a voucher worth up to € 9 for a future SIXT share journey"
+                                                                }
+                                                            ]
+                                                        ]
+                                                    }
+                                                ],
+                                                "childParagraphs": [
+                                                    {
+                                                        "heading": [
+                                                            {
+                                                                "type": "Text",
+                                                                "content": "Receive up to"
+                                                            }
+                                                        ],
+                                                        "content": [
+                                                            {
+                                                                "type": "Text",
+                                                                "content": [
+                                                                    [
+                                                                        {
+                                                                            "type": "Text",
+                                                                            "content": "9 €"
+                                                                        }
+                                                                    ],
+                                                                    [
+                                                                        {
+                                                                            "type": "Text",
+                                                                            "content": "/Voucher worth"
+                                                                        }
+                                                                    ]
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "childParagraphs": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "74f92cf5-6e4c-4d22-b158-23c892e5ce4d",
+                "type": "section",
+                "attributes": null,
+                "childItems": [
+                    {
+                        "id": "b4604c18-9d52-4580-aca7-5764fae3dfb1",
+                        "type": "IPARAGRAPH",
+                        "attributes": null,
+                        "text": [
+                            {
+                                "heading": [],
+                                "content": [
+                                    {
+                                        "type": "Cta",
+                                        "content": [
+                                            [
+                                                {
+                                                    "type": "Cta",
+                                                    "content": "All offers",
+                                                    "url": "https://www.sixt.com/share/car-sharing-offers/",
+                                                    "title": "",
+                                                    "target": "_self",
+                                                    "isInternalLink": false
+                                                }
+                                            ]
+                                        ]
+                                    }
+                                ],
+                                "childParagraphs": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "d8fcad5a-57a2-4d4a-8cb6-82173f5dcb3b",
+                "type": "section",
+                "attributes": {
+                    "heading": "Frequently asked Questions",
+                    "theme": "prime"
+                },
+                "childItems": [
+                    {
+                        "id": "1e771004-e6c4-44fb-9283-527b124e0e80",
+                        "type": "IPARAGRAPH",
+                        "attributes": null,
+                        "text": [
+                            {
+                                "heading": [
+                                    {
+                                        "type": "Text",
+                                        "content": "WHERE IS SIXT SHARE AVAILABLE?"
+                                    }
+                                ],
+                                "content": [
+                                    {
+                                        "type": "Text",
+                                        "content": [
+                                            [
+                                                {
+                                                    "type": "Text",
+                                                    "content": "You can find SIXT share in Germany, as well as in the Netherlands, France, Spain, Italy and Belgium. Find out where you can find us on the respective country pages or directly in the SIXT app. You only have to register once and can use all of SIXT services, no matter where you are."
+                                                }
+                                            ]
+                                        ]
+                                    },
+                                    {
+                                        "type": "List",
+                                        "content": [
+                                            [
+                                                {
+                                                    "type": "Link",
+                                                    "content": "Belgium",
+                                                    "url": "https://www.sixt.com/share/belgium/",
+                                                    "target": "_self",
+                                                    "title": "",
+                                                    "isInternalLink": false
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "type": "Link",
+                                                    "content": "France",
+                                                    "url": "https://www.sixt.com/share/france/",
+                                                    "target": "_self",
+                                                    "title": "",
+                                                    "isInternalLink": false
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "type": "Link",
+                                                    "content": "Germany",
+                                                    "url": "https://www.sixt.com/share/germany/",
+                                                    "target": "_self",
+                                                    "title": "",
+                                                    "isInternalLink": false
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "type": "Link",
+                                                    "content": "Italy",
+                                                    "url": "https://www.sixt.com/share/italy/",
+                                                    "target": "_self",
+                                                    "title": "",
+                                                    "isInternalLink": false
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "type": "Link",
+                                                    "content": "Netherlands",
+                                                    "url": "https://www.sixt.com/share/netherlands/",
+                                                    "target": "_self",
+                                                    "title": "",
+                                                    "isInternalLink": false
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "type": "Link",
+                                                    "content": "Spain",
+                                                    "url": "https://www.sixt.com/share/spain/",
+                                                    "target": "_self",
+                                                    "title": "",
+                                                    "isInternalLink": false
+                                                }
+                                            ]
+                                        ]
+                                    }
+                                ],
+                                "childParagraphs": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3ff05fc6-2374-4f81-a97f-7cd588076e2a",
+                        "type": "grid",
+                        "attributes": null,
+                        "childItems": [
+                            {
+                                "id": "e9e22443-05f2-4ab4-8f48-f423a43f4c94",
+                                "type": "column",
+                                "attributes": null,
+                                "childItems": [
+                                    {
+                                        "id": "4c237f29-e16b-436f-91a1-8a936cbdc017",
+                                        "type": "accordion",
+                                        "attributes": null,
+                                        "childItems": [
+                                            {
+                                                "id": "1e6794fd-549a-4d06-b201-b86d36989882",
+                                                "type": "IPARAGRAPH",
+                                                "attributes": null,
+                                                "text": [
+                                                    {
+                                                        "heading": [
+                                                            {
+                                                                "type": "Text",
+                                                                "content": "What is SIXT share?"
+                                                            }
+                                                        ],
+                                                        "content": [
+                                                            {
+                                                                "type": "Text",
+                                                                "content": [
+                                                                    [
+                                                                        {
+                                                                            "type": "Text",
+                                                                            "content": "SIXT share is a mobility service that offers a flexible mobility services: from bikes, mopeds, scooters to shared cars. You can book shared car from a minute up to 7 days.  Simply book a vehicle in the business area with your smartphone, open it and drive off. All vehicles can be found in the SIXT app."
+                                                                        }
+                                                                    ]
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "childParagraphs": []
+                                                    },
+                                                    {
+                                                        "heading": [
+                                                            {
+                                                                "type": "Text",
+                                                                "content": "How does SIXT share work?"
+                                                            }
+                                                        ],
+                                                        "content": [
+                                                            {
+                                                                "type": "Text",
+                                                                "content": [
+                                                                    [
+                                                                        {
+                                                                            "type": "Text",
+                                                                            "content": "To use SIXT share, you always need the latest version of the SIXT app. There you can see all available vehicles in the business area. You can reserve these for up to 15 minutes free of charge via the app and drive off straight away. You can end the rental within the SIXT share business area for free or at one of our 500 SIXT stations across Germany for a fee."
+                                                                        }
+                                                                    ]
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "childParagraphs": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "a5fc83b0-119e-4a73-aa49-d6ecafd143d4",
+                "type": "section",
+                "attributes": {
+                    "theme": "prime"
+                },
+                "childItems": [
+                    {
+                        "id": "4b836c4a-b56e-4453-949c-a4282feb82a7",
+                        "type": "IPARAGRAPH",
+                        "attributes": null,
+                        "text": [
+                            {
+                                "heading": [],
+                                "content": [
+                                    {
+                                        "type": "Cta",
+                                        "content": [
+                                            [
+                                                {
+                                                    "type": "Cta",
+                                                    "content": "More questions",
+                                                    "url": "https://www.sixt.com/share/help-center/",
+                                                    "title": "",
+                                                    "target": "_self",
+                                                    "isInternalLink": false
+                                                }
+                                            ]
+                                        ]
+                                    }
+                                ],
+                                "childParagraphs": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "0627b024-1c13-4c87-899f-82d452a1a3e3",
+                "type": "section",
+                "attributes": null,
+                "childItems": [
+                    {
+                        "id": "55597eaf-13e6-414d-86d4-7618317301e9",
+                        "type": "links",
+                        "attributes": null,
+                        "childItems": [
+                            {
+                                "id": "5fdb98f7-52fe-4bbc-909c-23bc4bfa1836",
+                                "type": "IPARAGRAPH",
+                                "attributes": null,
+                                "text": [
+                                    {
+                                        "heading": [
+                                            {
+                                                "type": "Text",
+                                                "content": "Car sharing Germany"
+                                            }
+                                        ],
+                                        "content": [
+                                            {
+                                                "type": "List",
+                                                "content": [
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Car sharing Berlin",
+                                                            "url": "https://www.sixt.com/share/car-sharing/berlin/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Car sharing Munich",
+                                                            "url": "https://www.sixt.com/share/car-sharing/munich/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Car sharing Hamburg",
+                                                            "url": "https://www.sixt.com/share/car-sharing/hamburg/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ]
+                                                ]
+                                            },
+                                            {
+                                                "type": "Text",
+                                                "content": [
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Car sharing Germany",
+                                                            "url": "https://www.sixt.com/share/car-sharing/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ]
+                                                ]
+                                            }
+                                        ],
+                                        "childParagraphs": []
+                                    },
+                                    {
+                                        "heading": [
+                                            {
+                                                "type": "Text",
+                                                "content": "Car sharing Netherlands"
+                                            }
+                                        ],
+                                        "content": [
+                                            {
+                                                "type": "List",
+                                                "content": [
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Car sharing Amsterdam",
+                                                            "url": "https://www.sixt.com/share/car-sharing/amsterdam/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Car sharing Rotterdam",
+                                                            "url": "https://www.sixt.com/share/car-sharing/rotterdam/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Car sharing The Hague",
+                                                            "url": "https://www.sixt.com/share/car-sharing/the-hague/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Car sharing Utrecht",
+                                                            "url": "https://www.sixt.com/share/car-sharing/utrecht/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ]
+                                                ]
+                                            },
+                                            {
+                                                "type": "Text",
+                                                "content": [
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Car sharing Netherlands",
+                                                            "url": "https://www.sixt.com/share/car-sharing/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ]
+                                                ]
+                                            }
+                                        ],
+                                        "childParagraphs": []
+                                    },
+                                    {
+                                        "heading": [
+                                            {
+                                                "type": "Text",
+                                                "content": "Car sharing Airports"
+                                            }
+                                        ],
+                                        "content": [
+                                            {
+                                                "type": "List",
+                                                "content": [
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Car sharing Schiphol Airport",
+                                                            "url": "https://www.sixt.com/share/car-sharing/amsterdam/schiphol-airport/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Car sharing Rotterdam the Hague Airport",
+                                                            "url": "https://www.sixt.com/share/car-sharing/rotterdam/rotterdam-airport/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Car sharing Berlin Airport",
+                                                            "url": "https://www.sixt.com/share/car-sharing/berlin/berlin-brandenburg/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Car sharing Hamburg Airport",
+                                                            "url": "https://www.sixt.com/share/car-sharing/hamburg/hamburg-airport/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Car sharing Munich Airport",
+                                                            "url": "https://www.sixt.com/share/car-sharing/munich/munich-airport/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ]
+                                                ]
+                                            }
+                                        ],
+                                        "childParagraphs": []
+                                    },
+                                    {
+                                        "heading": [
+                                            {
+                                                "type": "Text",
+                                                "content": "Car sharing Fleet"
+                                            }
+                                        ],
+                                        "content": [
+                                            {
+                                                "type": "List",
+                                                "content": [
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Fleet Germany",
+                                                            "url": "https://www.sixt.com/share/fleet/germany/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Fleet Netherlands",
+                                                            "url": "https://www.sixt.com/share/fleet/netherlands/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Vans Germany",
+                                                            "url": "https://www.sixt.com/share/fleet/vans/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ]
+                                                ]
+                                            }
+                                        ],
+                                        "childParagraphs": []
+                                    },
+                                    {
+                                        "heading": [
+                                            {
+                                                "type": "Text",
+                                                "content": "Car sharing Rates"
+                                            }
+                                        ],
+                                        "content": [
+                                            {
+                                                "type": "List",
+                                                "content": [
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Rates Netherlands",
+                                                            "url": "https://www.sixt.com/share/rates/netherlands/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Rates Germany",
+                                                            "url": "https://www.sixt.com/share/rates/germany/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Hourly packages",
+                                                            "url": "https://www.sixt.com/share/rates/hourly-packages/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Daily Packages",
+                                                            "url": "https://www.sixt.com/share/rates/daily-packages/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ]
+                                                ]
+                                            },
+                                            {
+                                                "type": "Text",
+                                                "content": [
+                                                    [
+                                                        {
+                                                            "type": "Link",
+                                                            "content": "Car sharing rates",
+                                                            "url": "https://www.sixt.com/share/rates/",
+                                                            "target": "_self",
+                                                            "title": "",
+                                                            "isInternalLink": false
+                                                        }
+                                                    ]
+                                                ]
+                                            }
+                                        ],
+                                        "childParagraphs": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "truckSlug": "truck-rental",
+        "breadcrumbs": {
+            "breadcrumbs": [
+                {
+                    "text": "SIXT",
+                    "href": "/"
+                },
+                {
+                    "text": "Share",
+                    "href": "/share/"
+                }
+            ],
+            "label": "Breadcrumb"
+        },
+        "shortcodeTranslations": {
+            "BrowserAudioNotSupported": "Your browser does not support audible functionality. Try with latest versions of Chrome, Safari, Mozilla, Opera or Edge.",
+            "ReadText": "Read the page",
+            "StopReading": "Stop reading",
+            "StartSavingNowCta": "Book and earn points",
+            "LoyaltyLdpBenefitsDisclaimer": "Skip the counter and priority service lanes available at select locations."
+        }
+    }
+}

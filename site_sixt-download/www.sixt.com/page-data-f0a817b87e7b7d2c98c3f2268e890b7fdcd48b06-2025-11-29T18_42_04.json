@@ -1,0 +1,1629 @@
+{
+    "url": "",
+    "pageId": "renthome",
+    "template": "/libraries/sixt/sitegen-plugin-rent/src/templates/RentHome/index.ts",
+    "data": {
+        "pageSpecificConfiguration": {
+            "hydra": {
+                "acceptLanguage": [
+                    "en-US",
+                    "en"
+                ],
+                "countryAlpha2": "US",
+                "countryAlpha3": "USA",
+                "defaultCurrency": "USD",
+                "langAlpha2": "en",
+                "langAlpha3": "eng",
+                "formats": {
+                    "time": "hh:mm",
+                    "decimalSeperator": ".",
+                    "date": "MM/DD/YYYY",
+                    "nameDate": "MMM DD",
+                    "measureOfLength": "mi",
+                    "hour12Format": true,
+                    "isFirstDaySunday": true
+                },
+                "homePageUrl": "/",
+                "pageHyphenLocale": "en-US",
+                "pageLocale": "en_US",
+                "tenantId": "6",
+                "userCentricsId": "LHOLXat-d",
+                "pageId": "renthome",
+                "hydraTranslations": {
+                    "Back": "Back",
+                    "CarouselControls": "Slide controls",
+                    "CarouselNextSlide": "Next slide",
+                    "CarouselPause": "Pause carousel",
+                    "CarouselPlay": "Play carousel",
+                    "CarouselPrevSlide": "Previous slide",
+                    "Close": "Close",
+                    "getCarouselIndicatorButton": "Go to slide {{_1_}} of {{_2_}}"
+                }
+            },
+            "chatbot": {
+                "cognigyConfigUrl": {
+                    "prod": "https://endpoint-sixt.cognigy.cloud/3761c008fd9cdc76560eac946fd6e42927a0dc1c5996ca516c0340df1fd68548",
+                    "stage": "https://endpoint-sixt.cognigy.cloud/8e5428025b606e69e9f4168e86b88a257c21b6f487c4e5aecd7ea3e0016ae168"
+                },
+                "isSmartBannerEnabled": true,
+                "smartBannerAppLink": "https://sixt.go.link/89tjD"
+            },
+            "customersettings": {
+                "corporateLink": "https://corporate.sixt.com/",
+                "privacyLink": "/privacy/",
+                "tcLink": "/terms-conditions/",
+                "accountBasePath": "/account",
+                "bookingProfileLink": "/account/#/profiles",
+                "listBookingsLink": "/account/#/bookings",
+                "loyaltyDetailsLink": "/account/#/loyalty-details",
+                "manageMyBookingLink": "/account/#/manage-my-booking-info",
+                "manageSubscriptionsLink": "/account/#/subscriptions",
+                "personalDataLink": "/account/#/account",
+                "openHelpCenterEntryPoint": true,
+                "enableSocialLogin": true,
+                "enableLoyalty": true,
+                "signupLink": "/services/#/signup",
+                "p100Header": true,
+                "helpCenterLink": "/help-center/",
+                "registrationSource": "rent"
+            },
+            "rentsearch": {
+                "funnelPageUrl": "/betafunnel/",
+                "helpCenterLink": "/help-center/",
+                "corporateLink": "https://corporate.sixt.com/"
+            }
+        },
+        "statsigWebUrl": {
+            "prod": "/ext/stg-sc/dist/index.min.js?apikey=client-1E1GD9QB1ChBTHUx56fmgHpJkkgyp9HpQgAmMjkXq4Z",
+            "internal": "/ext/stg-sc/dist/index.min.js?apikey=client-f51CY2QHtYu9mSk0f0eQZPQt5SBgh6lM5PSzX1dUyE6"
+        },
+        "ssrOnly": {
+            "structuredData": [
+                "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"SIXT\",\"url\":\"https://www.sixt.com/\",\"logo\":\"https://img.sixt.com/200/b92010ad-9024-497d-812b-c9843c6e4700.png\",\"sameAs\":[\"https://www.instagram.com/sixt/\",\"https://www.linkedin.com/company/sixt/?originalSubdomain=de\"]}"
+            ],
+            "fontFaceDeclarations": {
+                "RobotoArial": {
+                    "family": "RobotoArial",
+                    "configs": [
+                        {
+                            "src": [
+                                {
+                                    "local": "Arial"
+                                }
+                            ],
+                            "style": "normal",
+                            "weight": 400,
+                            "sizeAdjust": "108%",
+                            "ascentOverride": "88%",
+                            "descentOverride": "19%"
+                        }
+                    ]
+                },
+                "RobotoCondensedArial": {
+                    "family": "RobotoCondensedArial",
+                    "configs": [
+                        {
+                            "src": [
+                                {
+                                    "local": "Arial"
+                                }
+                            ],
+                            "style": "normal",
+                            "weight": 700,
+                            "sizeAdjust": "104%"
+                        }
+                    ]
+                },
+                "Roboto": {
+                    "family": "Roboto",
+                    "configs": [
+                        {
+                            "src": [
+                                {
+                                    "local": "Roboto"
+                                },
+                                {
+                                    "local": "Roboto-Regular"
+                                },
+                                {
+                                    "fileName": "roboto-v30-latin-ext_latin-regular.woff2",
+                                    "shouldPreload": true,
+                                    "type": "woff2"
+                                }
+                            ],
+                            "style": "normal",
+                            "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF",
+                            "weight": 400
+                        },
+                        {
+                            "src": [
+                                {
+                                    "local": "Roboto Bold"
+                                },
+                                {
+                                    "local": "Roboto-Bold"
+                                },
+                                {
+                                    "fileName": "roboto-v30-latin-ext_latin-700.woff2",
+                                    "shouldPreload": true,
+                                    "type": "woff2"
+                                }
+                            ],
+                            "style": "normal",
+                            "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF",
+                            "weight": 700
+                        }
+                    ]
+                },
+                "RobotoCondensed": {
+                    "family": "Roboto Condensed",
+                    "configs": [
+                        {
+                            "src": [
+                                {
+                                    "local": "Roboto Condensed Bold"
+                                },
+                                {
+                                    "local": "RobotoCondensed-Bold"
+                                },
+                                {
+                                    "fileName": "roboto-condensed-v25-latin-ext_latin-700.woff2",
+                                    "shouldPreload": true,
+                                    "type": "woff2"
+                                }
+                            ],
+                            "style": "normal",
+                            "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF",
+                            "weight": 700
+                        }
+                    ]
+                },
+                "HelveticaNow": {
+                    "family": "HelveticaNow",
+                    "configs": [
+                        {
+                            "src": [
+                                {
+                                    "fileName": "HelveticaNowTextRegular.woff2",
+                                    "shouldPreload": true,
+                                    "type": "woff2"
+                                }
+                            ],
+                            "style": "normal",
+                            "weight": 400
+                        },
+                        {
+                            "src": [
+                                {
+                                    "fileName": "HelveticaNowTextBold.woff2",
+                                    "shouldPreload": true,
+                                    "type": "woff2"
+                                }
+                            ],
+                            "style": "normal",
+                            "weight": 700
+                        },
+                        {
+                            "src": [
+                                {
+                                    "fileName": "HelveticaNowDisplayCondensedBlack.woff2",
+                                    "shouldPreload": true,
+                                    "type": "woff2"
+                                }
+                            ],
+                            "style": "normal",
+                            "weight": 900
+                        }
+                    ]
+                }
+            },
+            "cssVars": ":root { \n            --typo-display-large-font: 400 3.5rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-large-heavy-font: 900 3.75rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-display-medium-font: 400 2.875rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-medium-heavy-font: 900 3rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-display-small-font: 400 2.25rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-small-heavy-font: 900 2.5rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-large-font: 400 1.875rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-large-heavy-font: 900 2.125rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-medium-font: 400 1.5rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-medium-heavy-font: 900 1.75rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-small-font: 400 1.25rem / 1.2 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-small-heavy-font: 700 1.25rem / 1.2 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-copy-large-font: 400 1rem / 1.5 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-copy-large-heavy-font: 700 1rem / 1.5 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-copy-medium-23-font: 400 0.875rem / 1.5 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-copy-medium-heavy-font: 700 0.875rem / 1.5 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-copy-small-23-font: 400 0.75rem / 1.5 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-copy-small-heavy-font: 700 0.75rem / 1.5 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-copy-x-large-font: 400 1.375rem / 1.5 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-copy-x-large-heavy-font: 700 1.375rem / 1.5 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-display-large-heavy-transform: uppercase;--typo-display-medium-heavy-transform: uppercase;--typo-display-small-heavy-transform: uppercase;--typo-title-large-heavy-transform: uppercase;--typo-title-medium-heavy-transform: uppercase;--typo-display-large-heavy-letter-spacing: 0.025em;--typo-display-medium-heavy-letter-spacing: 0.0313em;--typo-display-small-heavy-letter-spacing: 0.0375em;--typo-title-large-heavy-letter-spacing: 0.03em;--typo-title-medium-heavy-letter-spacing: 0.036em;--typo-title-small-heavy-letter-spacing: 0.0125em;--typo-copy-large-letter-spacing: 0.0067em;--typo-copy-large-heavy-letter-spacing: 0.0067em;--typo-copy-medium-23-letter-spacing: 0.0086em;--typo-copy-medium-heavy-letter-spacing: 0.0086em;--typo-copy-small-23-letter-spacing: 0.001em;--typo-copy-small-heavy-letter-spacing: 0.001em;--typo-copy-x-large-letter-spacing: 0.0055em;--typo-copy-x-large-heavy-letter-spacing: 0.0055em;@media (min-width: 780px) {--typo-display-large-font: 400 4rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-large-heavy-font: 900 4.25rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-display-medium-font: 400 3.375rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-medium-heavy-font: 900 3.5rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-display-small-font: 400 2.75rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-small-heavy-font: 900 2.875rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-large-font: 400 2.125rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-large-heavy-font: 900 2.25rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-medium-font: 400 1.75rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-medium-heavy-font: 900 1.75rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-small-font: 400 1.375rem / 1.2 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-small-heavy-font: 700 1.375rem / 1.2 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;}@media (min-width: 992px) {--typo-display-large-font: 400 4.5rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-large-heavy-font: 900 4.5rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-display-medium-font: 400 3.75rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-medium-heavy-font: 900 3.75rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-display-small-font: 400 3rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-display-small-heavy-font: 900 3.125rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-large-font: 400 2.5rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-large-heavy-font: 900 2.5rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-medium-font: 400 1.875rem / 1 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-medium-heavy-font: 900 1.875rem / 1 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;--typo-title-small-font: 400 1.5rem / 1.2 HelveticaNow,Helvetica,Roboto,Arial,sans-serif;--typo-title-small-heavy-font: 700 1.5rem / 1.2 HelveticaNow,Helvetica,Roboto Condensed,Arial,sans-serif;}--border-radius-xs:0.25rem;--border-radius-s:0.5rem;--border-radius-m:0.75rem;--border-radius-l:1rem;--border-radius-xl:1.5rem;--color-prime-brand: rgba(255,80,0,1); --color-prime-brand-rgb: 255, 80, 0; --color-prime-on-brand: rgba(255,255,255,1); --color-prime-on-brand-rgb: 255, 255, 255; --color-prime-primary: rgba(26, 26, 26, 1); --color-prime-primary-rgb: 26, 26, 26; --color-prime-on-primary: rgba(255,255,255,1); --color-prime-on-primary-rgb: 255, 255, 255; --color-prime-secondary: rgba(101, 106, 111, 1); --color-prime-secondary-rgb: 101, 106, 111; --color-prime-on-secondary: rgba(255,255,255,1); --color-prime-on-secondary-rgb: 255, 255, 255; --color-prime-tertiary: rgba(215, 218, 220, 1); --color-prime-tertiary-rgb: 215, 218, 220; --color-prime-on-tertiary: rgba(255,255,255,1); --color-prime-on-tertiary-rgb: 255, 255, 255; --color-prime-positive: rgba(34, 197, 94, 1); --color-prime-positive-rgb: 34, 197, 94; --color-prime-on-positive: rgba(255,255,255,1); --color-prime-on-positive-rgb: 255, 255, 255; --color-prime-cautious: rgba(255, 188, 31, 1); --color-prime-cautious-rgb: 255, 188, 31; --color-prime-on-cautious: rgba(25,25,25,1); --color-prime-on-cautious-rgb: 25, 25, 25; --color-prime-negative: rgba(215, 0, 21, 1); --color-prime-negative-rgb: 215, 0, 21; --color-prime-on-negative: rgba(255,255,255,1); --color-prime-on-negative-rgb: 255, 255, 255; --color-prime-canvas-1: rgba(255,255,255,1); --color-prime-canvas-1-rgb: 255, 255, 255; --color-prime-canvas-2: rgba(233, 235, 238, 1); --color-prime-canvas-2-rgb: 233, 235, 238; --color-prime-canvas-3: rgba(255,255,255,1); --color-prime-canvas-3-rgb: 255, 255, 255; --color-prime-container-1: rgba(255,255,255,1); --color-prime-container-1-rgb: 255, 255, 255; --color-prime-container-2: rgba(244, 245, 246, 1); --color-prime-container-2-rgb: 244, 245, 246; --color-prime-special-1: rgba(246, 227, 255, 1); --color-prime-special-1-rgb: 246, 227, 255; --color-prime-special-2: rgba(191, 242, 255, 1); --color-prime-special-2-rgb: 191, 242, 255; --color-prime-special-3: rgba(171, 255, 178, 1); --color-prime-special-3-rgb: 171, 255, 178; --color-prime-special-4: rgba(255, 251, 171, 1); --color-prime-special-4-rgb: 255, 251, 171; --color-prime-hover-state: rgba(25,25,25,0.04); --color-prime-hover-state-rgb: 25, 25, 25, 0.04; --color-prime-focus-state: rgba(255,80,0,1); --color-prime-focus-state-rgb: 255, 80, 0; --color-prime-pressed-state: rgba(25,25,25,0.08); --color-prime-pressed-state-rgb: 25, 25, 25, 0.08; --color-prime-disabled-state: rgba(255,255,255,0.4); --color-prime-disabled-state-rgb: 255, 255, 255, 0.4; --color-prime-error-state: rgba(201, 32, 17, 0.05); --color-prime-error-state-rgb: 201, 32, 17, 0.05; --color-prime-success-state: rgba(14, 115, 87, 0.1); --color-prime-success-state-rgb: 14, 115, 87, 0.1; --color-prime-silver: rgba(217, 217, 217, 1); --color-prime-silver-rgb: 217, 217, 217; --color-prime-gold: rgba(200, 140, 24, 1); --color-prime-gold-rgb: 200, 140, 24; --color-prime-platinum: rgba(146, 136, 201, 1); --color-prime-platinum-rgb: 146, 136, 201; --color-prime-diamond: rgba(85, 158, 200, 1); --color-prime-diamond-rgb: 85, 158, 200; --color-prime-glass-ultra-thin: rgba(255,255,255,0.2); --color-prime-glass-ultra-thin-rgb: 255, 255, 255, 0.2; --color-prime-glass-thin: rgba(255,255,255,0.4); --color-prime-glass-thin-rgb: 255, 255, 255, 0.4; --color-prime-glass-regular: rgba(255,255,255,0.6); --color-prime-glass-regular-rgb: 255, 255, 255, 0.6; --color-prime-glass-thick: rgba(255,255,255,0.8); --color-prime-glass-thick-rgb: 255, 255, 255, 0.8; --color-prime-warning: rgba(255, 188, 31, 0.13); --color-prime-warning-rgb: 255, 188, 31, 0.13; --color-option-brand: rgba(255,80,0,1); --color-option-brand-rgb: 255, 80, 0; --color-option-on-brand: rgba(255,255,255,1); --color-option-on-brand-rgb: 255, 255, 255; --color-option-primary: rgba(255,255,255,1); --color-option-primary-rgb: 255, 255, 255; --color-option-on-primary: rgba(26, 26, 26, 1); --color-option-on-primary-rgb: 26, 26, 26; --color-option-secondary: rgba(141, 146, 153, 1); --color-option-secondary-rgb: 141, 146, 153; --color-option-on-secondary: rgba(255,255,255,1); --color-option-on-secondary-rgb: 255, 255, 255; --color-option-tertiary: rgba(49, 50, 52, 1); --color-option-tertiary-rgb: 49, 50, 52; --color-option-on-tertiary: rgba(255,255,255,1); --color-option-on-tertiary-rgb: 255, 255, 255; --color-option-positive: rgba(34, 197, 94, 1); --color-option-positive-rgb: 34, 197, 94; --color-option-on-positive: rgba(255,255,255,1); --color-option-on-positive-rgb: 255, 255, 255; --color-option-cautious: rgba(255, 188, 31, 1); --color-option-cautious-rgb: 255, 188, 31; --color-option-on-cautious: rgba(25,25,25,1); --color-option-on-cautious-rgb: 25, 25, 25; --color-option-negative: rgba(255, 85, 86, 1); --color-option-negative-rgb: 255, 85, 86; --color-option-on-negative: rgba(255,255,255,1); --color-option-on-negative-rgb: 255, 255, 255; --color-option-canvas-1: rgba(26, 26, 26, 1); --color-option-canvas-1-rgb: 26, 26, 26; --color-option-canvas-2: rgba(30, 30, 31, 1); --color-option-canvas-2-rgb: 30, 30, 31; --color-option-canvas-3: rgba(0,0,0,1); --color-option-canvas-3-rgb: 0, 0, 0; --color-option-container-1: rgba(33, 34, 35, 1); --color-option-container-1-rgb: 33, 34, 35; --color-option-container-2: rgba(39, 40, 41, 1); --color-option-container-2-rgb: 39, 40, 41; --color-option-special-1: rgba(246, 227, 255, 1); --color-option-special-1-rgb: 246, 227, 255; --color-option-special-2: rgba(191, 242, 255, 1); --color-option-special-2-rgb: 191, 242, 255; --color-option-special-3: rgba(171, 255, 178, 1); --color-option-special-3-rgb: 171, 255, 178; --color-option-special-4: rgba(255, 251, 171, 1); --color-option-special-4-rgb: 255, 251, 171; --color-option-hover-state: rgba(25,25,25,0.04); --color-option-hover-state-rgb: 25, 25, 25, 0.04; --color-option-focus-state: rgba(255,80,0,1); --color-option-focus-state-rgb: 255, 80, 0; --color-option-pressed-state: rgba(25,25,25,0.08); --color-option-pressed-state-rgb: 25, 25, 25, 0.08; --color-option-disabled-state: rgba(255,255,255,0.4); --color-option-disabled-state-rgb: 255, 255, 255, 0.4; --color-option-error-state: rgba(255, 105, 97, 0.05); --color-option-error-state-rgb: 255, 105, 97, 0.05; --color-option-success-state: rgba(29, 195, 126, 0.1); --color-option-success-state-rgb: 29, 195, 126, 0.1; --color-option-silver: rgba(217, 217, 217, 1); --color-option-silver-rgb: 217, 217, 217; --color-option-gold: rgba(200, 140, 24, 1); --color-option-gold-rgb: 200, 140, 24; --color-option-platinum: rgba(146, 136, 201, 1); --color-option-platinum-rgb: 146, 136, 201; --color-option-diamond: rgba(85, 158, 200, 1); --color-option-diamond-rgb: 85, 158, 200; --color-option-glass-ultra-thin: rgba(26, 26, 26, 0.2); --color-option-glass-ultra-thin-rgb: 26, 26, 26, 0.2; --color-option-glass-thin: rgba(26, 26, 26, 0.4); --color-option-glass-thin-rgb: 26, 26, 26, 0.4; --color-option-glass-regular: rgba(26, 26, 26, 0.6); --color-option-glass-regular-rgb: 26, 26, 26, 0.6; --color-option-glass-thick: rgba(26, 26, 26, 0.8); --color-option-glass-thick-rgb: 26, 26, 26, 0.8; --color-option-warning: rgba(255, 188, 31, 0.13); --color-option-warning-rgb: 255, 188, 31, 0.13; --color-accent-brand: rgba(255,255,255,1); --color-accent-brand-rgb: 255, 255, 255; --color-accent-on-brand: rgba(26, 26, 26, 1); --color-accent-on-brand-rgb: 26, 26, 26; --color-accent-primary: rgba(26, 26, 26, 1); --color-accent-primary-rgb: 26, 26, 26; --color-accent-on-primary: rgba(255,255,255,1); --color-accent-on-primary-rgb: 255, 255, 255; --color-accent-secondary: rgba(26, 26, 26, 1); --color-accent-secondary-rgb: 26, 26, 26; --color-accent-on-secondary: rgba(255,255,255,1); --color-accent-on-secondary-rgb: 255, 255, 255; --color-accent-tertiary: rgba(26, 26, 26, 1); --color-accent-tertiary-rgb: 26, 26, 26; --color-accent-on-tertiary: rgba(255,255,255,1); --color-accent-on-tertiary-rgb: 255, 255, 255; --color-accent-positive: rgba(34, 197, 94, 1); --color-accent-positive-rgb: 34, 197, 94; --color-accent-on-positive: rgba(255,255,255,1); --color-accent-on-positive-rgb: 255, 255, 255; --color-accent-cautious: rgba(255, 188, 31, 1); --color-accent-cautious-rgb: 255, 188, 31; --color-accent-on-cautious: rgba(25,25,25,1); --color-accent-on-cautious-rgb: 25, 25, 25; --color-accent-negative: rgba(215, 0, 21, 1); --color-accent-negative-rgb: 215, 0, 21; --color-accent-on-negative: rgba(255,255,255,1); --color-accent-on-negative-rgb: 255, 255, 255; --color-accent-canvas-1: rgba(255,80,0,1); --color-accent-canvas-1-rgb: 255, 80, 0; --color-accent-canvas-2: rgba(255,80,0,1); --color-accent-canvas-2-rgb: 255, 80, 0; --color-accent-canvas-3: rgba(255,80,0,1); --color-accent-canvas-3-rgb: 255, 80, 0; --color-accent-container-1: rgba(255,80,0,1); --color-accent-container-1-rgb: 255, 80, 0; --color-accent-container-2: rgba(255,255,255,1); --color-accent-container-2-rgb: 255, 255, 255; --color-accent-special-1: rgba(246, 227, 255, 1); --color-accent-special-1-rgb: 246, 227, 255; --color-accent-special-2: rgba(191, 242, 255, 1); --color-accent-special-2-rgb: 191, 242, 255; --color-accent-special-3: rgba(171, 255, 178, 1); --color-accent-special-3-rgb: 171, 255, 178; --color-accent-special-4: rgba(255, 251, 171, 1); --color-accent-special-4-rgb: 255, 251, 171; --color-accent-hover-state: rgba(25,25,25,0.04); --color-accent-hover-state-rgb: 25, 25, 25, 0.04; --color-accent-focus-state: rgba(255,80,0,1); --color-accent-focus-state-rgb: 255, 80, 0; --color-accent-pressed-state: rgba(25,25,25,0.08); --color-accent-pressed-state-rgb: 25, 25, 25, 0.08; --color-accent-disabled-state: rgba(255,255,255,0.4); --color-accent-disabled-state-rgb: 255, 255, 255, 0.4; --color-accent-error-state: rgba(201, 32, 17, 0.05); --color-accent-error-state-rgb: 201, 32, 17, 0.05; --color-accent-success-state: rgba(14, 115, 87, 0.1); --color-accent-success-state-rgb: 14, 115, 87, 0.1; --color-accent-silver: rgba(217, 217, 217, 1); --color-accent-silver-rgb: 217, 217, 217; --color-accent-gold: rgba(200, 140, 24, 1); --color-accent-gold-rgb: 200, 140, 24; --color-accent-platinum: rgba(146, 136, 201, 1); --color-accent-platinum-rgb: 146, 136, 201; --color-accent-diamond: rgba(85, 158, 200, 1); --color-accent-diamond-rgb: 85, 158, 200; --color-accent-glass-ultra-thin: rgba(255,80,0,0.2); --color-accent-glass-ultra-thin-rgb: 255, 80, 0, 0.2; --color-accent-glass-thin: rgba(255,80,0,0.4); --color-accent-glass-thin-rgb: 255, 80, 0, 0.4; --color-accent-glass-regular: rgba(255,80,0,0.6); --color-accent-glass-regular-rgb: 255, 80, 0, 0.6; --color-accent-glass-thick: rgba(255,80,0,0.8); --color-accent-glass-thick-rgb: 255, 80, 0, 0.8; --color-accent-warning: rgba(255, 188, 31, 0.13); --color-accent-warning-rgb: 255, 188, 31, 0.13;\n     } body { \n    \n                --color-highlight: var(--color-prime-highlight);\n                --color-highlight-rgb: var(--color-prime-highlight-rgb);\n                 \n                --color-primary: var(--color-prime-primary);\n                --color-primary-rgb: var(--color-prime-primary-rgb);\n                 \n                --color-secondary: var(--color-prime-secondary);\n                --color-secondary-rgb: var(--color-prime-secondary-rgb);\n                 \n                --color-tertiary: var(--color-prime-tertiary);\n                --color-tertiary-rgb: var(--color-prime-tertiary-rgb);\n                 \n                --color-error: var(--color-prime-error);\n                --color-error-rgb: var(--color-prime-error-rgb);\n                 \n                --color-on-primary: var(--color-prime-on-primary);\n                --color-on-primary-rgb: var(--color-prime-on-primary-rgb);\n                 \n                --color-on-secondary: var(--color-prime-on-secondary);\n                --color-on-secondary-rgb: var(--color-prime-on-secondary-rgb);\n                 \n                --color-on-tertiary: var(--color-prime-on-tertiary);\n                --color-on-tertiary-rgb: var(--color-prime-on-tertiary-rgb);\n                 \n                --color-on-highlight: var(--color-prime-on-highlight);\n                --color-on-highlight-rgb: var(--color-prime-on-highlight-rgb);\n                 \n                --color-on-error: var(--color-prime-on-error);\n                --color-on-error-rgb: var(--color-prime-on-error-rgb);\n                 \n                --color-background: var(--color-prime-background);\n                --color-background-rgb: var(--color-prime-background-rgb);\n                 \n                --color-background-variant: var(--color-prime-background-variant);\n                --color-background-variant-rgb: var(--color-prime-background-variant-rgb);\n                 \n                --color-background-emphasized: var(--color-prime-background-emphasized);\n                --color-background-emphasized-rgb: var(--color-prime-background-emphasized-rgb);\n                 \n                --color-focus-state: var(--color-prime-focus-state);\n                --color-focus-state-rgb: var(--color-prime-focus-state-rgb);\n                 \n                --color-special-1: var(--color-prime-special-1);\n                --color-special-1-rgb: var(--color-prime-special-1-rgb);\n                 \n                --color-special-2: var(--color-prime-special-2);\n                --color-special-2-rgb: var(--color-prime-special-2-rgb);\n                 \n                --color-special-3: var(--color-prime-special-3);\n                --color-special-3-rgb: var(--color-prime-special-3-rgb);\n                 \n                --color-special-4: var(--color-prime-special-4);\n                --color-special-4-rgb: var(--color-prime-special-4-rgb);\n                 \n                --color-brand: var(--color-prime-brand);\n                --color-brand-rgb: var(--color-prime-brand-rgb);\n                 \n                --color-on-brand: var(--color-prime-on-brand);\n                --color-on-brand-rgb: var(--color-prime-on-brand-rgb);\n                 \n                --color-positive: var(--color-prime-positive);\n                --color-positive-rgb: var(--color-prime-positive-rgb);\n                 \n                --color-on-positive: var(--color-prime-on-positive);\n                --color-on-positive-rgb: var(--color-prime-on-positive-rgb);\n                 \n                --color-cautious: var(--color-prime-cautious);\n                --color-cautious-rgb: var(--color-prime-cautious-rgb);\n                 \n                --color-on-cautious: var(--color-prime-on-cautious);\n                --color-on-cautious-rgb: var(--color-prime-on-cautious-rgb);\n                 \n                --color-negative: var(--color-prime-negative);\n                --color-negative-rgb: var(--color-prime-negative-rgb);\n                 \n                --color-on-negative: var(--color-prime-on-negative);\n                --color-on-negative-rgb: var(--color-prime-on-negative-rgb);\n                 \n                --color-canvas-1: var(--color-prime-canvas-1);\n                --color-canvas-1-rgb: var(--color-prime-canvas-1-rgb);\n                 \n                --color-canvas-2: var(--color-prime-canvas-2);\n                --color-canvas-2-rgb: var(--color-prime-canvas-2-rgb);\n                 \n                --color-canvas-3: var(--color-prime-canvas-3);\n                --color-canvas-3-rgb: var(--color-prime-canvas-3-rgb);\n                 \n                --color-container-1: var(--color-prime-container-1);\n                --color-container-1-rgb: var(--color-prime-container-1-rgb);\n                 \n                --color-container-2: var(--color-prime-container-2);\n                --color-container-2-rgb: var(--color-prime-container-2-rgb);\n                 \n                --color-hover-state: var(--color-prime-hover-state);\n                --color-hover-state-rgb: var(--color-prime-hover-state-rgb);\n                 \n                --color-pressed-state: var(--color-prime-pressed-state);\n                --color-pressed-state-rgb: var(--color-prime-pressed-state-rgb);\n                 \n                --color-disabled-state: var(--color-prime-disabled-state);\n                --color-disabled-state-rgb: var(--color-prime-disabled-state-rgb);\n                 \n                --color-error-state: var(--color-prime-error-state);\n                --color-error-state-rgb: var(--color-prime-error-state-rgb);\n                 \n                --color-success-state: var(--color-prime-success-state);\n                --color-success-state-rgb: var(--color-prime-success-state-rgb);\n                 \n                --color-silver: var(--color-prime-silver);\n                --color-silver-rgb: var(--color-prime-silver-rgb);\n                 \n                --color-gold: var(--color-prime-gold);\n                --color-gold-rgb: var(--color-prime-gold-rgb);\n                 \n                --color-platinum: var(--color-prime-platinum);\n                --color-platinum-rgb: var(--color-prime-platinum-rgb);\n                 \n                --color-diamond: var(--color-prime-diamond);\n                --color-diamond-rgb: var(--color-prime-diamond-rgb);\n                 \n                --color-glass-ultra-thin: var(--color-prime-glass-ultra-thin);\n                --color-glass-ultra-thin-rgb: var(--color-prime-glass-ultra-thin-rgb);\n                 \n                --color-glass-thin: var(--color-prime-glass-thin);\n                --color-glass-thin-rgb: var(--color-prime-glass-thin-rgb);\n                 \n                --color-glass-regular: var(--color-prime-glass-regular);\n                --color-glass-regular-rgb: var(--color-prime-glass-regular-rgb);\n                 \n                --color-glass-thick: var(--color-prime-glass-thick);\n                --color-glass-thick-rgb: var(--color-prime-glass-thick-rgb);\n                 \n                --color-warning: var(--color-prime-warning);\n                --color-warning-rgb: var(--color-prime-warning-rgb);\n                \n\n    background-color: rgb(var(--color-canvas-1-rgb));\n    color: rgb(var(--color-primary-rgb));\n    accent-color: rgb(var(--color-brand-rgb));\n }"
+        },
+        "meta": {
+            "title": "Premium Car Rental at affordable prices | SIXT rent a car",
+            "description": "Car rental deals on premium cars & other like-new rentals ✓2,000+ rental car locations ✓no hidden costs ✓pay later option ➤Rent a car easily online",
+            "entityIdRefs": [
+                {
+                    "name": "locale",
+                    "id": "en_US"
+                }
+            ],
+            "pageId": "renthome",
+            "noIndexNoFollow": false,
+            "canonicalUrl": "https://www.sixt.com/",
+            "splitTestVariation": "default",
+            "alternates": [
+                {
+                    "url": "https://www.sixt.ae/",
+                    "locale": "en_AE"
+                },
+                {
+                    "url": "https://www.sixt.com.ar/",
+                    "locale": "es_AR"
+                },
+                {
+                    "url": "https://www.sixt.at/",
+                    "locale": "de_AT"
+                },
+                {
+                    "url": "https://www.sixt.com.au/",
+                    "locale": "en_AU"
+                },
+                {
+                    "url": "https://www.sixt.be/fr-be/",
+                    "locale": "fr_BE"
+                },
+                {
+                    "url": "https://www.sixt.be/",
+                    "locale": "nl_BE"
+                },
+                {
+                    "url": "https://www.sixt.com.br/",
+                    "locale": "pt_BR"
+                },
+                {
+                    "url": "https://www.sixt.ca/fr-ca/",
+                    "locale": "fr_CA"
+                },
+                {
+                    "url": "https://www.sixt.ca/",
+                    "locale": "en_CA"
+                },
+                {
+                    "url": "https://www.sixt.ch/fr-ch/",
+                    "locale": "fr_CH"
+                },
+                {
+                    "url": "https://www.sixt.ch/",
+                    "locale": "de_CH"
+                },
+                {
+                    "url": "https://www.sixt.cl/",
+                    "locale": "es_CL"
+                },
+                {
+                    "url": "https://www.sixt.com/en-cy/",
+                    "locale": "en_CY"
+                },
+                {
+                    "url": "https://www.sixt.com/en-mt/",
+                    "locale": "en_MT"
+                },
+                {
+                    "url": "https://www.sixt.com/es-co/",
+                    "locale": "es_CO"
+                },
+                {
+                    "url": "https://www.sixt.com/es-us/",
+                    "locale": "es_US"
+                },
+                {
+                    "url": "https://www.sixt.com/fr-gp/",
+                    "locale": "fr_GP"
+                },
+                {
+                    "url": "https://www.sixt.com/fr-ma/",
+                    "locale": "fr_MA"
+                },
+                {
+                    "url": "https://www.sixt.com/zh-cn/",
+                    "locale": "zh_CN"
+                },
+                {
+                    "url": "https://www.sixt.com/",
+                    "locale": "en_US"
+                },
+                {
+                    "url": "https://www.sixt.co.cr/",
+                    "locale": "es_CR"
+                },
+                {
+                    "url": "https://www.sixt.de/",
+                    "locale": "de_DE"
+                },
+                {
+                    "url": "https://www.sixt.dk/",
+                    "locale": "da_DK"
+                },
+                {
+                    "url": "https://www.sixt.ee/",
+                    "locale": "et_EE"
+                },
+                {
+                    "url": "https://www.sixt.com.eg/",
+                    "locale": "en_EG"
+                },
+                {
+                    "url": "https://www.sixt.es/",
+                    "locale": "es_ES"
+                },
+                {
+                    "url": "https://www.sixt.fi/",
+                    "locale": "fi_FI"
+                },
+                {
+                    "url": "https://www.sixt.fr/",
+                    "locale": "fr_FR"
+                },
+                {
+                    "url": "https://www.sixt.gr/",
+                    "locale": "el_GR"
+                },
+                {
+                    "url": "https://www.sixt.hr/",
+                    "locale": "hr_HR"
+                },
+                {
+                    "url": "https://www.sixt.hu/",
+                    "locale": "hu_HU"
+                },
+                {
+                    "url": "https://www.sixt.ie/",
+                    "locale": "en_IE"
+                },
+                {
+                    "url": "https://www.sixt.is/",
+                    "locale": "en_IS"
+                },
+                {
+                    "url": "https://www.sixt.it/",
+                    "locale": "it_IT"
+                },
+                {
+                    "url": "https://www.sixt.jp/",
+                    "locale": "ja_JP"
+                },
+                {
+                    "url": "https://www.sixt.co.kr/",
+                    "locale": "ko_KR"
+                },
+                {
+                    "url": "https://www.sixt.lt/",
+                    "locale": "lt_LT"
+                },
+                {
+                    "url": "https://www.sixt.lv/",
+                    "locale": "lv_LV"
+                },
+                {
+                    "url": "https://www.sixt.com.mx/",
+                    "locale": "es_MX"
+                },
+                {
+                    "url": "https://www.sixt.nl/",
+                    "locale": "nl_NL"
+                },
+                {
+                    "url": "https://www.sixt.no/",
+                    "locale": "no_NO"
+                },
+                {
+                    "url": "https://www.sixt.nz/",
+                    "locale": "en_NZ"
+                },
+                {
+                    "url": "https://www.sixt.com.pa/",
+                    "locale": "es_PA"
+                },
+                {
+                    "url": "https://www.sixt.pl/",
+                    "locale": "pl_PL"
+                },
+                {
+                    "url": "https://www.sixt.pt/",
+                    "locale": "pt_PT"
+                },
+                {
+                    "url": "https://www.sixt.ro/",
+                    "locale": "ro_RO"
+                },
+                {
+                    "url": "https://www.sixt.com.sa/",
+                    "locale": "en_SA"
+                },
+                {
+                    "url": "https://www.sixt.se/",
+                    "locale": "sv_SE"
+                },
+                {
+                    "url": "https://www.sixt.com.sg/",
+                    "locale": "en_SG"
+                },
+                {
+                    "url": "https://www.sixt.si/",
+                    "locale": "sl_SI"
+                },
+                {
+                    "url": "https://www.sixt.co.uk/",
+                    "locale": "en_GB"
+                },
+                {
+                    "url": "https://sanisixt.co.za/",
+                    "locale": "en_ZA"
+                }
+            ],
+            "abVariation": "",
+            "hasCanonicalUrl": false,
+            "locale": "en_US",
+            "pageBuildId": "2025-11-29T18:42:04",
+            "pageVersion": "f0a817b87e7b7d2c98c3f2268e890b7fdcd48b06",
+            "isPreview": false
+        },
+        "thirdPartyKeys": {
+            "instana": {
+                "dev": "UNqZBRfKRlOV7aj-4hGL_A",
+                "stage": "UNqZBRfKRlOV7aj-4hGL_A",
+                "prod": "LRZPqrMVS1OBdVJmly5mmA"
+            },
+            "sourceDefense": {
+                "prod": {
+                    "accountId": "f53de06e-703f-4d86-adfd-c25c30871685",
+                    "siteId": "39315920-c083-4720-a4d5-ed8f1bee5649"
+                },
+                "internal": {
+                    "accountId": "f53de06e-703f-4d86-adfd-c25c30871685",
+                    "siteId": "8158596c-8ef8-46d6-aa6f-5042d7083a30"
+                }
+            }
+        },
+        "productLine": "rent-car",
+        "gtmData": {
+            "consentId": "GTM-NQBW5W7",
+            "unifiedId": "GTM-WG9TDF3J"
+        },
+        "legalFooter": {
+            "links": [
+                {
+                    "text": "Help",
+                    "href": "/help-center/",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "text": "Rental information",
+                    "href": "/pages/rental-information/",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "text": "SIXT for business",
+                    "href": "https://www.sixt.com/business/?utm_source=sixt.com&utm_medium=retail-website-referral&utm_campaign=US_US_btob_SITEWIDE-FOOTER-RT_ALL_GT_ENG&utm_content=Textlink-BusinessCustomer&utm_term=b2b_ref",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "text": "SIXT partners",
+                    "href": "/partners/",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "text": "SIXT Magazine",
+                    "href": "/magazine/",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "text": "Imprint & privacy",
+                    "href": "/pages/privacy/",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "text": "Do not share or sell my personal information",
+                    "href": "onclick:cookie_settings",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "text": "Terms & conditions",
+                    "href": "/pages/terms-conditions/",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "text": "Customers with disabilities",
+                    "href": "https://www.sixt.com/help-center/articles/customer-disabilities/",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "text": "Cookie-Settings",
+                    "href": "onclick:cookie_settings",
+                    "shouldOpenInNewTab": false
+                }
+            ]
+        },
+        "isEmbedded": false,
+        "drawerNavigation": {
+            "headingTranslations": "SIXT Product Menu",
+            "ariaLabelOpen": "Open global navigation menu",
+            "ariaLabelClose": "Close global navigation menu",
+            "links": [
+                {
+                    "text": "Car rental",
+                    "subtext": "",
+                    "href": "/",
+                    "isCurrent": true
+                },
+                {
+                    "text": "Truck rental",
+                    "subtext": "",
+                    "href": "/truck-rental/",
+                    "isCurrent": false
+                },
+                {
+                    "text": "Share",
+                    "subtext": "",
+                    "href": "/share/?promo_name=rent_hp_referral_share&promo_creative=menu&promo_position=sixt.com",
+                    "isCurrent": false
+                },
+                {
+                    "text": "Ride",
+                    "subtext": "Chauffeur Service, Airport Transfer",
+                    "href": "/ride/?utm_source=rent_hp_referral_ride&utm_medium=sixt_referral&utm_campaign=menu&promo_name=rent_hp_referral_ride&promo_creative=menu&promo_position=sixt.com",
+                    "isCurrent": false
+                },
+                {
+                    "text": "SIXT+",
+                    "subtext": "Car Subscription",
+                    "href": "/plus/?promo_name=rent_hp_referral_plus&promo_creative=menu&promo_position=sixt.com",
+                    "isCurrent": false
+                },
+                {
+                    "text": "Business",
+                    "subtext": "",
+                    "href": "https://www.sixt.com/business/?utm_source=sixt.com&utm_medium=retail-website-referral&utm_campaign=US_US_btob_HOME-BURGER-RT_ALL_GT_ENG&utm_content=p100&utm_term=b2b_ref&promo_name=rent_hp_referral&promo_creative=men&promo_position=sixt.com",
+                    "isCurrent": false
+                }
+            ]
+        },
+        "sixtNavigationFooter": {
+            "navigation": [
+                {
+                    "heading": "Our programs",
+                    "links": [
+                        {
+                            "href": "/plus/?utm_medium=sixt.com&utm_source=rent_footer_hp_referral",
+                            "text": "SIXT+ Car Subscription"
+                        },
+                        {
+                            "href": "/ride/?utm_source=rent_hp_referral_ride&utm_medium=sixt_referral&utm_campaign=footer&promo_name=rent_hp_referral_ride&promo_creative=footer&promo_position=sixt.com",
+                            "text": "SIXT ride"
+                        },
+                        {
+                            "href": "/best-deals/",
+                            "text": "Car rental deals"
+                        },
+                        {
+                            "href": "https://www.sixt.com/rewards-program/",
+                            "text": "SIXT ONE rewards program"
+                        },
+                        {
+                            "href": "/app/",
+                            "text": "SIXT app"
+                        }
+                    ]
+                },
+                {
+                    "heading": "SIXT for business",
+                    "links": [
+                        {
+                            "href": "https://www.sixt.com/business/?utm_source=sixt.com&utm_medium=retail-website-referral&utm_campaign=US_US_btob_HOME-BOTTOM-RT_RAC_ST_ENG&utm_content=Textlink-RegisterMyBusiness&utm_term=b2b_ref#?page=b2b-modal&product_type=undefined",
+                            "text": "Register my business"
+                        },
+                        {
+                            "href": "https://www.sixt.com/business/car-rental/?utm_source=sixt.com&utm_medium=retail-website-referral&utm_campaign=US_US_btob_HOME-BOTTOM-RT_ALL_GT_ENG&utm_content=Textlink-BusinessTravel&utm_term=b2b_ref",
+                            "text": "Mobility for Business Travel"
+                        },
+                        {
+                            "href": "https://www.sixt.com/business/fleet-solutions/?utm_source=sixt.com&utm_medium=retail-website-referral&utm_campaign=US_US_btob_HOME-BOTTOM-RT_ALL_LT_ENG&utm_content=Textlink-LongTerm&utm_term=b2b_ref",
+                            "text": "Business car alternatives"
+                        },
+                        {
+                            "href": "https://partner.sixt.com/",
+                            "text": "Travel agencies"
+                        }
+                    ]
+                },
+                {
+                    "heading": "About us",
+                    "links": [
+                        {
+                            "href": "https://about.sixt.com/",
+                            "text": "SIXT group"
+                        },
+                        {
+                            "href": "https://www.sixt.com/magazine/",
+                            "text": "SIXT Magazine"
+                        },
+                        {
+                            "href": "https://about.sixt.com/en/newsroom/",
+                            "text": "SIXT News"
+                        },
+                        {
+                            "href": "https://about.sixt.com/en/investor-relations/",
+                            "text": "Investor Relations"
+                        },
+                        {
+                            "href": "https://www.sixt.jobs/us",
+                            "text": "Careers"
+                        },
+                        {
+                            "href": "https://drying-little-tears.org/en/",
+                            "text": "Regine Sixt Children’s Aid Foundation"
+                        }
+                    ]
+                }
+            ],
+            "socialMedia": [
+                {
+                    "href": "https://www.instagram.com/sixt/",
+                    "text": "instagram",
+                    "network": "instagram"
+                },
+                {
+                    "href": "https://www.linkedin.com/company/sixt/?originalSubdomain=de",
+                    "text": "linkedin",
+                    "network": "linkedin"
+                }
+            ],
+            "mobileAppStoreLinks": [
+                {
+                    "href": "https://sixt.go.link/rent?adj_t=f1ztwl6&adj_engagement_type=fallback_click&adj_deep_link=sixt%3A%2F%2Fwww.sixt.com%2Frent&adj_campaign=us&adj_adgroup=sixtrent&adj_creative=footerAppStore",
+                    "imageSource": "/shared/icons/store-badges/app_store_black_en.svg",
+                    "alt": "Download the latest version of the SIXT app from Apple App Store",
+                    "width": 120,
+                    "height": 40
+                },
+                {
+                    "href": "https://sixt.go.link/rent?adj_t=f1ztwl6&adj_engagement_type=fallback_click&adj_deep_link=sixt%3A%2F%2Fwww.sixt.com%2Frent&adj_campaign=us&adj_adgroup=sixtrent&adj_creative=footerPlayStore&adj_fallback=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.sixt.reservation",
+                    "imageSource": "/shared/icons/store-badges/google_play_en.svg",
+                    "alt": "Download the latest version of the SIXT app from Google Play Store",
+                    "width": 135,
+                    "height": 40
+                }
+            ]
+        },
+        "alertBanner": {
+            "text": "113 years of SIXT. 113 years of tradition.",
+            "url": null
+        },
+        "sixtLogo": "rent-car",
+        "appLinks": [
+            {
+                "href": "https://sixt.go.link/rent?adj_t=f1ztwl6&adj_engagement_type=fallback_click&adj_deep_link=sixt%3A%2F%2Fwww.sixt.com%2Frent&adj_campaign=us&adj_adgroup=sixtrent&adj_creative=undefined",
+                "imageSource": "/shared/icons/store-badges/app_store_black_en.svg",
+                "alt": "Download the latest version of the SIXT app from Apple App Store",
+                "width": 120,
+                "height": 40
+            },
+            {
+                "href": "https://sixt.go.link/rent?adj_t=f1ztwl6&adj_engagement_type=fallback_click&adj_deep_link=sixt%3A%2F%2Fwww.sixt.com%2Frent&adj_campaign=us&adj_adgroup=sixtrent&adj_creative=undefined&adj_fallback=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.sixt.reservation",
+                "imageSource": "/shared/icons/store-badges/google_play_en.svg",
+                "alt": "Download the latest version of the SIXT app from Google Play Store",
+                "width": 135,
+                "height": 40
+            }
+        ],
+        "ibe": {
+            "homePageUrl": "/",
+            "truckHomePageUrl": "/truck-rental/",
+            "translations": {
+                "Age": "Age",
+                "CampaignClaimDiscount": "Claim deal",
+                "DateCampaignInEligibilityHintTitle": "Save more by adjusting your dates",
+                "DateTimeAreaPickup": "Pickup date",
+                "DateTimeAreaReturn": "Return date",
+                "DifferentReturnLocation": "Different return location",
+                "ErrorChangeTime": "Change time",
+                "ErrorChangeDate": "Change date",
+                "LocationCampaignInEligibilityHintTitle": "Save more by adjusting your location",
+                "LocationDateCampaignInEligibilityHintTitle": "Small changes, big savings",
+                "LocationInputPlaceholder": "Airport, city or address",
+                "PickUp": "Pickup",
+                "Return": "Return",
+                "SearchCTA": "Search",
+                "SeeOffers": "See offers",
+                "SelectPickupDate": "Select pickup date",
+                "SelectStation": "Select location",
+                "SelectYourDates": "Select your dates",
+                "ShowCars": "Show cars",
+                "ShowTrucks": "Show trucks",
+                "PickUpAndReturn": "Pickup & return",
+                "IbeSearchReturnAtPickup": "Return at pickup",
+                "SelectReturnDate": "Select return date",
+                "SearchEngineShowStations": "Show stations",
+                "BaseCorporateRate": "Corporate rate",
+                "VirtualProfileCardAddCorporate": "Apply corporate rate",
+                "VirtualProfileCardAppliedCorporate": "Corporate rate:",
+                "PartnerDiscountDesc": "To apply the partner discount you need to keep the rate login. Otherwise you will be logged out and redirected to the homepage.",
+                "PartnerDiscountDismiss": "Dismiss discount and go to homepage",
+                "PartnerDiscountProceed": "Proceed with partner discount",
+                "PartnerDiscountTitle": "You will lose the partner discount if you dismiss the rate",
+                "PartnerDiscountAltTitle": "Can't combine partner discount with corporate rates",
+                "TruckSearchInformationMessage": " ",
+                "CarSearchInformationMessage": " ",
+                "SelectedDateTimeUnavailabilityMessage": "Your selected date/time is not available at this location. Select new date/time or location.",
+                "Cars": "Cars",
+                "Trucks": "Trucks",
+                "ModifiedStationDateTimeMessage": "Date/time fields have been reset. Please select new dates/times.",
+                "PickupStationErrorMessage": "Please select a pickup location",
+                "ReturnStationErrorMessage": "Please select a return location",
+                "PickupDateErrorMessage": "Please select a pickup date",
+                "ReturnDateErrorMessage": "Please select a return date",
+                "SelectPickup": "Select pickup",
+                "MaximumSearchInputCharacter": "Maximum length of the input cannot exceed 200 characters",
+                "MinimumSearchInputCharacter": "Please enter at least 3 characters to see suggestions",
+                "SixtplusOfferListAlwaysIncludedTitleHighlighted": "Subscription"
+            },
+            "subscriptionPageUrl": "/plus/?promo_name=rent_hp_referral&promo_creative=ibe&promo_position=www.sixt.com"
+        },
+        "seoFooter": {
+            "title": "Drive first class. Pay Economy.",
+            "contents": [
+                {
+                    "label": "US Airport locations",
+                    "additionalLink": {
+                        "text": "Airport Car Rental Worldwide",
+                        "url": "/rental-guide/top-airports/",
+                        "title": "",
+                        "target": "_self",
+                        "isInternalLink": true
+                    },
+                    "items": [
+                        {
+                            "text": "Atlanta Airport (ATL)",
+                            "url": "/car-rental/usa/atlanta/atlanta-hartsfield-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Baltimore/Washington Airport (BWI)",
+                            "url": "/car-rental/usa/baltimore/bwi-baltimore-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Boston Airport (BOS)",
+                            "url": "/car-rental/usa/boston/boston-int-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Charlotte Airport (CLT)",
+                            "url": "/car-rental/usa/charlotte/charlotte-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Chicago Airport (ORD)",
+                            "url": "/car-rental/usa/chicago/ord-chicago-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Dallas/Fort Worth Airport (DFW)",
+                            "url": "/car-rental/usa/dallas/dfw-dallas-fort-worth-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Denver Airport (DEN)",
+                            "url": "/car-rental/usa/denver/denver-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Fort Lauderdale Airport (FLL)",
+                            "url": "/car-rental/usa/fort-lauderdale/fort-lauderdale-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Fort Myers Airport (RSW)",
+                            "url": "/car-rental/usa/fort-myers/rsw-fort-myers-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Honolulu Airport (HNL)",
+                            "url": "/car-rental/usa/honolulu/hnl-honolulu-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Houston Airport (IAH)",
+                            "url": "/car-rental/usa/houston/iah-houston-george-bush-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Jacksonville Airport (JAX)",
+                            "url": "/car-rental/usa/jacksonville/jacksonville-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Las Vegas Airport (LAS)",
+                            "url": "/car-rental/usa/las-vegas/las-vegas-mccarran-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Los Angeles Airport (LAX)",
+                            "url": "/car-rental/usa/los-angeles/los-angeles-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Miami Airport (MIA)",
+                            "url": "/car-rental/usa/miami-fl/miami-international-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "New York Airport (JFK)",
+                            "url": "/car-rental/usa/new-york-city/new-york-jfk-int-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Newark Airport (EWR)",
+                            "url": "/car-rental/usa/newark/newark-int-airport-ewr/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Orlando Airport (MCO)",
+                            "url": "/car-rental/usa/orlando/orlando-int-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Phoenix Airport (PHX)",
+                            "url": "/car-rental/usa/phoenix/phoenix-sky-harbor-int-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Portland Airport (PDX)",
+                            "url": "/car-rental/usa/portland/portland-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "San Diego Airport (SAN)",
+                            "url": "/car-rental/usa/san-diego-ca/san-diego-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "San Francisco Airport (SFO)",
+                            "url": "/car-rental/usa/san-francisco/sfo-san-francisco-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Seattle Airport (SEA)",
+                            "url": "/car-rental/usa/seattle/seattle-tacoma-int-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Tampa Airport (TPA)",
+                            "url": "/car-rental/usa/tampa/tpa-tampa-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        }
+                    ]
+                },
+                {
+                    "label": "US cities",
+                    "additionalLink": {
+                        "text": "See all US locations",
+                        "url": "/car-rental/usa/",
+                        "title": "",
+                        "target": "_self",
+                        "isInternalLink": true
+                    },
+                    "items": [
+                        {
+                            "text": "Atlanta",
+                            "url": "/car-rental/usa/atlanta/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Boston",
+                            "url": "/car-rental/usa/boston/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Chicago",
+                            "url": "/car-rental/usa/chicago/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Dallas",
+                            "url": "/car-rental/usa/dallas/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Denver",
+                            "url": "/car-rental/usa/denver/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Fort Lauderdale",
+                            "url": "/car-rental/usa/fort-lauderdale/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Honolulu",
+                            "url": "/car-rental/usa/honolulu/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Houston",
+                            "url": "/car-rental/usa/houston/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Las Vegas",
+                            "url": "/car-rental/usa/las-vegas/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Los Angeles",
+                            "url": "/car-rental/usa/los-angeles/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Maui",
+                            "url": "/car-rental/usa/maui/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Miami",
+                            "url": "/car-rental/usa/miami-fl/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "New York City",
+                            "url": "/car-rental/usa/new-york-city/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Orlando",
+                            "url": "/car-rental/usa/orlando/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Philadelphia",
+                            "url": "/car-rental/usa/philadelphia/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Phoenix",
+                            "url": "/car-rental/usa/phoenix/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Portland",
+                            "url": "/car-rental/usa/portland/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "San Diego",
+                            "url": "/car-rental/usa/san-diego-ca/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "San Francisco",
+                            "url": "/car-rental/usa/san-francisco/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Seattle",
+                            "url": "/car-rental/usa/seattle/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Tampa",
+                            "url": "/car-rental/usa/tampa/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        }
+                    ]
+                },
+                {
+                    "label": "Worldwide",
+                    "additionalLink": {
+                        "text": "All locations worldwide",
+                        "url": "/car-rental/",
+                        "title": "",
+                        "target": "_self",
+                        "isInternalLink": true
+                    },
+                    "items": [
+                        {
+                            "text": "Amsterdam",
+                            "url": "/car-rental/netherlands/amsterdam/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Barcelona",
+                            "url": "/car-rental/spain/barcelona/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Dubai",
+                            "url": "/car-rental/united-arab-emirates/dubai/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Dublin",
+                            "url": "/car-rental/ireland/dublin/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Edinburgh",
+                            "url": "/car-rental/united-kingdom/edinburgh/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "France",
+                            "url": "/car-rental/france/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Germany",
+                            "url": "/car-rental/germany/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Italy",
+                            "url": "/car-rental/italy/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "London",
+                            "url": "/car-rental/united-kingdom/london/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Madrid",
+                            "url": "/car-rental/spain/madrid/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Malaga",
+                            "url": "/car-rental/spain/malaga/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Munich",
+                            "url": "/car-rental/germany/munich/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Nice",
+                            "url": "/car-rental/france/nice/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Palma de Mallorca",
+                            "url": "/car-rental/spain/palma-de-mallorca/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Paris",
+                            "url": "/car-rental/france/paris/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Portugal",
+                            "url": "/car-rental/portugal/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Reykjavik",
+                            "url": "/car-rental/iceland/reykjavik/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Rome",
+                            "url": "/car-rental/italy/rome/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Scotland",
+                            "url": "/car-rental/united-kingdom/scotland/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Switzerland",
+                            "url": "/car-rental/switzerland/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Zagreb",
+                            "url": "/car-rental/croatia/zagreb/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        }
+                    ]
+                },
+                {
+                    "label": "Most booked outside US",
+                    "items": [
+                        {
+                            "text": "Germany - Frankfurt Airport",
+                            "url": "/car-rental/germany/frankfurt/frankfurt-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Germany - Munich Airport",
+                            "url": "/car-rental/germany/munich/munich-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Cyprus - Larnaca Airport",
+                            "url": "/car-rental/cyprus/larnaca/larnaca-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Kosovo - Pristina Airport",
+                            "url": "/car-rental/kosovo/pristina/pristina-int-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Greece - Athens International Airport",
+                            "url": "/car-rental/greece/athens/athens-international-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Italy - Bergamo Airport",
+                            "url": "/car-rental/italy/bergamo/bergamo-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Greece - Crete Heraklion Airport",
+                            "url": "/car-rental/greece/crete/crete-heraklion-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Greece - Thessaloniki Port",
+                            "url": "/car-rental/greece/thessaloniki/thessaloniki-port/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Portugal - Lisbon Airport",
+                            "url": "/car-rental/portugal/lisbon/lisbon-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Italy - Milan Airport",
+                            "url": "/car-rental/italy/milan/milan-ap-malpensa-t1/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "France - Paris CDG Airport",
+                            "url": "/car-rental/france/roissy/paris-cdg-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "France - Nice Airport",
+                            "url": "/car-rental/france/nice/nice-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "UK - London Heathrow Airport",
+                            "url": "/car-rental/united-kingdom/london/london-heathrow-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "UAE - Dubai International Airport",
+                            "url": "/car-rental/united-arab-emirates/dubai/dubai-int-airport-terminal-3/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Croatia - Zagreb Airport",
+                            "url": "/car-rental/croatia/zagreb/zagreb-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        },
+                        {
+                            "text": "Switzerland - Geneva Airport",
+                            "url": "/car-rental/switzerland/geneva/geneva-airport/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        }
+                    ]
+                },
+                {
+                    "label": "Fleet & services",
+                    "items": [
+                        {
+                            "text": "Fleet Guide",
+                            "url": "/fleet/fleet-guide/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": false
+                        },
+                        {
+                            "text": "Convertible Car Rental",
+                            "url": "/convertible-rental/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": false
+                        },
+                        {
+                            "text": "Luxury Car Rental",
+                            "url": "/luxury-cars/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": false
+                        },
+                        {
+                            "text": "Minivan Rental",
+                            "url": "/minivan-rental/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": false
+                        },
+                        {
+                            "text": "Passenger Van Rental",
+                            "url": "/minivan-rental/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": false
+                        },
+                        {
+                            "text": "SUV Rental",
+                            "url": "/suv-rental/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": false
+                        },
+                        {
+                            "text": "Car Rental Coupons",
+                            "url": "/car-rental-coupons/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": false
+                        },
+                        {
+                            "text": "Car Rental Under 25",
+                            "url": "/rental-guide/young-driver/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": false
+                        },
+                        {
+                            "text": "Car Rental without Credit Cards",
+                            "url": "/help-center/articles/car-rental-without-credit-card/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": false
+                        },
+                        {
+                            "text": "Long-Term Car Rental",
+                            "url": "/rental-services/long-term-car-rental/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": false
+                        },
+                        {
+                            "text": "One-Way Car Rental",
+                            "url": "/rental-services/one-way-car-rental/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": false
+                        },
+                        {
+                            "text": "Car Rental Services",
+                            "url": "/rental-services/",
+                            "title": "",
+                            "target": "_self",
+                            "isInternalLink": true
+                        }
+                    ]
+                }
+            ],
+            "text": "Premium vehicles without premium prices. We have over 222,000 rental vehicles in our fleet, which hosts models from some of the best car manufacturers in the world, including German favorites such as BMW, Mercedes, Audi and more."
+        },
+        "translations": {
+            "ShowMore": "Show more",
+            "ShowLess": "Show less"
+        },
+        "usp": [
+            {
+                "src": "public",
+                "header": "Global reach",
+                "text": "2,000+ SIXT stations in over 105 countries"
+            },
+            {
+                "src": "directions_car_filled",
+                "header": "Distinctive fleet",
+                "text": "From high-end convertibles to premium SUVs"
+            },
+            {
+                "src": "volunteer_activism",
+                "header": "Exceptional service",
+                "text": "Stress-free, trustworthy, no hidden costs"
+            }
+        ],
+        "heroSection": {
+            "imageDesktop": "a1d32aef-c392-481a-b9f4-90ec46d8cee3.jpg",
+            "imageMobile": "ce4b6054-3b0c-4dc3-841b-33af59275dfa.jpg",
+            "alt": "Premium car rental at affordable rates. Worldwide."
+        },
+        "banderole": {
+            "heading": "Don't rent a car.\\n Rent THE car.",
+            "headingTag": "div",
+            "subheading": "Premium car rental at affordable rates. Worldwide.",
+            "subheadingTag": "h1"
+        },
+        "deals": [
+            {
+                "id": "19be2c2a2f62b17a2bcd8a547f329ab3",
+                "headline": "SIXT ONE: Meet our new rewards program",
+                "subheadline": "Join now to start earning points for savings and exclusive rewards!",
+                "ctaText": "Learn more",
+                "image": "6dcf22be-1f1e-4c74-b059-edeff816f2e6.jpg",
+                "href": "https://www.sixt.com/rewards-program/?promo_name=rent_hp_referral_loyalty&promo_creative=deals&promo_position=sixt.com",
+                "shouldOpenInNewTab": false
+            },
+            {
+                "id": "df5f036ca4ac13f01605592eaa4182c4",
+                "headline": "Black Friday: Steal the Deal",
+                "subheadline": "Book now and lock in big-time savings.",
+                "ctaText": "Book now",
+                "image": "002f5a35-c831-4451-a92b-850528ab8717.jpg",
+                "href": "https://www.sixt.com/campaign/rent-black-friday-promo-25/?promo_name=rent_hp_referral_rent&promo_creative=deals&promo_position=sixt.com",
+                "shouldOpenInNewTab": false,
+                "eyecatcher": {
+                    "value": "20%",
+                    "topline": "Up to",
+                    "subline": "Discount"
+                }
+            },
+            {
+                "id": "7c97661669591bfa64ec7a190133f7e6",
+                "headline": "Save on luxury vehicles",
+                "subheadline": "Book now and drive first class.",
+                "ctaText": "Book now",
+                "image": "fcc0657b-7e9f-4fba-8aa3-772db517f57f.jpg",
+                "href": "https://www.sixt.com/campaign/5-luxuryspecial-us/?promo_name=rent_hp_referral_rent&promo_creative=deals&promo_position=sixt.com",
+                "shouldOpenInNewTab": false,
+                "eyecatcher": {
+                    "value": "15%",
+                    "topline": "Up to",
+                    "subline": "discount"
+                }
+            },
+            {
+                "id": "ff344a82f1ef68ab2d742b898b50bea2",
+                "headline": "Book and manage your rentals in one place.",
+                "subheadline": "Get the most out of SIXT in our app.",
+                "ctaText": "Download the SIXT APP",
+                "image": "f54533f1-6585-4af6-a307-5c2af42fe3c5.jpg",
+                "href": "https://sixt.go.link/2Zrlz?promo_name=rent_hp_app_download&promo_creative=deals&promo_position=sixt.com",
+                "shouldOpenInNewTab": false
+            },
+            {
+                "id": "86dd1294c36f296b8d53bc9f5e1a334a",
+                "headline": "Business travel in style",
+                "subheadline": "Become a corporate customer and enjoy exclusive rental car benefits",
+                "ctaText": "Register now",
+                "image": "54cf77f7-fe31-47e5-ac12-a25cec8cadd0.jpg",
+                "href": "https://www.sixt.com/business/car-rental/?utm_source=sixt.com&utm_medium=retail-website-referral&utm_campaign=US_US_btob_HOME-DEALS-RT_RAC_ST_ENG&utm_content=dealsproducthp_price&utm_term=b2b_ref&promo_name=rent_hp_referral_b2b&promo_creative=deals&promo_position=sixt.com",
+                "shouldOpenInNewTab": false,
+                "eyecatcher": {
+                    "value": "$35",
+                    "topline": "Cars from",
+                    "subline": "a day"
+                }
+            }
+        ],
+        "productDiscovery": {
+            "headline": "More SIXT",
+            "productTiles": [
+                {
+                    "headline": "SIXT+ Car Subscription",
+                    "image": "d684ac6a-79d7-4971-99c2-550b5e82c091.jpg",
+                    "subheadline": "The better way of owning a car.",
+                    "ctaText": "Learn more",
+                    "href": "/plus/?promo_name=rent_hp_referral_plus&promo_creative=more_sixt&promo_position=sixt.com",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "headline": "SIXT App",
+                    "image": "421f0424-a73a-4c84-a078-02627d2c2aba.png",
+                    "subheadline": "Book and manage all your rentals in one place.",
+                    "ctaText": "Get the SIXT App",
+                    "href": "https://sixt.go.link/2Zrlz?promo_name=rent_hp_app_download&promo_creative=more_sixt&promo_position=sixt.com",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "headline": "SIXT Business",
+                    "image": "81451aba-068f-4d67-984f-a215847520f9.jpg",
+                    "subheadline": "Business travel and fleet solutions for all businesses.",
+                    "ctaText": "Register now",
+                    "href": "https://www.sixt.com/business/?utm_source=sixt.com&utm_medium=retail-website-referral&utm_campaign=US_US_btob_HOME-PRODUCTPROMO-RT_ALL_GT_ENG&utm_content=MORE-SIXT-copy&utm_term=b2b_ref",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "headline": "SIXT Ride",
+                    "image": "16780f8c-3337-4ffc-afd1-89866775e759.jpg",
+                    "subheadline": "Sit back with your personal chauffeur.",
+                    "ctaText": "Learn more",
+                    "href": "/ride/?utm_source=rent_hp_referral_ride&utm_medium=sixt_referral&utm_campaign=more_sixt&promo_name=rent_hp_referral_ride&promo_creative=more_sixt&promo_position=sixt.com",
+                    "shouldOpenInNewTab": false
+                },
+                {
+                    "headline": "SIXT Share",
+                    "image": "88421872-45ef-4b07-aa33-f901b604086e.png",
+                    "subheadline": "On-the-go flexibility with premium car sharing.",
+                    "ctaText": "Learn more",
+                    "href": "/share/?promo_name=rent_hp_referral_share&promo_creative=more_sixt&promo_position=sixt.com",
+                    "shouldOpenInNewTab": false
+                }
+            ]
+        },
+        "testimonial": {
+            "headingTranslations": "Testimonials",
+            "image": "5afdbd43-aee2-4177-b4b2-6e0c7d30b996.png",
+            "items": [
+                {
+                    "id": "845cdc9f-374b-4336-b6f4-c741fd5b4bc6",
+                    "author": "— P., Los Angeles",
+                    "content": "SIXT is the only rental company I’ve never had an issue with. Seriously… they’ve turned me into a lifelong client."
+                },
+                {
+                    "id": "24632a35-84a1-4d90-a9bb-3d4b15717e8d",
+                    "author": "— Mahmoud F., Munich",
+                    "content": "Seamless experience online, car handover and car return. The staff in the Munich branch are very friendly and competent."
+                },
+                {
+                    "id": "24207caa-d521-446b-ba07-5a49de6d3504",
+                    "author": "— Dave W., Paris",
+                    "content": "One of the best hire car pick up experiences I’ve had. Great service and a good car."
+                },
+                {
+                    "id": "071cf5f2-ad88-4408-9a20-5fe0e8a659bd",
+                    "author": "— Lisa R., Rome",
+                    "content": "Very easy rental experience...so important when driving in another country. Car was great and no hidden fees."
+                }
+            ]
+        }
+    }
+}

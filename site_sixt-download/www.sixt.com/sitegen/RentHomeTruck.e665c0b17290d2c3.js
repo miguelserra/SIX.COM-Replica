@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk_sixt_web_sitegen_rent=self.webpackChunk_sixt_web_sitegen_rent||[]).push([["50331"],{17134:function(e,t,n){n.r(t),n.d(t,{default:()=>c});var a=n(31549),s=n(25763),u=n(98605),i=n(28902),r=n(29551);let c=function({pageContext:{pageData:e}}){return(0,u.b)("sitegen","RentHomeTruckTemplateReady"),(0,i.M)(e.meta.pageId),(0,a.jsx)(r.O,{pageData:e,vehicleType:s.v.Truck})}}}]);
+//# sourceMappingURL=RentHomeTruck.e665c0b17290d2c3.js.map
