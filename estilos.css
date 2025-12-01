@@ -33,50 +33,65 @@ img {
   display: flex;
   flex-direction: column;
   background-color: #ff5000;
+  overflow: hidden;
 }
 
 #s1-barra-txt-topo {
-  order: 1;
-  height: 24px;
+  height: 1.5rem;
   background-color: #ff5000;
-  z-index: 5;
+  z-index: 2;
 }
 
 #s1-imagem {
-  order: 2;
-  margin-top: -135px;
+  max-height: 32rem;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: crop;
+     object-fit: crop;
 }
 
 #s1-barra-txt-fundo {
-  order: 3;
   height: 14rem;
 }
 
 #sector2 {
-  display: block;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  align-items: stretch;
   background-color: white;
 }
 
 #s2-cards-topo {
   display: flex;
-  height: 100px;
-  width: 100%;
   padding: 5rem;
   background-color: aqua;
 }
 #s2-cards-topo > div {
-  flex-grow: 1;
+  height: 6.3rem;
   border: 1px solid red;
+}
+
+.s2-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+.s2-card .s2-card-title {
+  font-size: 1rem;
+}
+.s2-card .s2-card-txt {
+  font-size: 1.375rem;
+}
+.s2-card .s2-card-icon {
+  height: 2rem;
+  padding-right: 12px;
+}
+.s2-card .s2-card-icon svg {
+  width: 2rem;
+  height: auto;
 }
 
 #s2-galeria {
   max-height: 109rem;
-  max-width: 90rem;
   margin-bottom: 5rem;
   padding: 0 5rem;
   display: grid;
@@ -86,11 +101,14 @@ img {
        column-gap: 1.5rem;
   row-gap: 2.5rem;
 }
-#s2-galeria img {
-  border-radius: 12px;
-}
-#s2-galeria #s2-img1 {
-  max-height: 100%;
+#s2-galeria div:first-child {
   grid-column: 1/3;
   grid-row: 1/2;
+}
+#s2-galeria .s2-img-container {
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+#s2-galeria #s2-img1 img {
+  transform: scale(1.375) translateX(-13.5%);
 }/*# sourceMappingURL=estilos.css.map */
