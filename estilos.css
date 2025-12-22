@@ -293,4 +293,44 @@ body {
 #sector3 #s3-footer #s3-btns-dir .btn-arrow:first-child svg {
   transform: rotate(180deg);
   transform-origin: center;
+}
+
+#sector5 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100rem;
+  padding: 5rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex-direction: row;
+  background-color: #ffffff;
+  padding: 5rem;
+  max-height: 58.75rem;
+}
+#sector5 #s5-textboxdiv {
+  flex-basis: 33.33%;
+  padding-right: 6rem;
+  display: flex;
+  flex-direction: column;
+}
+#sector5 #s5-tabsdiv {
+  flex-basis: 66.67%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tabs-window .tab {
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  order: 1;
+  display: none;
+}
+.tabs-window input[type=radio] {
+  display: none;
+}
+.tabs-window input[type=radio]:checked + label + .tab {
+  display: block;
 }/*# sourceMappingURL=estilos.css.map */

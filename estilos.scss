@@ -358,3 +358,47 @@ body {
     }
 
 }
+
+
+#sector5{
+    @include sector-common; 
+    flex-direction      : row;
+    background-color    : #ffffff;
+    padding             : 5rem;
+    max-height          : 58.75rem;
+
+    #s5-textboxdiv{
+        flex-basis: 33.33%;
+        padding-right: 6rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #s5-tabsdiv{
+        flex-basis: 66.67%;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+}
+
+
+.tabs-window{
+    .tab {
+        width: 100%;
+        padding: 20px;
+        background: #fff;
+        order: 1;
+        display: none;
+    }
+
+    input[type="radio"] {
+        
+        display: none;
+
+        &:checked + label + .tab {
+            display: block;
+        }
+    }
+}
