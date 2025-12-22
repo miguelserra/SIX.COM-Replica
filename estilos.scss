@@ -5,6 +5,8 @@
 */
 
 //SETUP
+
+
 @mixin sector-common{
     display             : flex;
     flex-direction      : column;
@@ -28,6 +30,7 @@ img {
     object-fit  : cover;
     height      : 100%;
     width       : 100%;
+    
 }
 
 .img-container{
@@ -139,6 +142,14 @@ $sixt-orange : #ff5000;
     src: url('fonts/HelveticaNowDisplayCondensedBlack.woff2') format('woff2');
 }
 
+@mixin font-HelveticaNow-400 {
+  font-family: 'HelveticaNow', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.2;
+}
+
+
 @mixin font-HelveticaNow-700 {
   font-family: 'HelveticaNow', sans-serif;
   font-weight: 700;
@@ -152,6 +163,7 @@ $sixt-orange : #ff5000;
   font-size: 3.75rem;
   line-height: 1;
 }
+
 
 @mixin font-RobotoCondensed-700 {
   font-family: 'Roboto Condensed', sans-serif;
@@ -169,15 +181,21 @@ $sixt-orange : #ff5000;
 }
 
 body {
-    font-family         : "Roboto";
+    //font-family         : "Roboto";
     display             : flex;
-    justify-content     : center;
+    flex-direction      : column;
+    position: relative ;
+    align-items: center;
     background-color    : green;
     line-height         : 1.5
 }
 
 
+
+
 #main{
+    position:relative;
+    transform: translateY(-19rem);
     display         : flex;
     flex-direction  : column;
     align-items     : center;
@@ -185,6 +203,315 @@ body {
     max-width       : 160rem; //mas nao mais que 160rem
     //border: 5px double black
 }
+
+
+
+
+#form-container{
+
+    @include sector-common();
+    padding: 0 5rem;
+    position: sticky;
+    top: 0rem;
+    margin-top: 5.5rem;
+    height: 13.1rem;
+    background-color: palevioletred;
+    z-index: 1000;
+    svg{
+            height: 1rem;
+            align-items: center;
+            padding-right: 0.5rem
+        }
+
+}
+
+
+#rental-form{
+      background-color: white;
+    
+}
+
+#buttons-form{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    
+    gap: 0.5rem ;
+    height: 2.31rem;
+    width: 100%;
+    padding: 0 1.5rem;
+    
+    
+    
+
+    button{
+        @include font-HelveticaNow-400;
+        position: relative;
+        padding: 0.5rem 0.75rem;
+        min-width: 2.25rem;
+        max-width: 15rem;
+        background-color: lightgrey;
+        border-radius: 50vmin;
+        height: 100%;
+        display: flex;   
+        justify-content: center;   
+        border-style: none;
+        line-height: 1.5;
+       
+        div{
+            align-items: center;
+        }
+
+      
+    }
+}
+//Validar se é suposto estar tudo em cascade
+#pickup-return-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+    min-height: 4.75rem;
+    background-color: yellow;
+    gap:1rem;
+    @include font-HelveticaNow-700;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    
+
+    #rf-booker{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+        flex: 1 1 25rem;
+        width: 100%;
+        min-width: 35.90rem;
+        align-items: end;
+
+
+
+    }
+
+    #pickup-return{
+        display: flex;
+        margin:0.25rem;
+        padding-right: 1.5rem;
+        flex-direction: column;
+        align-items: stretch;
+        height: 100%;
+        flex-grow: 1;
+        
+        #rf-pickup-input{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+            align-items: center;
+            height: 3.5rem;
+            width: 100%;
+            padding: 0 0.75rem;
+            box-sizing: border-box;
+            border-radius: 0.75rem;
+            border: 1px lightgray solid;
+            background-color: white;
+            color: rgba(26, 26, 26, 1);
+
+            svg{
+                height: 1.75rem;
+                padding-right: 0.5rem
+            }
+
+            input{
+                width: 100%; // OBRIGATÓRIO: Faz o input esticar até à borda do container
+                box-sizing: border-box; // Garante que o padding não estraga a largura
+                height: 100%; // Ou uma altura fixa, ex: 3rem
+                min-height: 3rem; // Ajuda a manter a consistência visual
+                border: none;
+                font-size: 1rem;
+                padding: 0.5rem;
+            }
+        }
+
+
+    }
+
+    #plus-different-location{
+        display: flex;
+        flex-shrink: 1;
+        margin-bottom: 2px;
+        padding-right:5.5rem;
+        align-items: center;
+        height: 3.5rem;
+        width: auto;
+        @include font-HelveticaNow-400;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: rgba(101, 106, 111, 1);
+
+
+         svg{
+            height: 1.5rem;
+            padding-right: 0.5rem
+        }
+
+    }
+
+    #rf-date{
+        display: flex;
+        flex-direction: row;
+        flex: 1 1 25rem;
+        //width: 100%;
+    
+    }
+
+    #pickup-return-date{
+        display: flex;
+        flex-direction: row;
+
+        input{
+            width: 100%; // OBRIGATÓRIO: Faz o input esticar até à borda do container
+            box-sizing: border-box; // Garante que o padding não estraga a largura
+            height: 100%; // Ou uma altura fixa, ex: 3rem
+            min-height: 3rem; // Ajuda a manter a consistência visual
+        }
+        
+    }
+
+    #rf-pickup-date{
+        display: flex;
+        flex-direction: column;
+        flex: 1; // Divide o espaço igualmente
+        width: 50%;
+        
+    }
+//Este para já tem propriedas iguais ao return!!!
+
+    #pickup-datetime-container{
+        display: flex;
+        flex-direction: row;
+
+         input{
+                width: 100%; // OBRIGATÓRIO: Faz o input esticar até à borda do container
+                box-sizing: border-box; // Garante que o padding não estraga a largura
+                height: 100%; // Ou uma altura fixa, ex: 3rem
+                min-height: 3rem; // Ajuda a manter a consistência visual
+                border: none;
+                font-size: 1rem;
+                padding: 0.5rem;
+            }
+        
+        #rf-pickup-date-input, #pickup-time{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+            align-items: center;
+            height: 3.5rem;
+            width: 100%;
+            padding: 0 0.75rem;
+            box-sizing: border-box;
+            border-radius: 0.75rem;
+            border: 1px lightgray solid;
+            background-color: white;
+            color: rgba(26, 26, 26, 1);
+
+            svg{
+                height: 1.75rem;
+                padding-right: 0.5rem
+            }
+
+           
+        }
+    }
+
+  
+
+     #rf-return-date{
+        display: flex;
+        flex-direction: column;
+        flex: 1; // Divide o espaço igualmente
+        width: 50%;
+        
+    }
+
+
+
+    #return-datetime-container{
+        display: flex;
+        flex-direction: row;
+
+         input{
+                width: 100%; // OBRIGATÓRIO: Faz o input esticar até à borda do container
+                box-sizing: border-box; // Garante que o padding não estraga a largura
+                height: 100%; // Ou uma altura fixa, ex: 3rem
+                min-height: 3rem; // Ajuda a manter a consistência visual
+                border: none;
+                font-size: 1rem;
+                padding: 0.5rem;
+            }
+        
+        #rf-return-date-input, #return-time{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+            align-items: center;
+            height: 3.5rem;
+            width: 100%;
+            padding: 0 0.75rem;
+            box-sizing: border-box;
+            border-radius: 0.75rem;
+            border: 1px lightgray solid;
+            background-color: white;
+            color: rgba(26, 26, 26, 1);
+
+            svg{
+                height: 1.75rem;
+                padding-right: 0.5rem
+            }
+
+           
+        }
+    }
+
+    
+
+   
+
+    #rf-cars{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        flex: 0 0 auto;    
+        height: 100%;
+
+        
+        #show-cars{
+            width:auto;
+            height: 3.5rem;
+            margin-left: 1rem;
+            padding: 0rem 2rem;
+            
+            background-color: $sixt-orange;
+            border: none;
+            border-radius: 0.75rem;
+            color: white;
+            @include font-HelveticaNow-700;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            cursor: pointer;
+        }
+        
+
+    }
+
+
+}
+
 
 #sector1 {
     @include sector-common;
