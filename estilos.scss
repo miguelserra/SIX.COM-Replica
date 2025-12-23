@@ -749,6 +749,7 @@ body {
             @include font-HelveticaNow-400;
             font-size: 0.875rem;
             letter-spacing: 0.0086em;
+            cursor: pointer;
         }
 
         input[type="radio"]:checked + label {

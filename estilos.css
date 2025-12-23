@@ -630,6 +630,7 @@ body {
   line-height: 1.5;
   font-size: 0.875rem;
   letter-spacing: 0.0086em;
+  cursor: pointer;
 }
 #sector5 #s5-tabsdiv input[type=radio]:checked + label {
   color: #fefefe;
