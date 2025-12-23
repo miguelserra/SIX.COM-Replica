@@ -105,19 +105,280 @@ img {
 }
 
 body {
-  font-family: "Roboto";
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
   background-color: green;
   line-height: 1.5;
 }
 
 #main {
+  position: relative;
+  transform: translateY(-19rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   max-width: 160rem;
+}
+
+#form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100rem;
+  padding: 5rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 5rem;
+  position: sticky;
+  top: 0rem;
+  margin-top: 5.5rem;
+  height: 13.1rem;
+  background-color: palevioletred;
+  z-index: 1000;
+}
+#form-container svg {
+  height: 1rem;
+  align-items: center;
+  padding-right: 0.5rem;
+}
+
+#rental-form {
+  background-color: white;
+}
+
+#buttons-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  gap: 0.5rem;
+  height: 2.31rem;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+#buttons-form button {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  position: relative;
+  padding: 0.5rem 0.75rem;
+  min-width: 2.25rem;
+  max-width: 15rem;
+  background-color: lightgrey;
+  border-radius: 50vmin;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  border-style: none;
+  line-height: 1.5;
+}
+#buttons-form button div {
+  align-items: center;
+}
+
+#pickup-return-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 100%;
+  min-height: 4.75rem;
+  background-color: yellow;
+  gap: 1rem;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+#pickup-return-container #rf-booker {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  flex: 1 1 25rem;
+  width: 100%;
+  min-width: 35.9rem;
+  align-items: end;
+}
+#pickup-return-container #pickup-return {
+  display: flex;
+  margin: 0.25rem;
+  padding-right: 1.5rem;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  flex-grow: 1;
+}
+#pickup-return-container #pickup-return #rf-pickup-input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  height: 3.5rem;
+  width: 100%;
+  padding: 0 0.75rem;
+  box-sizing: border-box;
+  border-radius: 0.75rem;
+  border: 1px lightgray solid;
+  background-color: white;
+  color: rgb(26, 26, 26);
+}
+#pickup-return-container #pickup-return #rf-pickup-input svg {
+  height: 1.75rem;
+  padding-right: 0.5rem;
+}
+#pickup-return-container #pickup-return #rf-pickup-input input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  min-height: 3rem;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+#pickup-return-container #plus-different-location {
+  display: flex;
+  flex-shrink: 1;
+  margin-bottom: 2px;
+  padding-right: 5.5rem;
+  align-items: center;
+  height: 3.5rem;
+  width: auto;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgb(101, 106, 111);
+}
+#pickup-return-container #plus-different-location svg {
+  height: 1.5rem;
+  padding-right: 0.5rem;
+}
+#pickup-return-container #rf-date {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 25rem;
+}
+#pickup-return-container #pickup-return-date {
+  display: flex;
+  flex-direction: row;
+}
+#pickup-return-container #pickup-return-date input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  min-height: 3rem;
+}
+#pickup-return-container #rf-pickup-date {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 50%;
+}
+#pickup-return-container #pickup-datetime-container {
+  display: flex;
+  flex-direction: row;
+}
+#pickup-return-container #pickup-datetime-container input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  min-height: 3rem;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+#pickup-return-container #pickup-datetime-container #rf-pickup-date-input, #pickup-return-container #pickup-datetime-container #pickup-time {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  height: 3.5rem;
+  width: 100%;
+  padding: 0 0.75rem;
+  box-sizing: border-box;
+  border-radius: 0.75rem;
+  border: 1px lightgray solid;
+  background-color: white;
+  color: rgb(26, 26, 26);
+}
+#pickup-return-container #pickup-datetime-container #rf-pickup-date-input svg, #pickup-return-container #pickup-datetime-container #pickup-time svg {
+  height: 1.75rem;
+  padding-right: 0.5rem;
+}
+#pickup-return-container #rf-return-date {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 50%;
+}
+#pickup-return-container #return-datetime-container {
+  display: flex;
+  flex-direction: row;
+}
+#pickup-return-container #return-datetime-container input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  min-height: 3rem;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+#pickup-return-container #return-datetime-container #rf-return-date-input, #pickup-return-container #return-datetime-container #return-time {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  height: 3.5rem;
+  width: 100%;
+  padding: 0 0.75rem;
+  box-sizing: border-box;
+  border-radius: 0.75rem;
+  border: 1px lightgray solid;
+  background-color: white;
+  color: rgb(26, 26, 26);
+}
+#pickup-return-container #return-datetime-container #rf-return-date-input svg, #pickup-return-container #return-datetime-container #return-time svg {
+  height: 1.75rem;
+  padding-right: 0.5rem;
+}
+#pickup-return-container #rf-cars {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+  height: 100%;
+}
+#pickup-return-container #rf-cars #show-cars {
+  width: auto;
+  height: 3.5rem;
+  margin-left: 1rem;
+  padding: 0rem 2rem;
+  background-color: #ff5000;
+  border: none;
+  border-radius: 0.75rem;
+  color: white;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  cursor: pointer;
 }
 
 #sector1 {
