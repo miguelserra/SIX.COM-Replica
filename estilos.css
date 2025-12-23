@@ -498,6 +498,8 @@ body {
   font-weight: 900;
   font-size: 3.75rem;
   line-height: 1;
+  font-size: 3.125rem;
+  letter-spacing: 0.0375em;
   text-align: center;
 }
 #sector3 #s3-carrossel {
@@ -554,4 +556,118 @@ body {
 #sector3 #s3-footer #s3-btns-dir .btn-arrow:first-child svg {
   transform: rotate(180deg);
   transform-origin: center;
+}
+
+#sector5 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100rem;
+  padding: 5rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex-direction: row;
+  background-color: #ffffff;
+  padding: 5rem;
+  height: 31.875rem;
+}
+#sector5 #s5-textboxdiv {
+  min-width: 33%;
+  flex-basis: 33.33%;
+  padding-right: 6rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+#sector5 #s5-textboxdiv h2 {
+  box-sizing: border-box;
+  margin-bottom: 1.5rem;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 900;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-size: 3.125rem;
+  text-transform: uppercase;
+}
+#sector5 #s5-textboxdiv p {
+  box-sizing: border-box;
+  width: 95%;
+  margin-bottom: 2rem;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.0067em;
+}
+#sector5 #s5-tabsdiv {
+  flex-basis: 66.67%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding-left: 0.75rem;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-size: 0.875rem;
+  letter-spacing: 0.0086em;
+  line-height: 1.5;
+}
+#sector5 #s5-tabsdiv label {
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 2.3125rem;
+  padding: 0 1rem;
+  margin: 0 0.75rem 0.75rem 0;
+  border: none;
+  border-radius: 1.15625rem;
+  background-color: #f1f2f3;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  letter-spacing: 0.0086em;
+}
+#sector5 #s5-tabsdiv input[type=radio]:checked + label {
+  color: #fefefe;
+  background-color: black;
+}
+#sector5 #s5-tabsdiv ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr) 3.25rem;
+  list-style-type: none;
+}
+#sector5 #s5-tabsdiv ul li {
+  box-sizing: border-box;
+  height: 2.25rem;
+  margin-right: 1rem;
+  padding-bottom: 0.75rem;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#sector5 #s5-tabsdiv a {
+  grid-row: 7/8;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  color: black;
+}
+
+.tabs-window .tab {
+  width: 100%;
+  order: 1;
+  display: none;
+}
+.tabs-window input[type=radio] {
+  display: none;
+}
+.tabs-window input[type=radio]:checked + label + .tab {
+  display: block;
 }/*# sourceMappingURL=estilos.css.map */
