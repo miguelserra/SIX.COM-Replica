@@ -6,7 +6,6 @@
 
 //SETUP
 
-
 @mixin sector-common{
     display             : flex;
     flex-direction      : column;
@@ -806,3 +805,90 @@ body {
         
     }
 }
+
+
+#sector6{
+    @include sector-common; 
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #191919;
+    min-height              : 29.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 0rem;
+
+    #s6-header{
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 4rem;
+        box-sizing: border-box;
+    }
+
+    #s6-header-socials{
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 0.3rem;
+        box-sizing: border-box;
+        align-items: center;
+        gap: 1.5rem;
+       
+    }
+
+    #s6-list{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        box-sizing: border-box; 
+        flex-wrap: wrap;
+        padding-top: 1.5rem;
+
+        
+
+        div{
+            list-style: none;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+
+            li:first-child {
+                @include font-HelveticaNow-700;
+                font-size: 1rem;
+                line-height: 1.5;
+                color: #8D9299;
+                
+                }
+
+            li{
+                @include font-HelveticaNow-700;
+                font-size: 0.875rem;
+                line-height: 1.5;
+                color: #FFFFFF;
+                white-space: nowrap;
+                text-align: left;
+                margin-top: 1rem;
+            }
+
+        }
+    }
+
+    #s6-app{
+        display: flex;
+        margin-top: auto; //fica auto??
+        gap: 1rem;
+        padding-top: 2.5rem;
+
+        img{
+            width:auto; //fica auto??
+        
+            height: 2.5rem;
+        }
+    }
+
+//AJUSTAR MARGIN TOP DAS LISTAS QUANDO O VIEWPORT DIMINUI!!!!!!!!!!!!!!!!
+}
+

@@ -671,4 +671,85 @@ body {
 }
 .tabs-window input[type=radio]:checked + label + .tab {
   display: block;
+}
+
+#sector6 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100rem;
+  padding: 5rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: #191919;
+  min-height: 29.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0rem;
+}
+#sector6 #s6-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 4rem;
+  box-sizing: border-box;
+}
+#sector6 #s6-header-socials {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 0.3rem;
+  box-sizing: border-box;
+  align-items: center;
+  gap: 1.5rem;
+}
+#sector6 #s6-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+}
+#sector6 #s6-list div {
+  list-style: none;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+#sector6 #s6-list div li:first-child {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #8D9299;
+}
+#sector6 #s6-list div li {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #FFFFFF;
+  white-space: nowrap;
+  text-align: left;
+  margin-top: 1rem;
+}
+#sector6 #s6-app {
+  display: flex;
+  margin-top: auto;
+  gap: 1rem;
+  padding-top: 2.5rem;
+}
+#sector6 #s6-app img {
+  width: auto;
+  height: 2.5rem;
 }/*# sourceMappingURL=estilos.css.map */
