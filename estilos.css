@@ -164,8 +164,8 @@ body {
 #buttons-form button {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.2;
+  font-size: 1rem;
+  line-height: 1.5;
   position: relative;
   padding: 0.5rem 0.75rem;
   min-width: 2.25rem;
@@ -255,8 +255,8 @@ body {
   width: auto;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.2;
+  font-size: 1rem;
+  line-height: 1.5;
   font-size: 1rem;
   line-height: 1.5;
   color: rgb(101, 106, 111);
