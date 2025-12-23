@@ -139,6 +139,13 @@ $sixt-orange : #ff5000;
     src: url('fonts/HelveticaNowDisplayCondensedBlack.woff2') format('woff2');
 }
 
+@mixin font-HelveticaNow-400 {
+  font-family: 'HelveticaNow', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 @mixin font-HelveticaNow-700 {
   font-family: 'HelveticaNow', sans-serif;
   font-weight: 700;
@@ -201,9 +208,9 @@ body {
 }
 
 #s1-imagem{
-    object-fit          : crop; //faz clip à imagem qd muito apertada
-    overflow: hidden;
-    margin-top: -8.25rem;
+    object-fit  : crop; //faz clip à imagem qd muito apertada
+    overflow    : hidden;
+    margin-top  : -8.25rem;
 
     img {
         transform: translateY(4.2rem);
@@ -211,7 +218,7 @@ body {
 }
 
 #s1-barra-txt-fundo{
-    height              : 14rem; //altura fixa em todos os cenários
+    height  : 14rem; //altura fixa em todos os cenários
 }
 
 
@@ -220,8 +227,8 @@ body {
     background-color    : #ffffff;
 
     #s2-cards-topo{
-        display: flex;
-        margin: 0 -0.25rem 5rem -0.25rem;
+        display : flex;
+        margin  : 0 -0.25rem 5rem -0.25rem;
         //background-color: aqua;
 
         > div {
@@ -288,6 +295,8 @@ body {
         height : 3.75rem;
         margin-bottom: 2.5rem;
         @include font-HelveticaNow-900;
+        font-size: 3.125rem;
+        letter-spacing: 0.0375em;
         text-align: center;
     }
 
@@ -365,19 +374,95 @@ body {
     flex-direction      : row;
     background-color    : #ffffff;
     padding             : 5rem;
-    max-height          : 58.75rem;
+    height              : 31.875rem;
 
     #s5-textboxdiv{
+        min-width: 33%;
         flex-basis: 33.33%;
         padding-right: 6rem;
         display: flex;
         flex-direction: column;
+        box-sizing: border-box;
+
+        h2 {
+            box-sizing: border-box;
+            margin-bottom: 1.5rem;
+            @include font-HelveticaNow-900;
+            font-size: 3.125rem;
+            text-transform: uppercase;
+        }
+
+        p{
+            box-sizing: border-box;
+            width: 95%;
+            margin-bottom: 2rem;
+            @include font-HelveticaNow-400;
+            letter-spacing: 0.0067em;
+        }
+
+        
+
     }
     
     #s5-tabsdiv{
         flex-basis: 66.67%;
+
         display: flex;
         flex-wrap: wrap;
+        box-sizing: border-box;
+        padding-left: 0.75rem;
+
+        @include font-HelveticaNow-700;
+        font-size: 0.875rem;
+        letter-spacing: 0.0086em;
+        line-height: 1.5;
+
+        label {
+            display     : flex;
+            align-items : center;
+            width       : auto;
+            height      : 2.3125rem;
+            padding     : 0 1rem;
+            margin      : 0 0.75rem 0.75rem 0;
+            border      : none;
+            border-radius: calc(2.3125rem/2);
+            background-color: #f1f2f3;
+            @include font-HelveticaNow-400;
+            font-size: 0.875rem;
+            letter-spacing: 0.0086em;
+        }
+
+        input[type="radio"]:checked + label {
+            color: #fefefe;
+            background-color: black;
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(6,1fr) 3.25rem;;
+            list-style-type: none;
+
+            li {
+                box-sizing: border-box;
+                height : 2.25rem;
+                margin-right: 1rem;
+                padding-bottom: 0.75rem;
+                overflow-x: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+
+        a{  
+            grid-row: 7/8;
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            text-decoration: underline;
+            text-underline-offset: 0.25em;
+            color : black;
+        }
 
     }
 
@@ -387,18 +472,17 @@ body {
 .tabs-window{
     .tab {
         width: 100%;
-        padding: 20px;
-        background: #fff;
         order: 1;
         display: none;
     }
 
     input[type="radio"] {
-        
+
         display: none;
 
         &:checked + label + .tab {
             display: block;
         }
+        
     }
 }
