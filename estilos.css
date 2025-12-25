@@ -396,9 +396,17 @@ body {
 }
 
 #s1-barra-txt-topo {
-  height: 1.5rem;
+  height: 1.85rem;
   background-color: #ff5000;
   z-index: 2;
+  color: #191919;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-size: 0.75rem;
+  text-align: center;
+  line-height: 2.25rem;
 }
 
 #s1-imagem {
@@ -411,8 +419,30 @@ body {
   transform: translateY(4.2rem);
 }
 
-#s1-barra-txt-fundo {
+#s1-barra-fundo {
   height: 14rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: #191919;
+}
+#s1-barra-fundo #s1-barra-txt-fundo-1, #s1-barra-fundo #s1-barra-txt-fundo-2 {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 900;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-size: 4.5rem;
+  text-align: center;
+  line-height: 1;
+}
+#s1-barra-fundo #s1-barra-txt-fundo-3 {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 #sector2 {
@@ -752,4 +782,43 @@ body {
 #sector6 #s6-app img {
   width: auto;
   height: 2.5rem;
+}
+
+#sector7 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100rem;
+  padding: 5rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #191919;
+  box-sizing: border-box;
+  padding: 2.5rem 5rem;
+  min-height: 6.5rem;
+  flex: 1;
+  gap: 0.9rem;
+  list-style: none;
+}
+#sector7 li {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #FFFFFF;
+  white-space: nowrap;
+  text-align: left;
+}
+#sector7 li:last-child {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  color: #8D9299;
 }/*# sourceMappingURL=estilos.css.map */
