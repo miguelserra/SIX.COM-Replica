@@ -6,7 +6,6 @@
 
 //SETUP
 
-
 @mixin sector-common{
     display             : flex;
     flex-direction      : column;
@@ -517,13 +516,20 @@ body {
     max-width: 100%;
     padding             : 0; //override do padding
     background-color    : $sixt-orange;
+    
     //height: ;
 }
 
 #s1-barra-txt-topo{
-    height              : 1.5rem; //altura fixa em todos os cenários
+    height              : 1.85rem; //altura fixa em todos os cenários
     background-color    : $sixt-orange;
     z-index: 2;
+    color: #191919;
+    @include font-HelveticaNow-700;
+    font-size: 0.75rem;
+    text-align: center;
+    line-height: 2.25rem;
+    
 }
 
 #s1-imagem{
@@ -536,8 +542,33 @@ body {
     }
 }
 
-#s1-barra-txt-fundo{
+
+//Falta fazerem wrap responsivo!!!!
+
+#s1-barra-fundo{
     height  : 14rem; //altura fixa em todos os cenários
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: #191919;
+
+    #s1-barra-txt-fundo-1, #s1-barra-txt-fundo-2{
+        
+        @include font-HelveticaNow-900;
+        font-size: 4.5rem;
+        //letter-spacing: 0.0375em;
+        text-align: center;
+        line-height: 1;
+    }
+
+    #s1-barra-txt-fundo-3{
+       @include font-HelveticaNow-700;
+       font-size: 1rem;
+       line-height: 1.5;
+ 
+    }
+
 }
 
 
@@ -806,3 +837,121 @@ body {
         
     }
 }
+
+
+#sector6{
+    @include sector-common; 
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #191919;
+    min-height              : 29.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 0rem;
+
+    #s6-header{
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 4rem;
+        box-sizing: border-box;
+    }
+
+    #s6-header-socials{
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 0.3rem;
+        box-sizing: border-box;
+        align-items: center;
+        gap: 1.5rem;
+       
+    }
+
+    #s6-list{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        box-sizing: border-box; 
+        flex-wrap: wrap;
+        padding-top: 1.5rem;
+
+        
+
+        div{
+            list-style: none;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+
+            li:first-child {
+                @include font-HelveticaNow-700;
+                font-size: 1rem;
+                line-height: 1.5;
+                color: #8D9299;
+                
+                }
+
+            li{
+                @include font-HelveticaNow-700;
+                font-size: 0.875rem;
+                line-height: 1.5;
+                color: #FFFFFF;
+                white-space: nowrap;
+                text-align: left;
+                margin-top: 1rem;
+            }
+
+        }
+    }
+
+    #s6-app{
+        display: flex;
+        margin-top: auto; //fica auto??
+        gap: 1rem;
+        padding-top: 2.5rem;
+
+        img{
+            width:auto; //fica auto??
+            height: 2.5rem;
+        }
+    }
+
+}
+
+
+#sector7{
+    @include sector-common; 
+    flex-direction      : row;
+    flex-wrap: wrap;
+    background-color    : #191919;
+    box-sizing: border-box;
+    padding             : 2.5rem 5rem;
+    min-height          : 6.5rem;
+    flex: 1;   
+    //align-items: center; - À partida não é necessário
+    gap: 0.9rem;
+    list-style: none;
+    //border-top: 0.5px solid #4D4D4D; - afinal o site não tem border (no entanto devemos validar)
+
+    li{ //Propriedades das letras iguais aos li do sector6
+        @include font-HelveticaNow-700;   
+
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: #FFFFFF;
+        white-space: nowrap;
+        text-align: left;
+        
+        &:last-child {
+            @include font-HelveticaNow-400;
+            font-size: 0.875rem;
+            color:#8D9299
+            
+        }
+    }
+}
+
