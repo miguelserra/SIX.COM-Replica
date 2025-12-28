@@ -36,6 +36,18 @@ img {
   fill: black;
 }
 
+.tabs-window .tab {
+  width: 100%;
+  order: 1;
+  display: none;
+}
+.tabs-window input[type=radio] {
+  display: none;
+}
+.tabs-window input[type=radio]:checked + label + .tab {
+  display: block;
+}
+
 @font-face {
   font-family: "RobotoArial";
   font-style: normal;
@@ -99,6 +111,8 @@ img {
   font-display: swap;
   src: url("fonts/HelveticaNowDisplayCondensedBlack.woff2") format("woff2");
 }
+/* ######## MIGUEL COMEÇA 1 ########### */
+/* ######## MIGUEL ACABA 1 ########### */
 * {
   margin: 0px;
   padding: 0px;
@@ -130,7 +144,8 @@ body:has(#toggle:checked) #s1-nav-options {
   max-width: 160rem;
 }
 
-#form-container {
+/* ######## MIGUEL COMEÇA 2 ########### */
+#rf-container {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -139,255 +154,270 @@ body:has(#toggle:checked) #s1-nav-options {
   padding: 5rem;
   overflow: hidden;
   box-sizing: border-box;
-  padding: 0 5rem;
   position: sticky;
   top: 0rem;
   margin-top: 5.5rem;
-  height: 13.1rem;
-  background-color: palevioletred;
-  z-index: 1000;
-}
-#form-container svg {
-  height: 1rem;
-  align-items: center;
-  padding-right: 0.5rem;
-}
-
-#rental-form {
-  background-color: white;
-}
-
-#buttons-form {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  box-sizing: border-box;
-  gap: 0.5rem;
-  height: 2.31rem;
+  padding: 0 5rem;
   width: 100%;
-  padding: 0 1.5rem;
-}
-#buttons-form button {
-  font-family: "HelveticaNow", sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  position: relative;
-  padding: 0.5rem 0.75rem;
-  min-width: 2.25rem;
-  max-width: 15rem;
-  background-color: lightgrey;
-  border-radius: 50vmin;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  border-style: none;
-  line-height: 1.5;
-}
-#buttons-form button div {
+  z-index: 999;
   align-items: center;
 }
-
-#pickup-return-container {
-  position: relative;
+#rf-container > div {
+  min-height: 13.06rem;
+  width: 100%;
+  border-radius: 1rem;
+  background-color: white;
+  box-sizing: border-box;
+}
+#rf-container > div #rf-tabs-window {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  max-width: 100%;
-  min-height: 4.75rem;
-  background-color: yellow;
-  gap: 1rem;
+  box-sizing: border-box;
+  margin: 1rem 1.5rem;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.2;
-  font-size: 0.75rem;
-  line-height: 1.5;
-}
-#pickup-return-container #rf-booker {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: end;
-  flex: 1 1 25rem;
-  width: 100%;
-  min-width: 35.9rem;
-  align-items: end;
-}
-#pickup-return-container #pickup-return {
-  display: flex;
-  margin: 0.25rem;
-  padding-right: 1.5rem;
-  flex-direction: column;
-  align-items: stretch;
-  height: 100%;
-  flex-grow: 1;
-}
-#pickup-return-container #pickup-return #rf-pickup-input {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  align-items: center;
-  height: 3.5rem;
-  width: 100%;
-  padding: 0 0.75rem;
-  box-sizing: border-box;
-  border-radius: 0.75rem;
-  border: 1px lightgray solid;
-  background-color: white;
-  color: rgb(26, 26, 26);
-}
-#pickup-return-container #pickup-return #rf-pickup-input svg {
-  height: 1.75rem;
-  padding-right: 0.5rem;
-}
-#pickup-return-container #pickup-return #rf-pickup-input input {
-  width: 100%;
-  box-sizing: border-box;
-  height: 100%;
-  min-height: 3rem;
-  border: none;
   font-size: 1rem;
-  padding: 0.5rem;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  letter-spacing: 0.0086em;
 }
-#pickup-return-container #plus-different-location {
+#rf-container > div #rf-tabs-window > label {
   display: flex;
-  flex-shrink: 1;
-  margin-bottom: 2px;
-  padding-right: 5.5rem;
   align-items: center;
-  height: 3.5rem;
   width: auto;
+  height: 2.3125rem;
+  padding: 0 1rem;
+  margin: 0 0.5rem 0 0;
+  border: none;
+  border-radius: 1.15625rem;
+  background-color: #f1f2f3;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  letter-spacing: 0.0086em;
+  cursor: pointer;
+}
+#rf-container > div #rf-tabs-window input[type=radio]:checked + label {
+  color: #f4f5f6;
+  background-color: black;
+}
+#rf-container > div #rf-tabs-window input[type=radio]:checked + label img {
+  filter: invert(100%);
+}
+#rf-container > div #rf-tabs-window a {
+  display: inline-block;
+  width: 100%;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-decoration: underline;
+  font-size: 0.75rem;
+}
+
+.rf-form {
+  padding: 1rem 0;
+  display: flex;
+  gap: 0 0.5rem;
+}
+.rf-form .rf-locations-div {
+  flex-grow: 1;
+  display: flex;
+}
+.rf-form .rf-locations-div .rf-location-input {
+  flex-grow: 1;
+  display: flex;
+}
+.rf-form .rf-locations-div .rf-location-input div {
+  width: 100%;
+}
+.rf-form .rf-locations-div .rf-location-input div span {
+  width: 100%;
+  display: inline-block;
+  height: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+.rf-form .rf-locations-div .rf-location-input div span label {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.75rem;
+}
+.rf-form .rf-locations-div .rf-location-input div div {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 3.25rem;
+  padding: 0 0.75rem;
+  border: 1px solid #d7dadc;
+  border-radius: 1rem;
+}
+.rf-form .rf-locations-div .rf-location-input div div input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 3rem;
+  margin: 0 0.5rem;
+  border: 0px;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
   font-size: 1rem;
   line-height: 1.5;
-  color: rgb(101, 106, 111);
 }
-#pickup-return-container #plus-different-location svg {
+.rf-form .rf-locations-div .rf-location-input div div input::-moz-placeholder {
+  color: #d7dadc;
+}
+.rf-form .rf-locations-div .rf-location-input div div input::placeholder {
+  color: #d7dadc;
+}
+.rf-form .rf-locations-div .rf-location-return {
+  flex-grow: 1;
+  display: none;
+  padding: 0 0.5rem 0 1rem;
+}
+.rf-form .rf-locations-div .rf-different-location {
+  flex-grow: 1;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  height: 3.25rem;
+  padding: 0 0.75rem;
+  color: #656a6f;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.rf-form .rf-locations-div .rf-different-location div {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 3rem;
+}
+.rf-form .rf-locations-div .rf-different-location img {
+  margin: 0.5rem;
+}
+.rf-form .rf-dates-div {
+  min-width: 41.5rem;
+  display: flex;
+  width: 41.5rem;
+  justify-content: stretch;
+  gap: 0 1rem;
+}
+.rf-form .rf-dates-div div {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 13.5rem;
+}
+.rf-form .rf-dates-div div span {
+  width: 100%;
+  display: inline-block;
   height: 1.5rem;
-  padding-right: 0.5rem;
+  margin-bottom: 0.25rem;
 }
-#pickup-return-container #rf-date {
-  display: flex;
-  flex-direction: row;
-  flex: 1 1 25rem;
-}
-#pickup-return-container #pickup-return-date {
-  display: flex;
-  flex-direction: row;
-}
-#pickup-return-container #pickup-return-date input {
-  width: 100%;
-  box-sizing: border-box;
-  height: 100%;
-  min-height: 3rem;
-}
-#pickup-return-container #rf-pickup-date {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  width: 50%;
-}
-#pickup-return-container #pickup-datetime-container {
-  display: flex;
-  flex-direction: row;
-}
-#pickup-return-container #pickup-datetime-container input {
-  width: 100%;
-  box-sizing: border-box;
-  height: 100%;
-  min-height: 3rem;
-  border: none;
+.rf-form .rf-dates-div div span label {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
   font-size: 1rem;
-  padding: 0.5rem;
+  line-height: 1.5;
+  font-size: 0.75rem;
 }
-#pickup-return-container #pickup-datetime-container #rf-pickup-date-input, #pickup-return-container #pickup-datetime-container #pickup-time {
-  position: relative;
+.rf-form .rf-dates-div div div {
   display: flex;
   flex-direction: row;
-  flex: 1;
   align-items: center;
-  height: 3.5rem;
   width: 100%;
-  padding: 0 0.75rem;
-  box-sizing: border-box;
-  border-radius: 0.75rem;
-  border: 1px lightgray solid;
-  background-color: white;
-  color: rgb(26, 26, 26);
-}
-#pickup-return-container #pickup-datetime-container #rf-pickup-date-input svg, #pickup-return-container #pickup-datetime-container #pickup-time svg {
-  height: 1.75rem;
-  padding-right: 0.5rem;
-}
-#pickup-return-container #rf-return-date {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  width: 50%;
-}
-#pickup-return-container #return-datetime-container {
-  display: flex;
-  flex-direction: row;
-}
-#pickup-return-container #return-datetime-container input {
-  width: 100%;
-  box-sizing: border-box;
-  height: 100%;
-  min-height: 3rem;
-  border: none;
+  height: 3.25rem;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
   font-size: 1rem;
-  padding: 0.5rem;
+  line-height: 1.5;
 }
-#pickup-return-container #return-datetime-container #rf-return-date-input, #pickup-return-container #return-datetime-container #return-time {
-  position: relative;
+.rf-form .rf-dates-div .rf-div-btn-show {
+  flex-basis: 12.5rem;
   display: flex;
   flex-direction: row;
-  flex: 1;
-  align-items: center;
-  height: 3.5rem;
-  width: 100%;
-  padding: 0 0.75rem;
+  align-items: flex-end;
   box-sizing: border-box;
-  border-radius: 0.75rem;
-  border: 1px lightgray solid;
-  background-color: white;
-  color: rgb(26, 26, 26);
 }
-#pickup-return-container #return-datetime-container #rf-return-date-input svg, #pickup-return-container #return-datetime-container #return-time svg {
-  height: 1.75rem;
-  padding-right: 0.5rem;
-}
-#pickup-return-container #rf-cars {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  flex: 0 0 auto;
-  height: 100%;
-}
-#pickup-return-container #rf-cars #show-cars {
-  width: auto;
-  height: 3.5rem;
-  margin-left: 1rem;
-  padding: 0rem 2rem;
+.rf-form .rf-dates-div .rf-div-btn-show button {
+  width: 100%;
+  height: 3.25rem;
+  border-radius: 1rem;
   background-color: #ff5000;
-  border: none;
-  border-radius: 0.75rem;
   color: white;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.2;
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.5;
-  cursor: pointer;
+}
+.rf-form .rf-dates-div .rf-div-btn-show label {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
 }
 
+.rf-btn {
+  all: unset;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  border: 1px solid #d7dadc;
+  margin-left: -1px;
+}
+.rf-btn > img {
+  padding-left: 0.75rem;
+}
+.rf-btn > div {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 0.5rem;
+}
+
+.rounded-left {
+  border-radius: 1rem 0 0 1rem;
+  flex-basis: 50%;
+}
+.rounded-left > div {
+  justify-content: center;
+}
+
+.rounded-right {
+  border-radius: 0 1rem 1rem 0;
+  flex-basis: 50%;
+}
+.rounded-right > div {
+  justify-content: flex-start;
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+}
+.btn-icon img {
+  z-index: 100;
+  height: 1rem;
+}
+.btn-icon p {
+  margin-left: 0.5rem;
+}
+
+/* ######## MIGUEL ACABA 2 ########### */
 #sector1 {
   display: flex;
   flex-direction: column;
@@ -402,16 +432,15 @@ body:has(#toggle:checked) #s1-nav-options {
   padding: 0;
   background-color: #ff5000;
 }
-
-#s1-barra-txt-topo {
+#sector1 #s1-barra-txt-topo {
   height: 1.85rem;
   background-color: #ff5000;
   z-index: 2;
   color: #191919;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.2;
+  font-size: 1rem;
+  line-height: 1.5;
   font-size: 0.75rem;
   text-align: center;
   line-height: 2.25rem;
@@ -778,15 +807,17 @@ body:has(#toggle:checked) #s1-nav-options {
 }
 
 #s1-imagem {
+#sector1 #s1-imagem {
   -o-object-fit: crop;
      object-fit: crop;
   overflow: hidden;
   margin-top: -8.25rem;
 }
-#s1-imagem img {
-  transform: translateY(4.2rem);
+#sector1 #s1-imagem img {
+  transform: translateY(3.8rem);
 }
 #s1-imagem:after {
+#sector1 #s1-imagem:after {
   content: "";
   display: block;
   width: 100%;
@@ -798,6 +829,7 @@ body:has(#toggle:checked) #s1-nav-options {
 }
 
 #s1-barra-fundo {
+#sector1 #s1-barra-fundo {
   height: 14rem;
   display: flex;
   align-items: center;
@@ -805,7 +837,8 @@ body:has(#toggle:checked) #s1-nav-options {
   justify-content: center;
   color: #191919;
 }
-#s1-barra-fundo #s1-barra-txt-fundo-1, #s1-barra-fundo #s1-barra-txt-fundo-2 {
+#sector1 #s1-barra-fundo #s1-barra-fundo-titulo {
+  margin-bottom: 0.5rem;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
@@ -813,12 +846,14 @@ body:has(#toggle:checked) #s1-nav-options {
   font-size: 4.5rem;
   text-align: center;
   line-height: 1;
+  letter-spacing: 0.0129em;
 }
-#s1-barra-fundo #s1-barra-txt-fundo-3 {
+#sector1 #s1-barra-fundo #s1-barra-fundo-titulo div {
+  overflow-wrap: break-word;
+}
+#sector1 #s1-barra-fundo #s1-barra-fundo-subtitulo {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.2;
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -858,13 +893,14 @@ body:has(#toggle:checked) #s1-nav-options {
 #sector2 .s2-card .s2-card-title {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.2;
   font-size: 1rem;
+  line-height: 1.5;
 }
 #sector2 .s2-card .s2-card-txt {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
   font-size: 1.5rem;
   line-height: 1.2;
   letter-spacing: 0.0125em;
@@ -1016,11 +1052,10 @@ body:has(#toggle:checked) #s1-nav-options {
   padding-left: 0.75rem;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.2;
+  font-size: 1rem;
+  line-height: 1.5;
   font-size: 0.875rem;
   letter-spacing: 0.0086em;
-  line-height: 1.5;
 }
 #sector5 #s5-tabsdiv label {
   display: flex;
@@ -1067,18 +1102,6 @@ body:has(#toggle:checked) #s1-nav-options {
   text-decoration: underline;
   text-underline-offset: 0.25em;
   color: black;
-}
-
-.tabs-window .tab {
-  width: 100%;
-  order: 1;
-  display: none;
-}
-.tabs-window input[type=radio] {
-  display: none;
-}
-.tabs-window input[type=radio]:checked + label + .tab {
-  display: block;
 }
 
 #sector6 {
@@ -1140,8 +1163,6 @@ body:has(#toggle:checked) #s1-nav-options {
 #sector6 #s6-list div li:first-child {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.2;
   font-size: 1rem;
   line-height: 1.5;
   color: #8D9299;
@@ -1149,10 +1170,9 @@ body:has(#toggle:checked) #s1-nav-options {
 #sector6 #s6-list div li {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.2;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.5;
+  font-size: 0.875rem;
   color: #FFFFFF;
   white-space: nowrap;
   text-align: left;
@@ -1196,10 +1216,9 @@ body:has(#toggle:checked) #s1-nav-options {
 #sector7 li {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.2;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.5;
+  font-size: 0.875rem;
   color: #FFFFFF;
   white-space: nowrap;
   text-align: left;
