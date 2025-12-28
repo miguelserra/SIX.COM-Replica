@@ -173,6 +173,14 @@ $sixt-placeholder-gray: #d7dadc;
 }
 /* ######## MIGUEL ACABA 1 ########### */
 
+
+@mixin font-HelveticaNow-800 {
+  font-family: 'HelveticaNow', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
 @mixin font-HelveticaNow-900 {
   font-family: 'HelveticaNow', sans-serif;
   font-weight: 900;
@@ -203,6 +211,19 @@ body {
     align-items         : center;
     background-color    : green;
     line-height         : 1.5
+
+    
+
+}
+
+body:has(#toggle:checked) {
+    //desativa o nav quando o menu está aberto
+    #s1-nav-options {
+        pointer-events: none;
+        
+    }
+    //inibe o scroll da pagina quando o menu está aberto
+    overflow: hidden;
 }
 
 #main{
@@ -488,8 +509,448 @@ body {
     p{
         margin-left: 0.5rem;
     }
+}
+
+//Gonçalo meteu position relative no sector1 para o nav ficar fixo
+#sector1 {
+    @include sector-common;
+    position: relative;
+    max-width: 100%;
+    padding             : 0; //override do padding
+    background-color    : $sixt-orange;
+
+
+//gonçalo começa
+
+#s1-nav-container{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 5rem;
+}
+
+
+#s1-nav{
+    
+    display: flex;
+    position: absolute; //faz com que o nav fique fixo no sitio 
+    width: 100%;
+    top: 1.8rem; // distancia ao topo da pagina
+    z-index: 5000;
+
+    label{
+        display : none;
+        font-size: 22px;
+        padding : repeat(3, 0px) 5px;
+        cursor  : pointer;
+    }
+
+    #toggle {
+        display: none;
+    }
+
+    .sandwich label{
+        display: block;
+    }
+
+    .sandwich{
+        //padding-left: 5.5%; //espaçamento do icon para a
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+
+        label{
+            display: flex;
+            align-items: center;
+            font-size:1.5rem; //aumenta o icon
+            cursor: pointer;
+            color: #ffffff;
+            width: fit-content;
+        }
+
+        .open-btn{
+            display: block;
+            position: relative;
+
+            svg{
+                transform: translateY(0.5rem)
+            }
+        }
+    }
+
+    .menu.inside{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        display: none;
+        position: fixed; //faz com que o menu acompanhe a pagina quando está aberto
+        top: 0;
+        left: 0;
+        padding-top: 1.75rem; //espaço do topo na lista
+        padding-left: calc(max(0px, (100vw - 100rem) / 2) + 6.5rem);
+        background-color: white;
+        height: 100vh;
+        width:25vw;
+        min-width: 22rem;
+        box-sizing: border-box;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
+        z-index: 6000;
+        
+        .menu-header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Alinha à esquerda */
+            padding-bottom: 2rem; /* Espaço antes dos links começarem */
+            border-bottom: none; /* Remove a linha de baixo se tiveres */
+            gap: 0.5rem;
+            
+            .close-btn {
+                font-size: 2rem;   /* Tamanho grande */
+                font-weight: 1;  /* Mais fino */
+                color: #191919;     
+                cursor: pointer;
+                line-height: 1;
+                display: block;    /* Para aceitar transforms se preciso */
+                
+                &:hover {
+                    color: #191919 /* Laranja no hover */
+                }
+            }
+        }
+
+        li{
+            @include font-HelveticaNow-700;
+            font-size: 1.5rem;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            white-space: nowrap;
+            
+            gap: 1rem;
+            padding: 0.5rem 0rem;
+            cursor: pointer;
+
+            &.menu-header{
+                flex-direction: row; //alinha o x e simbolo sixt na horizontal
+                align-items: center;
+            }
+            
+            span{
+                @include font-HelveticaNow-400;
+                font-size: 0.875rem;   
+                margin-top: -1rem;;          
+            }
+
+            &:hover {
+                color: #ff5000; /* Laranja no hover */
+            }
+        }
+    }
+
+    .sandwich #toggle:checked + .menu {
+        display : flex;
+        flex-direction: column;
+    }
+
+    #s1-nav-options{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem; //espaçamento entre os itens do nav
+        box-sizing: border-box;
+        padding-top: 0.8rem;
+        
+
+        .s1-nav-options-item{
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            height: 100%;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+            //formatação do texto do nav
+            @include font-HelveticaNow-700;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color:#ffffff;
+
+             //formatação do menu dropdown genérico para os 3 itens do nav
+            .dropdown-menu{
+                display:none;
+                position: absolute;
+                top: 100%;
+                // left: 50%; //alinha ao centro do item do nav
+                //transform: translateX(-50%); //centraliza o menu dropdown
+                background-color: white;
+                max-width: 7rem;
+                padding: 0.5rem 0;
+                margin:0;
+                list-style: none;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    
+                border-radius: 4px;            
+                z-index: 1000;
+            }
+
+            //formatação dos inputs do form booking e login (todos os inputs basicamente iguais)
+            .input-group {
+                margin-bottom: 1.5rem;
+                position: relative;
+
+                label {
+                    display: block;
+                    @include font-HelveticaNow-400;
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                    color: #191919;
+                    margin-bottom: 0.2rem;
+                }
+
+                input {
+
+                    @include font-HelveticaNow-400;
+                    width: 100%;
+                    border: none;
+                    border-bottom: 1px solid #ccc; //linha cinza em baixo
+                    padding: 0.5rem 0;
+                    outline: none; 
+                    box-sizing: border-box;
+
+                    &:focus {
+                        border-bottom: 2px solid #ff5f00; //Linha laranja ao escrever
+                    }
+                }
+            }
+
+            //formatação do form booking quando faz dropdown
+            .dropdown-menu.booking-form {
+                
+                min-width: 21.88rem; //largura do menu booking
+                padding: 2rem;
+                text-align: left; //O texto do form é alinhado à esquerda
+                color: #191919;
+
+                h3 {
+                    margin-bottom: 0.5rem;
+                    @include font-HelveticaNow-800;
+                    color: #191919;
+                }
+
+                p {
+                    margin-bottom: 1.5rem;
+                    @include font-HelveticaNow-400;
+                    color: #666;
+                    white-space: normal; //Permite que o texto de descrição quebre linha
+                }
+
+                //inputs do form booking
+              
+
+            //Formatação do botão do form booking - next
+            button {
+                width: 100%;
+                background-color: $sixt-orange; //laranja sixt
+                color: white;
+                border: none;
+                padding: 1rem;
+                font-weight: bold;
+                font-size: 1rem;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-top: 0.5rem;
+
+                &:hover {
+                    background-color: #e04e00; //laranja mais escuro quando se faz over0
+                }
+            }
+        
+            }
+
+
+            .dropdown-trigger{
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                height:100%;
+                cursor: pointer;
+            }
+
+           
+            //formatação dos elemento do dropdown language
+            .dropdown-menu.language-list{
+
+                li{
+                    padding: 0.40rem 1rem;
+                    color: #191919; /* Texto preto */
+                    font-weight: normal;
+                    white-space: nowrap;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $sixt-orange;
+                    }
+                }
+            }
+
+            //formatação dos elementos do menu dropdown login
+            .dropdown-menu.login-form{
+                min-width: 23.75rem; //largura do menu login
+                right:0; //alinha à direita do item do nav
+                padding: 2rem;
+                text-align: left;
+                color: #191919;
+                h3 {
+                    margin: 0 0 0.5rem 0;
+                    @include font-HelveticaNow-800;
+                    color: #191919;
+                    text-transform: uppercase;
+                }
+
+                p {
+                    margin: 0 0 1.5rem 0;
+                    @include font-HelveticaNow-400;
+                    line-height: 1;
+                    font-weight: normal;
+                    color: #666;
+                    white-space: normal;
+                }
+
+                /* 2. Inputs (Cópia exata do estilo do Booking) */
+               /* .input-group {
+                    margin-bottom: 1.2rem;
+                    position: relative;
+
+                    label {
+                        display: block;
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                        color: #191919;
+                        margin-bottom: 0.2rem;
+                    }
+
+                    input {
+                        width: 100%;
+                        border: none;
+                        border-bottom: 1px solid #ccc;
+                        padding: 0.5rem 0;
+                        font-size: 1rem;
+                        outline: none;
+                        box-sizing: border-box;
+                        background: transparent;
+
+                        &:focus {
+                            border-bottom: 2px solid #ff5f00;
+                        }
+                    }*/
+                }   
+
+
+                .btn-submit {
+                    width: 100%;
+                    background-color: #ff5f00;
+                    color: white;
+                    border: none;
+                    padding: 1rem;
+                    font-weight: bold;
+                    font-size: 1rem;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    margin-top: 0.5rem;
+                    transition: background 0.2s;
+
+                    &:hover {
+                        background-color: #e04e00;
+                    }
+                }
+
+                .separator {
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    margin: 1.5rem 0 1rem 0;
+                    color: #666;
+                    font-size: 0.8rem;
+
+                    &::before, &::after {
+                        content: '';
+                        flex: 1;
+                        border-bottom: 1px solid #e0e0e0;
+                    }
+
+                    span {
+                        padding: 0 10px;
+                        background-color: white; /* Garante que a linha não passa por trás do texto */
+                    }
+
+                }
+
+                .btn-register {
+                    display: block;
+                    width: 100%;
+                    padding: 0.8rem;
+                    background-color: white;
+                    color: #191919;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    text-align: center;
+                    text-decoration: none;
+                    cursor: pointer;
+                    box-sizing: border-box;
+                    transition: background 0.2s;
+
+                    &:hover {
+                        background-color: #f5f5f5;
+                        border-color: #bbb;
+                    }
+                }   
+
+
+                &.dropdown-parent:hover .dropdown-menu {
+                    display: block;
+                } 
+          }
+    }    
+}
 
     
+  
+
+   
+//gonçalo termina
+
+
+#s1-imagem{
+    object-fit  : crop; //faz clip à imagem qd muito apertada
+    overflow    : hidden;
+    margin-top  : -8.25rem;
+
+    img {
+        transform: translateY(4.2rem);
+        
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 11.9%;
+        background: linear-gradient(to bottom, rgba(0,0,0,.7),rgba(0,0,0,0));
+        //border-radius: 100%;
+        position: absolute;
+        top: 0; left: 0;    
 }
 
 
@@ -871,6 +1332,15 @@ body {
             flex-direction: column;
             align-items: left;
 
+            ul{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                list-style: none;
+                gap: 0 1rem;
+
+            };
+
             li:first-child {
                 @include font-HelveticaNow-700;
                 color: #8D9299;
@@ -913,9 +1383,15 @@ body {
     min-height          : 6.5rem;
     flex: 1;   
     //align-items: center; - À partida não é necessário
-    gap: 0.9rem;
-    list-style: none;
-    //border-top: 0.5px solid #4D4D4D; - afinal o site não tem border (no entanto devemos validar)
+
+    ul{
+        display: flex;
+        flex-direction: row;
+        gap: 0.9rem;
+        list-style: none;
+        flex-wrap: wrap
+    }
+    
 
     li{ //Propriedades das letras iguais aos li do sector6
         @include font-HelveticaNow-700;   
