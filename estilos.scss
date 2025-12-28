@@ -511,38 +511,26 @@ body:has(#toggle:checked) {
     }
 }
 
-//Gonçalo meteu position relative no sector1 para o nav ficar fixo
-#sector1 {
-    @include sector-common;
-    position: relative;
-    max-width: 100%;
-    padding             : 0; //override do padding
-    background-color    : $sixt-orange;
-
-
-//gonçalo começa
-
-#s1-nav-container{
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    max-width: 90rem;
-    margin: 0 auto;
-    padding: 0 5rem;
-}
-
-
-#s1-nav{
+ 
+#navbar{
     
     display: flex;
     position: absolute; //faz com que o nav fique fixo no sitio 
     width: 100%;
     top: 1.8rem; // distancia ao topo da pagina
     z-index: 5000;
+
+    #navbar-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        max-width: 90rem;
+        margin: 0 auto;
+        padding: 0 5rem;
+    }   
 
     label{
         display : none;
@@ -855,7 +843,6 @@ body:has(#toggle:checked) {
                     }*/
                 }   
 
-
                 .btn-submit {
                     width: 100%;
                     background-color: #ff5f00;
@@ -917,7 +904,6 @@ body:has(#toggle:checked) {
                     }
                 }   
 
-
                 &.dropdown-parent:hover .dropdown-menu {
                     display: block;
                 } 
@@ -925,40 +911,32 @@ body:has(#toggle:checked) {
     }    
 }
 
-    
-  
-
-   
-//gonçalo termina
-
-
 #s1-imagem{
     object-fit  : crop; //faz clip à imagem qd muito apertada
     overflow    : hidden;
     margin-top  : -8.25rem;
 
     img {
-        transform: translateY(4.2rem);
-        
+        transform: translateY(3.8rem);
     }
-
+    
     &:after {
         content: "";
         display: block;
         width: 100%;
         height: 11.9%;
         background: linear-gradient(to bottom, rgba(0,0,0,.7),rgba(0,0,0,0));
+        
         //border-radius: 100%;
         position: absolute;
-        top: 0; left: 0;    
+        top: 0; left: 0;
+    }
 }
-
-
-/* ######## MIGUEL ACABA 2 ########### */
-
+//Gonçalo meteu position relative no sector1 para o nav ficar fixo
 #sector1 {
     @include sector-common;
-    max-width           : 100%;
+    position: relative;
+    max-width: 100%;
     padding             : 0; //override do padding
     background-color    : $sixt-orange;
 
@@ -973,29 +951,8 @@ body:has(#toggle:checked) {
         line-height: 2.25rem;
         
     }
-    
-    #s1-imagem{
-        object-fit  : crop; //faz clip à imagem qd muito apertada
-        overflow    : hidden;
-        margin-top  : -8.25rem;
-    
-        img {
-            transform: translateY(3.8rem);
-        }
-        
-        &:after {
-            content: "";
-            display: block;
-            width: 100%;
-            height: 11.9%;
-            background: linear-gradient(to bottom, rgba(0,0,0,.7),rgba(0,0,0,0));
-            
-            //border-radius: 100%;
-            position: absolute;
-            top: 0; left: 0;
-        }
-    }
-    
+
+
     //Falta fazerem wrap responsivo!!!!
     
     #s1-barra-fundo{
@@ -1025,10 +982,9 @@ body:has(#toggle:checked) {
         }
     
         #s1-barra-fundo-subtitulo{
-           @include font-HelveticaNow-700;
-
-        }
+            @include font-HelveticaNow-700;
     
+        }
     }
 }
 
@@ -1408,4 +1364,3 @@ body:has(#toggle:checked) {
         }
     }
 }
-
