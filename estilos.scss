@@ -1049,12 +1049,125 @@ body:has(#toggle:checked) {
             //esta imagem tem um zoom e posicionamento esquesito
             transform: scale(1.375) translateX(-13.5%);
         }
+
+            .img-container {
+            position: relative;
+            overflow: hidden;
+
+           
+            
+            div.s2-txt {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                align-items: flex-start;
+                text-align: left;
+                box-sizing          : border-box;
+                bottom: 0;          // mantem encostado ao fundo
+                left: 0;         // mantem encostado à esquerda
+                padding: 2.5rem 2rem;
+                z-index: 10000;
+                width: 100%;
+                gap:0.7rem;
+
+
+                .frame-content {
+                    background: url(media/losango.svg);
+                    background-repeat: no-repeat;
+                    background-size:contain;
+                    position: relative; 
+                    margin-bottom: 2rem;
+                    //MUITO IMPORTANTE - Altura e largura da div que contem o frame como background;
+                    width: 10rem;
+                    height:8.5rem;
+                    margin-bottom: 0rem;
+
+                    .s2-frame-header {
+                        position: absolute;
+                        top: -0.3rem;   
+                        left: 4.6rem;   
+                        
+                        @include font-HelveticaNow-700;
+                        font-size: 0.7rem;
+                        text-transform: uppercase;
+                        color: white;
+
+                        &.s2-frame-header-smaller{
+                            left: 3.8rem;
+                            font-size: 0.6rem ;
+                        }
+                        
+                    }
+
+                    .s2-frame-maintxt {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        color: white;
+                        padding-top: 0.8rem;
+
+                        .big-number {
+                            @include font-HelveticaNow-900;
+                            font-size: 3.5rem; 
+                        }
+
+                        .label {
+                            @include font-HelveticaNow-900;
+                            font-size: 1.2rem;
+                            text-transform: uppercase;
+                        }
+                    }
+
+                }
+              
+                
+                
+                h1{
+                    @include font-HelveticaNow-900;
+                    font-size: 2.5rem;
+                    color: white;
+                    text-transform: uppercase;
+
+                    &.smaller{
+                        font-size: 1.875rem;
+                    }
+                    
+                }
+
+                p{
+                    @include font-HelveticaNow-400;
+                    color: white;
+                    //margin: 1.5rem 0;
+                
+                } 
+                
+                button{
+                    background-color: transparent;
+                    color: white;
+                    border-radius: 100px;   /* Cria o formato de comprimido */
+                    border: 2.5px solid white;
+                    padding: 0.4rem 1.5rem;
+                    width: auto;
+                    
+                    @include font-HelveticaNow-700;
+                    font-size: 0.75rem;
+                    line-height: 1.5;
+                    text-align: center;
+                    //font-weight: bold;
+                    
+                    white-space: nowrap;
+                    cursor: pointer;
+                }
+            }
+
+        }
     }
 }
 
 
 #sector3 {
     @include sector-common; 
+    position: relative;
     background-color    : #e9ebee;
     padding             : 5rem;
     max-height          : 58.75rem;
@@ -1085,6 +1198,71 @@ body:has(#toggle:checked) {
         }
             */
     }
+
+    .img-container{
+        position: relative;
+        overflow: hidden;
+
+
+    }
+
+    div.s3-txt {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                align-items: center;
+                text-align: center;
+                box-sizing          : border-box;
+                top: 0;          // mantem encostado ao fundo
+                left: 0;         // mantem encostado à esquerda
+                padding: 4rem 2rem;
+                z-index: 10000;
+                width: 100%;
+                gap:1.3rem;
+
+                }
+              
+                
+                
+                h1{
+                    @include font-HelveticaNow-900;
+                    
+                    font-size: 1.875rem;
+                    color: white;
+                    text-transform: uppercase;
+
+                    &.smaller{
+                        font-size: 1.875rem;
+                    }
+                    
+                }
+
+                p{
+                    @include font-HelveticaNow-400;
+                    color: white;
+                    //margin: 1.5rem 0;
+                
+                } 
+                
+                .s3-btn{
+                    background-color: transparent;
+                    color: white;
+                    border-radius: 100px;   /* Cria o formato de comprimido */
+                    border: 2.5px solid white;
+                    padding: 0.4rem 1.5rem;
+                    width: auto;
+                    
+                    @include font-HelveticaNow-700;
+                    font-size: 0.75rem;
+                    line-height: 1.5;
+                    text-align: center;
+                    //font-weight: bold;
+                    
+                    white-space: nowrap;
+                    cursor: pointer;
+                }
+            }
+
 
     #s3-footer{
         display: flex;
@@ -1134,7 +1312,7 @@ body:has(#toggle:checked) {
 
     }
 
-}
+
 
 
 #sector5{
