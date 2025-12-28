@@ -915,6 +915,108 @@ body:has(#toggle:checked) #s1-nav-options {
 #sector2 #s2-galeria #s2-img1 img {
   transform: scale(1.375) translateX(-13.5%);
 }
+#sector2 #s2-galeria .img-container {
+  position: relative;
+  overflow: hidden;
+}
+#sector2 #s2-galeria .img-container div.s2-txt {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: flex-start;
+  text-align: left;
+  box-sizing: border-box;
+  bottom: 0;
+  left: 0;
+  padding: 2.5rem 2rem;
+  z-index: 10000;
+  width: 100%;
+  gap: 0.7rem;
+}
+#sector2 #s2-galeria .img-container div.s2-txt .frame-content {
+  background: url(media/losango.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  margin-bottom: 2rem;
+  width: 10rem;
+  height: 8.5rem;
+  margin-bottom: 0rem;
+}
+#sector2 #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-header {
+  position: absolute;
+  top: -0.3rem;
+  left: 4.6rem;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: white;
+}
+#sector2 #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-header.s2-frame-header-smaller {
+  left: 3.8rem;
+  font-size: 0.6rem;
+}
+#sector2 #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-maintxt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding-top: 0.8rem;
+}
+#sector2 #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-maintxt .big-number {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 900;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-size: 3.5rem;
+}
+#sector2 #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-maintxt .label {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 900;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+#sector2 #s2-galeria .img-container div.s2-txt h1 {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 900;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-size: 2.5rem;
+  color: white;
+  text-transform: uppercase;
+}
+#sector2 #s2-galeria .img-container div.s2-txt h1.smaller {
+  font-size: 1.875rem;
+}
+#sector2 #s2-galeria .img-container div.s2-txt p {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+}
+#sector2 #s2-galeria .img-container div.s2-txt button {
+  background-color: transparent;
+  color: white;
+  border-radius: 100px; /* Cria o formato de comprimido */
+  border: 2.5px solid white;
+  padding: 0.4rem 1.5rem;
+  width: auto;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
 
 #sector3 {
   display: flex;
@@ -925,6 +1027,7 @@ body:has(#toggle:checked) #s1-nav-options {
   padding: 5rem;
   overflow: hidden;
   box-sizing: border-box;
+  position: relative;
   background-color: #e9ebee;
   padding: 5rem;
   max-height: 58.75rem;
@@ -957,26 +1060,81 @@ body:has(#toggle:checked) #s1-nav-options {
   }
       */
 }
-#sector3 #s3-footer {
+#sector3 .img-container {
+  position: relative;
+  overflow: hidden;
+}
+#sector3 div.s3-txt {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  padding: 4rem 2rem;
+  z-index: 10000;
+  width: 100%;
+  gap: 1.3rem;
+}
+#sector3 h1 {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 900;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-size: 1.875rem;
+  color: white;
+  text-transform: uppercase;
+}
+#sector3 h1.smaller {
+  font-size: 1.875rem;
+}
+#sector3 p {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+}
+#sector3 .s3-btn {
+  background-color: transparent;
+  color: white;
+  border-radius: 100px; /* Cria o formato de comprimido */
+  border: 2.5px solid white;
+  padding: 0.4rem 1.5rem;
+  width: auto;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+#s3-footer {
   display: flex;
   justify-content: space-between;
   align-items: end;
   height: 4rem;
 }
-#sector3 #s3-footer #s3-btns-esq {
+#s3-footer #s3-btns-esq {
   display: flex;
   justify-content: stretch;
   transform: translate(-0.825rem, 0);
   padding: 0.5rem;
 }
-#sector3 #s3-footer #s3-btns-dir {
+#s3-footer #s3-btns-dir {
   display: flex;
   box-sizing: border-box;
   justify-content: space-between;
   padding-right: 0.5rem;
   gap: 1rem;
 }
-#sector3 #s3-footer #s3-btns-dir .btn-arrow {
+#s3-footer #s3-btns-dir .btn-arrow {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -987,11 +1145,11 @@ body:has(#toggle:checked) #s1-nav-options {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px, rgba(0, 0, 0, 0.08) 0px 1px 4px;
   cursor: pointer;
 }
-#sector3 #s3-footer #s3-btns-dir .btn-arrow svg {
+#s3-footer #s3-btns-dir .btn-arrow svg {
   display: block;
   height: 1.5rem;
 }
-#sector3 #s3-footer #s3-btns-dir .btn-arrow:first-child svg {
+#s3-footer #s3-btns-dir .btn-arrow:first-child svg {
   transform: rotate(180deg);
   transform-origin: center;
 }
