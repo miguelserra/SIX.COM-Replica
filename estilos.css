@@ -1,64 +1,4 @@
 @charset "UTF-8";
-/*
-##########################
-### VARIAVEIS e MIXINS ###
-##########################
-*/
-div, h1, h2, p, label {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-
-button {
-  cursor: pointer !important;
-}
-
-img {
-  display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
-
-.img-container {
-  border-radius: 1rem;
-  overflow: hidden;
-}
-
-.btn-dot {
-  border-width: 0;
-  justify-content: center;
-  align-items: center;
-}
-.btn-dot img {
-  width: 1rem; /* Define o tamanho físico aqui */
-  height: 1rem; /* Define o tamanho físico aqui */
-  display: block;
-  filter: invert(50%);
-}
-.btn-dot:first-child img {
-  filter: unset;
-}
-
-.tabs-window .tab {
-  width: 100%;
-  order: 1;
-  display: none;
-}
-.tabs-window input[type=radio] {
-  display: none;
-}
-.tabs-window input[type=radio]:checked + label + .tab {
-  display: block;
-}
-
-.link {
-  text-decoration: underline;
-  text-underline-offset: 0.25em;
-}
-
 @font-face {
   font-family: "RobotoArial";
   font-style: normal;
@@ -122,6 +62,70 @@ img {
   font-display: swap;
   src: url("fonts/HelveticaNowDisplayCondensedBlack.woff2") format("woff2");
 }
+/*
+##########################
+### VARIAVEIS e MIXINS ###
+##########################
+*/
+div, h1, h2, p, label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+button {
+  cursor: pointer !important;
+}
+
+img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.img-container {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.btn-dot {
+  border-width: 0;
+  justify-content: center;
+  align-items: center;
+}
+.btn-dot img {
+  width: 1rem; /* Define o tamanho físico aqui */
+  height: 1rem; /* Define o tamanho físico aqui */
+  display: block;
+  filter: invert(50%);
+}
+.btn-dot:first-child img {
+  filter: unset;
+}
+
+.tabs-window .tab {
+  width: 100%;
+  order: 1;
+  display: none;
+}
+.tabs-window input[type=radio] {
+  display: none;
+}
+.tabs-window input[type=radio]:checked + label + .tab {
+  display: block;
+}
+
+a {
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -143,14 +147,21 @@ body {
 body:has(#toggle:checked) {
   overflow: hidden;
 }
-body:has(#toggle:checked) #s1-nav-options {
+body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-container {
   pointer-events: none;
+}
+
+#test-div {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 99999;
 }
 
 #main {
   position: relative;
-  transform: translateY(-21rem);
-  margin-bottom: -21rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -162,8 +173,8 @@ body:has(#toggle:checked) #s1-nav-options {
   display: flex;
   position: absolute;
   width: 100%;
-  top: 1.8rem;
-  z-index: 5000;
+  top: 1.5rem;
+  z-index: 5000000;
 }
 #navbar #navbar-container {
   display: flex;
@@ -171,7 +182,7 @@ body:has(#toggle:checked) #s1-nav-options {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 4rem;
   max-width: 90rem;
   margin: 0 auto;
   padding: 0 5rem;
@@ -202,8 +213,6 @@ body:has(#toggle:checked) #s1-nav-options {
   font-size: 1.5rem;
   cursor: pointer;
   color: #ffffff;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 #navbar .sandwich .open-btn {
   display: flex;
@@ -292,15 +301,14 @@ body:has(#toggle:checked) #s1-nav-options {
   display: flex;
   flex-direction: column;
 }
-#navbar #s1-nav-options {
+#navbar #navbar-options {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 2rem;
   box-sizing: border-box;
-  padding-top: 0.8rem;
 }
-#navbar #s1-nav-options .s1-nav-options-item {
+#navbar #navbar-options .navbar-options-item {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -316,7 +324,7 @@ body:has(#toggle:checked) #s1-nav-options {
   line-height: 1.5;
   color: #ffffff;
 }
-#navbar #s1-nav-options .s1-nav-options-item .dropdown-menu {
+#navbar #navbar-options .navbar-options-item .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
@@ -329,11 +337,11 @@ body:has(#toggle:checked) #s1-nav-options {
   border-radius: 4px;
   z-index: 1000;
 }
-#navbar #s1-nav-options .s1-nav-options-item .input-group {
+#navbar #navbar-options .navbar-options-item .input-group {
   margin-bottom: 1.5rem;
   position: relative;
 }
-#navbar #s1-nav-options .s1-nav-options-item .input-group label {
+#navbar #navbar-options .navbar-options-item .input-group label {
   display: block;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
@@ -344,7 +352,7 @@ body:has(#toggle:checked) #s1-nav-options {
   color: #191919;
   margin-bottom: 0.2rem;
 }
-#navbar #s1-nav-options .s1-nav-options-item .input-group input {
+#navbar #navbar-options .navbar-options-item .input-group input {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -356,16 +364,16 @@ body:has(#toggle:checked) #s1-nav-options {
   outline: none;
   box-sizing: border-box;
 }
-#navbar #s1-nav-options .s1-nav-options-item .input-group input:focus {
+#navbar #navbar-options .navbar-options-item .input-group input:focus {
   border-bottom: 2px solid #ff5f00;
 }
-#navbar #s1-nav-options .s1-nav-options-item .dropdown-menu.booking-form {
+#navbar #navbar-options .navbar-options-item .dropdown-menu.booking-form {
   min-width: 21.88rem;
   padding: 2rem;
   text-align: left;
   color: #191919;
 }
-#navbar #s1-nav-options .s1-nav-options-item .dropdown-menu.booking-form h3 {
+#navbar #navbar-options .navbar-options-item .dropdown-menu.booking-form h3 {
   margin-bottom: 0.5rem;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 800;
@@ -373,7 +381,7 @@ body:has(#toggle:checked) #s1-nav-options {
   line-height: 1.2;
   color: #191919;
 }
-#navbar #s1-nav-options .s1-nav-options-item .dropdown-menu.booking-form p {
+#navbar #navbar-options .navbar-options-item .dropdown-menu.booking-form p {
   margin-bottom: 1.5rem;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
@@ -382,7 +390,7 @@ body:has(#toggle:checked) #s1-nav-options {
   color: #666;
   white-space: normal;
 }
-#navbar #s1-nav-options .s1-nav-options-item .dropdown-menu.booking-form button {
+#navbar #navbar-options .navbar-options-item .dropdown-menu.booking-form button {
   width: 100%;
   background-color: #ff5000;
   color: white;
@@ -393,65 +401,38 @@ body:has(#toggle:checked) #s1-nav-options {
   border-radius: 4px;
   margin-top: 0.5rem;
 }
-#navbar #s1-nav-options .s1-nav-options-item .dropdown-menu.booking-form button:hover {
+#navbar #navbar-options .navbar-options-item .dropdown-menu.booking-form button:hover {
   background-color: #e04e00;
 }
-#navbar #s1-nav-options .s1-nav-options-item .dropdown-trigger {
+#navbar #navbar-options .navbar-options-item .dropdown-trigger {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   height: 100%;
   cursor: pointer;
 }
-#navbar #s1-nav-options .s1-nav-options-item .dropdown-trigger img {
+#navbar #navbar-options .navbar-options-item .dropdown-trigger img {
   height: 1.5rem;
   filter: invert(100%);
 }
-#navbar #s1-nav-options .s1-nav-options-item .dropdown-menu.language-list li {
+#navbar #navbar-options .navbar-options-item .dropdown-menu.language-list li {
   padding: 0.4rem 1rem;
   color: #191919; /* Texto preto */
   font-weight: normal;
   white-space: nowrap;
   cursor: pointer;
 }
-#navbar #s1-nav-options .s1-nav-options-item .dropdown-menu.language-list li:hover {
+#navbar #navbar-options .navbar-options-item .dropdown-menu.language-list li:hover {
   color: #ff5000;
 }
-#navbar #s1-nav-options .s1-nav-options-item .dropdown-menu.login-form {
+#navbar #navbar-options .navbar-options-item .dropdown-menu.login-form {
   min-width: 23.75rem;
   right: 0;
   padding: 2rem;
   text-align: left;
   color: #191919;
-  /* 2. Inputs (Cópia exata do estilo do Booking) */
-  /* .input-group {
-       margin-bottom: 1.2rem;
-       position: relative;
-
-       label {
-           display: block;
-           font-size: 0.8rem;
-           font-weight: bold;
-           color: #191919;
-           margin-bottom: 0.2rem;
-       }
-
-       input {
-           width: 100%;
-           border: none;
-           border-bottom: 1px solid #ccc;
-           padding: 0.5rem 0;
-           font-size: 1rem;
-           outline: none;
-           box-sizing: border-box;
-           background: transparent;
-
-           &:focus {
-               border-bottom: 2px solid #ff5f00;
-           }
-       }*/
 }
-#navbar #s1-nav-options .s1-nav-options-item .dropdown-menu.login-form h3 {
+#navbar #navbar-options .navbar-options-item .dropdown-menu.login-form h3 {
   margin: 0 0 0.5rem 0;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 800;
@@ -460,7 +441,7 @@ body:has(#toggle:checked) #s1-nav-options {
   color: #191919;
   text-transform: uppercase;
 }
-#navbar #s1-nav-options .s1-nav-options-item .dropdown-menu.login-form p {
+#navbar #navbar-options .navbar-options-item .dropdown-menu.login-form p {
   margin: 0 0 1.5rem 0;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
@@ -471,7 +452,7 @@ body:has(#toggle:checked) #s1-nav-options {
   color: #666;
   white-space: normal;
 }
-#navbar #s1-nav-options .s1-nav-options-item .btn-submit {
+#navbar #navbar-options .navbar-options-item .btn-submit {
   width: 100%;
   background-color: #ff5f00;
   color: white;
@@ -483,10 +464,10 @@ body:has(#toggle:checked) #s1-nav-options {
   margin-top: 0.5rem;
   transition: background 0.2s;
 }
-#navbar #s1-nav-options .s1-nav-options-item .btn-submit:hover {
+#navbar #navbar-options .navbar-options-item .btn-submit:hover {
   background-color: #e04e00;
 }
-#navbar #s1-nav-options .s1-nav-options-item .separator {
+#navbar #navbar-options .navbar-options-item .separator {
   display: flex;
   align-items: center;
   text-align: center;
@@ -494,16 +475,16 @@ body:has(#toggle:checked) #s1-nav-options {
   color: #666;
   font-size: 0.8rem;
 }
-#navbar #s1-nav-options .s1-nav-options-item .separator::before, #navbar #s1-nav-options .s1-nav-options-item .separator::after {
+#navbar #navbar-options .navbar-options-item .separator::before, #navbar #navbar-options .navbar-options-item .separator::after {
   content: "";
   flex: 1;
   border-bottom: 1px solid #e0e0e0;
 }
-#navbar #s1-nav-options .s1-nav-options-item .separator span {
+#navbar #navbar-options .navbar-options-item .separator span {
   padding: 0 10px;
   background-color: white; /* Garante que a linha não passa por trás do texto */
 }
-#navbar #s1-nav-options .s1-nav-options-item .btn-register {
+#navbar #navbar-options .navbar-options-item .btn-register {
   display: block;
   width: 100%;
   padding: 0.8rem;
@@ -518,11 +499,11 @@ body:has(#toggle:checked) #s1-nav-options {
   box-sizing: border-box;
   transition: background 0.2s;
 }
-#navbar #s1-nav-options .s1-nav-options-item .btn-register:hover {
+#navbar #navbar-options .navbar-options-item .btn-register:hover {
   background-color: #f5f5f5;
   border-color: #bbb;
 }
-#navbar #s1-nav-options .s1-nav-options-item.dropdown-parent:hover .dropdown-menu {
+#navbar #navbar-options .navbar-options-item.dropdown-parent:hover .dropdown-menu {
   display: block;
 }
 
@@ -879,27 +860,26 @@ body:has(#toggle:checked) #s1-nav-options {
   margin-left: 0.5rem;
 }
 
-#s1-imagem {
-  -o-object-fit: crop;
-     object-fit: crop;
-  overflow: hidden;
-  margin-top: -8.25rem;
-}
-#s1-imagem img {
-  transform: translateY(3.8rem);
-}
-#s1-imagem:after {
-  content: "";
-  display: block;
+.sector-max-width {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  height: 11.9%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-  position: absolute;
-  top: 0;
-  left: 0;
+}
+
+.sector-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100rem;
+  padding: 5rem;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 #sector1 {
+  background-color: #ff5000;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -911,13 +891,15 @@ body:has(#toggle:checked) #s1-nav-options {
   position: relative;
   max-width: 100%;
   padding: 0;
-  background-color: #ff5000;
 }
 #sector1 #s1-barra-txt-topo {
-  height: 1.85rem;
+  height: 1.5rem;
   background-color: #ff5000;
-  color: #191919;
+  color: black;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
@@ -925,6 +907,25 @@ body:has(#toggle:checked) #s1-nav-options {
   font-size: 0.75rem;
   text-align: center;
   line-height: 2.25rem;
+}
+#sector1 #s1-imagem {
+  -o-object-fit: crop;
+     object-fit: crop;
+  overflow: hidden;
+  margin-top: -8.25rem;
+}
+#sector1 #s1-imagem img {
+  transform: translateY(3.8rem);
+}
+#sector1 #s1-imagem:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 11.9%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 #sector1 #s1-barra-fundo {
   height: 14rem;
@@ -956,44 +957,36 @@ body:has(#toggle:checked) #s1-nav-options {
 }
 
 #sector2 {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  width: 100%;
-  max-width: 100rem;
-  padding: 5rem;
-  overflow: hidden;
-  box-sizing: border-box;
-  background-color: #ffffff;
+  background-color: white;
 }
-#sector2 #s2-cards-topo {
+#sector2 > div #s2-cards-topo {
   display: flex;
   margin: 0 -0.25rem 5rem -0.25rem;
 }
-#sector2 #s2-cards-topo > div {
+#sector2 > div #s2-cards-topo > div {
   height: 6.3rem;
 }
-#sector2 .s2-card {
+#sector2 > div .s2-card {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   padding: 0 2.75rem 0 0.75rem;
 }
-#sector2 .s2-card .s2-card-icon {
+#sector2 > div .s2-card .s2-card-icon {
   height: 2rem;
   padding-right: 12px;
 }
-#sector2 .s2-card .s2-card-icon svg {
+#sector2 > div .s2-card .s2-card-icon svg {
   width: 2rem;
   height: auto;
 }
-#sector2 .s2-card .s2-card-title {
+#sector2 > div .s2-card .s2-card-title {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.5;
 }
-#sector2 .s2-card .s2-card-txt {
+#sector2 > div .s2-card .s2-card-txt {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
@@ -1002,7 +995,7 @@ body:has(#toggle:checked) #s1-nav-options {
   line-height: 1.2;
   letter-spacing: 0.0125em;
 }
-#sector2 #s2-galeria {
+#sector2 > div #s2-galeria {
   display: grid;
   grid-template-rows: 1.09fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
@@ -1011,18 +1004,18 @@ body:has(#toggle:checked) #s1-nav-options {
        column-gap: 1.5rem;
   row-gap: 2.5rem;
 }
-#sector2 #s2-galeria div:first-child {
+#sector2 > div #s2-galeria div:first-child {
   grid-column: 1/3;
   grid-row: 1/2;
 }
-#sector2 #s2-galeria #s2-img1 img {
+#sector2 > div #s2-galeria #s2-img1 img {
   transform: scale(1.375) translateX(-13.5%);
 }
-#sector2 #s2-galeria .img-container {
+#sector2 > div #s2-galeria .img-container {
   position: relative;
   overflow: hidden;
 }
-#sector2 #s2-galeria .img-container div.s2-txt {
+#sector2 > div #s2-galeria .img-container div.s2-txt {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -1036,7 +1029,7 @@ body:has(#toggle:checked) #s1-nav-options {
   width: 100%;
   gap: 0.7rem;
 }
-#sector2 #s2-galeria .img-container div.s2-txt .frame-content {
+#sector2 > div #s2-galeria .img-container div.s2-txt .frame-content {
   background: url(media/losango.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -1046,7 +1039,7 @@ body:has(#toggle:checked) #s1-nav-options {
   height: 8.5rem;
   margin-bottom: 0rem;
 }
-#sector2 #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-header {
+#sector2 > div #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-header {
   position: absolute;
   top: -0.3rem;
   left: 4.6rem;
@@ -1058,25 +1051,25 @@ body:has(#toggle:checked) #s1-nav-options {
   text-transform: uppercase;
   color: white;
 }
-#sector2 #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-header.s2-frame-header-smaller {
+#sector2 > div #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-header.s2-frame-header-smaller {
   left: 3.8rem;
   font-size: 0.6rem;
 }
-#sector2 #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-maintxt {
+#sector2 > div #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-maintxt {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
   padding-top: 0.8rem;
 }
-#sector2 #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-maintxt .big-number {
+#sector2 > div #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-maintxt .big-number {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
   line-height: 1;
   font-size: 3.5rem;
 }
-#sector2 #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-maintxt .label {
+#sector2 > div #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-maintxt .label {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
@@ -1084,7 +1077,7 @@ body:has(#toggle:checked) #s1-nav-options {
   font-size: 1.2rem;
   text-transform: uppercase;
 }
-#sector2 #s2-galeria .img-container div.s2-txt h1 {
+#sector2 > div #s2-galeria .img-container div.s2-txt h1 {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
@@ -1093,17 +1086,17 @@ body:has(#toggle:checked) #s1-nav-options {
   color: white;
   text-transform: uppercase;
 }
-#sector2 #s2-galeria .img-container div.s2-txt h1.smaller {
+#sector2 > div #s2-galeria .img-container div.s2-txt h1.smaller {
   font-size: 1.875rem;
 }
-#sector2 #s2-galeria .img-container div.s2-txt p {
+#sector2 > div #s2-galeria .img-container div.s2-txt p {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
   color: white;
 }
-#sector2 #s2-galeria .img-container div.s2-txt button {
+#sector2 > div #s2-galeria .img-container div.s2-txt button {
   background-color: transparent;
   color: white;
   border-radius: 100px; /* Cria o formato de comprimido */
@@ -1121,20 +1114,14 @@ body:has(#toggle:checked) #s1-nav-options {
 }
 
 #sector3 {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  width: 100%;
-  max-width: 100rem;
-  padding: 5rem;
-  overflow: hidden;
-  box-sizing: border-box;
-  position: relative;
   background-color: #e9ebee;
+}
+#sector3 > div {
+  position: relative;
   padding: 5rem;
   max-height: 58.75rem;
 }
-#sector3 #s3-header {
+#sector3 > div #s3-header {
   height: 3.75rem;
   margin-bottom: 2.5rem;
   font-family: "HelveticaNow", sans-serif;
@@ -1145,7 +1132,7 @@ body:has(#toggle:checked) #s1-nav-options {
   letter-spacing: 0.0375em;
   text-align: center;
 }
-#sector3 #s3-carrossel {
+#sector3 > div #s3-carrossel {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(3, 1fr);
@@ -1162,11 +1149,11 @@ body:has(#toggle:checked) #s1-nav-options {
   }
       */
 }
-#sector3 .img-container {
+#sector3 > div .img-container {
   position: relative;
   overflow: hidden;
 }
-#sector3 div.s3-txt {
+#sector3 > div div.s3-txt {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -1180,7 +1167,7 @@ body:has(#toggle:checked) #s1-nav-options {
   width: 100%;
   gap: 1.3rem;
 }
-#sector3 h1 {
+#sector3 > div h1 {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
@@ -1189,17 +1176,17 @@ body:has(#toggle:checked) #s1-nav-options {
   color: white;
   text-transform: uppercase;
 }
-#sector3 h1.smaller {
+#sector3 > div h1.smaller {
   font-size: 1.875rem;
 }
-#sector3 p {
+#sector3 > div p {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
   color: white;
 }
-#sector3 .s3-btn {
+#sector3 > div .s3-btn {
   background-color: transparent;
   color: white;
   border-radius: 100px; /* Cria o formato de comprimido */
@@ -1215,26 +1202,26 @@ body:has(#toggle:checked) #s1-nav-options {
   text-align: center;
   white-space: nowrap;
 }
-#sector3 #s3-footer {
+#sector3 > div #s3-footer {
   display: flex;
   justify-content: space-between;
   align-items: end;
   height: 4rem;
 }
-#sector3 #s3-footer #s3-btns-esq {
+#sector3 > div #s3-footer #s3-btns-esq {
   display: flex;
   justify-content: stretch;
   transform: translate(-0.825rem, 0);
   padding: 0.5rem;
 }
-#sector3 #s3-footer #s3-btns-dir {
+#sector3 > div #s3-footer #s3-btns-dir {
   display: flex;
   box-sizing: border-box;
   justify-content: space-between;
   padding-right: 0.5rem;
   gap: 1rem;
 }
-#sector3 #s3-footer #s3-btns-dir .btn-arrow {
+#sector3 > div #s3-footer #s3-btns-dir .btn-arrow {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1244,12 +1231,12 @@ body:has(#toggle:checked) #s1-nav-options {
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px, rgba(0, 0, 0, 0.08) 0px 1px 4px;
 }
-#sector3 #s3-footer #s3-btns-dir .btn-arrow img {
+#sector3 > div #s3-footer #s3-btns-dir .btn-arrow img {
   display: block;
   height: 1.5rem;
   width: auto;
 }
-#sector3 #s3-footer #s3-btns-dir .btn-arrow:first-child img {
+#sector3 > div #s3-footer #s3-btns-dir .btn-arrow:first-child img {
   transform: rotate(180deg);
   transform-origin: center;
 }

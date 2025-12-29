@@ -39,9 +39,9 @@
 
             </nav>
 
-            <div id="s1-nav-options">
+            <div id="navbar-options">
 
-                <div class="s1-nav-options-item dropdown-parent">
+                <div class="navbar-options-item dropdown-parent">
                     
                     <div class="dropdown-trigger">
                         <img src="icons/ico_car.svg" alt="car icon">
@@ -72,7 +72,7 @@
                 </div>    
                 
 
-                <div class="s1-nav-options-item dropdown-parent">
+                <div class="navbar-options-item dropdown-parent">
 
                     <div class="dropdown-trigger">
                         <img src="icons/ico_globe.svg" alt = "globe icon">
@@ -89,7 +89,7 @@
 
                 </div>
 
-                <div class="s1-nav-options-item dropdown-parent">
+                <div class="navbar-options-item dropdown-parent">
                     <div class="dropdown-trigger">
                         <img src="icons/ico_user.svg" alt = "user icon">
                         <div>Log in | Register </div>
@@ -129,242 +129,245 @@
 
 
         </div>
-     </div>
-
-    <div id="rf-container">
-        <div>
-            <div id="rf-tabs-window" class="tabs-window">
-
-                <input type="radio" id="rf-tab-cars" name="rf-tabs" checked="checked">
-                <label for="rf-tab-cars">
-                    <div class="btn-icon">
-                        <img src="icons/ico_car.svg" alt="car icon"/>
-                        <p>Cars</p>
-                    </div>
-                </label>
-
-                <div class="tab"> <!-- TAB CARS COMEÇA -->
-
-                    <form id="rf-form-cars" class="rf-form" autocomplete="on" method="post">
-                        <div class="rf-locations-div">
-                            <div class="rf-location-input rf-location-pickup">
-                                <div>
-                                    <span>
-                                        <label class="rf-lbl-pickup">Pickup & return</label>
-                                    </span>
+    </div>
+    
+    <div id="test-div">
+    
+        <div id="rf-container">
+            <div>
+                <div id="rf-tabs-window" class="tabs-window">
+    
+                    <input type="radio" id="rf-tab-cars" name="rf-tabs" checked="checked">
+                    <label for="rf-tab-cars">
+                        <div class="btn-icon">
+                            <img src="icons/ico_car.svg" alt="car icon"/>
+                            <p>Cars</p>
+                        </div>
+                    </label>
+    
+                    <div class="tab"> <!-- TAB CARS COMEÇA -->
+    
+                        <form id="rf-form-cars" class="rf-form" autocomplete="on" method="post">
+                            <div class="rf-locations-div">
+                                <div class="rf-location-input rf-location-pickup">
                                     <div>
-                                        <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                        <input type="text" id="input-pickup-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
+                                        <span>
+                                            <label class="rf-lbl-pickup">Pickup & return</label>
+                                        </span>
+                                        <div>
+                                            <img class="icon" src="icons/ico_search.svg" alt="search"/>
+                                            <input type="text" id="input-pickup-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="rf-location-input rf-location-return">
-                                <div>
-                                    <span>
-                                        <label>Return</label>
-                                    </span>
+                                <div class="rf-location-input rf-location-return">
                                     <div>
-                                        <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                        <input type="text" id="input-pickup-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
+                                        <span>
+                                            <label>Return</label>
+                                        </span>
+                                        <div>
+                                            <img class="icon" src="icons/ico_search.svg" alt="search"/>
+                                            <input type="text" id="input-pickup-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="rf-different-location">
-                                <img class="icon" src="icons/ico_plus.svg" alt="search"/>
-                                <div>Different return location</div>
-                            </div>
-                        </div> <!--FIM "rf-locations-div""--> 
-                        
-                        <div class="rf-dates-div">
-                            <div>
-                                <span>
-                                    <label>Pickup date</label>
-                                </span>
-                                <div>
-                                    <button type="button" class="rf-btn rounded-left">
-                                        <img class="icon" src="icons/ico_calendar.svg" alt="pickup date"/>
-                                        <div>Oct 20</div>
-                                    </button>
-                                    <button type="button" class="rf-btn rounded-right">
-                                        <div>12:00 PM</div>
-                                    </button>
+                                <div class="rf-different-location">
+                                    <img class="icon" src="icons/ico_plus.svg" alt="search"/>
+                                    <div>Different return location</div>
                                 </div>
-                            </div>
-                            <div>
-                                <span>
-                                    <label>Return date</label>
-                                </span>
-                                <div>
-                                    <button type="button" class="rf-btn rounded-left">
-                                        <img class="icon" src="icons/ico_calendar.svg" alt="return date"/>
-                                        <div>Oct 24</div>
-                                    </button>
-                                    <button type="button" class="rf-btn rounded-right">
-                                        <div>12:00 PM</div>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="rf-div-btn-show">
-                                <button type="button" class="rf-btn" id="rf-btn-showcars">
-                                    <div>Show cars</div>
-                                </button>
-                            </div>
-                        </div> <!--FIM "rf-dates-div"-->
+                            </div> <!--FIM "rf-locations-div""--> 
                             
-                    </form>
-                    
-                    <a class="link">Apply corporate rate</a>
-
-                </div> <!-- TAB CARS ACABA -->
-
-                <input type="radio" id="rf-tab-trucks" name="rf-tabs">
-                <label for="rf-tab-trucks">
-                    <div class="btn-icon">
-                        <img src="icons/ico_truck.svg" alt="truck icon"/>
-                        <p>Trucks</p>
-                    </div>
-                </label>
-
-                <div class="tab"> <!-- TAB TRUCKS COMEÇA -->
-
-                    <form id="rf-form-trucks" class="rf-form" autocomplete="on" method="post">
-                        <div class="rf-locations-div">
-                            <div class="rf-location-input rf-location-pickup">
+                            <div class="rf-dates-div">
                                 <div>
                                     <span>
-                                        <label class="rf-lbl-pickup">Pickup & return</label>
+                                        <label>Pickup date</label>
                                     </span>
                                     <div>
-                                        <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                        <input type="text" id="input-pickup-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
+                                        <button type="button" class="rf-btn rounded-left">
+                                            <img class="icon" src="icons/ico_calendar.svg" alt="pickup date"/>
+                                            <div>Oct 20</div>
+                                        </button>
+                                        <button type="button" class="rf-btn rounded-right">
+                                            <div>12:00 PM</div>
+                                        </button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="rf-location-input rf-location-return">
                                 <div>
                                     <span>
-                                        <label>Return</label>
+                                        <label>Return date</label>
                                     </span>
                                     <div>
-                                        <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                        <input type="text" id="input-pickup-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
+                                        <button type="button" class="rf-btn rounded-left">
+                                            <img class="icon" src="icons/ico_calendar.svg" alt="return date"/>
+                                            <div>Oct 24</div>
+                                        </button>
+                                        <button type="button" class="rf-btn rounded-right">
+                                            <div>12:00 PM</div>
+                                        </button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="rf-different-location">
-                                <img class="icon" src="icons/ico_plus.svg" alt="search"/>
-                                <div>Different return location</div>
-                            </div>
-                        </div> <!--FIM "rf-locations-div""--> 
+                                <div class="rf-div-btn-show">
+                                    <button type="button" class="rf-btn" id="rf-btn-showcars">
+                                        <div>Show cars</div>
+                                    </button>
+                                </div>
+                            </div> <!--FIM "rf-dates-div"-->
+                                
+                        </form>
                         
-                        <div class="rf-dates-div">
-                            <div>
-                                <span>
-                                    <label>Pickup date</label>
-                                </span>
-                                <div>
-                                    <button type="button" class="rf-btn rounded-left">
-                                        <img class="icon" src="icons/ico_calendar.svg" alt="pickup date"/>
-                                        <div>Jan 03</div>
-                                    </button>
-                                    <button type="button" class="rf-btn rounded-right">
-                                        <div>12:00 PM</div>
-                                    </button>
+                        <a class="link">Apply corporate rate</a>
+    
+                    </div> <!-- TAB CARS ACABA -->
+    
+                    <input type="radio" id="rf-tab-trucks" name="rf-tabs">
+                    <label for="rf-tab-trucks">
+                        <div class="btn-icon">
+                            <img src="icons/ico_truck.svg" alt="truck icon"/>
+                            <p>Trucks</p>
+                        </div>
+                    </label>
+    
+                    <div class="tab"> <!-- TAB TRUCKS COMEÇA -->
+    
+                        <form id="rf-form-trucks" class="rf-form" autocomplete="on" method="post">
+                            <div class="rf-locations-div">
+                                <div class="rf-location-input rf-location-pickup">
+                                    <div>
+                                        <span>
+                                            <label class="rf-lbl-pickup">Pickup & return</label>
+                                        </span>
+                                        <div>
+                                            <img class="icon" src="icons/ico_search.svg" alt="search"/>
+                                            <input type="text" id="input-pickup-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div>
-                                <span>
-                                    <label>Return date</label>
-                                </span>
-                                <div>
-                                    <button type="button" class="rf-btn rounded-left">
-                                        <img class="icon" src="icons/ico_calendar.svg" alt="return date"/>
-                                        <div>Jan 05</div>
-                                    </button>
-                                    <button type="button" class="rf-btn rounded-right">
-                                        <div>12:00 PM</div>
-                                    </button>
+                                <div class="rf-location-input rf-location-return">
+                                    <div>
+                                        <span>
+                                            <label>Return</label>
+                                        </span>
+                                        <div>
+                                            <img class="icon" src="icons/ico_search.svg" alt="search"/>
+                                            <input type="text" id="input-pickup-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="rf-div-btn-show">
-                                <button type="button" class="rf-btn" id="rf-btn-showcars">
-                                    <div>Show trucks</div>
-                                </button>
-                            </div>
-                        </div> <!--FIM "rf-dates-div"-->
+                                <div class="rf-different-location">
+                                    <img class="icon" src="icons/ico_plus.svg" alt="search"/>
+                                    <div>Different return location</div>
+                                </div>
+                            </div> <!--FIM "rf-locations-div""--> 
                             
-                    </form>
+                            <div class="rf-dates-div">
+                                <div>
+                                    <span>
+                                        <label>Pickup date</label>
+                                    </span>
+                                    <div>
+                                        <button type="button" class="rf-btn rounded-left">
+                                            <img class="icon" src="icons/ico_calendar.svg" alt="pickup date"/>
+                                            <div>Jan 03</div>
+                                        </button>
+                                        <button type="button" class="rf-btn rounded-right">
+                                            <div>12:00 PM</div>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span>
+                                        <label>Return date</label>
+                                    </span>
+                                    <div>
+                                        <button type="button" class="rf-btn rounded-left">
+                                            <img class="icon" src="icons/ico_calendar.svg" alt="return date"/>
+                                            <div>Jan 05</div>
+                                        </button>
+                                        <button type="button" class="rf-btn rounded-right">
+                                            <div>12:00 PM</div>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="rf-div-btn-show">
+                                    <button type="button" class="rf-btn" id="rf-btn-showcars">
+                                        <div>Show trucks</div>
+                                    </button>
+                                </div>
+                            </div> <!--FIM "rf-dates-div"-->
+                                
+                        </form>
+                        
+                        <a class="link">Apply corporate rate</a>
+                    </div> <!-- TAB TRUCKS ACABA -->
+    
+    
+                    <input type="radio" id="rf-tab-subscription" name="rf-tabs">
+                    <label for="rf-tab-subscription">
+                        <div class="btn-icon">
+                            <img src="icons/ico_subscription.svg" alt="truck icon"/>
+                            <p>Subscription</p>
+                        </div>
+                    </label>
+                    <div class="tab">
+    
+    
+                    </div>
                     
-                    <a class="link">Apply corporate rate</a>
-                </div> <!-- TAB TRUCKS ACABA -->
-
-
-                <input type="radio" id="rf-tab-subscription" name="rf-tabs">
-                <label for="rf-tab-subscription">
-                    <div class="btn-icon">
-                        <img src="icons/ico_subscription.svg" alt="truck icon"/>
-                        <p>Subscription</p>
-                    </div>
-                </label>
-                <div class="tab">
-
-
+    
                 </div>
-                
-
-            </div>
-
-            <!-- CALENDARIO COMEÇA -->
-            <div id="rf-calendar-container">
-
-                <div id="rf-calendar-btn-left" class="calendar-btn">
-
-
-                </div>
-
-                <div id="rf-calendars">
-                    <div id="rf-calendar-left" class="calendar">
-
+    
+                <!-- CALENDARIO COMEÇA -->
+                <div id="rf-calendar-container">
+    
+                    <div id="rf-calendar-btn-left" class="calendar-btn">
+    
+    
                     </div>
-                    <div id="rf-calendar-center" class="calendar">
-                        <div class="month-year">Month YYYY</div>
-                        <div class="week-day">SU</div>
-                        <div class="week-day">MO</div>
-                        <div class="week-day">TU</div>
-                        <div class="week-day">WE</div>
-                        <div class="week-day">TH</div>
-                        <div class="week-day">FR</div>
-                        <div class="week-day">SA</div>
-                        <div class="day-number"></div>
-                        <div class="day-number"></div>
-                        <div class="day-number"></div>
-                        <div class="day-number">1</div>
-                        <div class="day-number">2</div>
-                        <div class="day-number">3</div>
-                        <div class="day-number">4</div>
-                        <div class="day-number">6</div>
-                        <div class="day-number">7</div>
-                        <div class="day-number">8</div>
-                        <div class="day-number">9</div>
-                        <div class="day-number">10</div>
-                        <div class="day-number">11</div>
-                        <div class="day-number">12</div>
-                        <div class="day-number">13</div>
+    
+                    <div id="rf-calendars">
+                        <div id="rf-calendar-left" class="calendar">
+    
+                        </div>
+                        <div id="rf-calendar-center" class="calendar">
+                            <div class="month-year">Month YYYY</div>
+                            <div class="week-day">SU</div>
+                            <div class="week-day">MO</div>
+                            <div class="week-day">TU</div>
+                            <div class="week-day">WE</div>
+                            <div class="week-day">TH</div>
+                            <div class="week-day">FR</div>
+                            <div class="week-day">SA</div>
+                            <div class="day-number"></div>
+                            <div class="day-number"></div>
+                            <div class="day-number"></div>
+                            <div class="day-number">1</div>
+                            <div class="day-number">2</div>
+                            <div class="day-number">3</div>
+                            <div class="day-number">4</div>
+                            <div class="day-number">6</div>
+                            <div class="day-number">7</div>
+                            <div class="day-number">8</div>
+                            <div class="day-number">9</div>
+                            <div class="day-number">10</div>
+                            <div class="day-number">11</div>
+                            <div class="day-number">12</div>
+                            <div class="day-number">13</div>
+                        </div>
+                        <div id="rf-calendar-right" class="calendar">
+                            
+                        </div>
                     </div>
-                    <div id="rf-calendar-right" class="calendar">
+    
+                    <div id="rf-calendar-btn-right" class="calendar-btn">
                         
                     </div>
                 </div>
-
-                <div id="rf-calendar-btn-right" class="calendar-btn">
-                    
-                </div>
+                <!-- CALENDARIO ACABA -->
+    
             </div>
-            <!-- CALENDARIO ACABA -->
-
+            
+    
         </div>
-        
-
     </div>
     
     
@@ -372,11 +375,11 @@
 
         <div id="sector1">
             <div id="s1-barra-txt-topo">113 years of SIXT. 113 years of tradition.</div>
-             
+            
             <div id="s1-imagem">
                 <img src="media/s1-image.webp" alt="bmw cinzento">
             </div>
-
+            
             <div id="s1-barra-fundo">
                 <div id="s1-barra-fundo-titulo">
                     <div>DON'T RENT A CAR.</div>
@@ -386,193 +389,201 @@
             </div>
             
         </div>
-
-        <div id="sector2">
-
-            <div id="s2-cards-topo">
-
-                <div class="s2-card">
-                    <div class="s2-card-icon">
-                        <img src="icons/ico_world.svg" alt="world icon">
-                    </div>
-                    <div class="s2-card-title">Global reach</div>
-                    <div class="s2-card-txt">2,000+ SIXT stations in over 105 countries</div>
-                </div>
-
-                <div class="s2-card">
-                    <div class="s2-card-icon">
-                        <img src="icons/ico_car.svg" alt="world icon">
-                    </div>
-                    <div class="s2-card-title">Distinctive fleet</div>
-                    <div class="s2-card-txt">From high-end convertibles to premium SUVs</div>
-                </div>
-
-                <div class="s2-card">
-                    <div class="s2-card-icon">
-                        <img src="icons/ico_giving_hand.svg" alt="giving hand icon">
-                    </div>
-                    <div class="s2-card-title">Exceptional service</div>
-                    <div class="s2-card-txt">Stress-free, trustworthy, no hidden costs</div>
-                </div>
-
-            </div>
-
-            <div id="s2-galeria">
-                
-                <div id="s2-img1" class="img-container">
-                    <img src="media/s2-img1.webp" alt="rapariga a entrar no carro">
-                    <div class="s2-txt">
-                        <h1 class="s2-txt-header">sixt one: meet our new rewards program</h1>
-                        <p class="s2-txt-paragraph">Join now to start earning points for saving and exclusive rewards!</p>
-                        <button class="s2-btn">Learn more</button>
-                    </div>
-                </div>
-
-                <div id="s2-img2" class="img-container">
-                    <img src="media/s2-img2.webp" alt="chervolet branco"> 
-                                      
-                    <div class="s2-txt">
-                       
-                        <div class="frame-content">
-                            <div class="s2-frame-header">UP TO</div>
-                            <div class="s2-frame-maintxt">
-                                <span class="big-number">15%</span>
-                                <span class="label">DISCOUNT</span>
-                            </div>
-                        </div>
-                           
-                        <h1 class="s2-txt-header smaller">Start your week in style</h1>
-                        <p class="s2-txt-paragraph">Save on week start rentals.</p>
-                        <button class="s2-btn">Book now</button>
-
-                    </div>
-
-                </div>
-
-                <div id="s2-img3" class="img-container">
-                    <img src="media/s2-img3.webp" alt="bmw X2 cor cobre">
-                    <div class="s2-txt">
-
-                        <div class="frame-content">
-                            <div class="s2-frame-header">UP TO</div>
-                            <div class="s2-frame-maintxt">
-                                <span class="big-number">15%</span>
-                                <span class="label">DISCOUNT</span>
-                            </div>
-                        </div>
-
-                        <h1 class="s2-txt-header smaller">save on luxury vehicles</h1>
-                        <p class="s2-txt-paragraph">Book now and drive first class.</p>
-                        <button class="s2-btn">Book now</button>
-                    </div>
-                </div>
-
-                <div id="s2-img4" class="img-container">
-                    <img src="media/s2-img4.webp" alt="telemovel com app sixt">
-                    <div class="s2-txt">
-                        <h1 class="s2-txt-header smaller">book and manage your rentals in one place.</h1>
-                        <p class="s2-txt-paragraph">Get the most out of SIXT in our app.</p>
-                        <button class="s2-btn">Download the SIXT APP</button>
-                    </div>
-                </div>
-                
-                <div id="s2-img5" class="img-container">
-                    <img src="media/s2-img5.webp" alt="homem de fato junto a bmw cinzento">
-                     <div class="s2-txt">
-                        
-                        <div class="frame-content">
-                            <div class="s2-frame-header s2-frame-header-smaller">cars from</div>
-                            <div class="s2-frame-maintxt">
-                                <span class="big-number">$35</span>
-                                <span class="label">a day</span>
-                            </div>
-                        </div>
-
-                        <h1 class="s2-txt-header smaller">business travel in style</h1>
-                        <p class="s2-txt-paragraph">Become a corporate customer and enjoy exclusive rental car benefits</p>
-                        <button class="s2-btn">Register now</button>
-                    </div>
-                    
-                </div>
+        
+        <div id="sector2" class="sector-max-width">
             
-            </div>
-        </div>
+            <div class="sector-container">
 
-        <div id="sector3">
-
-            <div id="s3-header">MORE SIXT</div>
-
-            <div id="s3-carrossel">
-
-                <div id="s3-img1" class="img-container">
-                    <img src="media/s3-img1.webp" alt="homem de fato casual bmw preto">
-                    <div class="s3-txt">
-                        <h1 class="s3-txt-header">sixt+ car subscription</h1>
-                        <p class="s3-txt-paragraph">The better way of owning a car.</p>
-                        <button class="s3-btn">Learn more</button>
+                <div id="s2-cards-topo">
+    
+                    <div class="s2-card">
+                        <div class="s2-card-icon">
+                            <img src="icons/ico_world.svg" alt="world icon">
+                        </div>
+                        <div class="s2-card-title">Global reach</div>
+                        <div class="s2-card-txt">2,000+ SIXT stations in over 105 countries</div>
                     </div>
-                </div>
-                
-                <div id="s3-img2" class="img-container">
-                    <img src="media/s3-img2.webp" alt="telemovel com app sixt">
-                    <div class="s3-txt">
-                        <h1 class="s3-txt-header">sixt app</h1>
-                        <p class="s3-txt-paragraph">Book and manage all your rentals in one place.</p>
-                        <button class="s3-btn">Get the SIXT App</button>
+    
+                    <div class="s2-card">
+                        <div class="s2-card-icon">
+                            <img src="icons/ico_car.svg" alt="world icon">
+                        </div>
+                        <div class="s2-card-title">Distinctive fleet</div>
+                        <div class="s2-card-txt">From high-end convertibles to premium SUVs</div>
                     </div>
+    
+                    <div class="s2-card">
+                        <div class="s2-card-icon">
+                            <img src="icons/ico_giving_hand.svg" alt="giving hand icon">
+                        </div>
+                        <div class="s2-card-title">Exceptional service</div>
+                        <div class="s2-card-txt">Stress-free, trustworthy, no hidden costs</div>
+                    </div>
+    
                 </div>
+    
+                <div id="s2-galeria">
                     
-                <div id="s3-img3" class="img-container">
-                    <img src="media/s3-img3.webp" alt="homem de fato junto a mercedes preto">
-                    <div class="s3-txt">
-                        <h1 class="s3-txt-header">sixt business</h1>
-                        <p class="s3-txt-paragraph">Business travel and fleet solutions for all businesses.</p>
-                        <button class="s3-btn">Register now</button>
+                    <div id="s2-img1" class="img-container">
+                        <img src="media/s2-img1.webp" alt="rapariga a entrar no carro">
+                        <div class="s2-txt">
+                            <h1 class="s2-txt-header">sixt one: meet our new rewards program</h1>
+                            <p class="s2-txt-paragraph">Join now to start earning points for saving and exclusive rewards!</p>
+                            <button class="s2-btn">Learn more</button>
+                        </div>
                     </div>
-                </div>
-                
-                <div id="s3-img4" class="img-container">
-                    <img src="media/s3-img4.webp" alt="mulher banco de tras com cinto de segurança e telemovel">
-                    <div class="s3-txt">
-                        <h1 class="s3-txt-header">sixt ride</h1>
-                        <p class="s3-txt-paragraph">Sit back with your personal chauffeur.</p>
-                        <button class="s3-btn">Learn more</button>
+    
+                    <div id="s2-img2" class="img-container">
+                        <img src="media/s2-img2.webp" alt="chervolet branco"> 
+                                          
+                        <div class="s2-txt">
+                           
+                            <div class="frame-content">
+                                <div class="s2-frame-header">UP TO</div>
+                                <div class="s2-frame-maintxt">
+                                    <span class="big-number">15%</span>
+                                    <span class="label">DISCOUNT</span>
+                                </div>
+                            </div>
+                               
+                            <h1 class="s2-txt-header smaller">Start your week in style</h1>
+                            <p class="s2-txt-paragraph">Save on week start rentals.</p>
+                            <button class="s2-btn">Book now</button>
+    
+                        </div>
+    
                     </div>
-                
-                </div>
-                <div id="s3-img5" class="img-container">
-                    <img src="media/s3-img5.webp" alt="fiat500 branco sixt">
-                    <div class="s3-txt">
-                        <h1 class="s3-txt-header">sixt share</h1>
-                        <p class="s3-txt-paragraph">On-the-go flexibility with premium car sharing.</p>
-                        <button class="s3-btn">Learn more</button>
+    
+                    <div id="s2-img3" class="img-container">
+                        <img src="media/s2-img3.webp" alt="bmw X2 cor cobre">
+                        <div class="s2-txt">
+    
+                            <div class="frame-content">
+                                <div class="s2-frame-header">UP TO</div>
+                                <div class="s2-frame-maintxt">
+                                    <span class="big-number">15%</span>
+                                    <span class="label">DISCOUNT</span>
+                                </div>
+                            </div>
+    
+                            <h1 class="s2-txt-header smaller">save on luxury vehicles</h1>
+                            <p class="s2-txt-paragraph">Book now and drive first class.</p>
+                            <button class="s2-btn">Book now</button>
+                        </div>
                     </div>
+    
+                    <div id="s2-img4" class="img-container">
+                        <img src="media/s2-img4.webp" alt="telemovel com app sixt">
+                        <div class="s2-txt">
+                            <h1 class="s2-txt-header smaller">book and manage your rentals in one place.</h1>
+                            <p class="s2-txt-paragraph">Get the most out of SIXT in our app.</p>
+                            <button class="s2-btn">Download the SIXT APP</button>
+                        </div>
+                    </div>
+                    
+                    <div id="s2-img5" class="img-container">
+                        <img src="media/s2-img5.webp" alt="homem de fato junto a bmw cinzento">
+                         <div class="s2-txt">
+                            
+                            <div class="frame-content">
+                                <div class="s2-frame-header s2-frame-header-smaller">cars from</div>
+                                <div class="s2-frame-maintxt">
+                                    <span class="big-number">$35</span>
+                                    <span class="label">a day</span>
+                                </div>
+                            </div>
+    
+                            <h1 class="s2-txt-header smaller">business travel in style</h1>
+                            <p class="s2-txt-paragraph">Become a corporate customer and enjoy exclusive rental car benefits</p>
+                            <button class="s2-btn">Register now</button>
+                        </div>
+                        
+                    </div>
+            
                 </div>
             </div>
+            
+        </div>
 
-            <div id="s3-footer">
-                <div id="s3-btns-esq">
-                    <button class="btn-dot">
-                        <img src="icons/ico_dot.svg">
-                    </button>
-                    <button class="btn-dot">
-                        <img src="icons/ico_dot.svg">
-                    </button>
-                    <button class="btn-dot">
-                        <img src="icons/ico_dot.svg">
-                    </button>
+        <div id="sector3" class="sector-max-width">
+
+            <div class="sector-container">
+                
+                <div id="s3-header">MORE SIXT</div>
+    
+                <div id="s3-carrossel">
+    
+                    <div id="s3-img1" class="img-container">
+                        <img src="media/s3-img1.webp" alt="homem de fato casual bmw preto">
+                        <div class="s3-txt">
+                            <h1 class="s3-txt-header">sixt+ car subscription</h1>
+                            <p class="s3-txt-paragraph">The better way of owning a car.</p>
+                            <button class="s3-btn">Learn more</button>
+                        </div>
+                    </div>
+                    
+                    <div id="s3-img2" class="img-container">
+                        <img src="media/s3-img2.webp" alt="telemovel com app sixt">
+                        <div class="s3-txt">
+                            <h1 class="s3-txt-header">sixt app</h1>
+                            <p class="s3-txt-paragraph">Book and manage all your rentals in one place.</p>
+                            <button class="s3-btn">Get the SIXT App</button>
+                        </div>
+                    </div>
+                        
+                    <div id="s3-img3" class="img-container">
+                        <img src="media/s3-img3.webp" alt="homem de fato junto a mercedes preto">
+                        <div class="s3-txt">
+                            <h1 class="s3-txt-header">sixt business</h1>
+                            <p class="s3-txt-paragraph">Business travel and fleet solutions for all businesses.</p>
+                            <button class="s3-btn">Register now</button>
+                        </div>
+                    </div>
+                    
+                    <div id="s3-img4" class="img-container">
+                        <img src="media/s3-img4.webp" alt="mulher banco de tras com cinto de segurança e telemovel">
+                        <div class="s3-txt">
+                            <h1 class="s3-txt-header">sixt ride</h1>
+                            <p class="s3-txt-paragraph">Sit back with your personal chauffeur.</p>
+                            <button class="s3-btn">Learn more</button>
+                        </div>
+                    
+                    </div>
+                    <div id="s3-img5" class="img-container">
+                        <img src="media/s3-img5.webp" alt="fiat500 branco sixt">
+                        <div class="s3-txt">
+                            <h1 class="s3-txt-header">sixt share</h1>
+                            <p class="s3-txt-paragraph">On-the-go flexibility with premium car sharing.</p>
+                            <button class="s3-btn">Learn more</button>
+                        </div>
+                    </div>
                 </div>
-                <div id="s3-btns-dir">
-                    <button class="btn-arrow">
-                        <img src="icons/ico_greater.svg">
-                    </button>
-                    <button class="btn-arrow">
-                        <img src="icons/ico_greater.svg">
-                    </button>
+    
+                <div id="s3-footer">
+                    <div id="s3-btns-esq">
+                        <button class="btn-dot">
+                            <img src="icons/ico_dot.svg">
+                        </button>
+                        <button class="btn-dot">
+                            <img src="icons/ico_dot.svg">
+                        </button>
+                        <button class="btn-dot">
+                            <img src="icons/ico_dot.svg">
+                        </button>
+                    </div>
+                    <div id="s3-btns-dir">
+                        <button class="btn-arrow">
+                            <img src="icons/ico_greater.svg">
+                        </button>
+                        <button class="btn-arrow">
+                            <img src="icons/ico_greater.svg">
+                        </button>
+                    </div>
                 </div>
             </div>
 
         </div>
+
 
         <div id="sector4">
 
