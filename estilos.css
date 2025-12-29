@@ -32,14 +32,14 @@ img {
   justify-content: center;
   align-items: center;
 }
-.btn-dot svg {
+.btn-dot img {
   width: 1rem; /* Define o tamanho físico aqui */
   height: 1rem; /* Define o tamanho físico aqui */
   display: block;
-  fill: gray;
+  filter: invert(50%);
 }
-.btn-dot:first-child svg {
-  fill: black;
+.btn-dot:first-child img {
+  filter: unset;
 }
 
 .tabs-window .tab {
@@ -206,11 +206,20 @@ body:has(#toggle:checked) #s1-nav-options {
   width: fit-content;
 }
 #navbar .sandwich .open-btn {
-  display: block;
+  display: flex;
+  align-items: center;
   position: relative;
 }
-#navbar .sandwich .open-btn svg {
-  transform: translateY(0.5rem);
+#navbar .sandwich .open-btn div {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  transform: scale(0.9, 0.7);
+}
+#navbar .sandwich .open-btn img {
+  margin-left: 0.75rem;
 }
 #navbar .menu.inside {
   display: flex;
@@ -394,6 +403,10 @@ body:has(#toggle:checked) #s1-nav-options {
   height: 100%;
   cursor: pointer;
 }
+#navbar #s1-nav-options .s1-nav-options-item .dropdown-trigger img {
+  height: 1.5rem;
+  filter: invert(100%);
+}
 #navbar #s1-nav-options .s1-nav-options-item .dropdown-menu.language-list li {
   padding: 0.4rem 1rem;
   color: #191919; /* Texto preto */
@@ -522,6 +535,7 @@ body:has(#toggle:checked) #s1-nav-options {
   padding: 5rem;
   overflow: hidden;
   box-sizing: border-box;
+  overflow: unset;
   position: sticky;
   top: 0rem;
   margin-top: 5.5rem;
@@ -531,6 +545,10 @@ body:has(#toggle:checked) #s1-nav-options {
   align-items: center;
 }
 #rf-container > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-height: 13.06rem;
   width: 100%;
   border-radius: 1rem;
@@ -584,6 +602,80 @@ body:has(#toggle:checked) #s1-nav-options {
   font-size: 1rem;
   line-height: 1.5;
   font-size: 0.75rem;
+}
+#rf-container > div div#rf-calendar-container {
+  background-color: red;
+  position: absolute;
+  top: 9.75rem;
+  width: 85%;
+  height: 22.5rem;
+  padding: 1.25rem 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 1rem;
+  /*############################################################################################
+  ##############################################################################################
+  #############################################################################################*/
+  display: none;
+  /*############################################################################################
+  ##############################################################################################
+  #############################################################################################*/
+  justify-content: space-between;
+}
+#rf-container > div div#rf-calendar-container .calendar-btn {
+  box-sizing: border-box;
+  background-color: yellow;
+  flex: 1 1 3rem;
+}
+#rf-container > div div#rf-calendar-container div#rf-calendars {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: calc(100% - 6rem);
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+#rf-container > div div#rf-calendar-container div#rf-calendars .calendar {
+  box-sizing: border-box;
+  background-color: white;
+  height: 100%;
+  flex-basis: 21rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 0.75fr repeat(6, 1fr);
+}
+#rf-container > div div#rf-calendar-container div#rf-calendars .calendar .month-year {
+  grid-column: 1/8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+#rf-container > div div#rf-calendar-container div#rf-calendars .calendar .week-day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #d7dadc;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.925rem;
+  color: gray;
+}
+#rf-container > div div#rf-calendar-container div#rf-calendars .calendar .day-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.925rem;
 }
 
 .rf-form {
@@ -1152,11 +1244,12 @@ body:has(#toggle:checked) #s1-nav-options {
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px, rgba(0, 0, 0, 0.08) 0px 1px 4px;
 }
-#sector3 #s3-footer #s3-btns-dir .btn-arrow svg {
+#sector3 #s3-footer #s3-btns-dir .btn-arrow img {
   display: block;
   height: 1.5rem;
+  width: auto;
 }
-#sector3 #s3-footer #s3-btns-dir .btn-arrow:first-child svg {
+#sector3 #s3-footer #s3-btns-dir .btn-arrow:first-child img {
   transform: rotate(180deg);
   transform-origin: center;
 }
