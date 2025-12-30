@@ -729,7 +729,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             ##############################################################################################
             #############################################################################################*/
 
-            display: none;//flex;
+            display: flex;//none;//flex;
 
             /*############################################################################################
             ##############################################################################################
@@ -1036,7 +1036,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         display: flex;
         align-items: center;
         justify-content: center;
-        
+
         @include font-HelveticaNow-700;
         font-size   : 0.75rem;
         text-align  : center;
