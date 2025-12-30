@@ -151,22 +151,12 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   pointer-events: none;
 }
 
-#test-div {
+#rf-aux-div {
   position: absolute;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 99999;
-}
-
-#main {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 160rem;
 }
 
 #navbar {
@@ -174,7 +164,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   position: absolute;
   width: 100%;
   top: 1.5rem;
-  z-index: 5000000;
+  z-index: 1000;
 }
 #navbar #navbar-container {
   display: flex;
@@ -247,7 +237,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   box-sizing: border-box;
   box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
   overflow-y: auto;
-  z-index: 6000;
+  z-index: 100;
 }
 #navbar .menu.inside .menu-header {
   display: flex;
@@ -522,7 +512,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   margin-top: 5.5rem;
   padding: 0 5rem;
   width: 100%;
-  z-index: 999;
+  z-index: 100;
   align-items: center;
 }
 #rf-container > div {
@@ -597,7 +587,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   /*############################################################################################
   ##############################################################################################
   #############################################################################################*/
-  display: flex;
+  display: none;
   /*############################################################################################
   ##############################################################################################
   #############################################################################################*/
@@ -853,7 +843,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   align-items: center;
 }
 .btn-icon img {
-  z-index: 100;
+  z-index: 10;
   height: 1rem;
 }
 .btn-icon p {
@@ -878,7 +868,14 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   box-sizing: border-box;
 }
 
-#sector1 {
+#main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+#main #sector1 {
   background-color: #ff5000;
   display: flex;
   flex-direction: column;
@@ -892,7 +889,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   max-width: 100%;
   padding: 0;
 }
-#sector1 #s1-barra-txt-topo {
+#main #sector1 #s1-barra-txt-topo {
   height: 1.5rem;
   background-color: #ff5000;
   color: black;
@@ -908,16 +905,16 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   text-align: center;
   line-height: 2.25rem;
 }
-#sector1 #s1-imagem {
+#main #sector1 #s1-imagem {
   -o-object-fit: crop;
      object-fit: crop;
   overflow: hidden;
   margin-top: -8.25rem;
 }
-#sector1 #s1-imagem img {
+#main #sector1 #s1-imagem img {
   transform: translateY(3.8rem);
 }
-#sector1 #s1-imagem:after {
+#main #sector1 #s1-imagem:after {
   content: "";
   display: block;
   width: 100%;
@@ -927,7 +924,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   top: 0;
   left: 0;
 }
-#sector1 #s1-barra-fundo {
+#main #sector1 #s1-barra-fundo {
   height: 14rem;
   display: flex;
   align-items: center;
@@ -935,7 +932,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   justify-content: center;
   color: #191919;
 }
-#sector1 #s1-barra-fundo #s1-barra-fundo-titulo {
+#main #sector1 #s1-barra-fundo #s1-barra-fundo-titulo {
   margin-bottom: 0.5rem;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
@@ -946,47 +943,46 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   line-height: 1;
   letter-spacing: 0.0129em;
 }
-#sector1 #s1-barra-fundo #s1-barra-fundo-titulo div {
+#main #sector1 #s1-barra-fundo #s1-barra-fundo-titulo div {
   overflow-wrap: break-word;
 }
-#sector1 #s1-barra-fundo #s1-barra-fundo-subtitulo {
+#main #sector1 #s1-barra-fundo #s1-barra-fundo-subtitulo {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.5;
 }
-
-#sector2 {
+#main #sector2 {
   background-color: white;
 }
-#sector2 > div #s2-cards-topo {
+#main #sector2 div.sector-container #s2-cards-topo {
   display: flex;
   margin: 0 -0.25rem 5rem -0.25rem;
 }
-#sector2 > div #s2-cards-topo > div {
+#main #sector2 div.sector-container #s2-cards-topo > div {
   height: 6.3rem;
 }
-#sector2 > div .s2-card {
+#main #sector2 div.sector-container .s2-card {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   padding: 0 2.75rem 0 0.75rem;
 }
-#sector2 > div .s2-card .s2-card-icon {
+#main #sector2 div.sector-container .s2-card .s2-card-icon {
   height: 2rem;
   padding-right: 12px;
 }
-#sector2 > div .s2-card .s2-card-icon svg {
+#main #sector2 div.sector-container .s2-card .s2-card-icon svg {
   width: 2rem;
   height: auto;
 }
-#sector2 > div .s2-card .s2-card-title {
+#main #sector2 div.sector-container .s2-card .s2-card-title {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.5;
 }
-#sector2 > div .s2-card .s2-card-txt {
+#main #sector2 div.sector-container .s2-card .s2-card-txt {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
@@ -995,7 +991,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   line-height: 1.2;
   letter-spacing: 0.0125em;
 }
-#sector2 > div #s2-galeria {
+#main #sector2 div.sector-container #s2-galeria {
   display: grid;
   grid-template-rows: 1.09fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
@@ -1004,18 +1000,18 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
        column-gap: 1.5rem;
   row-gap: 2.5rem;
 }
-#sector2 > div #s2-galeria div:first-child {
+#main #sector2 div.sector-container #s2-galeria div:first-child {
   grid-column: 1/3;
   grid-row: 1/2;
 }
-#sector2 > div #s2-galeria #s2-img1 img {
+#main #sector2 div.sector-container #s2-galeria #s2-img1 img {
   transform: scale(1.375) translateX(-13.5%);
 }
-#sector2 > div #s2-galeria .img-container {
+#main #sector2 div.sector-container #s2-galeria .img-container {
   position: relative;
   overflow: hidden;
 }
-#sector2 > div #s2-galeria .img-container div.s2-txt {
+#main #sector2 div.sector-container #s2-galeria .img-container div.s2-txt {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -1025,11 +1021,11 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   bottom: 0;
   left: 0;
   padding: 2.5rem 2rem;
-  z-index: 10000;
+  z-index: 10;
   width: 100%;
   gap: 0.7rem;
 }
-#sector2 > div #s2-galeria .img-container div.s2-txt .frame-content {
+#main #sector2 div.sector-container #s2-galeria .img-container div.s2-txt .frame-content {
   background: url(media/losango.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -1039,7 +1035,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   height: 8.5rem;
   margin-bottom: 0rem;
 }
-#sector2 > div #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-header {
+#main #sector2 div.sector-container #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-header {
   position: absolute;
   top: -0.3rem;
   left: 4.6rem;
@@ -1051,25 +1047,25 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   text-transform: uppercase;
   color: white;
 }
-#sector2 > div #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-header.s2-frame-header-smaller {
+#main #sector2 div.sector-container #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-header.s2-frame-header-smaller {
   left: 3.8rem;
   font-size: 0.6rem;
 }
-#sector2 > div #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-maintxt {
+#main #sector2 div.sector-container #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-maintxt {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
   padding-top: 0.8rem;
 }
-#sector2 > div #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-maintxt .big-number {
+#main #sector2 div.sector-container #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-maintxt .big-number {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
   line-height: 1;
   font-size: 3.5rem;
 }
-#sector2 > div #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-maintxt .label {
+#main #sector2 div.sector-container #s2-galeria .img-container div.s2-txt .frame-content .s2-frame-maintxt .label {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
@@ -1077,7 +1073,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 1.2rem;
   text-transform: uppercase;
 }
-#sector2 > div #s2-galeria .img-container div.s2-txt h1 {
+#main #sector2 div.sector-container #s2-galeria .img-container div.s2-txt h1 {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
@@ -1086,17 +1082,17 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   color: white;
   text-transform: uppercase;
 }
-#sector2 > div #s2-galeria .img-container div.s2-txt h1.smaller {
+#main #sector2 div.sector-container #s2-galeria .img-container div.s2-txt h1.smaller {
   font-size: 1.875rem;
 }
-#sector2 > div #s2-galeria .img-container div.s2-txt p {
+#main #sector2 div.sector-container #s2-galeria .img-container div.s2-txt p {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
   color: white;
 }
-#sector2 > div #s2-galeria .img-container div.s2-txt button {
+#main #sector2 div.sector-container #s2-galeria .img-container div.s2-txt button {
   background-color: transparent;
   color: white;
   border-radius: 100px; /* Cria o formato de comprimido */
@@ -1112,16 +1108,15 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   text-align: center;
   white-space: nowrap;
 }
-
-#sector3 {
+#main #sector3 {
   background-color: #e9ebee;
 }
-#sector3 > div {
+#main #sector3 div.sector-container {
   position: relative;
   padding: 5rem;
   max-height: 58.75rem;
 }
-#sector3 > div #s3-header {
+#main #sector3 div.sector-container #s3-header {
   height: 3.75rem;
   margin-bottom: 2.5rem;
   font-family: "HelveticaNow", sans-serif;
@@ -1132,7 +1127,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   letter-spacing: 0.0375em;
   text-align: center;
 }
-#sector3 > div #s3-carrossel {
+#main #sector3 div.sector-container #s3-carrossel {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(3, 1fr);
@@ -1149,11 +1144,11 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   }
       */
 }
-#sector3 > div .img-container {
+#main #sector3 div.sector-container .img-container {
   position: relative;
   overflow: hidden;
 }
-#sector3 > div div.s3-txt {
+#main #sector3 div.sector-container div.s3-txt {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -1163,11 +1158,11 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   top: 0;
   left: 0;
   padding: 4rem 2rem;
-  z-index: 10000;
+  z-index: 10;
   width: 100%;
   gap: 1.3rem;
 }
-#sector3 > div h1 {
+#main #sector3 div.sector-container h1 {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
@@ -1176,17 +1171,17 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   color: white;
   text-transform: uppercase;
 }
-#sector3 > div h1.smaller {
+#main #sector3 div.sector-container h1.smaller {
   font-size: 1.875rem;
 }
-#sector3 > div p {
+#main #sector3 div.sector-container p {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
   color: white;
 }
-#sector3 > div .s3-btn {
+#main #sector3 div.sector-container .s3-btn {
   background-color: transparent;
   color: white;
   border-radius: 100px; /* Cria o formato de comprimido */
@@ -1202,26 +1197,26 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   text-align: center;
   white-space: nowrap;
 }
-#sector3 > div #s3-footer {
+#main #sector3 div.sector-container #s3-footer {
   display: flex;
   justify-content: space-between;
   align-items: end;
   height: 4rem;
 }
-#sector3 > div #s3-footer #s3-btns-esq {
+#main #sector3 div.sector-container #s3-footer #s3-btns-esq {
   display: flex;
   justify-content: stretch;
   transform: translate(-0.825rem, 0);
   padding: 0.5rem;
 }
-#sector3 > div #s3-footer #s3-btns-dir {
+#main #sector3 div.sector-container #s3-footer #s3-btns-dir {
   display: flex;
   box-sizing: border-box;
   justify-content: space-between;
   padding-right: 0.5rem;
   gap: 1rem;
 }
-#sector3 > div #s3-footer #s3-btns-dir .btn-arrow {
+#main #sector3 div.sector-container #s3-footer #s3-btns-dir .btn-arrow {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1231,17 +1226,38 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px, rgba(0, 0, 0, 0.08) 0px 1px 4px;
 }
-#sector3 > div #s3-footer #s3-btns-dir .btn-arrow img {
+#main #sector3 div.sector-container #s3-footer #s3-btns-dir .btn-arrow img {
   display: block;
   height: 1.5rem;
   width: auto;
 }
-#sector3 > div #s3-footer #s3-btns-dir .btn-arrow:first-child img {
+#main #sector3 div.sector-container #s3-footer #s3-btns-dir .btn-arrow:first-child img {
   transform: rotate(180deg);
   transform-origin: center;
 }
-
-#sector5 {
+#main #sector4 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+#main #sector4 #s4-img {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+}
+#main #sector4 div.sector-container {
+  position: absolute;
+  height: 100%;
+  padding: 5rem;
+  border: 1px solid red;
+}
+#main #sector5 {
+  background-color: white;
+}
+#main #sector5 div.sector-container {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -1251,11 +1267,10 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   overflow: hidden;
   box-sizing: border-box;
   flex-direction: row;
-  background-color: #ffffff;
   padding: 5rem;
   height: 31.875rem;
 }
-#sector5 #s5-textboxdiv {
+#main #sector5 div.sector-container #s5-textboxdiv {
   min-width: 33%;
   flex-basis: 33.33%;
   padding-right: 6rem;
@@ -1263,7 +1278,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   flex-direction: column;
   box-sizing: border-box;
 }
-#sector5 #s5-textboxdiv h2 {
+#main #sector5 div.sector-container #s5-textboxdiv h2 {
   box-sizing: border-box;
   margin-bottom: 1.5rem;
   font-family: "HelveticaNow", sans-serif;
@@ -1273,7 +1288,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 3.125rem;
   text-transform: uppercase;
 }
-#sector5 #s5-textboxdiv p {
+#main #sector5 div.sector-container #s5-textboxdiv p {
   box-sizing: border-box;
   width: 95%;
   margin-bottom: 2rem;
@@ -1283,12 +1298,13 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   line-height: 1.5;
   letter-spacing: 0.0067em;
 }
-#sector5 #s5-tabsdiv {
+#main #sector5 div.sector-container #s5-tabsdiv {
   flex-basis: 66.67%;
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
   padding-left: 0.75rem;
+  z-index: 10;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
@@ -1296,7 +1312,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 0.875rem;
   letter-spacing: 0.0086em;
 }
-#sector5 #s5-tabsdiv label {
+#main #sector5 div.sector-container #s5-tabsdiv label {
   display: flex;
   align-items: center;
   width: auto;
@@ -1314,17 +1330,17 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   letter-spacing: 0.0086em;
   cursor: pointer;
 }
-#sector5 #s5-tabsdiv input[type=radio]:checked + label {
+#main #sector5 div.sector-container #s5-tabsdiv input[type=radio]:checked + label {
   color: #fefefe;
   background-color: black;
 }
-#sector5 #s5-tabsdiv ul {
+#main #sector5 div.sector-container #s5-tabsdiv ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 1fr) 3.25rem;
   list-style-type: none;
 }
-#sector5 #s5-tabsdiv ul li {
+#main #sector5 div.sector-container #s5-tabsdiv ul li {
   box-sizing: border-box;
   height: 2.25rem;
   margin-right: 1rem;
@@ -1333,15 +1349,17 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-#sector5 #s5-tabsdiv a {
+#main #sector5 div.sector-container #s5-tabsdiv a {
   grid-row: 7/8;
   display: flex;
   align-items: center;
   box-sizing: border-box;
   color: black;
 }
-
-#sector6 {
+#main #sector6 {
+  background-color: #191919;
+}
+#main #sector6 div.sector-container {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -1352,12 +1370,11 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   box-sizing: border-box;
   flex-direction: column;
   flex-grow: 1;
-  background-color: #191919;
   min-height: 29.5rem;
   padding-top: 1.5rem;
   padding-bottom: 0rem;
 }
-#sector6 #s6-header {
+#main #sector6 div.sector-container #s6-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1365,7 +1382,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   height: 4rem;
   box-sizing: border-box;
 }
-#sector6 #s6-header-socials {
+#main #sector6 div.sector-container #s6-header-socials {
   display: flex;
   flex-direction: row;
   padding-bottom: 0.3rem;
@@ -1373,7 +1390,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   align-items: center;
   gap: 1.5rem;
 }
-#sector6 #s6-list {
+#main #sector6 div.sector-container #s6-list {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -1383,28 +1400,28 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   flex-wrap: wrap;
   padding-top: 1.5rem;
 }
-#sector6 #s6-list div {
+#main #sector6 div.sector-container #s6-list div {
   list-style: none;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: left;
 }
-#sector6 #s6-list div ul {
+#main #sector6 div.sector-container #s6-list div ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   list-style: none;
   gap: 0 1rem;
 }
-#sector6 #s6-list div li:first-child {
+#main #sector6 div.sector-container #s6-list div li:first-child {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.5;
   color: #8D9299;
 }
-#sector6 #s6-list div li {
+#main #sector6 div.sector-container #s6-list div li {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
@@ -1415,18 +1432,20 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   text-align: left;
   margin-top: 1rem;
 }
-#sector6 #s6-app {
+#main #sector6 div.sector-container #s6-app {
   display: flex;
   margin-top: auto;
   gap: 1rem;
   padding-top: 2.5rem;
 }
-#sector6 #s6-app img {
+#main #sector6 div.sector-container #s6-app img {
   width: auto;
   height: 2.5rem;
 }
-
-#sector7 {
+#main #sector7 {
+  background-color: #191919;
+}
+#main #sector7 div.sector-container {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -1437,20 +1456,19 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   box-sizing: border-box;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: #191919;
   box-sizing: border-box;
   padding: 2.5rem 5rem;
   min-height: 6.5rem;
   flex: 1;
 }
-#sector7 ul {
+#main #sector7 div.sector-container ul {
   display: flex;
   flex-direction: row;
   gap: 0.9rem;
   list-style: none;
   flex-wrap: wrap;
 }
-#sector7 li {
+#main #sector7 div.sector-container li {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
@@ -1460,7 +1478,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   white-space: nowrap;
   text-align: left;
 }
-#sector7 li:last-child {
+#main #sector7 div.sector-container li:last-child {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
