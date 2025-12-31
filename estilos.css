@@ -671,18 +671,178 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 #rf-container > div div#rf-calendar-container div#rf-calendars .calendar .day-number.start-node.end-node {
   border-radius: 0.75rem;
 }
-
-.rf-form {
+#rf-container > #rf-search-results {
+  width: 100%;
+  box-shadow: none !important;
+  border: none !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+#rf-container > #rf-search-results .car-card {
+  background-color: #191919;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  box-sizing: border-box;
+  cursor: pointer;
+  min-height: 24rem;
+  justify-content: space-between;
+  transition: transform 0.2s, background-color 0.2s;
+  align-items: flex-start;
+  text-align: left;
+}
+#rf-container > #rf-search-results .car-card:hover {
+  transform: translateY(-5px);
+  background-color: #252525;
+}
+#rf-container > #rf-search-results .car-card .card-header {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+#rf-container > #rf-search-results .car-card .card-header h3 {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 900;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  color: white;
+}
+#rf-container > #rf-search-results .car-card .card-header h3 span {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.8rem;
+  color: #999;
+  text-transform: none;
+  margin-left: 0.3rem;
+}
+#rf-container > #rf-search-results .car-card .card-header p {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.8rem;
+  color: #fff;
+  margin: 0;
+}
+#rf-container > #rf-search-results .car-card .card-specs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+#rf-container > #rf-search-results .car-card .card-specs span {
+  display: flex;
+  align-items: center;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.75rem;
+  background-color: #333;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  color: white;
+}
+#rf-container > #rf-search-results .car-card .card-specs span img {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.3rem;
+  filter: invert(100%); /* Garante ícones brancos */
+}
+#rf-container > #rf-search-results .car-card .card-image {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+#rf-container > #rf-search-results .car-card .card-image img {
+  width: 100%;
+  height: auto;
+  max-height: 140px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#rf-container > #rf-search-results .car-card .card-features {
+  width: 100%;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.75rem;
+  color: #00ff00;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+#rf-container > #rf-search-results .car-card .card-features .check {
+  font-size: 1rem;
+}
+#rf-container > #rf-search-results .car-card .card-footer {
+  width: 100%;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+}
+#rf-container > #rf-search-results .car-card .card-footer .price-main {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 900;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-size: 1.5rem;
+  color: white;
+  display: flex;
+  align-items: baseline;
+}
+#rf-container > #rf-search-results .car-card .card-footer .price-main span {
+  font-size: 1rem;
+}
+#rf-container > #rf-search-results .car-card .card-footer .price-main .per-day {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  margin-left: 0.2rem;
+  color: #ccc;
+}
+#rf-container > #rf-search-results .car-card .card-footer .price-total {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 0.2rem;
+}
+#rf-container .rf-form {
   padding: 1rem 0;
   display: flex;
   gap: 0 0.5rem;
 }
-.rf-form .rf-locations-div {
+#rf-container .rf-form .rf-locations-div {
   flex-grow: 1;
   display: flex;
   gap: 0.75rem;
   padding-right: 0.75rem;
 }
+#rf-container .rf-form .rf-locations-div .rf-location-input {
+  flex-grow: 1;
+  display: flex;
+}
+#rf-container .rf-form .rf-locations-div .rf-location-input div {
 .rf-form .rf-locations-div .rf-location-input {
   flex-basis: 100%;
   flex-grow: 1;
@@ -694,6 +854,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   flex-direction: column;
   align-items: center;
 }
+#rf-container .rf-form .rf-locations-div .rf-location-input div span {
 .rf-form .rf-locations-div .rf-location-input > div span {
   width: 100%;
   display: inline-flex;
@@ -701,6 +862,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   height: 1.5rem;
   margin-bottom: 0.25rem;
 }
+#rf-container .rf-form .rf-locations-div .rf-location-input div span label {
 .rf-form .rf-locations-div .rf-location-input > div span p {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
@@ -708,6 +870,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   line-height: 1.5;
   font-size: 0.75rem;
 }
+#rf-container .rf-form .rf-locations-div .rf-location-input div div {
 .rf-form .rf-locations-div .rf-location-input > div .rf-input-location {
   box-sizing: border-box;
   display: flex;
@@ -718,6 +881,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   border: 1px solid #d7dadc;
   border-radius: 1rem;
 }
+#rf-container .rf-form .rf-locations-div .rf-location-input div div input {
 .rf-form .rf-locations-div .rf-location-input > div .rf-input-location:focus-within {
   border: 2px solid #ff5000;
   outline: none;
@@ -736,6 +900,24 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 1rem;
   line-height: 1.5;
 }
+#rf-container .rf-form .rf-locations-div .rf-location-input div div input::-moz-placeholder {
+  color: #d7dadc;
+}
+#rf-container .rf-form .rf-locations-div .rf-location-input div div input::placeholder {
+  color: #d7dadc;
+}
+#rf-container .rf-form .rf-locations-div .rf-location-return {
+  flex-grow: 1;
+  display: none;
+  padding: 0 0.5rem 0 1rem;
+}
+#rf-container .rf-form .rf-locations-div .rf-different-location {
+  flex-grow: 1;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  height: 3.25rem;
+  padding: 0 0.75rem;
 .rf-form .rf-locations-div .rf-location-input > div .rf-input-location input::-moz-placeholder {
   color: #d7dadc;
 }
@@ -758,6 +940,15 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 1rem;
   line-height: 1.5;
 }
+#rf-container .rf-form .rf-locations-div .rf-different-location div {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 3rem;
+}
+#rf-container .rf-form .rf-locations-div .rf-different-location img {
+  margin: 0.5rem;
 .rf-form .rf-locations-div .rf-location-input > div .rf-location-return {
   display: none;
 }
@@ -770,19 +961,21 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 .rf-form .rf-locations-div .rf-location-input > div .rf-cbx-diff-loc:checked + div + div {
   display: flex;
 }
-.rf-form .rf-dates-div {
+#rf-container .rf-form .rf-dates-div {
   min-width: 41.5rem;
   display: flex;
   width: 41.5rem;
   justify-content: stretch;
   gap: 0 1rem;
 }
+#rf-container .rf-form .rf-dates-div div {
 .rf-form .rf-dates-div > div {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   width: 13.5rem;
 }
+#rf-container .rf-form .rf-dates-div div span {
 .rf-form .rf-dates-div > div span {
   width: 100%;
   display: inline-flex;
@@ -790,6 +983,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   height: 1.5rem;
   margin-bottom: 0.25rem;
 }
+#rf-container .rf-form .rf-dates-div div span label {
 .rf-form .rf-dates-div > div span p {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
@@ -797,6 +991,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   line-height: 1.5;
   font-size: 0.75rem;
 }
+#rf-container .rf-form .rf-dates-div div div {
 .rf-form .rf-dates-div > div div {
   display: flex;
   flex-direction: row;
@@ -808,21 +1003,21 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 1rem;
   line-height: 1.5;
 }
-.rf-form .rf-dates-div .rf-div-btn-show {
+#rf-container .rf-form .rf-dates-div .rf-div-btn-show {
   flex-basis: 12.5rem;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   box-sizing: border-box;
 }
-.rf-form .rf-dates-div .rf-div-btn-show button {
+#rf-container .rf-form .rf-dates-div .rf-div-btn-show button {
   width: 100%;
   height: 3.25rem;
   border-radius: 1rem;
   background-color: #ff5000;
   color: white;
 }
-.rf-form .rf-dates-div .rf-div-btn-show button div {
+#rf-container .rf-form .rf-dates-div .rf-div-btn-show button div {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -1205,9 +1400,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   color: white;
   text-transform: uppercase;
 }
-#main #sector3 div.sector-container h1.smaller {
-  font-size: 1.875rem;
-}
 #main #sector3 div.sector-container p {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
@@ -1243,6 +1435,9 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   transform: translate(-0.825rem, 0);
   padding: 0.5rem;
 }
+#main #sector3 div.sector-container #s3-footer #s3-btns-esq .btn-dot {
+  background-color: transparent;
+}
 #main #sector3 div.sector-container #s3-footer #s3-btns-dir {
   display: flex;
   box-sizing: border-box;
@@ -1276,17 +1471,117 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  height: 50rem;
 }
 #main #sector4 #s4-img {
-  position: relative;
+  position: absolute;
   z-index: 0;
   width: 100%;
+  height: 100%;
+}
+#main #sector4:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8) 100%);
+  z-index: 1;
 }
 #main #sector4 div.sector-container {
-  position: absolute;
+  position: relative;
+  z-index: 2;
   height: 100%;
-  padding: 5rem;
-  border: 1px solid red;
+  padding: 12rem 5rem 2rem 5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+#main #sector4 div.sector-container #s4-carrossel {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(1, 1fr);
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+  row-gap: 2.5rem;
+  grid-auto-rows: 0;
+  padding-bottom: 0;
+  row-gap: 0;
+  overflow: hidden;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+  /* troca ordem <- estao todas a 0 no inicio, -1 vai para primera pos
+  #s3-img5{
+      order : -1;
+  }
+      */
+}
+#main #sector4 div.sector-container #s4-carrossel h1 {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 3rem;
+  line-height: 1;
+  color: white;
+  margin-bottom: 1rem;
+}
+#main #sector4 div.sector-container #s4-carrossel p {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 1.375rem;
+  color: white;
+}
+#main #sector4 div.sector-container #s4-footer {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  flex-shrink: 0;
+  width: 100%;
+  padding-bottom: 3.5rem;
+}
+#main #sector4 div.sector-container #s4-footer #s4-btns-esq {
+  display: flex;
+  justify-content: stretch;
+  transform: translate(-0.825rem, 0);
+  padding: 0.5rem;
+  filter: invert(100%);
+}
+#main #sector4 div.sector-container #s4-footer #s4-btns-esq .btn-dot {
+  background-color: transparent;
+}
+#main #sector4 div.sector-container #s4-footer #s4-btns-dir {
+  background: transparent;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding-right: 0.5rem;
+  gap: 1rem;
+}
+#main #sector4 div.sector-container #s4-footer #s4-btns-dir .btn-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.625rem;
+  height: 2.625rem;
+  border-width: 0px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px, rgba(0, 0, 0, 0.08) 0px 1px 4px;
+  filter: invert(100%);
+}
+#main #sector4 div.sector-container #s4-footer #s4-btns-dir .btn-arrow img {
+  display: block;
+  height: 1.5rem;
+  width: auto;
+}
+#main #sector4 div.sector-container #s4-footer #s4-btns-dir .btn-arrow:first-child img {
+  transform: rotate(180deg);
+  transform-origin: center;
 }
 #main #sector5 {
   background-color: white;

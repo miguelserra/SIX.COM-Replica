@@ -845,6 +845,17 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             flex-basis : 100%;
             flex-grow: 1;
             display: flex;
+            flex-direction: column;
+            color: white;
+            box-sizing: border-box;
+            cursor: pointer;
+            min-height: 24rem; 
+            justify-content: space-between;
+            transition: transform 0.2s, background-color 0.2s;
+            
+            // Garante que o texto dentro do card alinha à esquerda
+            align-items: flex-start; 
+            text-align: left;
 
             > div {
                 width: 100%;
@@ -864,6 +875,13 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                         font-size: 0.75rem;
                     }
                 }
+                p {
+                    @include font-HelveticaNow-400;
+                    font-size: 0.8rem;
+                    color: #fff;
+                    margin: 0;
+                }
+            }
 
                 .rf-input-location{
                     box-sizing      : border-box;
@@ -964,44 +982,104 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     font-size   : 0.75rem;
                 }
             }
-
-            div{
-                display         : flex;
-                flex-direction  : row;
-                align-items     : center;
-                width           : 100%;
-                height          : 3.25rem;
-                @include font-HelveticaNow-400;
+    
+            .rf-location-return{
+                flex-grow: 1;
+                display: none;
+                padding: 0 0.5rem 0 1rem;
             }
-
-        }
-        
-        .rf-div-btn-show{
-            flex-basis: 12.5rem;
-            display: flex;
-            flex-direction: row;
-            align-items: flex-end;
-            box-sizing: border-box;
-            
-            button{
-                width           : 100%;
-                height          : 3.25rem;
-                border-radius   : 1rem;
-                background-color: $sixt-orange;
-                color           : white;
+    
+            .rf-different-location{
+                flex-grow: 1;
+                align-self: flex-end;
+                display: flex;
+                align-items: center;
+                height : 3.25rem;
+                padding: 0 0.75rem;
+                color: #656a6f;
+                @include font-HelveticaNow-400;
+                font-size: 1rem;
+                line-height: 1.5;
                 
                 div{
-                    width           : 100%;
-                    display         : flex;
-                    justify-content : center;
-                    align-items     : center;
-                    height          : 3rem;
-                    @include font-HelveticaNow-700;
+                    display: flex;
+                    align-items: center;
+                    box-sizing: border-box;
+                    width : 100%;
+                    height : 3rem;
+                }
+                
+                img {
+                    margin : 0.5rem;
                 }
             }
-            
         }
-    }
+        
+        .rf-dates-div{
+            min-width   : 41.5rem;
+            display     : flex;
+            width       : 41.5rem;
+    
+            justify-content: stretch;
+            gap: 0 1rem;
+    
+            div {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                width : 13.5rem;
+    
+                span{
+                    width           : 100%;
+                    display         : inline-block; //necessário para atribuir height
+                    height          : 1.5rem;
+                    margin-bottom   : 0.25rem;
+    
+                    label{
+                        @include font-HelveticaNow-700;
+                        font-size   : 0.75rem;
+                    }
+                }
+    
+                div{
+                    display         : flex;
+                    flex-direction  : row;
+                    align-items     : center;
+                    width           : 100%;
+                    height          : 3.25rem;
+                    @include font-HelveticaNow-400;
+                }
+    
+            }
+            
+            .rf-div-btn-show{
+                flex-basis: 12.5rem;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                box-sizing: border-box;
+                
+                button{
+                    width           : 100%;
+                    height          : 3.25rem;
+                    border-radius   : 1rem;
+                    background-color: $sixt-orange;
+                    color           : white;
+                    
+                    div{
+                        width           : 100%;
+                        display         : flex;
+                        justify-content : center;
+                        align-items     : center;
+                        height          : 3rem;
+                        @include font-HelveticaNow-700;
+                    }
+                }
+                
+            }
+        }
+}
+
 } //fim form
 
 .rf-btn{
@@ -1406,10 +1484,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 font-size       : 1.875rem;
                 color           : white;
                 text-transform  : uppercase;
-        
-                &.smaller{
-                    font-size   : 1.875rem;
-                }
                 
             }
         
@@ -1447,6 +1521,11 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     justify-content : stretch;
                     transform       : translate(-0.825rem, 0);
                     padding         : 0.5rem;
+
+                    .btn-dot{
+                    background-color: transparent; //remove o fundo dos pontos
+                    }
+            
                 }
             
                 #s3-btns-dir {
@@ -1470,6 +1549,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                             display : block;
                             height  : 1.5rem;
                             width: auto;
+                            
                         }
                         
                         &:first-child img {
@@ -1478,7 +1558,9 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                         //transform: rotate(180deg);
                         }
                     }
-            
+
+
+                 
                 }
             
             }
@@ -1495,26 +1577,142 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         flex-direction: column;
         align-items: center;
         overflow: hidden;
+        height: 50rem;
     
         
         #s4-img{
-            position: relative;
+            position: absolute;
             z-index: 0;
             width: 100%;
+            height: 100%;
+            
         }
+
+        &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0.8) 100%);
+                z-index:1
+              
+            }
+
     
         div.sector-container{
-            position: absolute;
+            position: relative;
+            z-index: 2;
             height  : 100%;
-            padding : 5rem;
+            padding : 12rem 5rem 2rem 5rem;
+            box-sizing: border-box;
             //background-color: red
-            border: 1px solid red;
-        }
+            //border: 1px solid red;
+
+            display: flex;
+            flex-direction: column;
+            //justify-content:space-between; //Para que a grid e os botoes se separem entre o topo e fundo, ajustado posteriormente com padding
+            #s4-carrossel{
+                display                 : grid;
+                grid-template-rows      : 1fr;
+                grid-template-columns   : repeat(1,1fr);
+                @include grid-general-config;
+                
+                grid-auto-rows: 0;
+                padding-bottom: 0;
+                row-gap: 0;
+                overflow: hidden;
+                text-align: center;
+                justify-content: center;
+                position: relative;
+                margin-top: auto;
+                margin-bottom: auto;
+                
+                /* troca ordem <- estao todas a 0 no inicio, -1 vai para primera pos
+                #s3-img5{
+                    order : -1;
+                }
+                    */
+
+                
+
+                h1{
+                    @include font-HelveticaNow-400;
+                    font-size: 3rem;
+                    line-height: 1;
+                    color: white;
+                    margin-bottom: 1rem;
+                }
+
+                p{
+                    @include font-HelveticaNow-700;
+                    font-size: 1.375rem;
+                    color: white;
+                }
+            }
+
+            #s4-footer{
+                display         : flex;
+                justify-content : space-between;
+                //align-items     : flex-end;
+                height          : 4rem;
+                flex-shrink: 0;
+                width: 100%;
+                padding-bottom: 3.5rem;
+                
+                
+                #s4-btns-esq {
+                    display         : flex;
+                    justify-content : stretch;
+                    transform       : translate(-0.825rem, 0);
+                    padding         : 0.5rem;
+                    filter: invert(100%);
+                    
+                    .btn-dot{
+                        background-color: transparent; //remove o fundo dos pontos
+                        
+                    }
+                }
+            
+                #s4-btns-dir{
+                    background: transparent;
+                    display         : flex;
+                    box-sizing      : border-box;
+                    justify-content : space-between;
+                    padding-right   : 0.5rem;
+                    gap             : 1rem;
+            
+                    .btn-arrow{
+                        display         : flex;
+                        justify-content : center;
+                        align-items     : center;
+                        width           : 2.625rem;
+                        height          : 2.625rem;
+                        border-width    : 0px;
+                        border-radius   : 50%;
+                        box-shadow      : rgba(0, 0, 0, 0.1) 0px 2px 6px, rgba(0, 0, 0, 0.08) 0px 1px 4px;
+                        filter: invert(100%);
+                        img {
+                            display : block;
+                            height  : 1.5rem;
+                            width: auto;
+                        }
+                        
+                        &:first-child img {
+                            transform: rotate(180deg);
+                            transform-origin: center
+                        //transform: rotate(180deg);
+                        }
+
+                    }
+            
+                }
+
+             }
     
-    
-    }
-    
-    
+         }
+
+    }   
     
     
     #sector5{
