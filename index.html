@@ -149,41 +149,46 @@
     
                         <form id="rf-form-cars" class="rf-form" autocomplete="on" method="post">
                             <div class="rf-locations-div">
-                                <div class="rf-location-input rf-location-pickup">
+                                <div class="rf-location-input">
                                     <div>
                                         <span>
-                                            <label class="rf-lbl-pickup">Pickup & return</label>
+                                            <p class="rf-lbl-pickup">Pickup & return</p>
                                         </span>
-                                        <div>
+                                        <div class="rf-input-location  rf-location-pickup">
                                             <img class="icon" src="icons/ico_search.svg" alt="search"/>
                                             <input type="text" id="input-pickup-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="rf-location-input rf-location-return">
+                                
+                                <div class="rf-location-input">
                                     <div>
                                         <span>
-                                            <label>Return</label>
+                                            <p>Return</p>
                                         </span>
-                                        <div>
+
+                                        <input type="checkbox" class="rf-cbx-diff-loc" id="rf-cbx-diff-loc-cars">
+                                        
+                                        <div class="rf-input-location rf-different-location">
+                                            <img class="icon" src="icons/ico_plus.svg" alt="search"/>
+                                            <label for="rf-cbx-diff-loc-cars">Different return location</label>
+                                        </div>
+
+                                        <div class="rf-input-location rf-location-return">
                                             <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                            <input type="text" id="input-pickup-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
+                                            <input type="text" id="input-return-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="rf-different-location">
-                                    <img class="icon" src="icons/ico_plus.svg" alt="search"/>
-                                    <div>Different return location</div>
                                 </div>
                             </div> <!--FIM "rf-locations-div""--> 
                             
                             <div class="rf-dates-div">
                                 <div>
                                     <span>
-                                        <label>Pickup date</label>
+                                        <p>Pickup date</p>
                                     </span>
                                     <div>
-                                        <button type="button" class="rf-btn rounded-left">
+                                        <button type="button" class="rf-btn rounded-left rf-date-pick">
                                             <img class="icon" src="icons/ico_calendar.svg" alt="pickup date"/>
                                             <div>Oct 20</div>
                                         </button>
@@ -194,10 +199,10 @@
                                 </div>
                                 <div>
                                     <span>
-                                        <label>Return date</label>
+                                        <p>Return date</p>
                                     </span>
                                     <div>
-                                        <button type="button" class="rf-btn rounded-left">
+                                        <button type="button" class="rf-btn rounded-left rf-date-pick">
                                             <img class="icon" src="icons/ico_calendar.svg" alt="return date"/>
                                             <div>Oct 24</div>
                                         </button>
@@ -231,33 +236,38 @@
     
                         <form id="rf-form-trucks" class="rf-form" autocomplete="on" method="post">
                             <div class="rf-locations-div">
-                                <div class="rf-location-input rf-location-pickup">
+                                <div class="rf-location-input">
                                     <div>
                                         <span>
-                                            <label class="rf-lbl-pickup">Pickup & return</label>
+                                            <p class="rf-lbl-pickup">Pickup & return</p>
                                         </span>
-                                        <div>
+                                        <div class="rf-input-location  rf-location-pickup">
                                             <img class="icon" src="icons/ico_search.svg" alt="search"/>
                                             <input type="text" id="input-pickup-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="rf-location-input rf-location-return">
+                                
+                                <div class="rf-location-input">
                                     <div>
                                         <span>
-                                            <label>Return</label>
+                                            <p>Return</p>
                                         </span>
-                                        <div>
+
+                                        <input type="checkbox" class="rf-cbx-diff-loc" id="rf-cbx-diff-loc-trucks">
+                                        
+                                        <div class="rf-input-location rf-different-location">
+                                            <img class="icon" src="icons/ico_plus.svg" alt="search"/>
+                                            <label for="rf-cbx-diff-loc-trucks">Different return location</label>
+                                        </div>
+
+                                        <div class="rf-input-location rf-location-return">
                                             <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                            <input type="text" id="input-pickup-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
+                                            <input type="text" id="input-return-trucks" name="pickup-trucks-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="rf-different-location">
-                                    <img class="icon" src="icons/ico_plus.svg" alt="search"/>
-                                    <div>Different return location</div>
-                                </div>
-                            </div> <!--FIM "rf-locations-div""--> 
+                            </div> <!--FIM "rf-locations-div""-->  
                             
                             <div class="rf-dates-div">
                                 <div>
@@ -265,7 +275,7 @@
                                         <label>Pickup date</label>
                                     </span>
                                     <div>
-                                        <button type="button" class="rf-btn rounded-left">
+                                        <button type="button" class="rf-btn rounded-left rf-date-pick">
                                             <img class="icon" src="icons/ico_calendar.svg" alt="pickup date"/>
                                             <div>Jan 03</div>
                                         </button>
@@ -279,7 +289,7 @@
                                         <label>Return date</label>
                                     </span>
                                     <div>
-                                        <button type="button" class="rf-btn rounded-left">
+                                        <button type="button" class="rf-btn rounded-left rf-date-pick">
                                             <img class="icon" src="icons/ico_calendar.svg" alt="return date"/>
                                             <div>Jan 05</div>
                                         </button>
@@ -289,7 +299,7 @@
                                     </div>
                                 </div>
                                 <div class="rf-div-btn-show">
-                                    <button type="button" class="rf-btn" id="rf-btn-showcars">
+                                    <button type="button" class="rf-btn" id="rf-btn-showtrucks">
                                         <div>Show trucks</div>
                                     </button>
                                 </div>
@@ -317,7 +327,7 @@
                 </div>
     
                 <!-- CALENDARIO COMEÇA -->
-                <div id="rf-calendar-container">
+                <div id="rf-calendar-container" class="">
     
                     <div id="rf-calendar-btn-left" class="calendar-btn">
     
@@ -325,11 +335,10 @@
                     </div>
     
                     <div id="rf-calendars">
-                        <div id="rf-calendar-left" class="calendar">
-    
-                        </div>
-                        <div id="rf-calendar-center" class="calendar">
-                            <div class="month-year">Month YYYY</div>
+                        <div id="rf-calendar-0" class="calendar">
+                            
+                            <div id="rf-MY-0" class="month-year">Month YYYY</div>
+                            
                             <div class="week-day">SU</div>
                             <div class="week-day">MO</div>
                             <div class="week-day">TU</div>
@@ -337,24 +346,38 @@
                             <div class="week-day">TH</div>
                             <div class="week-day">FR</div>
                             <div class="week-day">SA</div>
-                            <div class="day-number"></div>
-                            <div class="day-number"></div>
-                            <div class="day-number"></div>
+                            <!--
                             <div class="day-number">1</div>
-                            <div class="day-number">2</div>
-                            <div class="day-number">3</div>
-                            <div class="day-number">4</div>
-                            <div class="day-number">6</div>
-                            <div class="day-number">7</div>
-                            <div class="day-number">8</div>
-                            <div class="day-number">9</div>
-                            <div class="day-number">10</div>
-                            <div class="day-number">11</div>
-                            <div class="day-number">12</div>
-                            <div class="day-number">13</div>
+                            -->
                         </div>
-                        <div id="rf-calendar-right" class="calendar">
+                        <div id="rf-calendar-1" class="calendar">
+                            <div id="rf-MY-1" class="month-year">Month YYYY</div>
                             
+                            <div class="week-day">SU</div>
+                            <div class="week-day">MO</div>
+                            <div class="week-day">TU</div>
+                            <div class="week-day">WE</div>
+                            <div class="week-day">TH</div>
+                            <div class="week-day">FR</div>
+                            <div class="week-day">SA</div>
+                            
+                            <!--
+                            <div class="day-number">1</div>
+                            -->
+                        </div>
+                        <div id="rf-calendar-2" class="calendar">
+                            <div id="rf-MY-2" class="month-year">Month YYYY</div>
+                            
+                            <div class="week-day">SU</div>
+                            <div class="week-day">MO</div>
+                            <div class="week-day">TU</div>
+                            <div class="week-day">WE</div>
+                            <div class="week-day">TH</div>
+                            <div class="week-day">FR</div>
+                            <div class="week-day">SA</div>
+                            <!--
+                            <div class="day-number">1</div>
+                            -->
                         </div>
                     </div>
     
@@ -843,6 +866,8 @@
     </div>
 
     
+    
+    <script type="text/javascript" src="scripts.js"></script>
 
 </body>
 </html>

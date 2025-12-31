@@ -151,14 +151,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   pointer-events: none;
 }
 
-#rf-aux-div {
-  position: absolute;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 #navbar {
   display: flex;
   position: absolute;
@@ -299,9 +291,8 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   box-sizing: border-box;
 }
 #navbar #navbar-options .navbar-options-item {
-  display: flex;
-  flex-direction: row;
   position: relative;
+  display: flex;
   height: 100%;
   align-items: center;
   gap: 0.5rem;
@@ -312,7 +303,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   line-height: 1.5;
   font-size: 0.875rem;
   line-height: 1.5;
-  color: #ffffff;
+  color: white;
 }
 #navbar #navbar-options .navbar-options-item .dropdown-menu {
   display: none;
@@ -497,6 +488,14 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   display: block;
 }
 
+#rf-aux-div {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #rf-container {
   display: flex;
   flex-direction: column;
@@ -587,7 +586,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   /*############################################################################################
   ##############################################################################################
   #############################################################################################*/
-  display: none;
+  display: flex;
   /*############################################################################################
   ##############################################################################################
   #############################################################################################*/
@@ -613,8 +612,14 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: 0.75fr repeat(6, 1fr);
+  /*
+  :nth-child(7n+2) {
+      color: $sixt-placeholder-gray;
+  }
+  */
 }
 #rf-container > div div#rf-calendar-container div#rf-calendars .calendar .month-year {
+  grid-row: 1/2;
   grid-column: 1/8;
   display: flex;
   justify-content: center;
@@ -627,6 +632,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   line-height: 1.2;
 }
 #rf-container > div div#rf-calendar-container div#rf-calendars .calendar .week-day {
+  grid-row: 2/3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -646,7 +652,24 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.5;
-  font-size: 0.925rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+#rf-container > div div#rf-calendar-container div#rf-calendars .calendar .day-number.in-range {
+  background-color: #d7dadc;
+}
+#rf-container > div div#rf-calendar-container div#rf-calendars .calendar .day-number.start-node {
+  background-color: gray;
+  color: white;
+  border-radius: 0.75rem 0 0 0.75rem;
+}
+#rf-container > div div#rf-calendar-container div#rf-calendars .calendar .day-number.end-node {
+  background-color: gray;
+  color: white;
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+#rf-container > div div#rf-calendar-container div#rf-calendars .calendar .day-number.start-node.end-node {
+  border-radius: 0.75rem;
 }
 
 .rf-form {
@@ -657,37 +680,49 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 .rf-form .rf-locations-div {
   flex-grow: 1;
   display: flex;
+  gap: 0.75rem;
+  padding-right: 0.75rem;
 }
 .rf-form .rf-locations-div .rf-location-input {
+  flex-basis: 100%;
   flex-grow: 1;
   display: flex;
 }
-.rf-form .rf-locations-div .rf-location-input div {
+.rf-form .rf-locations-div .rf-location-input > div {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.rf-form .rf-locations-div .rf-location-input div span {
+.rf-form .rf-locations-div .rf-location-input > div span {
   width: 100%;
-  display: inline-block;
+  display: inline-flex;
+  align-items: flex-end;
   height: 1.5rem;
   margin-bottom: 0.25rem;
 }
-.rf-form .rf-locations-div .rf-location-input div span label {
+.rf-form .rf-locations-div .rf-location-input > div span p {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.5;
   font-size: 0.75rem;
 }
-.rf-form .rf-locations-div .rf-location-input div div {
+.rf-form .rf-locations-div .rf-location-input > div .rf-input-location {
   box-sizing: border-box;
   display: flex;
   align-items: center;
   height: 3.25rem;
+  width: 100%;
   padding: 0 0.75rem;
   border: 1px solid #d7dadc;
   border-radius: 1rem;
 }
-.rf-form .rf-locations-div .rf-location-input div div input {
+.rf-form .rf-locations-div .rf-location-input > div .rf-input-location:focus-within {
+  border: 2px solid #ff5000;
+  outline: none;
+}
+.rf-form .rf-locations-div .rf-location-input > div .rf-input-location input {
   width: 100%;
   box-sizing: border-box;
   height: 3rem;
@@ -701,25 +736,21 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 1rem;
   line-height: 1.5;
 }
-.rf-form .rf-locations-div .rf-location-input div div input::-moz-placeholder {
+.rf-form .rf-locations-div .rf-location-input > div .rf-input-location input::-moz-placeholder {
   color: #d7dadc;
 }
-.rf-form .rf-locations-div .rf-location-input div div input::placeholder {
+.rf-form .rf-locations-div .rf-location-input > div .rf-input-location input::placeholder {
   color: #d7dadc;
 }
-.rf-form .rf-locations-div .rf-location-return {
-  flex-grow: 1;
-  display: none;
-  padding: 0 0.5rem 0 1rem;
-}
-.rf-form .rf-locations-div .rf-different-location {
-  flex-grow: 1;
-  align-self: flex-end;
-  display: flex;
-  align-items: center;
-  height: 3.25rem;
-  padding: 0 0.75rem;
+.rf-form .rf-locations-div .rf-location-input > div .rf-different-location {
+  border: unset;
   color: #656a6f;
+}
+.rf-form .rf-locations-div .rf-location-input > div .rf-different-location img {
+  margin-right: 0.5rem;
+}
+.rf-form .rf-locations-div .rf-location-input > div .rf-different-location label {
+  width: 100%;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -727,15 +758,17 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 1rem;
   line-height: 1.5;
 }
-.rf-form .rf-locations-div .rf-different-location div {
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  width: 100%;
-  height: 3rem;
+.rf-form .rf-locations-div .rf-location-input > div .rf-location-return {
+  display: none;
 }
-.rf-form .rf-locations-div .rf-different-location img {
-  margin: 0.5rem;
+.rf-form .rf-locations-div .rf-location-input > div .rf-cbx-diff-loc {
+  display: none;
+}
+.rf-form .rf-locations-div .rf-location-input > div .rf-cbx-diff-loc:checked + div {
+  display: none;
+}
+.rf-form .rf-locations-div .rf-location-input > div .rf-cbx-diff-loc:checked + div + div {
+  display: flex;
 }
 .rf-form .rf-dates-div {
   min-width: 41.5rem;
@@ -744,26 +777,27 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   justify-content: stretch;
   gap: 0 1rem;
 }
-.rf-form .rf-dates-div div {
+.rf-form .rf-dates-div > div {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   width: 13.5rem;
 }
-.rf-form .rf-dates-div div span {
+.rf-form .rf-dates-div > div span {
   width: 100%;
-  display: inline-block;
+  display: inline-flex;
+  align-items: flex-end;
   height: 1.5rem;
   margin-bottom: 0.25rem;
 }
-.rf-form .rf-dates-div div span label {
+.rf-form .rf-dates-div > div span p {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.5;
   font-size: 0.75rem;
 }
-.rf-form .rf-dates-div div div {
+.rf-form .rf-dates-div > div div {
   display: flex;
   flex-direction: row;
   align-items: center;
