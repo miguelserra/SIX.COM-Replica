@@ -195,6 +195,9 @@ img {
     }
 }
 
+
+
+
 a{
     cursor: pointer;
 }
@@ -241,15 +244,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         pointer-events: none;
     }
     overflow: hidden; //inibe o scroll da pagina quando o menu está aberto
-}
-
-#rf-aux-div{
-    position        : absolute;
-    height : 100%;
-    
-    display         : flex;
-    flex-direction  : column;
-    align-items     : center;
 }
 
 #navbar{
@@ -395,30 +389,30 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     }
 
     .sandwich #toggle:checked + .menu {
-        display : flex;
-        flex-direction: column;
+        display         : flex;
+        flex-direction  : column;
     }
 
     #navbar-options{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap         : 2rem; //espaçamento entre os itens do nav
-        box-sizing: border-box;      
+        display         : flex;
+        flex-direction  : row;
+        align-items     : center;
+        gap             : 2rem; //espaçamento entre os itens do nav
+        box-sizing      : border-box;      
 
         .navbar-options-item{
-            display: flex;
-            flex-direction: row;
-            position: relative;
-            height: 100%;
-            align-items: center;
-            gap: 0.5rem;
-            white-space: nowrap;
+            position        : relative;
+            display         : flex;
+            height          : 100%;
+            align-items     : center;
+            gap             : 0.5rem;
+            white-space     : nowrap;
+
             //formatação do texto do nav
             @include font-HelveticaNow-700;
-            font-size: 0.875rem;
-            line-height: 1.5;
-            color:#ffffff;
+            font-size       : 0.875rem;
+            line-height     : 1.5;
+            color           : white;
 
              //formatação do menu dropdown genérico para os 3 itens do nav
             .dropdown-menu{
@@ -631,6 +625,16 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     }    
 }
 
+#rf-aux-div{
+    position        : absolute;
+    height          : 100%;
+    
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+}
+
+
 #rf-container{
     @include sector-common;
     overflow    : unset;
@@ -717,8 +721,9 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             /*############################################################################################
             ##############################################################################################
             #############################################################################################*/
+            
+            display: flex;
 
-            display: none;//flex;
 
             /*############################################################################################
             ##############################################################################################
@@ -748,8 +753,17 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     grid-template-columns: repeat(7,1fr);
                     grid-template-rows: 0.75fr repeat(6,1fr);
 
+
+                    /*
+                    :nth-child(7n+2) {
+                        color: $sixt-placeholder-gray;
+                    }
+                    */
+
                     .month-year{
+                        grid-row: 1/2;
                         grid-column: 1/8;
+
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -760,6 +774,8 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     }
 
                     .week-day{
+                        grid-row: 2/3;
+
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -776,36 +792,58 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                         align-items: center;
 
                         @include font-HelveticaNow-700;
-                        font-size: 0.925rem;
+                        font-size: 0.9rem;
+                        //transform: scale(1.025,1);
+
+                        cursor: pointer;
+
+                        &.in-range {
+                            background-color: $sixt-placeholder-gray;
+                        }
+    
+    
+                        &.start-node {
+                            background-color: gray;
+                            color: white;
+                            border-radius: 0.75rem 0 0 0.75rem;
+                        }
+    
+    
+                        &.end-node {
+                            background-color: gray;
+                            color: white;
+                            border-radius: 0 0.75rem 0.75rem 0;
+                        }
+    
+                        &.start-node.end-node {
+                            border-radius: 0.75rem;
+                        }
+
                     }
+
+
                 }
             }
         }
     }
 
-    
-    & > #rf-search-results {
+}
+
+.rf-form{
+    padding: 1rem 0;
+
+    display : flex;
+    gap : 0 0.5rem;
+
+    .rf-locations-div{
+        flex-grow: 1;
+        display: flex;
+        gap: 0.75rem;
+        padding-right: 0.75rem;
         
-        // 1. Reset Agressivo (para limpar a herança da "caixa branca")
-        width: 100%;
-        //background-color: transparent !important; 
-        box-shadow: none !important;
-        border: none !important;
-        min-height: 0 !important;
-        padding: 0 !important;
-        margin-bottom: 0 !important;
-        
-        // 2. Configuração da Grelha
-        display: none; // O JavaScript muda isto para 'grid'
-        grid-template-columns: repeat(4, 1fr); 
-        gap: 1rem;
-        margin-top: 2rem;
-        
-        // 3. Estilo dos Cartões (Fundo preto)
-        .car-card {
-            background-color: #191919; 
-            border-radius: 0.5rem;
-            padding: 1.5rem;
+        .rf-location-input{
+            flex-basis : 100%;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
             color: white;
@@ -819,26 +857,22 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             align-items: flex-start; 
             text-align: left;
 
-            &:hover {
-                transform: translateY(-5px);
-                background-color: #252525;
-            }
-
-            .card-header {
+            > div {
                 width: 100%;
-                margin-bottom: 1rem;
-                h3 {
-                    @include font-HelveticaNow-900;
-                    font-size: 1.1rem;
-                    text-transform: uppercase;
-                    margin-bottom: 0.25rem;
-                    color: white;
-                    span {
-                        @include font-HelveticaNow-400;
-                        font-size: 0.8rem;
-                        color: #999;
-                        text-transform: none;
-                        margin-left: 0.3rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+                span{
+                    width           : 100%;
+                    display         : inline-flex; //necessário para atribuir height
+                    align-items     : flex-end;
+                    height          : 1.5rem;
+                    margin-bottom   : 0.25rem;
+
+                    p{
+                        @include font-HelveticaNow-700;
+                        font-size: 0.75rem;
                     }
                 }
                 p {
@@ -849,140 +883,103 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 }
             }
 
-            .card-specs {
-                display: flex;
-                gap: 0.5rem;
-                margin-bottom: 1rem;
-                span {
-                    display: flex;
-                    align-items: center;
-                    @include font-HelveticaNow-700;
-                    font-size: 0.75rem;
-                    background-color: #333;
-                    padding: 0.25rem 0.5rem;
-                    border-radius: 4px;
-                    white-space: nowrap;
-                    color: white;
-                    img {
-                        width: 0.8rem;
-                        height: 0.8rem;
-                        margin-right: 0.3rem;
-                        filter: invert(100%); /* Garante ícones brancos */
+                .rf-input-location{
+                    box-sizing      : border-box;
+                    display         : flex;
+                    align-items     : center;
+                    height          : 3.25rem;
+                    width           : 100%;
+                    padding         : 0 0.75rem;
+                    border          : 1px solid $sixt-placeholder-gray;
+                    border-radius   : 1rem;
+                    
+                    &:focus-within {
+                        border  : 2px solid $sixt-orange;
+                        outline : none; // Remove o contorno padrão do browser
                     }
-                }
-            }
 
-            .card-image {
-                flex-grow: 1;
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 1rem 0;
-                img {
-                    width: 100%;
-                    height: auto;
-                    max-height: 140px; 
-                    object-fit: contain;
-                }
-            }
-
-            .card-features {
-                width: 100%;
-                @include font-HelveticaNow-400;
-                font-size: 0.75rem;
-                color: #00ff00; // Verde check
-                margin-bottom: 1rem;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                .check { font-size: 1rem; }
-            }
-
-            .card-footer {
-                width: 100%;
-                border-top: 1px solid #444;
-                padding-top: 1rem;
-                .price-main {
-                    @include font-HelveticaNow-900;
-                    font-size: 1.5rem;
-                    color: white;
-                    display: flex;
-                    align-items: baseline;
-                    span { font-size: 1rem; }
-                    .per-day {
+                    input {
+                        width       : 100%;
+                        box-sizing  : border-box;
+                        height      :3rem;
+                        margin      : 0 0.5rem;
+                        border      : 0px;
+                        outline     : none;
                         @include font-HelveticaNow-400;
-                        font-size: 0.875rem;
-                        margin-left: 0.2rem;
-                        color: #ccc;
+                        font-size   : 1rem;
+                        line-height : 1.5;
+                        
+                        &::placeholder{
+                            color: $sixt-placeholder-gray;
+                        }
+
+
                     }
                 }
-                .price-total {
-                    @include font-HelveticaNow-400;
-                    font-size: 0.75rem;
-                    color: #888;
-                    margin-top: 0.2rem;
+
+                .rf-different-location{
+                    border : unset;
+                    color: #656a6f;
+                    
+                    img {
+                        margin-right: 0.5rem;
+                    }
+                    
+                    label{
+                        width : 100%;
+                        @include font-HelveticaNow-400;
+                        font-size: 1rem;
+                        line-height: 1.5;
+                    }
+        
+                }
+                
+                .rf-location-return{
+                    display: none;
+                    //display : flex;
+                }
+                
+                .rf-cbx-diff-loc{
+                    display: none;
+                    
+                    &:checked + div {
+                        display: none;
+                    }
+                    
+                    &:checked + div + div{
+                        display : flex;
+                    }
                 }
             }
+            
         }
+        
     }
     
-    .rf-form{
-        padding: 1rem 0;
-        
-        display : flex;
-        gap : 0 0.5rem;
-    
-        .rf-locations-div{
+    .rf-dates-div{
+        min-width   : 41.5rem;
+        display     : flex;
+        width       : 41.5rem;
+
+        justify-content: stretch;
+        gap: 0 1rem;
+
+        > div {
             flex-grow: 1;
             display: flex;
-            
-            .rf-location-input{
-                flex-grow: 1;
-                display: flex;
-    
-                div {
-                    width : 100%;
-                    
-                    span{
-                        width : 100%;
-                        display         : inline-block; //necessário para atribuir height
-                        height          : 1.5rem;
-                        margin-bottom   : 0.25rem;
-    
-                        label{
-                            @include font-HelveticaNow-700;
-                            font-size: 0.75rem;
-                        }
-                    }
-    
-                    div{
-                        box-sizing: border-box;
-                        display: flex;
-                        align-items: center;
-                        height : 3.25rem;
-                        padding: 0 0.75rem;
-                        border: 1px solid $sixt-placeholder-gray;
-                        border-radius: 1rem;
-    
-                        input {
-                            width : 100%;
-                            box-sizing: border-box;
-                            height:3rem;
-                            margin: 0 0.5rem;
-                            border: 0px;
-                            outline: none;
-                            @include font-HelveticaNow-400;
-                            font-size: 1rem;
-                            line-height: 1.5;
-                            
-                            &::placeholder{
-                                color: $sixt-placeholder-gray;
-                            }
-    
-    
-                        }
-                    }
+            flex-direction: column;
+            width : 13.5rem;
+
+            span{
+                width           : 100%;
+                display         : inline-flex; //necessário para atribuir height
+                align-items     : flex-end;
+                height          : 1.5rem;
+                margin-bottom   : 0.25rem;
+
+                p{
+                    @include font-HelveticaNow-700;
+                    font-size   : 0.75rem;
                 }
             }
     
