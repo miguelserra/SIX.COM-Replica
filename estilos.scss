@@ -195,6 +195,9 @@ img {
     }
 }
 
+
+
+
 a{
     cursor: pointer;
 }
@@ -241,15 +244,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         pointer-events: none;
     }
     overflow: hidden; //inibe o scroll da pagina quando o menu está aberto
-}
-
-#rf-aux-div{
-    position        : absolute;
-    height : 100%;
-    
-    display         : flex;
-    flex-direction  : column;
-    align-items     : center;
 }
 
 #navbar{
@@ -395,30 +389,30 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     }
 
     .sandwich #toggle:checked + .menu {
-        display : flex;
-        flex-direction: column;
+        display         : flex;
+        flex-direction  : column;
     }
 
     #navbar-options{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap         : 2rem; //espaçamento entre os itens do nav
-        box-sizing: border-box;      
+        display         : flex;
+        flex-direction  : row;
+        align-items     : center;
+        gap             : 2rem; //espaçamento entre os itens do nav
+        box-sizing      : border-box;      
 
         .navbar-options-item{
-            display: flex;
-            flex-direction: row;
-            position: relative;
-            height: 100%;
-            align-items: center;
-            gap: 0.5rem;
-            white-space: nowrap;
+            position        : relative;
+            display         : flex;
+            height          : 100%;
+            align-items     : center;
+            gap             : 0.5rem;
+            white-space     : nowrap;
+
             //formatação do texto do nav
             @include font-HelveticaNow-700;
-            font-size: 0.875rem;
-            line-height: 1.5;
-            color:#ffffff;
+            font-size       : 0.875rem;
+            line-height     : 1.5;
+            color           : white;
 
              //formatação do menu dropdown genérico para os 3 itens do nav
             .dropdown-menu{
@@ -631,6 +625,16 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     }    
 }
 
+#rf-aux-div{
+    position        : absolute;
+    height          : 100%;
+    
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+}
+
+
 #rf-container{
     @include sector-common;
     overflow    : unset;
@@ -717,8 +721,9 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             /*############################################################################################
             ##############################################################################################
             #############################################################################################*/
+            
+            display: flex;
 
-            display: none;//flex;
 
             /*############################################################################################
             ##############################################################################################
@@ -748,8 +753,17 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     grid-template-columns: repeat(7,1fr);
                     grid-template-rows: 0.75fr repeat(6,1fr);
 
+
+                    /*
+                    :nth-child(7n+2) {
+                        color: $sixt-placeholder-gray;
+                    }
+                    */
+
                     .month-year{
+                        grid-row: 1/2;
                         grid-column: 1/8;
+
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -760,6 +774,8 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     }
 
                     .week-day{
+                        grid-row: 2/3;
+
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -776,8 +792,36 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                         align-items: center;
 
                         @include font-HelveticaNow-700;
-                        font-size: 0.925rem;
+                        font-size: 0.9rem;
+                        //transform: scale(1.025,1);
+
+                        cursor: pointer;
+
+                        &.in-range {
+                            background-color: $sixt-placeholder-gray;
+                        }
+    
+    
+                        &.start-node {
+                            background-color: gray;
+                            color: white;
+                            border-radius: 0.75rem 0 0 0.75rem;
+                        }
+    
+    
+                        &.end-node {
+                            background-color: gray;
+                            color: white;
+                            border-radius: 0 0.75rem 0.75rem 0;
+                        }
+    
+                        &.start-node.end-node {
+                            border-radius: 0.75rem;
+                        }
+
                     }
+
+
                 }
             }
         }
@@ -794,45 +838,58 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     .rf-locations-div{
         flex-grow: 1;
         display: flex;
+        gap: 0.75rem;
+        padding-right: 0.75rem;
         
         .rf-location-input{
+            flex-basis : 100%;
             flex-grow: 1;
             display: flex;
 
-            div {
-                width : 100%;
+            > div {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 
                 span{
-                    width : 100%;
-                    display         : inline-block; //necessário para atribuir height
+                    width           : 100%;
+                    display         : inline-flex; //necessário para atribuir height
+                    align-items     : flex-end;
                     height          : 1.5rem;
                     margin-bottom   : 0.25rem;
 
-                    label{
+                    p{
                         @include font-HelveticaNow-700;
                         font-size: 0.75rem;
                     }
                 }
 
-                div{
-                    box-sizing: border-box;
-                    display: flex;
-                    align-items: center;
-                    height : 3.25rem;
-                    padding: 0 0.75rem;
-                    border: 1px solid $sixt-placeholder-gray;
-                    border-radius: 1rem;
+                .rf-input-location{
+                    box-sizing      : border-box;
+                    display         : flex;
+                    align-items     : center;
+                    height          : 3.25rem;
+                    width           : 100%;
+                    padding         : 0 0.75rem;
+                    border          : 1px solid $sixt-placeholder-gray;
+                    border-radius   : 1rem;
+                    
+                    &:focus-within {
+                        border  : 2px solid $sixt-orange;
+                        outline : none; // Remove o contorno padrão do browser
+                    }
 
                     input {
-                        width : 100%;
-                        box-sizing: border-box;
-                        height:3rem;
-                        margin: 0 0.5rem;
-                        border: 0px;
-                        outline: none;
+                        width       : 100%;
+                        box-sizing  : border-box;
+                        height      :3rem;
+                        margin      : 0 0.5rem;
+                        border      : 0px;
+                        outline     : none;
                         @include font-HelveticaNow-400;
-                        font-size: 1rem;
-                        line-height: 1.5;
+                        font-size   : 1rem;
+                        line-height : 1.5;
                         
                         &::placeholder{
                             color: $sixt-placeholder-gray;
@@ -841,39 +898,44 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 
                     }
                 }
-            }
-        }
 
-        .rf-location-return{
-            flex-grow: 1;
-            display: none;
-            padding: 0 0.5rem 0 1rem;
-        }
-
-        .rf-different-location{
-            flex-grow: 1;
-            align-self: flex-end;
-            display: flex;
-            align-items: center;
-            height : 3.25rem;
-            padding: 0 0.75rem;
-            color: #656a6f;
-            @include font-HelveticaNow-400;
-            font-size: 1rem;
-            line-height: 1.5;
-            
-            div{
-                display: flex;
-                align-items: center;
-                box-sizing: border-box;
-                width : 100%;
-                height : 3rem;
+                .rf-different-location{
+                    border : unset;
+                    color: #656a6f;
+                    
+                    img {
+                        margin-right: 0.5rem;
+                    }
+                    
+                    label{
+                        width : 100%;
+                        @include font-HelveticaNow-400;
+                        font-size: 1rem;
+                        line-height: 1.5;
+                    }
+        
+                }
+                
+                .rf-location-return{
+                    display: none;
+                    //display : flex;
+                }
+                
+                .rf-cbx-diff-loc{
+                    display: none;
+                    
+                    &:checked + div {
+                        display: none;
+                    }
+                    
+                    &:checked + div + div{
+                        display : flex;
+                    }
+                }
             }
             
-            img {
-                margin : 0.5rem;
-            }
         }
+        
     }
     
     .rf-dates-div{
@@ -884,7 +946,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         justify-content: stretch;
         gap: 0 1rem;
 
-        div {
+        > div {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -892,11 +954,12 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 
             span{
                 width           : 100%;
-                display         : inline-block; //necessário para atribuir height
+                display         : inline-flex; //necessário para atribuir height
+                align-items     : flex-end;
                 height          : 1.5rem;
                 margin-bottom   : 0.25rem;
 
-                label{
+                p{
                     @include font-HelveticaNow-700;
                     font-size   : 0.75rem;
                 }
