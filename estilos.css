@@ -101,10 +101,6 @@ img {
   display: block;
   filter: invert(50%);
 }
-.btn-dot:first-child img {
-  filter: unset;
-}
-
 .tabs-window .tab {
   width: 100%;
   order: 1;
@@ -1321,22 +1317,23 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
   row-gap: 2.5rem;
   grid-auto-rows: 0;
   padding-bottom: 0;
+  column-gap: 1.5rem;
   row-gap: 0;
   overflow: hidden;
-  /* troca ordem <- estao todas a 0 no inicio, -1 vai para primera pos
-  #s3-img5{
-      order : -1;
-  }
-      */
 }
 #main #sector3 div.sector-container .img-container {
+  display: none;
   position: relative;
   overflow: hidden;
+}
+#main #sector3 div.sector-container .img-container.visible {
+  display: block;
 }
 #main #sector3 div.sector-container div.s3-txt {
   display: flex;
@@ -1399,6 +1396,9 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   transform: translate(-0.825rem, 0);
   padding: 0.5rem;
 }
+#main #sector3 div.sector-container #s3-footer #s3-btns-esq .btn-dot.active-dot img {
+  filter: invert(0%) !important;
+}
 #main #sector3 div.sector-container #s3-footer #s3-btns-dir {
   display: flex;
   box-sizing: border-box;
@@ -1424,6 +1424,11 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 #main #sector3 div.sector-container #s3-footer #s3-btns-dir .btn-arrow:first-child img {
   transform: rotate(180deg);
   transform-origin: center;
+}
+#main #sector3 div.sector-container #s3-footer #s3-btns-dir .btn-arrow.disabled-arrow {
+  opacity: 0.3;
+  pointer-events: none;
+  cursor: default;
 }
 #main #sector4 {
   position: relative;
@@ -1474,11 +1479,12 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   position: relative;
   margin-top: auto;
   margin-bottom: auto;
-  /* troca ordem <- estao todas a 0 no inicio, -1 vai para primera pos
-  #s3-img5{
-      order : -1;
-  }
-      */
+}
+#main #sector4 div.sector-container #s4-carrossel div {
+  display: none;
+}
+#main #sector4 div.sector-container #s4-carrossel div.active-slide {
+  display: block;
 }
 #main #sector4 div.sector-container #s4-carrossel h1 {
   font-family: "HelveticaNow", sans-serif;
@@ -1516,6 +1522,15 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 #main #sector4 div.sector-container #s4-footer #s4-btns-esq .btn-dot {
   background-color: transparent;
 }
+#main #sector4 div.sector-container #s4-footer #s4-btns-esq .btn-dot img {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  filter: invert(50%);
+}
+#main #sector4 div.sector-container #s4-footer #s4-btns-esq .btn-dot.active-dot img {
+  filter: invert(0%);
+}
 #main #sector4 div.sector-container #s4-footer #s4-btns-dir {
   background: transparent;
   display: flex;
@@ -1543,6 +1558,10 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 #main #sector4 div.sector-container #s4-footer #s4-btns-dir .btn-arrow:first-child img {
   transform: rotate(180deg);
   transform-origin: center;
+}
+#main #sector4 div.sector-container #s4-footer #s4-btns-dir .btn-arrow.disabled-arrow {
+  opacity: 0.3;
+  pointer-events: none;
 }
 #main #sector5 {
   background-color: white;
