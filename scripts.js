@@ -23,7 +23,6 @@ function generateCalendars(date) {
 
         //obtem ano e mes da data indicada 
         let newDate = new Date(date.getFullYear(), date.getMonth() + j, 1);
-        console.log(newDate);
         let year = newDate.getFullYear();
         let month = newDate.getMonth();
 
@@ -140,6 +139,36 @@ document.querySelectorAll(".rf-date-pick").forEach(el1 =>
         calendar_container.toggle();
     })
 );
+
+
+/*Show cars/Trucks*/
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("JS carregado!"); // Debug
+
+    const resultsDiv = document.getElementById('rf-search-results');
+    const showCarsButtons = document.querySelectorAll('[id="rf-btn-showcars"]');
+
+    if(showCarsButtons.length > 0 && resultsDiv) {
+        showCarsButtons.forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                console.log("Botão clicado!"); // Debug
+                
+                event.preventDefault(); 
+                
+                // Muda o display para grid
+                resultsDiv.style.display = 'grid';
+                
+                // Faz scroll até aos resultados
+                resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    } else {
+        console.log("Erro: Elementos não encontrados.");
+    }
+});
+
+
 
 
 

@@ -671,7 +671,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 #rf-container > div div#rf-calendar-container div#rf-calendars .calendar .day-number.start-node.end-node {
   border-radius: 0.75rem;
 }
-#rf-container > #rf-search-results {
+#rf-container #rf-search-results {
   width: 100%;
   box-shadow: none !important;
   border: none !important;
@@ -683,7 +683,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   gap: 1rem;
   margin-top: 2rem;
 }
-#rf-container > #rf-search-results .car-card {
+#rf-container #rf-search-results .car-card {
   background-color: #191919;
   border-radius: 0.5rem;
   padding: 1.5rem;
@@ -698,15 +698,15 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   align-items: flex-start;
   text-align: left;
 }
-#rf-container > #rf-search-results .car-card:hover {
+#rf-container #rf-search-results .car-card:hover {
   transform: translateY(-5px);
   background-color: #252525;
 }
-#rf-container > #rf-search-results .car-card .card-header {
+#rf-container #rf-search-results .car-card .card-header {
   width: 100%;
   margin-bottom: 1rem;
 }
-#rf-container > #rf-search-results .car-card .card-header h3 {
+#rf-container #rf-search-results .car-card .card-header h3 {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
@@ -716,7 +716,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   margin-bottom: 0.25rem;
   color: white;
 }
-#rf-container > #rf-search-results .car-card .card-header h3 span {
+#rf-container #rf-search-results .car-card .card-header h3 span {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -726,7 +726,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   text-transform: none;
   margin-left: 0.3rem;
 }
-#rf-container > #rf-search-results .car-card .card-header p {
+#rf-container #rf-search-results .car-card .card-header p {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -735,12 +735,12 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   color: #fff;
   margin: 0;
 }
-#rf-container > #rf-search-results .car-card .card-specs {
+#rf-container #rf-search-results .car-card .card-specs {
   display: flex;
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
-#rf-container > #rf-search-results .car-card .card-specs span {
+#rf-container #rf-search-results .car-card .card-specs span {
   display: flex;
   align-items: center;
   font-family: "HelveticaNow", sans-serif;
@@ -754,13 +754,13 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   white-space: nowrap;
   color: white;
 }
-#rf-container > #rf-search-results .car-card .card-specs span img {
+#rf-container #rf-search-results .car-card .card-specs span img {
   width: 0.8rem;
   height: 0.8rem;
   margin-right: 0.3rem;
   filter: invert(100%); /* Garante ícones brancos */
 }
-#rf-container > #rf-search-results .car-card .card-image {
+#rf-container #rf-search-results .car-card .card-image {
   flex-grow: 1;
   width: 100%;
   display: flex;
@@ -768,14 +768,14 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   justify-content: center;
   margin: 1rem 0;
 }
-#rf-container > #rf-search-results .car-card .card-image img {
+#rf-container #rf-search-results .car-card .card-image img {
   width: 100%;
   height: auto;
   max-height: 140px;
   -o-object-fit: contain;
      object-fit: contain;
 }
-#rf-container > #rf-search-results .car-card .card-features {
+#rf-container #rf-search-results .car-card .card-features {
   width: 100%;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
@@ -788,15 +788,15 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   align-items: center;
   gap: 0.5rem;
 }
-#rf-container > #rf-search-results .car-card .card-features .check {
+#rf-container #rf-search-results .car-card .card-features .check {
   font-size: 1rem;
 }
-#rf-container > #rf-search-results .car-card .card-footer {
+#rf-container #rf-search-results .car-card .card-footer {
   width: 100%;
   border-top: 1px solid #444;
   padding-top: 1rem;
 }
-#rf-container > #rf-search-results .car-card .card-footer .price-main {
+#rf-container #rf-search-results .car-card .card-footer .price-main {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
@@ -806,10 +806,10 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   display: flex;
   align-items: baseline;
 }
-#rf-container > #rf-search-results .car-card .card-footer .price-main span {
+#rf-container #rf-search-results .car-card .card-footer .price-main span {
   font-size: 1rem;
 }
-#rf-container > #rf-search-results .car-card .card-footer .price-main .per-day {
+#rf-container #rf-search-results .car-card .card-footer .price-main .per-day {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -818,7 +818,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   margin-left: 0.2rem;
   color: #ccc;
 }
-#rf-container > #rf-search-results .car-card .card-footer .price-total {
+#rf-container #rf-search-results .car-card .card-footer .price-total {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -827,22 +827,18 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   color: #888;
   margin-top: 0.2rem;
 }
-#rf-container .rf-form {
+
+.rf-form {
   padding: 1rem 0;
   display: flex;
   gap: 0 0.5rem;
 }
-#rf-container .rf-form .rf-locations-div {
+.rf-form .rf-locations-div {
   flex-grow: 1;
   display: flex;
   gap: 0.75rem;
   padding-right: 0.75rem;
 }
-#rf-container .rf-form .rf-locations-div .rf-location-input {
-  flex-grow: 1;
-  display: flex;
-}
-#rf-container .rf-form .rf-locations-div .rf-location-input div {
 .rf-form .rf-locations-div .rf-location-input {
   flex-basis: 100%;
   flex-grow: 1;
@@ -854,7 +850,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   flex-direction: column;
   align-items: center;
 }
-#rf-container .rf-form .rf-locations-div .rf-location-input div span {
 .rf-form .rf-locations-div .rf-location-input > div span {
   width: 100%;
   display: inline-flex;
@@ -862,7 +857,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   height: 1.5rem;
   margin-bottom: 0.25rem;
 }
-#rf-container .rf-form .rf-locations-div .rf-location-input div span label {
 .rf-form .rf-locations-div .rf-location-input > div span p {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
@@ -870,7 +864,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   line-height: 1.5;
   font-size: 0.75rem;
 }
-#rf-container .rf-form .rf-locations-div .rf-location-input div div {
 .rf-form .rf-locations-div .rf-location-input > div .rf-input-location {
   box-sizing: border-box;
   display: flex;
@@ -881,7 +874,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   border: 1px solid #d7dadc;
   border-radius: 1rem;
 }
-#rf-container .rf-form .rf-locations-div .rf-location-input div div input {
 .rf-form .rf-locations-div .rf-location-input > div .rf-input-location:focus-within {
   border: 2px solid #ff5000;
   outline: none;
@@ -900,24 +892,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 1rem;
   line-height: 1.5;
 }
-#rf-container .rf-form .rf-locations-div .rf-location-input div div input::-moz-placeholder {
-  color: #d7dadc;
-}
-#rf-container .rf-form .rf-locations-div .rf-location-input div div input::placeholder {
-  color: #d7dadc;
-}
-#rf-container .rf-form .rf-locations-div .rf-location-return {
-  flex-grow: 1;
-  display: none;
-  padding: 0 0.5rem 0 1rem;
-}
-#rf-container .rf-form .rf-locations-div .rf-different-location {
-  flex-grow: 1;
-  align-self: flex-end;
-  display: flex;
-  align-items: center;
-  height: 3.25rem;
-  padding: 0 0.75rem;
 .rf-form .rf-locations-div .rf-location-input > div .rf-input-location input::-moz-placeholder {
   color: #d7dadc;
 }
@@ -940,15 +914,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 1rem;
   line-height: 1.5;
 }
-#rf-container .rf-form .rf-locations-div .rf-different-location div {
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  width: 100%;
-  height: 3rem;
-}
-#rf-container .rf-form .rf-locations-div .rf-different-location img {
-  margin: 0.5rem;
 .rf-form .rf-locations-div .rf-location-input > div .rf-location-return {
   display: none;
 }
@@ -961,21 +926,19 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 .rf-form .rf-locations-div .rf-location-input > div .rf-cbx-diff-loc:checked + div + div {
   display: flex;
 }
-#rf-container .rf-form .rf-dates-div {
+.rf-form .rf-dates-div {
   min-width: 41.5rem;
   display: flex;
   width: 41.5rem;
   justify-content: stretch;
   gap: 0 1rem;
 }
-#rf-container .rf-form .rf-dates-div div {
 .rf-form .rf-dates-div > div {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   width: 13.5rem;
 }
-#rf-container .rf-form .rf-dates-div div span {
 .rf-form .rf-dates-div > div span {
   width: 100%;
   display: inline-flex;
@@ -983,7 +946,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   height: 1.5rem;
   margin-bottom: 0.25rem;
 }
-#rf-container .rf-form .rf-dates-div div span label {
 .rf-form .rf-dates-div > div span p {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
@@ -991,7 +953,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   line-height: 1.5;
   font-size: 0.75rem;
 }
-#rf-container .rf-form .rf-dates-div div div {
 .rf-form .rf-dates-div > div div {
   display: flex;
   flex-direction: row;
@@ -1003,21 +964,21 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 1rem;
   line-height: 1.5;
 }
-#rf-container .rf-form .rf-dates-div .rf-div-btn-show {
+.rf-form .rf-dates-div .rf-div-btn-show {
   flex-basis: 12.5rem;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   box-sizing: border-box;
 }
-#rf-container .rf-form .rf-dates-div .rf-div-btn-show button {
+.rf-form .rf-dates-div .rf-div-btn-show button {
   width: 100%;
   height: 3.25rem;
   border-radius: 1rem;
   background-color: #ff5000;
   color: white;
 }
-#rf-container .rf-form .rf-dates-div .rf-div-btn-show button div {
+.rf-form .rf-dates-div .rf-div-btn-show button div {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -1400,6 +1361,9 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   color: white;
   text-transform: uppercase;
 }
+#main #sector3 div.sector-container h1.smaller {
+  font-size: 1.875rem;
+}
 #main #sector3 div.sector-container p {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
@@ -1434,9 +1398,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   justify-content: stretch;
   transform: translate(-0.825rem, 0);
   padding: 0.5rem;
-}
-#main #sector3 div.sector-container #s3-footer #s3-btns-esq .btn-dot {
-  background-color: transparent;
 }
 #main #sector3 div.sector-container #s3-footer #s3-btns-dir {
   display: flex;
