@@ -791,14 +791,14 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   flex-direction: column;
   width: 13.5rem;
 }
-.rf-form .rf-dates-div > div span {
+.rf-form .rf-dates-div > div > span {
   width: 100%;
   display: inline-flex;
   align-items: flex-end;
   height: 1.5rem;
   margin-bottom: 0.25rem;
 }
-.rf-form .rf-dates-div > div span p {
+.rf-form .rf-dates-div > div > span p {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
