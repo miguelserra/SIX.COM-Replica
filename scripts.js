@@ -5,8 +5,13 @@
 //main div
 const divMain = document.querySelector('#main');
 
+//divs com string das datas
+const startDateDivs = document.querySelectorAll(".start-date");
+const endDateDivs = document.querySelectorAll(".end-date");
+
+
 //objeto para div que contem o Calendario
-const calendarContainer = {
+const objCalendarContainer = {
     element : document.getElementById('rf-calendar-container'),
     toggle : function() {
         if (this.element.style.display == "none"){
@@ -16,6 +21,7 @@ const calendarContainer = {
         }
     }
 };
+
 
 //botoes que ativam o calendario
 const btnDatePick = document.querySelectorAll(".rf-date-pick");
@@ -27,17 +33,120 @@ const months = [
     'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
-const startDateDivs = document.querySelectorAll(".start-date");
-const endDateDivs = document.querySelectorAll(".end-date");
 
-const rental_info = {
-    //TS = timestamp
-    startDateTS : 0,
-    startHours : 0,
-    startMinutes : 0, 
-    endDateTS : 0,
-    endHours : 0,
-    endMinutes : 0, 
+/* ########################
+## OBJECTO <RENTAL INFO> ##
+######################## */
+
+const objRentalInfoAndBilling = {
+
+    vehicle         : "car",
+
+    startDateTS     : 0,
+    startHours      : 0,
+    startMinutes    : 0, 
+
+    endDateTS       : 0,
+    endHours        : 0,
+    endMinutes      : 0,
+    
+    diffReturn      : false,
+    diffReturnFee   : 30,
+
+    applyCorpRate   : false,
+    tier1DiscRate   : 0.1,
+    tier2DiscRate   : 0.2,
+
+    weekCarRate     : 6,
+    weekendCarRate  : 15,
+    
+    weekTruckRate   : 12,
+    weekendTruckRate : 20,
+    
+    numWeekDays    : 0,
+    numWeekendDays  : 0,
+
+    billWeekDays   : 0,
+    billWeekendDays : 0,
+
+    billBeforeDiscount  : 0,
+    billDiscount        : 0,
+    billTotal           : 0,
+
+
+    handleRentingDays : function() {
+        let tsStart = this.startDateTS + (this.startHours*3600 + this.startMinutes*60)*1000;
+        let tsEnd = this.ehdDateTS + (this.endHours*3600 + this.endMinutes*60)*1000;
+
+        let timeWeek    = 0;
+        let timeWeekend = 0;
+
+        let ts = tsStart;
+        //vamos ver, dia em dia de aluguer, como o tempo é alocado (semana ou fds)
+        while (ts < tsEnd) {
+            // calcula o inicio do proximo dia À meia-noite
+            let nextDay = new Date(ts);
+            nextDay.setHours(24, 0, 0, 0);
+            let limit = Math.min(nextDay.getTime(), tsEnd);
+
+            //fracçao de tempo (max 24*60*60*1000 miliseg)
+            let fraction = limit - ts;
+
+            // verifica se o dia atual é tsEnd de semana (sabado ou domingo)
+            let date = new Date(ts);
+            let week = date.getDay(); 
+            if (week == 0 || week == 6) {// domingo=0 e sabado=6
+                timeWeekend += fraction;
+            } else {
+                timeWeek += fraction;
+            }
+
+            ts = limit; // salta para o inicio do prox dia
+        }
+
+        this.numweeks    = Math.ceil(timeWeek / (1000 * 60 * 60))
+        this.numWeekendDays = Math.ceil(timeWeekend / (1000 * 60 * 60));
+        
+    },
+
+    handleBilling : function() {
+
+        let weekRate     = 0;
+        let weekendRate  = 0;
+        let discountRate = 0;
+
+        if (this.vehicle == "car"){
+            weekRate    = this.weekCarRate;
+            weekendRate = this.weekendCarRate;
+        } else {
+            weekRate    = this.weekTruckRate;
+            weekendRate = this.weekendTruckRate;
+        }
+        
+        this.billWeekDays       = this.numWeekDays * this.weekCarRate;
+        this.billWeekendDays    = this.numWeekDays * this.weekendCarRate;
+        this.billBeforeDiscount = this.billWeekDays + this.billWeekendDays;
+        
+        if (this.diffReturn){
+            this.billBeforeDiscount += this.diffReturnFee;
+        }
+
+        if (this.applyCorpRate){
+            if (this.numWeekDays + this.numWeekendDays < 3){
+                discountRate = this.tier1DiscRate;
+            }else{
+                discountRate = this.tier2DiscRate;
+            }
+        }else{
+            discountRate = 0;
+        }
+
+        this.billDiscount = this.billTotal * discountRate;
+
+        this.billTotal = billBeforeDiscount - this.billDiscount;
+
+    }
+
 } 
 
 /* ###################################
@@ -52,7 +161,7 @@ function delay(time) {
 //evento que abre e fecha div do calendário ao clicar nos botões pickdate
 btnDatePick.forEach(el1 => 
     el1.addEventListener("click", function(){
-        calendarContainer.toggle();
+        objCalendarContainer.toggle();
     })
 );
 
@@ -60,7 +169,7 @@ btnDatePick.forEach(el1 =>
 //faz reset à visualização através de clicks no main
 document.body.addEventListener('click', function (event) {
     if (divMain.contains(event.target)) {
-        calendarContainer.element.style.display = "none";       
+        objCalendarContainer.element.style.display = "none";       
     }
 });
 
@@ -147,28 +256,28 @@ function handleDateClick(e) {
     let clickedDayTimestamp = +e.currentTarget.dataset.dateValue;
 
     //se nada clicado (inicia) ou start e end clicados (termina)
-    if (!rental_info.startDateTS || (rental_info.startDateTS && rental_info.endDateTS)) {
-        rental_info.startDateTS = clickedDayTimestamp;
-        rental_info.endDateTS = 0;
+    if (!objRentalInfoAndBilling.startDateTS || (objRentalInfoAndBilling.startDateTS && objRentalInfoAndBilling.endDateTS)) {
+        objRentalInfoAndBilling.startDateTS = clickedDayTimestamp;
+        objRentalInfoAndBilling.endDateTS = 0;
     } else {
         //se data de fim inferior ao start, troca, senao atribui enddate
-        if (clickedDayTimestamp < rental_info.startDateTS) {
-            rental_info.endDateTS = rental_info.startDateTS;
-            rental_info.startDateTS = clickedDayTimestamp;
+        if (clickedDayTimestamp < objRentalInfoAndBilling.startDateTS) {
+            objRentalInfoAndBilling.endDateTS = objRentalInfoAndBilling.startDateTS;
+            objRentalInfoAndBilling.startDateTS = clickedDayTimestamp;
         } else {
-            rental_info.endDateTS = clickedDayTimestamp;
+            objRentalInfoAndBilling.endDateTS = clickedDayTimestamp;
         }
 
-        setStartDate(rental_info.startDateTS);
-        setEndDate(rental_info.endDateTS);
-        delay(0.75).then( () => calendarContainer.toggle());
+        setStartDate(objRentalInfoAndBilling.startDateTS);
+        setEndDate(objRentalInfoAndBilling.endDateTS);
+        delay(0.75).then( () => objCalendarContainer.toggle());
 
     }
     updateSelectionVisuals(0);
 }
 
 function handleMouseEnter(e) {
-    if (rental_info.startDateTS && !rental_info.endDateTS) {
+    if (objRentalInfoAndBilling.startDateTS && !objRentalInfoAndBilling.endDateTS) {
         let hoverDateTimestamp = +e.currentTarget.dataset.dateValue;
         updateSelectionVisuals(hoverDateTimestamp);
     }
@@ -176,7 +285,7 @@ function handleMouseEnter(e) {
 
 function updateSelectionVisuals(hoverDate) {
     let allDays = document.querySelectorAll('.day-number');
-    let tempEnd = rental_info.endDateTS || hoverDate; //condiçao para dar no hover e end date ao mesmo tempo
+    let tempEnd = objRentalInfoAndBilling.endDateTS || hoverDate; //condiçao para dar no hover e end date ao mesmo tempo
 
     allDays.forEach(dayDiv => 
     {
@@ -186,15 +295,15 @@ function updateSelectionVisuals(hoverDate) {
         dayDiv.classList.remove('in-range', 'start-node', 'end-node');
 
         //atribui estilo ao start date e end date
-        if (dayTimestamp === rental_info.startDateTS) 
+        if (dayTimestamp === objRentalInfoAndBilling.startDateTS) 
             dayDiv.classList.add('start-node');
         if (dayTimestamp === tempEnd) 
             dayDiv.classList.add('end-node');
 
         //caso o star e end sejam os memos atribui este especial
-        if (rental_info.startDateTS && tempEnd) {
-            let min = Math.min(rental_info.startDateTS, tempEnd);
-            let max = Math.max(rental_info.startDateTS, tempEnd);
+        if (objRentalInfoAndBilling.startDateTS && tempEnd) {
+            let min = Math.min(objRentalInfoAndBilling.startDateTS, tempEnd);
+            let max = Math.max(objRentalInfoAndBilling.startDateTS, tempEnd);
             if (dayTimestamp >= min && dayTimestamp <= max) {
                 dayDiv.classList.add('in-range');
             }
@@ -207,7 +316,7 @@ function updateSelectionVisuals(hoverDate) {
 
 
 function init(){
-    calendarContainer.toggle();        
+    objCalendarContainer.toggle();        
     generateCalendars(currentDate);
 }
 
