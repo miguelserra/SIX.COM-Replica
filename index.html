@@ -134,7 +134,13 @@
     <div id="rf-aux-div">
     
         <div id="rf-container">
-            <div>
+
+            <!--Corresponde ao "botão" Show Cars na rf-dates-div da Tab Cars-->
+            <input type="checkbox" id="rf-cbx-diff-showcars">
+            <!--Corresponde ao botão Show Trucks na rf-dates-div da Tab Trucks -->
+            <input type="checkbox" id="rf-cbx-diff-showtrucks">
+            
+            <div id="rf-form-container">
                 <div id="rf-tabs-window" class="tabs-window">
     
                     <input type="radio" id="rf-tab-cars" name="rf-tabs" checked="checked">
@@ -144,9 +150,10 @@
                             <p>Cars</p>
                         </div>
                     </label>
-    
+                    
                     <div class="tab"> <!-- TAB CARS COMEÇA -->
-    
+                        
+                        
                         <form id="rf-form-cars" class="rf-form" autocomplete="on" method="post">
                             <div class="rf-locations-div">
                                 <div class="rf-location-input">
@@ -190,10 +197,10 @@
                                     <div>
                                         <button type="button" class="rf-btn rounded-left rf-date-pick">
                                             <img class="icon" src="icons/ico_calendar.svg" alt="pickup date"/>
-                                            <div>Oct 20</div>
+                                            <div><span class="start-date">Oct 20</span></div>
                                         </button>
                                         <button type="button" class="rf-btn rounded-right">
-                                            <div>12:00 PM</div>
+                                            <div><span class="start-time">12:00 PM</span></div>
                                         </button>
                                     </div>
                                 </div>
@@ -204,17 +211,16 @@
                                     <div>
                                         <button type="button" class="rf-btn rounded-left rf-date-pick">
                                             <img class="icon" src="icons/ico_calendar.svg" alt="return date"/>
-                                            <div>Oct 24</div>
+                                            <div><span class="end-date">Oct 24</span></div>
                                         </button>
                                         <button type="button" class="rf-btn rounded-right">
-                                            <div>12:00 PM</div>
+                                            <div><span class="end-time">12:00 PM</span></div>
                                         </button>
                                     </div>
                                 </div>
-                                <div class="rf-div-btn-show">
-                                    <button type="button" class="rf-btn" id="rf-btn-showcars">
-                                        <div>Show cars</div>
-                                    </button>
+
+                                <div class="rf-div-cbx-show">
+                                    <label for="rf-cbx-diff-showcars">Show cars</label>
                                 </div>
                             </div> <!--FIM "rf-dates-div"-->
                                 
@@ -243,7 +249,7 @@
                                         </span>
                                         <div class="rf-input-location  rf-location-pickup">
                                             <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                            <input type="text" id="input-pickup-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
+                                            <input type="text" id="input-pickup-trucks" name="pickup-trucks-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
                                         </div>
                                     </div>
                                 </div>
@@ -274,7 +280,7 @@
                                     <span>
                                         <p>Pickup date</p>
                                     </span>
-                                    <div>
+                                    <div class="rf-div-btn">
                                         <button type="button" class="rf-btn rounded-left rf-date-pick">
                                             <img class="icon" src="icons/ico_calendar.svg" alt="pickup date"/>
                                             <div>Jan 03</div>
@@ -288,7 +294,7 @@
                                     <span>
                                         <p>Return date</p>
                                     </span>
-                                    <div>
+                                    <div class="rf-div-btn">
                                         <button type="button" class="rf-btn rounded-left rf-date-pick">
                                             <img class="icon" src="icons/ico_calendar.svg" alt="return date"/>
                                             <div>Jan 05</div>
@@ -319,11 +325,9 @@
                         </div>
                     </label>
                     <div class="tab">
-    
-    
+                        <!--Vazio, para manter estrutura-->
                     </div>
                     
-    
                 </div>
     
                 <!-- CALENDARIO COMEÇA -->
@@ -389,94 +393,101 @@
     
             </div>
                       <!--Inicio dos resultados dos carros-->
-            <div id="rf-search-results">
+            <div class="rf-search-results" id="rf-search-results-cars">
                 
-                <div class="car-card">
-                    <div class="card-header">
-                        <h3>FORD FOCUS STW <span>or similar</span></h3>
-                        <p>Compact Station wagon Automatic</p>
+                <div>
+                    <h1>Your results are here. Pick your ride!</h1>
+                    <div>
+                        <div class="car-card">
+                            <div class="card-header">
+                                <h3>FORD FOCUS STW <span>or similar</span></h3>
+                                <p>Compact Station wagon Automatic</p>
+                            </div>
+                            
+                            <div class="card-specs">
+                                <span><img src="icons/ico_user.svg"> 5</span>
+                                <span><img src="icons/ico_gear.svg"> Automatic</span> 
+                            </div> <!--#############################-->
+        
+                            <div class="card-image">
+                                <img src="media/cars-ford-focus-stw.png" alt="ford focus"> </div>
+        
+                            <div class="card-features">
+                                <span class="check">✔</span> Unlimited kilometers
+                            </div>
+        
+                            <div class="card-footer">
+                                <div class="price-main">$63<span>.89</span> <span class="per-day">/day</span></div>
+                                <div class="price-total">$3,385.82 total</div>
+                            </div>
+                        </div>
+        
+                        <div class="car-card">
+                            <div class="card-header">
+                                <h3>NISSAN QASHQAI <span>or similar</span></h3>
+                                <p>Midsize SUV Manual</p>
+                            </div>
+                            <div class="card-specs">
+                                <span><img src="icons/ico_user.svg"> 5</span>
+                                <span><img src="icons/ico_gear.svg"> Manual</span>
+                            </div>
+                            <div class="card-image">
+                                <img src="media/cars-nissan-qashqai.png" alt="Nissan Qashqai">
+                            </div>
+                            <div class="card-features">
+                                <span class="check">✔</span> Unlimited kilometers
+                            </div>
+                            <div class="card-footer">
+                                <div class="price-main">$63<span>.89</span> <span class="per-day">/day</span></div>
+                                <div class="price-total">$3,385.82 total</div>
+                            </div>
+                        </div>
+        
+                        <div class="car-card">
+                            <div class="card-header">
+                                <h3>VW POLO <span>or similar</span></h3>
+                                <p>Economy Sedan Automatic</p>
+                            </div>
+                            <div class="card-specs">
+                                <span><img src="icons/ico_user.svg"> 5</span>
+                                <span><img src="icons/ico_gear.svg"> Manual</span>
+                            </div>
+                            <div class="card-image">
+                                <img src="media\cars-vw-polo.png" alt="VW Polo">
+                            </div>
+                            <div class="card-features">
+                                <span class="check">✔</span> Unlimited kilometers
+                            </div>
+                            <div class="card-footer">
+                                <div class="price-main">$63<span>.89</span> <span class="per-day">/day</span></div>
+                                <div class="price-total">$3,385.82 total</div>
+                            </div>
+                        </div>
+        
+                        <div class="car-card">
+                            <div class="card-header">
+                                <h3>VW TAIGO <span>or similar</span></h3>
+                                <p>Compact SUV Automatic</p>
+                            </div>
+                            <div class="card-specs">
+                                <span><img src="icons/ico_user.svg"> 5</span>
+                                <span><img src="icons/ico_gear.svg"> Automatic</span>
+                            </div>
+                            <div class="card-image">
+                                <img src="media/cars-vw-taigo-suv.png" alt="BMW">
+                            </div>
+                            <div class="card-features">
+                                <span class="check">✔</span> Unlimited kilometers
+                            </div>
+                            <div class="card-footer">
+                                <div class="price-main">$72<span>.61</span> <span class="per-day">/day</span></div>
+                                <div class="price-total">$4,100.00 total</div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="card-specs">
-                        <span><img src="icons/ico_user.svg"> 5</span>
-                        <span><img src="icons/ico_gear.svg"> Automatic</span> 
-                    </div> <!--#############################-->
 
-                    <div class="card-image">
-                        <img src="media/cars-ford-focus-stw.png" alt="ford focus"> </div>
-
-                    <div class="card-features">
-                        <span class="check">✔</span> Unlimited kilometers
-                    </div>
-
-                    <div class="card-footer">
-                        <div class="price-main">$63<span>.89</span> <span class="per-day">/day</span></div>
-                        <div class="price-total">$3,385.82 total</div>
-                    </div>
                 </div>
 
-                <div class="car-card">
-                    <div class="card-header">
-                        <h3>NISSAN QASHQAI <span>or similar</span></h3>
-                        <p>Midsize SUV Manual</p>
-                    </div>
-                    <div class="card-specs">
-                        <span><img src="icons/ico_user.svg"> 5</span>
-                        <span><img src="icons/ico_gear.svg"> Manual</span>
-                    </div>
-                    <div class="card-image">
-                        <img src="media/cars-nissan-qashqai.png" alt="Nissan Qashqai">
-                    </div>
-                    <div class="card-features">
-                        <span class="check">✔</span> Unlimited kilometers
-                    </div>
-                    <div class="card-footer">
-                        <div class="price-main">$63<span>.89</span> <span class="per-day">/day</span></div>
-                        <div class="price-total">$3,385.82 total</div>
-                    </div>
-                </div>
-
-                <div class="car-card">
-                    <div class="card-header">
-                        <h3>VW POLO <span>or similar</span></h3>
-                        <p>Economy Sedan Automatic</p>
-                    </div>
-                    <div class="card-specs">
-                        <span><img src="icons/ico_user.svg"> 5</span>
-                        <span><img src="icons/ico_gear.svg"> Manual</span>
-                    </div>
-                    <div class="card-image">
-                        <img src="media\cars-vw-polo.png" alt="VW Polo">
-                    </div>
-                    <div class="card-features">
-                        <span class="check">✔</span> Unlimited kilometers
-                    </div>
-                    <div class="card-footer">
-                        <div class="price-main">$63<span>.89</span> <span class="per-day">/day</span></div>
-                        <div class="price-total">$3,385.82 total</div>
-                    </div>
-                </div>
-
-                <div class="car-card">
-                    <div class="card-header">
-                        <h3>VW TAIGO <span>or similar</span></h3>
-                        <p>Compact SUV Automatic</p>
-                    </div>
-                    <div class="card-specs">
-                        <span><img src="icons/ico_user.svg"> 5</span>
-                        <span><img src="icons/ico_gear.svg"> Automatic</span>
-                    </div>
-                    <div class="card-image">
-                        <img src="media/cars-vw-taigo-suv.png" alt="BMW">
-                    </div>
-                    <div class="card-features">
-                        <span class="check">✔</span> Unlimited kilometers
-                    </div>
-                    <div class="card-footer">
-                        <div class="price-main">$72<span>.61</span> <span class="per-day">/day</span></div>
-                        <div class="price-total">$4,100.00 total</div>
-                    </div>
-                </div>
 
             </div>
             <!--fim dos resultados dos carros-->
