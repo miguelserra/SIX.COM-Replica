@@ -1092,7 +1092,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 }
 .rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-image img {
   width: 100%;
-  height: auto;
+  height: 11.97rem;
 }
 .rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-features {
   display: flex;

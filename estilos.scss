@@ -1268,7 +1268,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                         
                         img {
                             width       : 100%;
-                            height      : auto;
+                            height      : 11.97rem; // alterei de auto para fixo senao os trucks ficavam mais pequenos
                         }
                     }
             
