@@ -101,6 +101,7 @@ img {
   display: block;
   filter: invert(50%);
 }
+
 .tabs-window .tab {
   width: 100%;
   order: 1;

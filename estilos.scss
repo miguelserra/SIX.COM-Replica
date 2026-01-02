@@ -165,9 +165,6 @@ img {
         display : block;
         filter  : invert(50%);
         
-        &:hover {
-            //filter : unset; //Não corresponde ao que acontece no site. Apenas muda com evento click
-        }
     }
 
    
