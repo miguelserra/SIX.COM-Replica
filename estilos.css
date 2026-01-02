@@ -950,34 +950,40 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 
 .rf-search-results {
   display: none;
+  flex-direction: column;
   box-sizing: border-box;
   background-color: white;
   width: 100%;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
   margin-bottom: 2rem;
 }
-.rf-search-results > div {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.rf-search-results > div > h1 {
+.rf-search-results > h1 {
   align-self: center;
   display: inline-flex;
-  margin-bottom: 1rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid #ff5000;
-  border-radius: 1rem;
+  margin-bottom: 0.75rem;
+  padding: 1rem 2rem;
+  border: 5px solid #d7dadc;
+  background-image: url("media/cards-background.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: white;
+  border-radius: 2rem;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
   line-height: 1;
-  font-size: 1.5rem;
+  font-size: 1.875rem;
   letter-spacing: 0.025em;
+  text-transform: uppercase;
 }
-.rf-search-results > div > div {
+.rf-search-results div.rf-results-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 0fr;
+}
+.rf-search-results div.rf-results-container div.rf-results-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
@@ -986,26 +992,25 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   gap: 0 1rem;
   padding-top: 0.5rem;
 }
-.rf-search-results > div > div .car-card {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card {
   position: relative;
   box-sizing: border-box;
-  min-height: 24rem;
   width: 100%;
   height: 100%;
   border-radius: 1rem;
   overflow: hidden;
 }
-.rf-search-results > div > div .car-card:hover {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card:hover {
   transform: translateY(-5px);
 }
-.rf-search-results > div > div .car-card.inactive {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card.inactive {
   display: none;
 }
-.rf-search-results > div > div .car-card div.card-background {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-background {
   position: absolute;
   height: 100%;
 }
-.rf-search-results > div > div .car-card div.card-foreground {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground {
   position: relative;
   margin-top: 0.5rem;
   display: flex;
@@ -1018,11 +1023,11 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   color: white;
   cursor: pointer;
 }
-.rf-search-results > div > div .car-card div.card-foreground .card-header {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-header {
   width: 100%;
   margin-bottom: 1rem;
 }
-.rf-search-results > div > div .car-card div.card-foreground .card-header h3 {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-header h3 {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
@@ -1032,7 +1037,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   margin-bottom: 0.25rem;
   color: white;
 }
-.rf-search-results > div > div .car-card div.card-foreground .card-header h3 span {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-header h3 span {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -1042,7 +1047,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   text-transform: none;
   margin-left: 0.3rem;
 }
-.rf-search-results > div > div .car-card div.card-foreground .card-header p {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-header p {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -1051,12 +1056,12 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   color: white;
   margin: 0;
 }
-.rf-search-results > div > div .car-card div.card-foreground .card-specs {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-specs {
   display: flex;
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
-.rf-search-results > div > div .car-card div.card-foreground .card-specs span {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-specs span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1071,13 +1076,13 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   white-space: nowrap;
   color: white;
 }
-.rf-search-results > div > div .car-card div.card-foreground .card-specs span img {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-specs span img {
   width: 0.8rem;
   height: 0.8rem;
   margin-right: 0.3rem;
   filter: invert(100%);
 }
-.rf-search-results > div > div .car-card div.card-foreground .card-image {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-image {
   flex-grow: 1;
   width: 100%;
   margin: 1rem 0;
@@ -1085,11 +1090,11 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   justify-content: center;
   align-items: center;
 }
-.rf-search-results > div > div .car-card div.card-foreground .card-image img {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-image img {
   width: 100%;
   height: auto;
 }
-.rf-search-results > div > div .car-card div.card-foreground .card-features {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-features {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1104,12 +1109,12 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 0.875rem;
   color: #00ff00;
 }
-.rf-search-results > div > div .car-card div.card-foreground .card-footer {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-footer {
   width: 100%;
   border-top: 1px solid #444;
   padding-top: 1rem;
 }
-.rf-search-results > div > div .car-card div.card-foreground .card-footer .price {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-footer .price {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
@@ -1118,16 +1123,23 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   display: flex;
   align-items: baseline;
 }
-.rf-search-results > div > div .car-card div.card-foreground .card-footer .price span {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-footer .price span {
   font-size: 1rem;
 }
-.rf-search-results > div > div .car-card div.card-foreground .card-footer .price.week {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-footer .price.week {
   color: white;
 }
-.rf-search-results > div > div .car-card div.card-foreground .card-footer .price.weekend {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-footer .price.weekend {
   color: #888;
   margin-top: 0.2rem;
   font-size: 1.25rem;
+}
+.rf-search-results div.rf-results-container div.rf-booking-summary {
+  height: 100%;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  background-color: #00ff00;
 }
 
 .sector-max-width {
