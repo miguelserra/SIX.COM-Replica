@@ -52,7 +52,8 @@ class ToggleContainer {
 const objCalendarContainer = new ToggleContainer('rf-calendar-container');
 const objPickupTimeContainer = new ToggleContainer('rf-div-pickup-timeslots');
 const objReturnTimeContainer = new ToggleContainer('rf-div-return-timeslots');
-
+const objShowCarsContainer = new ToggleContainer('rf-search-results-cars');
+const objShowTrucksContainer = new ToggleContainer('rf-search-results-trucks');
 
 //botoes que ativam o calendario
 const btnsDatePick = document.querySelectorAll(".rf-date-pick-btn");
@@ -61,6 +62,9 @@ const btnsDatePick = document.querySelectorAll(".rf-date-pick-btn");
 const btnsPickupTime = document.querySelectorAll(".rf-time-pickup-btn");
 const btnsReturnTime = document.querySelectorAll(".rf-time-return-btn");
 
+//botoes que apresentam os resultados
+const cbxShowCars   = document.querySelector("#rf-btn-show-cars");
+const cbxShowTrucks = document.querySelector("#rf-btn-show-trucks");
 
 const months = [
     'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
@@ -71,17 +75,18 @@ const months = [
 ## OBJECTO <RENTAL INFO> ##
 ######################## */
 
-const objRentalInfoAndBilling = {
+const objBill = {
 
-    vehicle         : "car",
+    vehicleType     : "car",
+    vehicleID       : 0,
 
-    pickupDateTS     : 0,
-    pickupHours      : 0,
-    pickupMinutes    : 0, 
+    pickupDateTS    : 0,
+    pickupHours     : 0,
+    pickupMinutes   : 0, 
 
-    returnDateTS       : 0,
-    returnHours        : 0,
-    returnMinutes      : 0,
+    returnDateTS    : 0,
+    returnHours     : 0,
+    returnMinutes   : 0,
     
     diffReturn      : false,
     diffReturnFee   : 30,
@@ -94,12 +99,12 @@ const objRentalInfoAndBilling = {
     weekendCarRate  : 15,
     
     weekTruckRate   : 12,
-    weekendTruckRate : 20,
+    weekendTruckRate: 20,
     
-    numWeekDays    : 0,
+    numWeekDays     : 0,
     numWeekendDays  : 0,
 
-    billWeekDays   : 0,
+    billWeekDays    : 0,
     billWeekendDays : 0,
 
     billBeforeDiscount  : 0,
@@ -176,7 +181,7 @@ const objRentalInfoAndBilling = {
 
         this.billDiscount = this.billTotal * discountRate;
 
-        this.billTotal = billBeforeDiscount - this.billDiscount;
+        this.billTotal = this.billBeforeDiscount - this.billDiscount;
 
     }
 
@@ -198,13 +203,18 @@ objCalendarContainer.bindBtns(btnsDatePick);
 objPickupTimeContainer.bindBtns(btnsPickupTime);
 objReturnTimeContainer.bindBtns(btnsReturnTime);
 
+objShowCarsContainer.bindBtns([cbxShowCars]);
+objShowTrucksContainer.bindBtns([cbxShowTrucks]);
+
+
 //faz reset à visualização através de clicks no main
 document.body.addEventListener('click', function (event) {
     let target = event.target;
     objCalendarContainer.checkClickOutside(target, btnsDatePick);
     objPickupTimeContainer.checkClickOutside(target, btnsPickupTime);
     objReturnTimeContainer.checkClickOutside(target, btnsReturnTime);
-
+    objShowCarsContainer.checkClickOutside(target, [cbxShowCars]);
+    objShowTrucksContainer.checkClickOutside(target, [cbxShowTrucks]);
 });
 
 
@@ -282,7 +292,6 @@ function initSector3Carousel() {
     updateCarousel();
 }
 
-
 /*Sector 4 - carrossel*/
 function initSector4Carousel() {
     // Seletores
@@ -358,7 +367,6 @@ function initSector4Carousel() {
     updateCarousel();
 }
 
-
 /* #################################################
 ## GERAÇAO DO CONTEUDO DOS CALENDARIOS E SELECÇAO ##
 ################################################# */
@@ -387,10 +395,10 @@ function setEndDate(timestamp){
     });
 }
 
-function generateCalendars(date) {
+function handleCalendar(date) {
 
     //limpa dias dos 3 calendarios através da classe
-    const elements = document.getElementsByClassName("day-number");
+    let elements = document.getElementsByClassName("day-number");
     while(elements.length > 0){
         elements[0].parentNode.removeChild(elements[0]);
     }
@@ -420,7 +428,6 @@ function generateCalendars(date) {
         for (let i = 1; i <= lastDay; i++) {
             const dayDiv = document.createElement('div');
             dayDiv.textContent = i;
-            
 
             //precisamos disto para guardar um timestamp no div
             dayDiv.dataset.dateValue = new Date(year, month, i).getTime();
@@ -433,8 +440,6 @@ function generateCalendars(date) {
             calendar.appendChild(dayDiv);
         }
     }
-    
-
 }
 
 function handleDateClick(e) {
@@ -442,20 +447,20 @@ function handleDateClick(e) {
     let clickedDayTimestamp = +e.currentTarget.dataset.dateValue;
 
     //se nada clicado (inicia) ou start e end clicados (termina)
-    if (!objRentalInfoAndBilling.pickupDateTS || (objRentalInfoAndBilling.pickupDateTS && objRentalInfoAndBilling.returnDateTS)) {
-        objRentalInfoAndBilling.pickupDateTS = clickedDayTimestamp;
-        objRentalInfoAndBilling.returnDateTS = 0;
+    if (!objBill.pickupDateTS || (objBill.pickupDateTS && objBill.returnDateTS)) {
+        objBill.pickupDateTS = clickedDayTimestamp;
+        objBill.returnDateTS = 0;
     } else {
         //se data de fim inferior ao start, troca, senao atribui enddate
-        if (clickedDayTimestamp < objRentalInfoAndBilling.pickupDateTS) {
-            objRentalInfoAndBilling.returnDateTS = objRentalInfoAndBilling.pickupDateTS;
-            objRentalInfoAndBilling.pickupDateTS = clickedDayTimestamp;
+        if (clickedDayTimestamp < objBill.pickupDateTS) {
+            objBill.returnDateTS = objBill.pickupDateTS;
+            objBill.pickupDateTS = clickedDayTimestamp;
         } else {
-            objRentalInfoAndBilling.returnDateTS = clickedDayTimestamp;
+            objBill.returnDateTS = clickedDayTimestamp;
         }
 
-        setStartDate(objRentalInfoAndBilling.pickupDateTS);
-        setEndDate(objRentalInfoAndBilling.returnDateTS);
+        setStartDate(objBill.pickupDateTS);
+        setEndDate(objBill.returnDateTS);
         delay(0.75).then( () => objCalendarContainer.hide());
 
     }
@@ -463,7 +468,7 @@ function handleDateClick(e) {
 }
 
 function handleMouseEnter(e) {
-    if (objRentalInfoAndBilling.pickupDateTS && !objRentalInfoAndBilling.returnDateTS) {
+    if (objBill.pickupDateTS && !objBill.returnDateTS) {
         let hoverDateTimestamp = +e.currentTarget.dataset.dateValue;
         updateSelectionVisuals(hoverDateTimestamp);
     }
@@ -471,7 +476,7 @@ function handleMouseEnter(e) {
 
 function updateSelectionVisuals(hoverDate) {
     let allDays = document.querySelectorAll('.day-number');
-    let tempEnd = objRentalInfoAndBilling.returnDateTS || hoverDate; //condiçao para dar no hover e end date ao mesmo tempo
+    let tempEnd = objBill.returnDateTS || hoverDate; //condiçao para dar no hover e end date ao mesmo tempo
 
     allDays.forEach(dayDiv => 
     {
@@ -481,15 +486,15 @@ function updateSelectionVisuals(hoverDate) {
         dayDiv.classList.remove('in-range', 'start-node', 'end-node');
 
         //atribui estilo ao start date e end date
-        if (dayTimestamp === objRentalInfoAndBilling.pickupDateTS) 
+        if (dayTimestamp === objBill.pickupDateTS) 
             dayDiv.classList.add('start-node');
         if (dayTimestamp === tempEnd) 
             dayDiv.classList.add('end-node');
 
         //caso o star e end sejam os memos atribui este especial
-        if (objRentalInfoAndBilling.pickupDateTS && tempEnd) {
-            let min = Math.min(objRentalInfoAndBilling.pickupDateTS, tempEnd);
-            let max = Math.max(objRentalInfoAndBilling.pickupDateTS, tempEnd);
+        if (objBill.pickupDateTS && tempEnd) {
+            let min = Math.min(objBill.pickupDateTS, tempEnd);
+            let max = Math.max(objBill.pickupDateTS, tempEnd);
             if (dayTimestamp >= min && dayTimestamp <= max) {
                 dayDiv.classList.add('in-range');
             }
@@ -498,14 +503,45 @@ function updateSelectionVisuals(hoverDate) {
 }
 
 
-/*INICIALIZAÇAO DA PAGINA*/
+/* #####################
+## DIVS DE RESULTADOS ##
+##################### */
 
+function randomizeVehicleCards(type) {
+    // esconde todas as cards
+    let cards = document.querySelectorAll("." + type + "-card");
+    cards.forEach(card => card.classList.add("inactive"));
+    
+    // escolhe 4 idfices aleatorios
+    let pos = [0,1,2,3,4,5,6,7]
+    for (let i = 0; i < 4; i++){
+        let idx = Math.floor(Math.random() * pos.length); 
+        pos.splice(idx, 1);
+    }
+
+    //devolve visibilidade aos cards escolhidos
+    for (let i = 0; i < 4; i++){
+        let card = document.querySelector("#" + type + "-card-" + pos[i]) ;
+        card.classList.remove("inactive");
+    }
+}
+
+function showSearchResults(type) {
+    randomizeVehicleCards(type);
+    objBill.vehicleType = type;
+}
+
+cbxShowCars.addEventListener("click", () => showSearchResults('car'));
+cbxShowTrucks.addEventListener("click", () => showSearchResults('truck'));
+
+
+/*INICIALIZAÇAO DA PAGINA*/
 
 function init(){
     objCalendarContainer.hide();
     objPickupTimeContainer.hide();
     objReturnTimeContainer.hide();        
-    generateCalendars(currentDate);
+    handleCalendar(currentDate);
     initSector3Carousel();
     initSector4Carousel();
 }

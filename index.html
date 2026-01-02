@@ -135,11 +135,6 @@
     
         <div id="rf-container">
 
-            <!--Corresponde ao "botão" Show Cars na rf-dates-div da Tab Cars-->
-            <input type="checkbox" id="rf-cbx-diff-showcars">
-            <!--Corresponde ao botão Show Trucks na rf-dates-div da Tab Trucks -->
-            <input type="checkbox" id="rf-cbx-diff-showtrucks">
-            
             <div id="rf-form-container">
                 <div id="rf-tabs-window" class="tabs-window">
     
@@ -152,9 +147,8 @@
                     </label>
                     
                     <div class="tab"> <!-- TAB CARS COMEÇA -->
-                        
-                        
-                        <form id="rf-form-cars" class="rf-form" autocomplete="on" method="post">
+                                  
+                        <form id="rf-form-cars" class="rf-form" autocomplete="on" method="dialog">
                             <div class="rf-locations-div">
                                 <div class="rf-location-input">
                                     <div>
@@ -219,9 +213,9 @@
                                     </div>
                                 </div>
 
-                                <div class="rf-div-cbx-show">
-                                    <label for="rf-cbx-diff-showcars">Show cars</label>
-                                </div>
+                                <button class="rf-btn-show" id="rf-btn-show-cars">
+                                    Show cars
+                                </button>
                             </div> <!--FIM "rf-dates-div"-->
                                 
                         </form>
@@ -305,9 +299,9 @@
                                     </div>
                                 </div>
 
-                                <div class="rf-div-cbx-show">
-                                    <label for="rf-cbx-diff-showtrucks">Show trucks</label>
-                                </div>
+                                <button class="rf-btn-show" id="rf-btn-show-trucks">
+                                    Show trucks
+                                </button>
 
                             </div> <!--FIM "rf-dates-div"-->
                                 
@@ -462,7 +456,7 @@
                 <div>
                     <h1>Your results are here. Pick your ride!</h1>
                     <div>
-                        <div class="car-card" id="car-car-0">
+                        <div class="car-card" id="car-card-0">
                             <div class="card-header">
                                 <h3>FORD FOCUS STW <span>or similar</span></h3>
                                 <p>Compact Station wagon Automatic</p>
@@ -486,7 +480,7 @@
                             </div>
                         </div>
         
-                        <div class="car-card" id="car-car-1">
+                        <div class="car-card" id="car-card-1">
                             <div class="card-header">
                                 <h3>NISSAN QASHQAI <span>or similar</span></h3>
                                 <p>Midsize SUV Manual</p>
@@ -507,7 +501,7 @@
                             </div>
                         </div>
         
-                        <div class="car-card" id="car-car-2">
+                        <div class="car-card" id="car-card-2">
                             <div class="card-header">
                                 <h3>VW POLO <span>or similar</span></h3>
                                 <p>Economy Sedan Automatic</p>
@@ -528,7 +522,7 @@
                             </div>
                         </div>
         
-                        <div class="car-card" id="car-car-3">
+                        <div class="car-card" id="car-card-3">
                             <div class="card-header">
                                 <h3>VW TAIGO <span>or similar</span></h3>
                                 <p>Compact SUV Automatic</p>
@@ -549,7 +543,7 @@
                             </div>
                         </div>
 
-                        <div class="car-card" id="car-car-4">
+                        <div class="car-card" id="car-card-4">
                             <div class="card-header">
                                 <h3>FORD FOCUS STW <span>or similar</span></h3>
                                 <p>Compact Station wagon Automatic</p>
@@ -573,7 +567,7 @@
                             </div>
                         </div>
         
-                        <div class="car-card" id="car-car-5">
+                        <div class="car-card" id="car-card-5">
                             <div class="card-header">
                                 <h3>NISSAN QASHQAI <span>or similar</span></h3>
                                 <p>Midsize SUV Manual</p>
@@ -594,7 +588,7 @@
                             </div>
                         </div>
         
-                        <div class="car-card" id="car-car-6">
+                        <div class="car-card" id="car-card-6">
                             <div class="card-header">
                                 <h3>VW POLO <span>or similar</span></h3>
                                 <p>Economy Sedan Automatic</p>
@@ -615,7 +609,7 @@
                             </div>
                         </div>
         
-                        <div class="car-card" id="car-car-7">
+                        <div class="car-card" id="car-card-7">
                             <div class="card-header">
                                 <h3>VW TAIGO <span>or similar</span></h3>
                                 <p>Compact SUV Automatic</p>
