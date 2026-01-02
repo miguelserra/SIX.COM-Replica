@@ -66,6 +66,9 @@ const btnsReturnTime = document.querySelectorAll(".rf-time-return-btn");
 const cbxShowCars   = document.querySelector("#rf-btn-show-cars");
 const cbxShowTrucks = document.querySelector("#rf-btn-show-trucks");
 
+//car cards
+const divCards = document.querySelectorAll(".car-card")
+
 const months = [
     'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
 ];
@@ -509,7 +512,7 @@ function updateSelectionVisuals(hoverDate) {
 
 function randomizeVehicleCards(type) {
     // esconde todas as cards
-    let cards = document.querySelectorAll("." + type + "-card");
+    let cards = document.querySelectorAll(".car-card");
     cards.forEach(card => card.classList.add("inactive"));
     
     // escolhe 4 indices aleatorios
