@@ -512,7 +512,7 @@ function randomizeVehicleCards(type) {
     let cards = document.querySelectorAll("." + type + "-card");
     cards.forEach(card => card.classList.add("inactive"));
     
-    // escolhe 4 idfices aleatorios
+    // escolhe 4 indices aleatorios
     let pos = [0,1,2,3,4,5,6,7]
     for (let i = 0; i < 4; i++){
         let idx = Math.floor(Math.random() * pos.length); 
@@ -523,6 +523,7 @@ function randomizeVehicleCards(type) {
     for (let i = 0; i < 4; i++){
         let card = document.querySelector("#" + type + "-card-" + pos[i]) ;
         card.classList.remove("inactive");
+        card.dataset.cardID = "Car-" + (i+1);
     }
 }
 
