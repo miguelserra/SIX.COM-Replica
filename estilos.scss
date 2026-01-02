@@ -1173,21 +1173,24 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         }
     
         > div{
-            display: grid; // O JavaScript muda isto para 'grid'
-            grid-template-columns: repeat(4, 1fr); 
+            display                 : grid;
+            grid-template-columns   : repeat(4, 1fr); 
+            grid-template-rows      : 1fr; 
+            grid-auto-rows: 0;
+            overflow: hidden;
             gap: 1rem;
 
             .car-card {
-                background-color: #191919; 
-                border-radius   : 1rem;
-                padding         : 1.5rem;
                 display         : flex;
                 flex-direction  : column;
-                color           : white;
+                justify-content : space-between;
                 box-sizing      : border-box;
                 min-height      : 24rem; 
-                justify-content : space-between;
+                padding         : 1.5rem;
+                border-radius   : 1rem;
                 transition      : transform 0.2s, background-color 0.2s;
+                background-color: #191919; 
+                color           : white;
                 cursor          : pointer;
                 
                 // Garante que o texto dentro do card alinha à esquerda
@@ -1603,12 +1606,11 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             #s3-carrossel{
                 display                 : grid;
                 grid-template-rows      : 1fr;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.5rem;
-              
+                grid-template-columns   : repeat(3, 1fr);
+                grid-auto-rows: 0;              
+                gap                     : 1.5rem;
                 @include grid-general-config;
                 
-                grid-auto-rows: 0;
                 padding-bottom: 0;
                 column-gap: 1.5rem;
                 row-gap: 0;
@@ -1625,7 +1627,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 &.visible {
                     display: block; 
                     // O Grid encarrega-se da largura e altura automaticamente
-        }
+                }
         
             }
         

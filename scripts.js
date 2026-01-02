@@ -6,8 +6,8 @@
 const divMain = document.querySelector('#main');
 
 //divs com string das datas
-const startDateDivs = document.querySelectorAll(".start-date");
-const endDateDivs = document.querySelectorAll(".end-date");
+const pickupDateDivs = document.querySelectorAll(".pickup-date");
+const returnDateDivs = document.querySelectorAll(".return-date");
 
 //classe para o controlo de mostrar/ocultar elementos
 class ToggleContainer {
@@ -376,13 +376,13 @@ function getDateMonthDayFormat(timestamp){
 }
 
 function setStartDate(timestamp){
-    startDateDivs.forEach(el => {
+    pickupDateDivs.forEach(el => {
         el.textContent = getDateMonthDayFormat(timestamp);
     });
 }
 
 function setEndDate(timestamp){
-    endDateDivs.forEach(el => {
+    returnDateDivs.forEach(el => {
         el.textContent = getDateMonthDayFormat(timestamp);
     });
 }
