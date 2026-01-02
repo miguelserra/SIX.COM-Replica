@@ -195,12 +195,12 @@
                                         <p>Pickup date</p>
                                     </span>
                                     <div>
-                                        <button type="button" class="rf-btn rounded-left rf-date-pick">
+                                        <button type="button" class="rf-btn rounded-left rf-date-pick-btn">
                                             <img class="icon" src="icons/ico_calendar.svg" alt="pickup date"/>
-                                            <div><span class="start-date">Oct 20</span></div>
+                                            <div><span class="pickup-date">Oct 20</span></div>
                                         </button>
-                                        <button type="button" class="rf-btn rounded-right">
-                                            <div><span>12:00 PM</span></div>
+                                        <button type="button" class="rf-btn rounded-right rf-time-pickup-btn">
+                                            <div><span class="pickup-time">12:00 PM</span></div>
                                         </button>
                                     </div>
                                 </div>
@@ -209,12 +209,12 @@
                                         <p>Return date</p>
                                     </span>
                                     <div>
-                                        <button type="button" class="rf-btn rounded-left rf-date-pick">
+                                        <button type="button" class="rf-btn rounded-left rf-date-pick-btn">
                                             <img class="icon" src="icons/ico_calendar.svg" alt="return date"/>
-                                            <div><span class="end-date">Oct 24</span></div>
+                                            <div><span class="return-date">Oct 24</span></div>
                                         </button>
-                                        <button type="button" class="rf-btn rounded-right">
-                                            <div><span class="end-time">12:00 PM</span></div>
+                                        <button type="button" class="rf-btn rounded-right rf-time-return-btn">
+                                            <div><span class="return-time">12:00 PM</span></div>
                                         </button>
                                     </div>
                                 </div>
@@ -281,12 +281,12 @@
                                         <p>Pickup date</p>
                                     </span>
                                     <div class="rf-div-btn">
-                                        <button type="button" class="rf-btn rounded-left rf-date-pick">
+                                        <button type="button" class="rf-btn rounded-left rf-date-pick-btn">
                                             <img class="icon" src="icons/ico_calendar.svg" alt="pickup date"/>
-                                            <div><span class="start-date">Jan 03</span></div>
+                                            <div><span class="pickup-date">Jan 03</span></div>
                                         </button>
-                                        <button type="button" class="rf-btn rounded-right">
-                                            <div><span class="start-time">12:00 PM</span></div>
+                                        <button type="button" class="rf-btn rounded-right rf-time-pickup-btn">
+                                            <div><span class="pickup-time">12:00 PM</span></div>
                                         </button>
                                     </div>
                                 </div>
@@ -295,12 +295,12 @@
                                         <p>Return date</p>
                                     </span>
                                     <div class="rf-div-btn">
-                                        <button type="button" class="rf-btn rounded-left rf-date-pick">
+                                        <button type="button" class="rf-btn rounded-left rf-date-pick-btn">
                                             <img class="icon" src="icons/ico_calendar.svg" alt="return date"/>
-                                            <div><span class="end-date">Jan 05</span></div>
+                                            <div><span class="return-date">Jan 05</span></div>
                                         </button>
-                                        <button type="button" class="rf-btn rounded-right">
-                                            <div><span class="end-time">12:00 PM</span></div>
+                                        <button type="button" class="rf-btn rounded-right rf-time-return-btn">
+                                            <div><span class="return-time">12:00 PM</span></div>
                                         </button>
                                     </div>
                                 </div>
@@ -392,12 +392,68 @@
                 <!-- CALENDARIO ACABA -->
 
                 <!--HORAS DE RECOLHA COMEÇA-->
-                <div id="rf-times-container" class="">
-                    <ul>
-                        
-                    </ul>
+                <div id="rf-div-pickup-timeslots" class="rf-time-container">
+                    <h1>Select pickup time</h1>
+                    <h2>Opening Times: 8:30 AM - 7:00 PM</h3>
+                    <h3>Time slots available</h2>
+                    <div class="timeslots-grid">
+                        <div class="timeslot" tabindex="1"> 8:30 AM</div>
+                        <div class="timeslot"> 9:00 AM</div>
+                        <div class="timeslot"> 9:30 AM</div>
+                        <div class="timeslot">10:00 AM</div>
+                        <div class="timeslot">10:30 AM</div>
+                        <div class="timeslot">11:00 AM</div>
+                        <div class="timeslot">11:30 AM</div>
+                        <div class="timeslot">12:00 PM</div>
+                        <div class="timeslot">12:30 PM</div>
+                        <div class="timeslot"> 1:00 PM</div>
+                        <div class="timeslot"> 1:30 PM</div>
+                        <div class="timeslot"> 2:00 PM</div>
+                        <div class="timeslot"> 2:30 PM</div>
+                        <div class="timeslot"> 3:00 PM</div>
+                        <div class="timeslot"> 3:30 PM</div>
+                        <div class="timeslot"> 4:00 PM</div>
+                        <div class="timeslot"> 4:30 PM</div>
+                        <div class="timeslot"> 5:00 PM</div>
+                        <div class="timeslot"> 5:30 PM</div>
+                        <div class="timeslot"> 6:00 PM</div>
+                        <div class="timeslot"> 6:30 PM</div>
+                        <div class="timeslot"> 7:00 PM</div>
+                    </div>
                 </div>
+                <!--HORAS DE RECOLHA ACABA-->
 
+                <!--HORAS DE DEVOLUÇAO COMEÇA-->
+                <div id="rf-div-return-timeslots" class="rf-time-container">
+                    <h1>Select return time</h1>
+                    <h2>Opening Times: 8:30 AM - 7:00 PM</h3>
+                    <h3>Time slots available</h2>
+                    <div class="timeslots-grid">
+                        <div class="timeslot" tabindex="1"> 8:30 AM</div>
+                        <div class="timeslot"> 9:00 AM</div>
+                        <div class="timeslot"> 9:30 AM</div>
+                        <div class="timeslot">10:00 AM</div>
+                        <div class="timeslot">10:30 AM</div>
+                        <div class="timeslot">11:00 AM</div>
+                        <div class="timeslot">11:30 AM</div>
+                        <div class="timeslot">12:00 PM</div>
+                        <div class="timeslot">12:30 PM</div>
+                        <div class="timeslot"> 1:00 PM</div>
+                        <div class="timeslot"> 1:30 PM</div>
+                        <div class="timeslot"> 2:00 PM</div>
+                        <div class="timeslot"> 2:30 PM</div>
+                        <div class="timeslot"> 3:00 PM</div>
+                        <div class="timeslot"> 3:30 PM</div>
+                        <div class="timeslot"> 4:00 PM</div>
+                        <div class="timeslot"> 4:30 PM</div>
+                        <div class="timeslot"> 5:00 PM</div>
+                        <div class="timeslot"> 5:30 PM</div>
+                        <div class="timeslot"> 6:00 PM</div>
+                        <div class="timeslot"> 6:30 PM</div>
+                        <div class="timeslot"> 7:00 PM</div>
+                    </div>
+                </div>
+                <!--HORAS DE DEVOLUÇAO ACABA-->
             </div>
             
             <!--Inicio dos resultados dos carros-->

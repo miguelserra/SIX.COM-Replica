@@ -9,25 +9,58 @@ const divMain = document.querySelector('#main');
 const startDateDivs = document.querySelectorAll(".start-date");
 const endDateDivs = document.querySelectorAll(".end-date");
 
+//classe para o controlo de mostrar/ocultar elementos
+class ToggleContainer {
+    constructor(id) {
+        this.element = document.getElementById(id);
+    }
 
-//objeto para div que contem o Calendario
-const objCalendarContainer = {
-    element : document.getElementById('rf-calendar-container'),
-    toggle : function() {
-        if (this.element.style.display == "none"){
+    toggle() {
+        if (this.element.style.display === "none" || this.element.style.display === "") {
             this.element.style.display = "flex";
-        }else{
+        } else {
             this.element.style.display = "none";
         }
     }
-};
+
+    show() {
+        this.element.style.display = "flex";
+    }
+
+    hide() {
+        this.element.style.display = "none";
+    }
+
+    bindBtns(buttons) {
+        buttons.forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                this.toggle();
+            });
+        });
+    }
+
+    checkClickOutside(target, buttons) {
+        let isInsideElement = this.element.contains(target);
+        let isInsideButton = Array.from(buttons).some(btn => btn.contains(target));
+        if (!isInsideElement && !isInsideButton) {
+            this.hide();
+        }
+    }
+}
+
+//objetos que requerem mostrar/ocultar
+const objCalendarContainer = new ToggleContainer('rf-calendar-container');
+const objPickupTimeContainer = new ToggleContainer('rf-div-pickup-timeslots');
+const objReturnTimeContainer = new ToggleContainer('rf-div-return-timeslots');
 
 
 //botoes que ativam o calendario
-const btnDatePick = document.querySelectorAll(".rf-date-pick");
+const btnsDatePick = document.querySelectorAll(".rf-date-pick-btn");
 
-//botoes que ativam o calendario
-const btnShowVehicles = document.querySelectorAll(".rf-div-cbx-show");
+//botoes que ativam o pickup e return time
+const btnsPickupTime = document.querySelectorAll(".rf-time-pickup-btn");
+const btnsReturnTime = document.querySelectorAll(".rf-time-return-btn");
+
 
 const months = [
     'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
@@ -42,13 +75,13 @@ const objRentalInfoAndBilling = {
 
     vehicle         : "car",
 
-    startDateTS     : 0,
-    startHours      : 0,
-    startMinutes    : 0, 
+    pickupDateTS     : 0,
+    pickupHours      : 0,
+    pickupMinutes    : 0, 
 
-    endDateTS       : 0,
-    endHours        : 0,
-    endMinutes      : 0,
+    returnDateTS       : 0,
+    returnHours        : 0,
+    returnMinutes      : 0,
     
     diffReturn      : false,
     diffReturnFee   : 30,
@@ -75,14 +108,14 @@ const objRentalInfoAndBilling = {
 
 
     handleRentingDays : function() {
-        let tsStart = this.startDateTS + (this.startHours*3600 + this.startMinutes*60)*1000;
-        let tsEnd = this.ehdDateTS + (this.endHours*3600 + this.endMinutes*60)*1000;
+        let tsStart = this.pickupDateTS + (this.pickupHours*3600 + this.pickupMinutes*60)*1000;
+        let tsEnd = this.returnDateTS + (this.returnHours*3600 + this.returnMinutes*60)*1000;
 
         let timeWeek    = 0;
         let timeWeekend = 0;
 
         let ts = tsStart;
-        //vamos ver, dia em dia de aluguer, como o tempo é alocado (semana ou fds)
+        //vamos ver, para cada dia do aluguer, como o tempo é alocado (semana ou fds)
         while (ts < tsEnd) {
             // calcula o inicio do proximo dia À meia-noite
             let nextDay = new Date(ts);
@@ -104,8 +137,8 @@ const objRentalInfoAndBilling = {
             ts = limit; // salta para o inicio do prox dia
         }
 
-        this.numweeks    = Math.ceil(timeWeek / (1000 * 60 * 60))
-        this.numWeekendDays = Math.ceil(timeWeekend / (1000 * 60 * 60));
+        this.numWeekDays    = Math.ceil(timeWeek / (1000 * 3600 * 24)) //converte timestamp de milisec para dias
+        this.numWeekendDays = Math.ceil(timeWeekend / (1000 * 3600 * 24 ));
         
     },
 
@@ -159,18 +192,19 @@ function delay(time) {
 }
 
 //evento que abre e fecha div do calendário ao clicar nos botões pickdate
-btnDatePick.forEach(el1 => 
-    el1.addEventListener("click", function(){
-        objCalendarContainer.toggle();
-    })
-);
+objCalendarContainer.bindBtns(btnsDatePick);
 
+//eventos que abrem e fecham divs dos timeslots ao clicar nos botões picktime
+objPickupTimeContainer.bindBtns(btnsPickupTime);
+objReturnTimeContainer.bindBtns(btnsReturnTime);
 
 //faz reset à visualização através de clicks no main
 document.body.addEventListener('click', function (event) {
-    if (divMain.contains(event.target)) {
-        objCalendarContainer.element.style.display = "none";       
-    }
+    let target = event.target;
+    objCalendarContainer.checkClickOutside(target, btnsDatePick);
+    objPickupTimeContainer.checkClickOutside(target, btnsPickupTime);
+    objReturnTimeContainer.checkClickOutside(target, btnsReturnTime);
+
 });
 
 
@@ -179,7 +213,6 @@ document.body.addEventListener('click', function (event) {
 ############# */
 
 /*Sector 3 - carrossel*/
-
 function initSector3Carousel() {
     // 1. Seletores
     const cards = Array.from(document.querySelectorAll('#s3-carrossel .img-container'));
@@ -250,9 +283,7 @@ function initSector3Carousel() {
 }
 
 
-
 /*Sector 4 - carrossel*/
-
 function initSector4Carousel() {
     // Seletores
     const slides = document.querySelectorAll('#s4-carrossel > div');
@@ -411,28 +442,28 @@ function handleDateClick(e) {
     let clickedDayTimestamp = +e.currentTarget.dataset.dateValue;
 
     //se nada clicado (inicia) ou start e end clicados (termina)
-    if (!objRentalInfoAndBilling.startDateTS || (objRentalInfoAndBilling.startDateTS && objRentalInfoAndBilling.endDateTS)) {
-        objRentalInfoAndBilling.startDateTS = clickedDayTimestamp;
-        objRentalInfoAndBilling.endDateTS = 0;
+    if (!objRentalInfoAndBilling.pickupDateTS || (objRentalInfoAndBilling.pickupDateTS && objRentalInfoAndBilling.returnDateTS)) {
+        objRentalInfoAndBilling.pickupDateTS = clickedDayTimestamp;
+        objRentalInfoAndBilling.returnDateTS = 0;
     } else {
         //se data de fim inferior ao start, troca, senao atribui enddate
-        if (clickedDayTimestamp < objRentalInfoAndBilling.startDateTS) {
-            objRentalInfoAndBilling.endDateTS = objRentalInfoAndBilling.startDateTS;
-            objRentalInfoAndBilling.startDateTS = clickedDayTimestamp;
+        if (clickedDayTimestamp < objRentalInfoAndBilling.pickupDateTS) {
+            objRentalInfoAndBilling.returnDateTS = objRentalInfoAndBilling.pickupDateTS;
+            objRentalInfoAndBilling.pickupDateTS = clickedDayTimestamp;
         } else {
-            objRentalInfoAndBilling.endDateTS = clickedDayTimestamp;
+            objRentalInfoAndBilling.returnDateTS = clickedDayTimestamp;
         }
 
-        setStartDate(objRentalInfoAndBilling.startDateTS);
-        setEndDate(objRentalInfoAndBilling.endDateTS);
-        delay(0.75).then( () => objCalendarContainer.toggle());
+        setStartDate(objRentalInfoAndBilling.pickupDateTS);
+        setEndDate(objRentalInfoAndBilling.returnDateTS);
+        delay(0.75).then( () => objCalendarContainer.hide());
 
     }
     updateSelectionVisuals(0);
 }
 
 function handleMouseEnter(e) {
-    if (objRentalInfoAndBilling.startDateTS && !objRentalInfoAndBilling.endDateTS) {
+    if (objRentalInfoAndBilling.pickupDateTS && !objRentalInfoAndBilling.returnDateTS) {
         let hoverDateTimestamp = +e.currentTarget.dataset.dateValue;
         updateSelectionVisuals(hoverDateTimestamp);
     }
@@ -440,7 +471,7 @@ function handleMouseEnter(e) {
 
 function updateSelectionVisuals(hoverDate) {
     let allDays = document.querySelectorAll('.day-number');
-    let tempEnd = objRentalInfoAndBilling.endDateTS || hoverDate; //condiçao para dar no hover e end date ao mesmo tempo
+    let tempEnd = objRentalInfoAndBilling.returnDateTS || hoverDate; //condiçao para dar no hover e end date ao mesmo tempo
 
     allDays.forEach(dayDiv => 
     {
@@ -450,15 +481,15 @@ function updateSelectionVisuals(hoverDate) {
         dayDiv.classList.remove('in-range', 'start-node', 'end-node');
 
         //atribui estilo ao start date e end date
-        if (dayTimestamp === objRentalInfoAndBilling.startDateTS) 
+        if (dayTimestamp === objRentalInfoAndBilling.pickupDateTS) 
             dayDiv.classList.add('start-node');
         if (dayTimestamp === tempEnd) 
             dayDiv.classList.add('end-node');
 
         //caso o star e end sejam os memos atribui este especial
-        if (objRentalInfoAndBilling.startDateTS && tempEnd) {
-            let min = Math.min(objRentalInfoAndBilling.startDateTS, tempEnd);
-            let max = Math.max(objRentalInfoAndBilling.startDateTS, tempEnd);
+        if (objRentalInfoAndBilling.pickupDateTS && tempEnd) {
+            let min = Math.min(objRentalInfoAndBilling.pickupDateTS, tempEnd);
+            let max = Math.max(objRentalInfoAndBilling.pickupDateTS, tempEnd);
             if (dayTimestamp >= min && dayTimestamp <= max) {
                 dayDiv.classList.add('in-range');
             }
@@ -471,7 +502,9 @@ function updateSelectionVisuals(hoverDate) {
 
 
 function init(){
-    objCalendarContainer.toggle();        
+    objCalendarContainer.hide();
+    objPickupTimeContainer.hide();
+    objReturnTimeContainer.hide();        
     generateCalendars(currentDate);
     initSector3Carousel();
     initSector4Carousel();
