@@ -170,9 +170,7 @@ img {
         }
     }
 
-    &:first-child img{
-        filter : unset;
-    }
+   
 }
 
 
@@ -1547,25 +1545,29 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             #s3-carrossel{
                 display                 : grid;
                 grid-template-rows      : 1fr;
-                grid-template-columns   : repeat(3,1fr);
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+              
                 @include grid-general-config;
                 
                 grid-auto-rows: 0;
                 padding-bottom: 0;
+                column-gap: 1.5rem;
                 row-gap: 0;
                 overflow: hidden;
+               
         
-                /* troca ordem <- estao todas a 0 no inicio, -1 vai para primera pos
-                #s3-img5{
-                    order : -1;
-                }
-                    */
             }
         
             .img-container{
+                display: none;
                 position: relative;
-                overflow: hidden;
-        
+                overflow: hidden;    
+                
+                &.visible {
+                    display: block; 
+                    // O Grid encarrega-se da largura e altura automaticamente
+        }
         
             }
         
@@ -1632,6 +1634,11 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     justify-content : stretch;
                     transform       : translate(-0.825rem, 0);
                     padding         : 0.5rem;
+
+                    .btn-dot {
+                       &.active-dot img { filter: invert(0%) !important; }
+                    }
+
                 }
             
                 #s3-btns-dir {
@@ -1650,7 +1657,9 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                         border-width    : 0px;
                         border-radius   : 50%;
                         box-shadow      : rgba(0, 0, 0, 0.1) 0px 2px 6px, rgba(0, 0, 0, 0.08) 0px 1px 4px;
-            
+                        
+
+
                         img {
                             display : block;
                             height  : 1.5rem;
@@ -1662,6 +1671,8 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                             transform-origin: center
                         //transform: rotate(180deg);
                         }
+
+                        &.disabled-arrow { opacity: 0.3; pointer-events: none; cursor: default; }
                     }
             
                 }
@@ -1731,11 +1742,14 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 margin-top: auto;
                 margin-bottom: auto;
                 
-                /* troca ordem <- estao todas a 0 no inicio, -1 vai para primera pos
-                #s3-img5{
-                    order : -1;
+           
+
+                div { //Formatação para ativar o slide desejado
+                    display: none; // Esconde todos por defeito
+                    &.active-slide {
+                        display: block; 
+                    }
                 }
-                    */
 
                 
 
@@ -1773,7 +1787,18 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     
                     .btn-dot{
                         background-color: transparent; //remove o fundo dos pontos
-                        
+                        img {
+                        // Estado inativo (cinzento/escuro)
+                        width: 1rem;
+                        height: 1rem;
+                        display: block;
+                        filter: invert(50%); 
+                        }
+
+
+                        &.active-dot img {
+                            filter: invert(0%);
+                        }
                     }
                 }
             
@@ -1794,7 +1819,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                         border-width    : 0px;
                         border-radius   : 50%;
                         box-shadow      : rgba(0, 0, 0, 0.1) 0px 2px 6px, rgba(0, 0, 0, 0.08) 0px 1px 4px;
-                        filter: invert(100%);
+                        filter: invert(100%); // inverte a cor dos botoes (preto fora e seta branca)
                         img {
                             display : block;
                             height  : 1.5rem;
@@ -1804,7 +1829,11 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                         &:first-child img {
                             transform: rotate(180deg);
                             transform-origin: center
-                        //transform: rotate(180deg);
+                        }
+
+                        &.disabled-arrow {
+                            opacity: 0.3; // botão fica opaco quando nao permite a seleção
+                            pointer-events: none; // Impede o clique
                         }
 
                     }
