@@ -667,6 +667,75 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 #rf-container #rf-form-container div#rf-calendar-container div#rf-calendars .calendar .day-number.start-node.end-node {
   border-radius: 0.75rem;
 }
+#rf-container #rf-form-container .rf-time-container {
+  background-color: white;
+  position: absolute;
+  top: 9.75rem;
+  width: 20rem;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+  padding-bottom: 1.25rem;
+}
+#rf-container #rf-form-container .rf-time-container#rf-div-pickup-timeslots {
+  right: 23rem;
+}
+#rf-container #rf-form-container .rf-time-container#rf-div-return-timeslots {
+  right: 8.1666666667rem;
+}
+#rf-container #rf-form-container .rf-time-container h1 {
+  border-bottom: 1px solid #d7dadc;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+#rf-container #rf-form-container .rf-time-container h2 {
+  padding: 1rem 0.75rem 0.25rem 0.75rem;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+#rf-container #rf-form-container .rf-time-container h3 {
+  padding: 0.5rem 0.75rem;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+#rf-container #rf-form-container .rf-time-container .timeslots-grid {
+  padding: 0.25rem 0.75rem 0 0.75rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  overflow-y: scroll;
+}
+#rf-container #rf-form-container .rf-time-container .timeslots-grid .timeslot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.25rem;
+  background-color: #d7dadc;
+  filter: contrast(1.25);
+  border-radius: 0.5rem;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+#rf-container #rf-form-container .rf-time-container .timeslots-grid .timeslot:hover {
+  background-color: lightgrey;
+}
 #rf-container > input[type=checkbox] {
   display: none;
 }
@@ -776,7 +845,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   display: flex;
 }
 .rf-form .rf-dates-div {
-  min-width: 41.5rem;
   display: flex;
   width: 41.5rem;
   justify-content: stretch;
@@ -827,10 +895,10 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 }
 .rf-form .rf-dates-div .rf-div-cbx-show label {
   display: flex;
-  height: 100%;
-  width: 100%;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
@@ -975,7 +1043,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 1rem;
   line-height: 1.5;
   font-size: 0.8rem;
-  color: #fff;
+  color: white;
   margin: 0;
 }
 .rf-search-results > div > div .car-card .card-specs {
@@ -985,6 +1053,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 }
 .rf-search-results > div > div .car-card .card-specs span {
   display: flex;
+  justify-content: center;
   align-items: center;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
@@ -1007,8 +1076,8 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   flex-grow: 1;
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   margin: 1rem 0;
 }
 .rf-search-results > div > div .car-card .card-image img {
@@ -1028,6 +1097,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   color: #00ff00;
   margin-bottom: 1rem;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 0.5rem;
 }
@@ -1116,8 +1186,8 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   color: black;
   z-index: 2;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
@@ -1148,9 +1218,9 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 #main #sector1 #s1-barra-fundo {
   height: 14rem;
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
   color: #191919;
 }
 #main #sector1 #s1-barra-fundo #s1-barra-fundo-titulo {
