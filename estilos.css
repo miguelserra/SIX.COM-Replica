@@ -730,7 +730,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   border: 2px solid #ff5000;
   outline: none;
 }
-.rf-form .rf-locations-div .rf-location-input > div .rf-input-location input {
+.rf-form .rf-locations-div .rf-location-input > div .rf-input-location > input {
   width: 100%;
   box-sizing: border-box;
   height: 3rem;
@@ -744,10 +744,10 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 1rem;
   line-height: 1.5;
 }
-.rf-form .rf-locations-div .rf-location-input > div .rf-input-location input::-moz-placeholder {
+.rf-form .rf-locations-div .rf-location-input > div .rf-input-location > input::-moz-placeholder {
   color: #d7dadc;
 }
-.rf-form .rf-locations-div .rf-location-input > div .rf-input-location input::placeholder {
+.rf-form .rf-locations-div .rf-location-input > div .rf-input-location > input::placeholder {
   color: #d7dadc;
 }
 .rf-form .rf-locations-div .rf-location-input > div .rf-different-location {
@@ -848,6 +848,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   align-items: center;
   border: 1px solid #d7dadc;
   margin-left: -1px;
+  overflow: hidden;
 }
 .rf-btn > img {
   padding-left: 0.75rem;
@@ -871,7 +872,11 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   flex-basis: 50%;
 }
 .rounded-right > div {
+  position: relative;
   justify-content: flex-start;
+}
+.rounded-right > div span {
+  text-align: start;
 }
 
 .icon {
