@@ -133,7 +133,7 @@
     row-gap                 : 2.5rem;
 }
 
-div, h1, h2, p, label{
+div, h1, h2, h3, p, label{
     user-select: none; //impede seleção de texto
 }
 
@@ -567,7 +567,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     font-size: 1rem;
                     border-radius: 4px;
                     margin-top: 0.5rem;
-                    transition: background 0.2s;
+                    //transition: background 0.2s;
 
                     &:hover {
                         background-color: #e04e00;
@@ -608,7 +608,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     text-align: center;
                     text-decoration: none;
                     box-sizing: border-box;
-                    transition: background 0.2s;
+                    //transition: background 0.2s;
 
                     &:hover {
                         background-color: #f5f5f5;
@@ -632,7 +632,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     align-items     : center;
 }
 
-
 #rf-container{
     @include sector-common;
     overflow    : unset;
@@ -642,9 +641,9 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     padding     : 0 5rem; //overide so sector-common
     width       : 100%;
     z-index     : 100;
-    align-items: center;
+    align-items : center;
 
-    > div {
+    #rf-form-container {
         position            : relative;
         display             : flex;
         flex-direction      : column;
@@ -684,6 +683,13 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 cursor: pointer;
             }
 
+            a{
+                display         : inline-block;
+                width           : 100%;
+                @include        font-HelveticaNow-700;
+                font-size       : 0.75rem;
+            }
+
             input[type="radio"]:checked + label {
                 color: #f4f5f6;
                 background-color: black;
@@ -692,14 +698,10 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 }
             }
 
-            a{
-                display         : inline-block;
-                width           : 100%;
-                @include        font-HelveticaNow-700;
-                font-size       : 0.75rem;
-            }
+
             
         }
+        
         
         div#rf-calendar-container{
             //calendar grid step size
@@ -715,6 +717,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             box-sizing          : border-box;
             overflow            : hidden;
             border-radius       : 1rem;
+            box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
 
             /*############################################################################################
             ##############################################################################################
@@ -823,163 +826,29 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 }
             }
         }
+
+    }
+    
+    > input[type="checkbox"]{
+        display: none;
     }
 
-    #rf-search-results {
-        
-        // 1. Reset Agressivo (para limpar a herança da "caixa branca")
-        width: 100%;
-        //background-color: transparent !important; 
-        box-shadow: none !important;
-        border: none !important;
-        min-height: 0 !important;
-        padding: 0 !important;
-        margin-bottom: 0 !important;
-        
-        // 2. Configuração da Grelha
-        display: none; // O JavaScript muda isto para 'grid'
-        grid-template-columns: repeat(4, 1fr); 
-        gap: 1rem;
-        margin-top: 2rem;
-        
-        // 3. Estilo dos Cartões (Fundo preto)
-        .car-card {
-            background-color: #191919; 
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            color: white;
-            box-sizing: border-box;
-            cursor: pointer;
-            min-height: 24rem; 
-            justify-content: space-between;
-            transition: transform 0.2s, background-color 0.2s;
-            
-            // Garante que o texto dentro do card alinha à esquerda
-            align-items: flex-start; 
-            text-align: left;
-
-            &:hover {
-                transform: translateY(-5px);
-                background-color: #252525;
-            }
-
-            .card-header {
-                width: 100%;
-                margin-bottom: 1rem;
-                h3 {
-                    @include font-HelveticaNow-900;
-                    font-size: 1.1rem;
-                    text-transform: uppercase;
-                    margin-bottom: 0.25rem;
-                    color: white;
-                    span {
-                        @include font-HelveticaNow-400;
-                        font-size: 0.8rem;
-                        color: #999;
-                        text-transform: none;
-                        margin-left: 0.3rem;
-                    }
-                }
-                p {
-                    @include font-HelveticaNow-400;
-                    font-size: 0.8rem;
-                    color: #fff;
-                    margin: 0;
-                }
-            }
-
-            .card-specs {
-                display: flex;
-                gap: 0.5rem;
-                margin-bottom: 1rem;
-                span {
-                    display: flex;
-                    align-items: center;
-                    @include font-HelveticaNow-700;
-                    font-size: 0.75rem;
-                    background-color: #333;
-                    padding: 0.25rem 0.5rem;
-                    border-radius: 4px;
-                    white-space: nowrap;
-                    color: white;
-                    img {
-                        width: 0.8rem;
-                        height: 0.8rem;
-                        margin-right: 0.3rem;
-                        filter: invert(100%); /* Garante ícones brancos */
-                    }
-                }
-            }
-
-            .card-image {
-                flex-grow: 1;
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 1rem 0;
-                img {
-                    width: 100%;
-                    height: auto;
-                    max-height: 140px; 
-                    object-fit: contain;
-                }
-            }
-
-            .card-features {
-                width: 100%;
-                @include font-HelveticaNow-400;
-                font-size: 0.75rem;
-                color: #00ff00; // Verde check
-                margin-bottom: 1rem;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                .check { font-size: 1rem; }
-            }
-
-            .card-footer {
-                width: 100%;
-                border-top: 1px solid #444;
-                padding-top: 1rem;
-                .price-main {
-                    @include font-HelveticaNow-900;
-                    font-size: 1.5rem;
-                    color: white;
-                    display: flex;
-                    align-items: baseline;
-                    span { font-size: 1rem; }
-                    .per-day {
-                        @include font-HelveticaNow-400;
-                        font-size: 0.875rem;
-                        margin-left: 0.2rem;
-                        color: #ccc;
-                    }
-                }
-                .price-total {
-                    @include font-HelveticaNow-400;
-                    font-size: 0.75rem;
-                    color: #888;
-                    margin-top: 0.2rem;
-                }
-            }
-        }
+    #rf-cbx-diff-showcars:checked + input[type="checkbox"] + div + div{
+        display: block;
     }
 
-
-
-
-
+    #rf-cbx-diff-showtrucks:checked + div + div {
+        display: block;
+    }
 }
+
 
 .rf-form{
     padding: 1rem 0;
-
+    
     display : flex;
     gap : 0 0.5rem;
-
+    
     .rf-locations-div{
         flex-grow: 1;
         display: flex;
@@ -1025,7 +894,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                         outline : none; // Remove o contorno padrão do browser
                     }
 
-                    input {
+                    > input {
                         width       : 100%;
                         box-sizing  : border-box;
                         height      :3rem;
@@ -1097,7 +966,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             flex-direction: column;
             width : 13.5rem;
 
-            span{
+            >span{
                 width           : 100%;
                 display         : inline-flex; //necessário para atribuir height
                 align-items     : flex-end;
@@ -1117,34 +986,36 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 width           : 100%;
                 height          : 3.25rem;
                 @include font-HelveticaNow-400;
+
+                :focus-within {
+                    border  : 2px solid $sixt-orange;
+                    outline : none;
+                }
             }
 
         }
         
-        .rf-div-btn-show{
-            flex-basis: 12.5rem;
-            display: flex;
-            flex-direction: row;
-            align-items: flex-end;
-            box-sizing: border-box;
+        
+        .rf-div-cbx-show{
+            align-self  : flex-end;
+            height      : 3.25rem;
+            flex-basis  : 12.5rem;
+
+            display         : flex;
+            border-radius   : 1rem;
+            background-color: $sixt-orange;
             
-            button{
+
+            label{
+                display         : flex;
+                height          : 100%;
                 width           : 100%;
-                height          : 3.25rem;
-                border-radius   : 1rem;
-                background-color: $sixt-orange;
+                justify-content : center;
+                align-items     : center;
+                @include font-HelveticaNow-700;
                 color           : white;
-                
-                div{
-                    width           : 100%;
-                    display         : flex;
-                    justify-content : center;
-                    align-items     : center;
-                    height          : 3rem;
-                    @include font-HelveticaNow-700;
-                }
             }
-            
+
         }
     }
 } //fim form
@@ -1156,6 +1027,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     align-items: center;
     border: 1px solid $sixt-placeholder-gray;
     margin-left: -1px;
+    overflow: hidden;
 
     > img{
         padding-left: 0.75rem;
@@ -1180,8 +1052,15 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 .rounded-right {
     border-radius: 0 1rem 1rem 0;
     flex-basis: 50%;
+
     > div{
+        position: relative;
         justify-content: flex-start;
+
+        span{
+            text-align: start;
+        }
+        
     }
 }
 
@@ -1201,6 +1080,165 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 
     p{
         margin-left: 0.5rem;
+    }
+}
+
+.rf-search-results {
+    display: none;
+    box-sizing: border-box;
+    //transform: translateY(calc(-1 * $rf-shadow-size - 1rem));
+    background-color: white;
+    width: 100%;
+    padding: 2rem;
+    border-radius:1rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    margin-bottom: $rf-shadow-size;
+    
+    > div{
+        display : flex;
+        flex-direction: column;
+
+        > h1{
+            align-self: center;
+            display: inline-flex;
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid $sixt-orange;
+            border-radius: 1rem;
+            @include font-HelveticaNow-900;
+            font-size: 1.5rem;
+            letter-spacing: 0.025em;
+        }
+    
+        > div{
+            display: grid; // O JavaScript muda isto para 'grid'
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 1rem;
+
+            .car-card {
+                background-color: #191919; 
+                border-radius: 1rem;
+                padding: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                color: white;
+                box-sizing: border-box;
+                min-height: 24rem; 
+                justify-content: space-between;
+                transition: transform 0.2s, background-color 0.2s;
+                cursor: pointer;
+                
+                // Garante que o texto dentro do card alinha à esquerda
+                align-items: flex-start; 
+                text-align: left;
+        
+                &:hover {
+                    transform: translateY(-5px);
+                    background-color: #252525;
+                }
+        
+                .card-header {
+                    width: 100%;
+                    margin-bottom: 1rem;
+                    h3 {
+                        @include font-HelveticaNow-900;
+                        font-size: 1.1rem;
+                        text-transform: uppercase;
+                        margin-bottom: 0.25rem;
+                        color: white;
+                        span {
+                            @include font-HelveticaNow-400;
+                            font-size: 0.8rem;
+                            color: #999;
+                            text-transform: none;
+                            margin-left: 0.3rem;
+                        }
+                    }
+                    p {
+                        @include font-HelveticaNow-400;
+                        font-size: 0.8rem;
+                        color: #fff;
+                        margin: 0;
+                    }
+                }
+        
+                .card-specs {
+                    display: flex;
+                    gap: 0.5rem;
+                    margin-bottom: 1rem;
+                    span {
+                        display: flex;
+                        align-items: center;
+                        @include font-HelveticaNow-700;
+                        font-size: 0.75rem;
+                        background-color: #333;
+                        padding: 0.25rem 0.5rem;
+                        border-radius: 4px;
+                        white-space: nowrap;
+                        color: white;
+                        img {
+                            width: 0.8rem;
+                            height: 0.8rem;
+                            margin-right: 0.3rem;
+                            filter: invert(100%); /* Garante ícones brancos */
+                        }
+                    }
+                }
+        
+                .card-image {
+                    flex-grow: 1;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 1rem 0;
+                    img {
+                        width: 100%;
+                        height: auto;
+                        max-height: 140px; 
+                        object-fit: contain;
+                    }
+                }
+        
+                .card-features {
+                    width: 100%;
+                    @include font-HelveticaNow-400;
+                    font-size: 0.75rem;
+                    color: #00ff00; // Verde check
+                    margin-bottom: 1rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    .check { font-size: 1rem; }
+                }
+        
+                .card-footer {
+                    width: 100%;
+                    border-top: 1px solid #444;
+                    padding-top: 1rem;
+                    .price-main {
+                        @include font-HelveticaNow-900;
+                        font-size: 1.5rem;
+                        color: white;
+                        display: flex;
+                        align-items: baseline;
+                        span { font-size: 1rem; }
+                        .per-day {
+                            @include font-HelveticaNow-400;
+                            font-size: 0.875rem;
+                            margin-left: 0.2rem;
+                            color: #ccc;
+                        }
+                    }
+                    .price-total {
+                        @include font-HelveticaNow-400;
+                        font-size: 0.75rem;
+                        color: #888;
+                        margin-top: 0.2rem;
+                    }
+                }
+            }
+        }
     }
 }
 
