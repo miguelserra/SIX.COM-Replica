@@ -984,35 +984,45 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   grid-auto-rows: 0;
   overflow: hidden;
   gap: 0 1rem;
+  padding-top: 0.5rem;
 }
 .rf-search-results > div > div .car-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  position: relative;
   box-sizing: border-box;
   min-height: 24rem;
-  padding: 1.5rem;
-  margin-top: 0.5rem;
+  width: 100%;
+  height: 100%;
   border-radius: 1rem;
-  transition: transform 0.2s, background-color 0.2s;
-  background-color: #191919;
-  color: white;
-  cursor: pointer;
-  align-items: flex-start;
-  text-align: left;
+  overflow: hidden;
 }
 .rf-search-results > div > div .car-card:hover {
   transform: translateY(-5px);
-  background-color: #252525;
 }
 .rf-search-results > div > div .car-card.inactive {
   display: none;
 }
-.rf-search-results > div > div .car-card .card-header {
+.rf-search-results > div > div .car-card div.card-background {
+  position: absolute;
+  height: 100%;
+}
+.rf-search-results > div > div .car-card div.card-foreground {
+  position: relative;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  color: white;
+  cursor: pointer;
+}
+.rf-search-results > div > div .car-card div.card-foreground .card-header {
   width: 100%;
   margin-bottom: 1rem;
 }
-.rf-search-results > div > div .car-card .card-header h3 {
+.rf-search-results > div > div .car-card div.card-foreground .card-header h3 {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
@@ -1022,7 +1032,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   margin-bottom: 0.25rem;
   color: white;
 }
-.rf-search-results > div > div .car-card .card-header h3 span {
+.rf-search-results > div > div .car-card div.card-foreground .card-header h3 span {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -1032,7 +1042,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   text-transform: none;
   margin-left: 0.3rem;
 }
-.rf-search-results > div > div .car-card .card-header p {
+.rf-search-results > div > div .car-card div.card-foreground .card-header p {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -1041,12 +1051,12 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   color: white;
   margin: 0;
 }
-.rf-search-results > div > div .car-card .card-specs {
+.rf-search-results > div > div .car-card div.card-foreground .card-specs {
   display: flex;
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
-.rf-search-results > div > div .car-card .card-specs span {
+.rf-search-results > div > div .car-card div.card-foreground .card-specs span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1061,79 +1071,63 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   white-space: nowrap;
   color: white;
 }
-.rf-search-results > div > div .car-card .card-specs span img {
+.rf-search-results > div > div .car-card div.card-foreground .card-specs span img {
   width: 0.8rem;
   height: 0.8rem;
   margin-right: 0.3rem;
-  filter: invert(100%); /* Garante ícones brancos */
+  filter: invert(100%);
 }
-.rf-search-results > div > div .car-card .card-image {
+.rf-search-results > div > div .car-card div.card-foreground .card-image {
   flex-grow: 1;
   width: 100%;
+  margin: 1rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem 0;
 }
-.rf-search-results > div > div .car-card .card-image img {
+.rf-search-results > div > div .car-card div.card-foreground .card-image img {
   width: 100%;
   height: auto;
-  max-height: 140px;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
-.rf-search-results > div > div .car-card .card-features {
-  width: 100%;
-  font-family: "HelveticaNow", sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  font-size: 0.75rem;
-  color: #00ff00;
-  margin-bottom: 1rem;
+.rf-search-results > div > div .car-card div.card-foreground .card-features {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-}
-.rf-search-results > div > div .car-card .card-features .check {
-  font-size: 1rem;
-}
-.rf-search-results > div > div .car-card .card-footer {
+  justify-content: flex-start;
   width: 100%;
-  border-top: 1px solid #444;
-  padding-top: 1rem;
-}
-.rf-search-results > div > div .car-card .card-footer .price-main {
-  font-family: "HelveticaNow", sans-serif;
-  font-weight: 900;
-  font-size: 3.75rem;
-  line-height: 1;
-  font-size: 1.5rem;
-  color: white;
-  display: flex;
-  align-items: baseline;
-}
-.rf-search-results > div > div .car-card .card-footer .price-main span {
-  font-size: 1rem;
-}
-.rf-search-results > div > div .car-card .card-footer .price-main .per-day {
+  margin-bottom: 0.5rem;
+  gap: 0.5rem;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
   font-size: 0.875rem;
-  margin-left: 0.2rem;
-  color: #ccc;
+  color: #00ff00;
 }
-.rf-search-results > div > div .car-card .card-footer .price-total {
+.rf-search-results > div > div .car-card div.card-foreground .card-footer {
+  width: 100%;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+}
+.rf-search-results > div > div .car-card div.card-foreground .card-footer .price {
   font-family: "HelveticaNow", sans-serif;
-  font-weight: 400;
+  font-weight: 900;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: baseline;
+}
+.rf-search-results > div > div .car-card div.card-foreground .card-footer .price span {
   font-size: 1rem;
-  line-height: 1.5;
-  font-size: 0.75rem;
+}
+.rf-search-results > div > div .car-card div.card-foreground .card-footer .price.week {
+  color: white;
+}
+.rf-search-results > div > div .car-card div.card-foreground .card-footer .price.weekend {
   color: #888;
   margin-top: 0.2rem;
+  font-size: 1.25rem;
 }
 
 .sector-max-width {
