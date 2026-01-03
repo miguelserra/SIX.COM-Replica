@@ -2063,6 +2063,12 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   #navbar #navbar-container #navbar-options .dropdown-menu.language-list {
     right: -3rem;
   }
+<<<<<<< HEAD
+=======
+  #rf-aux-div {
+    height: auto;
+  }
+>>>>>>> 85e15e743acf5ddc2b8c254929fc78363f29b6ff
   #rf-aux-div #rf-container #rf-form-container #rf-calendar-container {
     width: 95%;
   }
@@ -2072,6 +2078,30 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars #rf-calendar-1 {
     display: none;
   }
+<<<<<<< HEAD
+=======
+  #rf-aux-div #rf-container .rf-search-results {
+    width: 100%;
+  }
+  #rf-aux-div #rf-container .rf-search-results h1 {
+    font-size: 1.5rem;
+    white-space: nowrap;
+  }
+  #rf-aux-div #rf-container .rf-search-results .rf-results-container {
+    grid-template-columns: 1fr;
+  }
+  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-results-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-results-gallery.bill-summary-mode {
+    display: none;
+  }
+  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-booking-summary {
+    padding: 0rem 1rem;
+  }
+>>>>>>> 85e15e743acf5ddc2b8c254929fc78363f29b6ff
   #main #sector1 #s1-imagem {
     height: 50rem;
   }
