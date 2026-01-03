@@ -90,18 +90,6 @@ img {
   overflow: hidden;
 }
 
-.btn-dot {
-  border-width: 0;
-  justify-content: center;
-  align-items: center;
-}
-.btn-dot img {
-  width: 1rem; /* Define o tamanho físico aqui */
-  height: 1rem; /* Define o tamanho físico aqui */
-  display: block;
-  filter: invert(50%);
-}
-
 .tabs-window .tab {
   width: 100%;
   order: 1;
@@ -350,6 +338,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   padding: 2rem;
   text-align: left;
   color: #191919;
+  border: 1.5px solid black;
 }
 #navbar #navbar-options .navbar-options-item .dropdown-menu.booking-form h3 {
   margin-bottom: 0.5rem;
@@ -393,6 +382,9 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   height: 1.5rem;
   filter: invert(100%);
 }
+#navbar #navbar-options .navbar-options-item .dropdown-menu.language-list {
+  border: 1.5px solid black;
+}
 #navbar #navbar-options .navbar-options-item .dropdown-menu.language-list li {
   padding: 0.4rem 1rem;
   color: #191919; /* Texto preto */
@@ -409,6 +401,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   padding: 2rem;
   text-align: left;
   color: #191919;
+  border: 1.5px solid black;
 }
 #navbar #navbar-options .navbar-options-item .dropdown-menu.login-form h3 {
   margin: 0 0 0.5rem 0;
@@ -1628,18 +1621,9 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 }
 #main #sector3 div.sector-container #s3-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: end;
   height: 4rem;
-}
-#main #sector3 div.sector-container #s3-footer #s3-btns-esq {
-  display: flex;
-  justify-content: stretch;
-  transform: translate(-0.825rem, 0);
-  padding: 0.5rem;
-}
-#main #sector3 div.sector-container #s3-footer #s3-btns-esq .btn-dot.active-dot img {
-  filter: invert(0%) !important;
 }
 #main #sector3 div.sector-container #s3-footer #s3-btns-dir {
   display: flex;
@@ -1748,36 +1732,15 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 }
 #main #sector4 div.sector-container #s4-footer {
   display: flex;
-  justify-content: space-between;
   height: 4rem;
-  flex-shrink: 0;
   width: 100%;
   padding-bottom: 3.5rem;
-}
-#main #sector4 div.sector-container #s4-footer #s4-btns-esq {
-  display: flex;
-  justify-content: stretch;
-  transform: translate(-0.825rem, 0);
-  padding: 0.5rem;
-  filter: invert(100%);
-}
-#main #sector4 div.sector-container #s4-footer #s4-btns-esq .btn-dot {
-  background-color: transparent;
-}
-#main #sector4 div.sector-container #s4-footer #s4-btns-esq .btn-dot img {
-  width: 1rem;
-  height: 1rem;
-  display: block;
-  filter: invert(50%);
-}
-#main #sector4 div.sector-container #s4-footer #s4-btns-esq .btn-dot.active-dot img {
-  filter: invert(0%);
+  justify-content: flex-end;
 }
 #main #sector4 div.sector-container #s4-footer #s4-btns-dir {
   background: transparent;
   display: flex;
   box-sizing: border-box;
-  justify-content: space-between;
   padding-right: 0.5rem;
   gap: 1rem;
 }
