@@ -634,7 +634,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     display         : flex;
     flex-direction  : column;
     align-items     : center;
-
+   
 }
 
 #rf-container{
@@ -818,9 +818,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                             border-radius: 0.75rem;
                         }
 
-                    }
-
-
+                    }   
                 }
             }
         }
@@ -898,6 +896,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 
 
         }
+        
     }
     
 }
@@ -908,6 +907,8 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     
     display : flex;
     gap : 0 0.5rem;
+    
+    
     
     .rf-locations-div{
         flex-grow: 1;
@@ -1069,6 +1070,11 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             color           : white;
         }
     }
+
+   
+
+
+
 } //fim form
 
 .rf-btn{
@@ -1148,6 +1154,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     &.bill-summary-mode{
         width: 75%;
     }
+    
     
     > h1{
         align-self      : center;
@@ -2251,3 +2258,51 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     }
 }
 
+
+@media only screen and (max-width: 1240px) {
+	.rf-form{
+		flex-wrap: wrap;   
+         
+        .rf-location-input{
+            padding-bottom: 1rem;
+
+            //Configurações para o input de pickup ocupar mais espaço do que o "+different location"
+            &:first-child {
+                flex: 3; 
+            }
+
+            &:last-child {
+                flex: 1; 
+            }    
+        }
+        
+        //Quando o different location está checked, volta a ter 50/50
+        &:has(.rf-cbx-diff-loc:checked) {
+            .rf-location-input {
+            flex: 1 1;
+            }
+        }
+
+        //estica a div que contem as datas, horas e show button por toda a largura 
+        //e faz com que a div das datas fique maior do que a das horas 
+        .rf-dates-div{
+            width: 100%;
+            
+            div{
+                justify-content: left;
+            }
+
+            .rf-date-pick-btn{
+                flex: 2 1;
+    
+            }
+    
+            .rf-time-pickup-btn, .rf-time-return-btn {
+                flex: 1 0;
+            }
+            
+            
+        }
+        
+    }
+}

@@ -658,6 +658,11 @@ btnShowCars.addEventListener("click", () => showSearchResults('car'));
 btnShowTrucks.addEventListener("click", () => showSearchResults('truck'));
 
 
+
+
+
+
+
 /*INICIALIZAÇAO DA PAGINA*/
 
 function init(){
