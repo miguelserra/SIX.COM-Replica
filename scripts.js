@@ -349,77 +349,70 @@ divMain.addEventListener("click", function(event){
 function initSector3Carousel() {
     // 1. Seletores
     const cards = Array.from(document.querySelectorAll('#s3-carrossel .img-container'));
-    const dots = document.querySelectorAll('#s3-btns-esq .btn-dot');
     const btnLeft = document.querySelector('#s3-btns-dir .btn-arrow:first-child');
     const btnRight = document.querySelector('#s3-btns-dir .btn-arrow:last-child');
 
     let currentIndex = 0;
-    const itemsVisible = 3; 
-    const maxIndex = cards.length - itemsVisible; // 5 - 3 = 2
+    //const itemsVisible = 3; 
+    //const maxIndex = cards.length - itemsVisible; // 5 - 3 = 2
 
     function updateCarousel() {
-        // A. MOSTRAR/ESCONDER CARTÕES
-        // O Grid tem 3 colunas. Nós vamos tornar visíveis apenas 3 itens.
-        // O Grid vai pegar nesses 3 e colocá-los nas colunas 1, 2 e 3.
+       
+        //determina quantos cartões mostra mediante o portview
+        let itemsVisible = 3;
+
+        if (window.innerWidth <= 650) {
+            itemsVisible = 1;
+        } 
+        else if (window.innerWidth <= 900) {
+            itemsVisible = 2;
+        }
+
+        const maxIndex = cards.length - itemsVisible;
+
+        if (currentIndex > maxIndex) currentIndex = maxIndex;
         
         cards.forEach((card, index) => {
-            // Se o índice estiver dentro da janela atual (ex: 0, 1, 2), mostra.
+            // Se o índice estiver dentro da janela atual, mostra.
             if (index >= currentIndex && index < currentIndex + itemsVisible) {
                 card.classList.add('visible');
-            } else {
+            } 
+            else {
                 card.classList.remove('visible');
             }
         });
 
-        // B. ATUALIZAR PONTOS
-        dots.forEach((dot, index) => {
-            // O toggle adiciona a classe se a condição for true, remove se false
-            dot.classList.toggle('active-dot', index === currentIndex);
-        });
-
-        // C. BLOQUEAR SETAS
+        //Bloqueia setas nos limites
         btnLeft.classList.toggle('disabled-arrow', currentIndex === 0);
         btnRight.classList.toggle('disabled-arrow', currentIndex === maxIndex);
     }
-
-    // --- EVENT LISTENERS ---
     
-    if (btnLeft) {
-        btnLeft.addEventListener('click', function() {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        });
-    }
-
-    if (btnRight) {
-        btnRight.addEventListener('click', function() {
-            if (currentIndex < maxIndex) {
-                currentIndex++;
-                updateCarousel();
-            }
-        });
-    }
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', function() {
-            if (index <= maxIndex) {
-                currentIndex = index;
-                updateCarousel();
-            }
-        });
+    btnLeft.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
     });
 
+    btnRight.addEventListener('click', () => {
+        let itemsVisible = window.innerWidth <= 650 ? 1 : (window.innerWidth <= 900 ? 2 : 3);
+        if (currentIndex < cards.length - itemsVisible) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    
+    // Atualiza o layout quando a janela é redimensionada
+    window.addEventListener('resize', updateCarousel);
     // Iniciar
     updateCarousel();
 }
 
 /*Sector 4 - carrossel*/
 function initSector4Carousel() {
-    // Seletores
+  
     const slides = document.querySelectorAll('#s4-carrossel > div');
-    const dots = document.querySelectorAll('#s4-btns-esq .btn-dot');
     const btnLeft = document.querySelector('#s4-btns-dir .btn-arrow:first-child');
     const btnRight = document.querySelector('#s4-btns-dir .btn-arrow:last-child');
 
@@ -433,20 +426,13 @@ function initSector4Carousel() {
         slides.forEach((slide, index) => {
             if (index === currentIndex) {
                 slide.classList.add('active-slide');
-            } else {
+            } 
+            else {
                 slide.classList.remove('active-slide');
             }
         });
 
-        //Atualizar os Pontos (Dots)
-        dots.forEach((dot, index) => {
-            if (index === currentIndex) {
-                dot.classList.add('active-dot');
-            } else {
-                dot.classList.remove('active-dot');
-            }
-        });
-
+        
         // Atualizar Estado das Setas nos limites
         // Se estiver no início (0), desativa a esquerda
         if (currentIndex === 0) {
@@ -476,14 +462,6 @@ function initSector4Carousel() {
             currentIndex++;
             updateCarousel();
         }
-    });
-
-    // Opcional: Permitir clicar nos pontos para navegar
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', function() {
-            currentIndex = index;
-            updateCarousel();
-        });
     });
 
     // Inicializar o estado (mostrar o primeiro slide e configurar setas)

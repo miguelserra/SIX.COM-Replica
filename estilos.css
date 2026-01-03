@@ -90,18 +90,6 @@ img {
   overflow: hidden;
 }
 
-.btn-dot {
-  border-width: 0;
-  justify-content: center;
-  align-items: center;
-}
-.btn-dot img {
-  width: 1rem; /* Define o tamanho físico aqui */
-  height: 1rem; /* Define o tamanho físico aqui */
-  display: block;
-  filter: invert(50%);
-}
-
 .tabs-window .tab {
   width: 100%;
   order: 1;
@@ -350,6 +338,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   padding: 2rem;
   text-align: left;
   color: #191919;
+  border: 1.5px solid black;
 }
 #navbar #navbar-options .navbar-options-item .dropdown-menu.booking-form h3 {
   margin-bottom: 0.5rem;
@@ -393,6 +382,9 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   height: 1.5rem;
   filter: invert(100%);
 }
+#navbar #navbar-options .navbar-options-item .dropdown-menu.language-list {
+  border: 1.5px solid black;
+}
 #navbar #navbar-options .navbar-options-item .dropdown-menu.language-list li {
   padding: 0.4rem 1rem;
   color: #191919; /* Texto preto */
@@ -409,6 +401,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   padding: 2rem;
   text-align: left;
   color: #191919;
+  border: 1.5px solid black;
 }
 #navbar #navbar-options .navbar-options-item .dropdown-menu.login-form h3 {
   margin: 0 0 0.5rem 0;
@@ -1610,18 +1603,9 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 }
 #main #sector3 div.sector-container #s3-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: end;
   height: 4rem;
-}
-#main #sector3 div.sector-container #s3-footer #s3-btns-esq {
-  display: flex;
-  justify-content: stretch;
-  transform: translate(-0.825rem, 0);
-  padding: 0.5rem;
-}
-#main #sector3 div.sector-container #s3-footer #s3-btns-esq .btn-dot.active-dot img {
-  filter: invert(0%) !important;
 }
 #main #sector3 div.sector-container #s3-footer #s3-btns-dir {
   display: flex;
@@ -1730,36 +1714,15 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 }
 #main #sector4 div.sector-container #s4-footer {
   display: flex;
-  justify-content: space-between;
   height: 4rem;
-  flex-shrink: 0;
   width: 100%;
   padding-bottom: 3.5rem;
-}
-#main #sector4 div.sector-container #s4-footer #s4-btns-esq {
-  display: flex;
-  justify-content: stretch;
-  transform: translate(-0.825rem, 0);
-  padding: 0.5rem;
-  filter: invert(100%);
-}
-#main #sector4 div.sector-container #s4-footer #s4-btns-esq .btn-dot {
-  background-color: transparent;
-}
-#main #sector4 div.sector-container #s4-footer #s4-btns-esq .btn-dot img {
-  width: 1rem;
-  height: 1rem;
-  display: block;
-  filter: invert(50%);
-}
-#main #sector4 div.sector-container #s4-footer #s4-btns-esq .btn-dot.active-dot img {
-  filter: invert(0%);
+  justify-content: flex-end;
 }
 #main #sector4 div.sector-container #s4-footer #s4-btns-dir {
   background: transparent;
   display: flex;
   box-sizing: border-box;
-  justify-content: space-between;
   padding-right: 0.5rem;
   gap: 1rem;
 }
@@ -2020,12 +1983,13 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   color: #8D9299;
 }
 
-@media only screen and (max-width: 1240px) {
+@media only screen and (max-width: 1200px) {
   .rf-form {
     flex-wrap: wrap;
   }
   .rf-form .rf-location-input {
     padding-bottom: 1rem;
+    white-space: nowrap;
   }
   .rf-form .rf-location-input:first-child {
     flex: 3;
@@ -2047,5 +2011,293 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   }
   .rf-form .rf-dates-div .rf-time-pickup-btn, .rf-form .rf-dates-div .rf-time-return-btn {
     flex: 1 0;
+  }
+  #main #s1-imagem {
+    height: 50rem;
+  }
+  #main #sector2 {
+    min-height: 100rem;
+  }
+  #main #sector2 div.sector-container #s2-galeria {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-height: 160rem;
+    row-gap: 2.5rem;
+  }
+  #main #sector2 div.sector-container #s2-galeria div:first-child {
+    grid-column: 1;
+  }
+  #main #sector2 div.sector-container #s2-galeria #s2-img1 img {
+    transform: none;
+  }
+  #main #sector2 div.sector-container #s2-galeria .img-container {
+    width: 100%;
+    height: 30rem;
+  }
+  #main #sector2 div.sector-container #s2-galeria img {
+    width: 100%;
+    height: 100%;
+  }
+  #main #sector5 {
+    max-height: 42rem;
+    padding-bottom: 2rem;
+  }
+  #main #sector5 div.sector-container {
+    height: 100%;
+    padding-bottom: 1rem;
+  }
+  #main #sector5 div.sector-container #s5-textboxdiv,
+  #main #sector5 div.sector-container #s5-tabsdiv {
+    flex: 1 1;
+  }
+  #main #sector5 div.sector-container #s5-textboxdiv {
+    padding-right: 1.5rem;
+  }
+  #main #sector5 div.sector-container #s5-tabsdiv .tabs-window {
+    display: flex;
+    flex-direction: column;
+  }
+  #main #sector5 div.sector-container #s5-tabsdiv ul {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(11, 1fr) 3.25rem;
+  }
+  #main #sector5 div.sector-container #s5-tabsdiv a.link {
+    grid-row: -1;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #navbar #navbar-container #navbar-options .dropdown-trigger > div {
+    display: none;
+  }
+  #navbar #navbar-container #navbar-options .dropdown-menu.booking-form {
+    right: -7rem;
+  }
+  #navbar #navbar-container #navbar-options .dropdown-menu.language-list {
+    right: -3rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container {
+    width: 95%;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars {
+    justify-content: center;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars #rf-calendar-1 {
+    display: none;
+  }
+  #main #sector1 #s1-imagem {
+    height: 50rem;
+  }
+  #main #sector1 #s1-barra-fundo #s1-barra-fundo-titulo {
+    font-size: 4rem;
+  }
+  #main #sector1 #s1-barra-fundo #s1-barra-fundo-subtitulo {
+    font-size: 1rem;
+  }
+  #main #sector2 div.sector-container {
+    padding-top: 2rem;
+  }
+  #main #sector2 div.sector-container #s2-cards-topo {
+    margin-bottom: 1.5rem;
+  }
+  #main #sector2 div.sector-container #s2-cards-topo .s2-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 15rem;
+  }
+  #main #sector2 div.sector-container #s2-cards-topo .s2-card .s2-card-title {
+    white-space: nowrap;
+  }
+  #main #sector3 div.sector-container #s3-carrossel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #main #sector5 {
+    max-height: 46rem;
+    padding-bottom: 2rem;
+  }
+  #main #sector5 div.sector-container {
+    padding: 4rem 2rem;
+    flex-direction: column;
+    height: auto;
+  }
+  #main #sector5 div.sector-container #s5-tabsdiv {
+    padding-left: 0;
+  }
+  #main #sector5 div.sector-container #s5-tabsdiv ul {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr) 2.25rem;
+  }
+  #main #sector5 div.sector-container #s5-tabsdiv a.link {
+    grid-row: -1;
+    white-space: nowrap;
+  }
+}
+@media only screen and (max-width: 650px) {
+  #navbar #navbar-container {
+    padding: 0 1rem;
+  }
+  #navbar #navbar-container .sandwich .menu {
+    width: 100%;
+    align-items: left;
+    padding-left: 1rem;
+  }
+  #navbar #navbar-container #navbar-options .navbar-options-item.dropdown-parent .dropdown-menu.booking-form {
+    min-width: 17rem;
+  }
+  #navbar #navbar-container #navbar-options .navbar-options-item.dropdown-parent .dropdown-menu.login-form {
+    min-width: 17rem;
+    white-space: wrap;
+  }
+  #rf-aux-div {
+    height: auto;
+  }
+  #rf-aux-div #rf-container {
+    padding: 0 1rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window {
+    margin: 1rem 0.2rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window label {
+    margin-right: 0.1rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .rf-form .rf-locations-div {
+    flex-direction: column;
+    padding: 0 0.7rem;
+    gap: 0rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .rf-form .rf-locations-div .rf-location-input {
+    padding-bottom: 0rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .rf-form .rf-dates-div {
+    flex-direction: column;
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .rf-form .rf-dates-div > div {
+    flex-basis: 1rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .rf-form .rf-dates-div .rf-btn-show {
+    flex-basis: 3rem;
+    align-self: center;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .link {
+    margin-left: 0.75rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container {
+    width: 95%;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars {
+    justify-content: center;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars #rf-calendar-1, #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars #rf-calendar-2 {
+    display: none;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-div-pickup-timeslots {
+    right: 0rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-div-return-timeslots {
+    right: 0rem;
+  }
+  #rf-aux-div #rf-container .rf-search-results {
+    width: 100%;
+  }
+  #rf-aux-div #rf-container .rf-search-results h1 {
+    font-size: 1.5rem;
+    white-space: nowrap;
+  }
+  #rf-aux-div #rf-container .rf-search-results .rf-results-container {
+    grid-template-columns: 1fr;
+  }
+  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-results-gallery {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-results-gallery.bill-summary-mode {
+    display: none;
+  }
+  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-booking-summary {
+    padding: 0rem 1rem;
+  }
+  #main #sector1 #s1-barra-fundo #s1-barra-fundo-titulo {
+    height: 5rem;
+    font-size: 2.5rem;
+  }
+  #main #sector2 div.sector-container {
+    padding: 2.5rem 1rem;
+  }
+  #main #sector2 div.sector-container #s2-cards-topo {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  #main #sector2 div.sector-container #s2-cards-topo .s2-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 8rem;
+    padding: 0;
+  }
+  #main #sector2 div.sector-container #s2-cards-topo .s2-card .s2-card-title {
+    white-space: nowrap;
+  }
+  #main #sector3 div.sector-container {
+    padding: 2.5rem 1rem;
+  }
+  #main #sector3 div.sector-container #s3-carrossel {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #main #sector3 div.sector-container #s3-footer {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  #main #sector4 {
+    height: 30rem;
+  }
+  #main #sector4 div.sector-container {
+    padding: 5rem 1rem 2rem 1rem;
+    height: auto;
+  }
+  #main #sector4 div.sector-container #s4-carrossel {
+    height: auto;
+  }
+  #main #sector4 div.sector-container #s4-carrossel h1 {
+    font-size: 2rem;
+  }
+  #main #sector4 div.sector-container .s4-txt-main {
+    height: 10rem;
+    padding-bottom: 1rem;
+  }
+  #main #sector4 div.sector-container #s4-footer {
+    width: 100%;
+    justify-content: flex-end;
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+  }
+  #main #sector5 {
+    max-height: 95rem;
+    padding-bottom: 2rem;
+  }
+  #main #sector5 div.sector-container {
+    padding: 2rem 1rem;
+    height: auto;
+  }
+  #main #sector5 div.sector-container #s5-tabsdiv {
+    padding-left: 0rem;
+  }
+  #main #sector5 div.sector-container #s5-tabsdiv ul {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(12, 1fr) 2.25rem;
+  }
+  #main #sector6 div.sector-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  #main #sector7 div.sector-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }/*# sourceMappingURL=estilos.css.map */
