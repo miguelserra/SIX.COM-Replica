@@ -69,6 +69,10 @@ const lblReturn    = document.querySelectorAll(".rf-lbl-return");
 //botoes que ativam o calendario
 const btnsDatePick = document.querySelectorAll(".rf-date-pick-btn");
 
+//boptoes calendario
+const btnPrevMonth = document.getElementById("prevMonth");
+const btnNextMonth = document.getElementById("nextMonth");
+
 //botoes que ativam o pickup e return time
 const btnsPickupTime = document.querySelectorAll(".rf-time-pickup-btn");
 const btnsReturnTime = document.querySelectorAll(".rf-time-return-btn");
@@ -373,8 +377,6 @@ function initSector3Carousel() {
     const btnRight = document.querySelector('#s3-btns-dir .btn-arrow:last-child');
 
     let currentIndex = 0;
-    //const itemsVisible = 3; 
-    //const maxIndex = cards.length - itemsVisible; // 5 - 3 = 2
 
     function updateCarousel() {
        
@@ -388,7 +390,7 @@ function initSector3Carousel() {
             itemsVisible = 2;
         }
 
-        const maxIndex = cards.length - itemsVisible;
+        let maxIndex = cards.length - itemsVisible;
 
         if (currentIndex > maxIndex) currentIndex = maxIndex;
         
@@ -403,8 +405,8 @@ function initSector3Carousel() {
         });
 
         //Bloqueia setas nos limites
-        btnLeft.classList.toggle('disabled-arrow', currentIndex === 0);
-        btnRight.classList.toggle('disabled-arrow', currentIndex === maxIndex);
+        btnLeft.classList.toggle('disabled-arrow', currentIndex == 0);
+        btnRight.classList.toggle('disabled-arrow', currentIndex == maxIndex);
     }
     
     btnLeft.addEventListener('click', () => {
@@ -415,6 +417,8 @@ function initSector3Carousel() {
     });
 
     btnRight.addEventListener('click', () => {
+
+        //######################################################################
         let itemsVisible = window.innerWidth <= 650 ? 1 : (window.innerWidth <= 900 ? 2 : 3);
         if (currentIndex < cards.length - itemsVisible) {
             currentIndex++;
@@ -469,7 +473,7 @@ function initSector4Carousel() {
         }
     }
 
-    // Event Listeners para as Setas
+    // event listeners para as setas
     btnLeft.addEventListener('click', function() {
         if (currentIndex > 0) {
             currentIndex--;
@@ -484,7 +488,7 @@ function initSector4Carousel() {
         }
     });
 
-    // Inicializar o estado (mostrar o primeiro slide e configurar setas)
+    // mostrar o primeiro slide e configurar setas
     updateCarousel();
 }
 
@@ -515,6 +519,19 @@ function setEndDate(timestamp){
     });
     objBill.returnDateTS = timestamp;
 }
+
+
+btnPrevMonth.addEventListener("click", function (){
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    handleCalendar(currentDate);
+});
+
+
+btnNextMonth.addEventListener("click", function (){
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    handleCalendar(currentDate);
+});
+
 
 function handleCalendar(date) {
 
@@ -734,6 +751,9 @@ function setDifferentReturnLoc(type){
 
     //define verdadeiro ou falso: cbx verdadeiro -> diff return verdadeiro 
     objBill.diffReturnLoc = cbxDiffLocCars.checked ;
+
+    lblPickpup.forEach( el => el.textContent = "Pickup")
+    lblReturn.forEach( el => el.textContent = "Return")
 }
 
 cbxDiffLocCars.addEventListener("change", () => setDifferentReturnLoc('car'));
@@ -775,7 +795,7 @@ inpReturnLoc.forEach(inp => {
 ##################### */
 
 function reactivateCards() {
-    divsCards.forEach(card => card.classList.remove("inactive"));
+    divsCards.forEach(card =>card.classList.remove("inactive"));
     resetResultsGrids(false);
 }
 
