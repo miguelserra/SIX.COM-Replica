@@ -2290,21 +2290,25 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 }
 
 
-@media only screen and (max-width: 1240px) {
-	.rf-form{
-		flex-wrap: wrap;   
+@media only screen and (max-width: 1200px) {
+
+
+    
+    .rf-form{
+        flex-wrap: wrap;   
          
         .rf-location-input{
             padding-bottom: 1rem;
-
+            white-space: nowrap;
             //Configurações para o input de pickup ocupar mais espaço do que o "+different location"
             &:first-child {
                 flex: 3; 
             }
-
+    
             &:last-child {
                 flex: 1; 
             }    
+    
         }
         
         //Quando o different location está checked, volta a ter 50/50
@@ -2313,7 +2317,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             flex: 1 1;
             }
         }
-
+    
         //estica a div que contem as datas, horas e show button por toda a largura 
         //e faz com que a div das datas fique maior do que a das horas 
         .rf-dates-div{
@@ -2322,7 +2326,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             div{
                 justify-content: left;
             }
-
+    
             .rf-date-pick-btn{
                 flex: 2 1;
     
@@ -2336,4 +2340,354 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         }
         
     }
+    
+    //aumenta a primeira imagem do site para nao ficar escondida
+    
+    
+    
+    #main{
+        
+        #s1-imagem{
+            height: 50rem;
+        }
+
+        #sector2{
+            min-height: 100rem;
+            
+            div.sector-container{
+
+                //padding: 3rem 1.5rem;
+          
+                #s2-galeria{
+                    grid-template-columns   : 1fr ;
+                    //min-height              : 100rem;
+                    width: 100%;
+                    max-height: 160rem;
+                    row-gap: 2.5rem;
+
+                    div:first-child {
+                        grid-column: 1; //reseta a posição na grid da primeira imagem
+                        
+                    }
+
+
+                    #s2-img1 img {
+                        transform: none; //retira o posicionamento anterior para centrar melhor a imagem
+                    }
+
+                    .img-container {
+                        width: 100%;
+                        height: 30rem;
+                        
+                    }    
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }    
+                }
+
+            }
+
+
+        }
+        
+        #sector5{
+            max-height: 42rem;
+            padding-bottom: 2rem;
+            
+            div.sector-container {
+                //justify-content: space-between;
+                //align-items: flex-start;
+                //width: 100%;
+                height: 100%;
+                padding-bottom: 1rem;
+
+
+                #s5-textboxdiv, 
+                #s5-tabsdiv{
+                    flex: 1 1;
+                    //max-width: 50%;
+                    //box-sizing: border-box;
+
+
+                }
+
+                #s5-textboxdiv {
+                padding-right: 1.5rem; 
+                }
+
+                #s5-tabsdiv {
+                    
+                    .tabs-window{
+
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    // Ajuste da grid da lista para 2 colunas
+                    ul {
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-rows: repeat(11, 1fr) 3.25rem;
+                    }
+
+                    a.link{
+                        grid-row:-1;
+                    }
+                }
+            }
+        }
+    }   
+}
+
+
+@media only screen and (max-width: 900px) {
+
+    #navbar{
+
+        #navbar-container{
+            #navbar-options{
+                
+                .dropdown-trigger{
+
+                    > div{
+                        display: none;
+                    }
+                }
+
+                .dropdown-menu.booking-form {
+
+                    right:-7rem; //ajuste da posição do menu booking
+
+                }
+
+                .dropdown-menu.language-list {
+
+                    right:-3rem; //ajuste da posição do menu language
+
+                }
+
+            }
+
+        }
+
+
+    }
+
+    
+    #main{        
+        #sector1{
+            #s1-imagem{
+                height: 50rem;
+            }
+            
+            #s1-barra-fundo{
+                #s1-barra-fundo-titulo{
+                    font-size: 4rem;
+                }
+
+                #s1-barra-fundo-subtitulo{
+                    font-size:1rem;
+
+                }
+            }
+        
+        
+        }
+
+
+        #sector2{
+            div.sector-container{
+                padding-top: 2rem;
+                #s2-cards-topo{
+                    
+                    margin-bottom: 1.5rem;
+
+                    .s2-card{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        height: 15rem;
+
+                        .s2-card-title{
+                            white-space:nowrap;
+                        }
+                    }
+                }
+            }
+        }
+
+        #sector3{
+            div.sector-container {
+            //Ajusta a grid para mostrar apenas 2 colunas
+                #s3-carrossel {
+                grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        
+        }
+
+        #sector5{
+            max-height: 46rem;
+            padding-bottom: 2rem;
+            
+            div.sector-container {
+                //justify-content: space-between;
+                //align-items: flex-start;
+                //width: 100%;
+                padding: 4rem 2rem;
+                flex-direction: column;
+                height: auto;
+                //padding-top: 1rem;
+                //padding-bottom: 1rem;
+
+          
+              
+                #s5-tabsdiv {
+                    padding-left: 0;
+                    // Ajuste da grid da lista para 2 colunas
+                    ul {
+                        grid-template-columns: repeat(3, 1fr);
+                        grid-template-rows: repeat(7, 1fr) 2.25rem;
+                    }
+
+                    a.link{
+                        grid-row:-1;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+
+@media only screen and (max-width: 650px){
+
+
+    #main{        
+
+        #sector1{
+
+            #s1-barra-fundo{
+
+
+                #s1-barra-fundo-titulo{
+
+                    //font-size:4rem;
+                }
+
+            }
+
+        }
+
+
+
+        #sector2{
+            div.sector-container{
+                padding:2.5rem 1rem;
+                #s2-cards-topo{
+                    flex-direction: column;
+                    align-items: center;
+                    
+                    margin-bottom: 1.5rem;
+
+                    .s2-card{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                        height: 8rem;
+                        padding:0;
+
+                        .s2-card-title{
+                            white-space:nowrap;
+                        }
+                    }
+                }
+            }
+        }
+
+        #sector3{
+            div.sector-container {
+                padding:2.5rem 1rem;
+            //Ajusta a grid para mostrar apenas 2 colunas
+                #s3-carrossel {
+                grid-template-columns: repeat(1, 1fr);
+                }
+
+                #s3-footer{
+                    width: 100%;
+                    justify-content: flex-end;
+                    
+                }
+            }
+        
+        }
+
+
+        #sector4{
+            height: 30rem;
+            div.sector-container{
+                padding: 5rem 1rem 2rem 1rem;
+                height: auto;
+                
+                #s4-carrossel{
+                    height: auto;
+                    h1{
+                        font-size: 2rem;
+
+                    }
+
+                }
+
+                .s4-txt-main{
+                    height: 10rem;
+                    padding-bottom: 1rem;
+
+                }
+
+                #s4-footer{
+                    width: 100%;
+                    justify-content: flex-end;
+                    padding-top: 2.5rem;
+                    padding-bottom: 1rem;
+                    
+                }
+            
+
+            }
+
+
+
+        }
+
+        #sector5{
+            max-height: 95rem;
+            padding-bottom: 2rem;
+            
+            div.sector-container {
+                //justify-content: space-between;
+                //align-items: flex-start;
+                //width: 100%;
+                padding: 2rem 1rem;
+                height: auto;
+                //padding-top: 1rem;
+                //padding-bottom: 1rem;
+
+        
+            
+                #s5-tabsdiv {
+                    padding-left: 0rem;
+                    // Ajuste da grid da lista para 2 colunas
+                    ul {
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-rows: repeat(12, 1fr) 2.25rem;
+                    }
+               }
+            }
+        }   
+    }     
 }
