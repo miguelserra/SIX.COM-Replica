@@ -56,6 +56,10 @@ const objReturnTimeContainer = new ToggleContainer('rf-div-return-timeslots');
 const objShowCarsContainer = new ToggleContainer('rf-search-results-cars');
 const objShowTrucksContainer = new ToggleContainer('rf-search-results-trucks');
 
+//botoes tabs
+const tabCars = document.querySelector("#rf-tab-cars");
+const tabTrucks = document.querySelector("#rf-tab-trucks");
+
 //input forms
 const inpPickupLoc = document.querySelectorAll(".input-loc-pickup");
 const inpReturnLoc = document.querySelectorAll(".input-loc-return");
@@ -234,6 +238,11 @@ function delay(time) {
   return new Promise(resolve => setTimeout(resolve, time*1000));
 }
 
+
+//troca de tabs
+tabCars.addEventListener("change", () => reactivateCards("cars"));
+tabTrucks.addEventListener("change", () => reactivateCards("trucks"));
+
 //evento que abre e fecha div do calendário ao clicar nos botões pickdate
 objCalendarContainer.bindBtns(btnsDatePick);
 
@@ -324,6 +333,7 @@ function activateResultsMode()
 
     let divsResultsDiv = document.querySelectorAll(".rf-search-results");
     divsResultsDiv.forEach(el => el.classList.add("bill-summary-mode"));
+
 }
 
 //reset às grids dos resultados
@@ -786,6 +796,11 @@ inpReturnLoc.forEach(inp => {
 ## DIVS DE RESULTADOS ##
 ##################### */
 
+function reactivateCards() {
+    divsCards.forEach(card => card.classList.remove("inactive"));
+    resetResultsGrids(false);
+}
+
 function showSearchResults(type) {
 
     objBill.vehicleType = type;
@@ -813,7 +828,7 @@ function showSearchResults(type) {
         /*!!!!!   MUITO IMPORTANTE !!!!!!!!!!!!!!!!!!!!!!!!!!!*/
         activateResultsMode();
     }
-
+  
     function randomizeVehicleCards(type) {
         // esconde todas as cards
         divsCards.forEach(card => card.classList.add("inactive"));
@@ -837,7 +852,6 @@ function showSearchResults(type) {
             card.dataset.cardIntID = pos[i];
         }
     }
-    
 }
 
 btnShowCars.addEventListener("click", () => showSearchResults('car'));
