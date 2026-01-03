@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "HelveticaNow";
   font-style: normal;
@@ -83,7 +82,6 @@ body {
   flex-direction: column;
   position: relative;
   align-items: center;
-  background-color: green;
   line-height: 1.5;
 }
 
@@ -177,17 +175,17 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 #navbar .menu.inside .menu-header {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Alinha à esquerda */
-  padding-bottom: 2rem; /* Espaço antes dos links começarem */
-  border-bottom: none; /* Remove a linha de baixo se tiveres */
+  justify-content: flex-start;
+  padding-bottom: 2rem;
+  border-bottom: none;
   gap: 0.5rem;
 }
 #navbar .menu.inside .menu-header .close-btn {
-  font-size: 2rem; /* Tamanho grande */
-  font-weight: 1; /* Mais fino */
+  font-size: 2rem;
+  font-weight: 1;
   color: #191919;
   line-height: 1;
-  display: block; /* Para aceitar transforms se preciso */
+  display: block;
 }
 #navbar .menu.inside .menu-header .close-btn:hover {
   color: #191919;
@@ -220,7 +218,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   margin-top: -1rem;
 }
 #navbar .menu.inside li:hover {
-  color: #ff5000; /* Laranja no hover */
+  color: #ff5000;
 }
 #navbar .sandwich #toggle:checked + .menu {
   display: flex;
@@ -345,7 +343,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 }
 #navbar #navbar-options .navbar-options-item .dropdown-menu.language-list li {
   padding: 0.4rem 1rem;
-  color: #191919; /* Texto preto */
+  color: #191919;
   font-weight: normal;
   white-space: nowrap;
   cursor: pointer;
@@ -410,7 +408,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 }
 #navbar #navbar-options .navbar-options-item .separator span {
   padding: 0 10px;
-  background-color: white; /* Garante que a linha não passa por trás do texto */
+  background-color: white;
 }
 #navbar #navbar-options .navbar-options-item .btn-register {
   display: block;
@@ -542,13 +540,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   overflow: hidden;
   border-radius: 1rem;
   box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-  /*############################################################################################
-  ##############################################################################################
-  #############################################################################################*/
   display: flex;
-  /*############################################################################################
-  ##############################################################################################
-  #############################################################################################*/
   justify-content: space-between;
 }
 #rf-container #rf-form-container div#rf-calendar-container .calendar-btn {
@@ -583,11 +575,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: 0.75fr repeat(6, 1fr);
-  /*
-  :nth-child(7n+2) {
-      color: $sixt-placeholder-gray;
-  }
-  */
 }
 #rf-container #rf-form-container div#rf-calendar-container div#rf-calendars .calendar .month-year {
   grid-row: 1/2;
@@ -2063,12 +2050,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   #navbar #navbar-container #navbar-options .dropdown-menu.language-list {
     right: -3rem;
   }
-<<<<<<< HEAD
-=======
-  #rf-aux-div {
-    height: auto;
-  }
->>>>>>> 85e15e743acf5ddc2b8c254929fc78363f29b6ff
   #rf-aux-div #rf-container #rf-form-container #rf-calendar-container {
     width: 95%;
   }
@@ -2078,30 +2059,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars #rf-calendar-1 {
     display: none;
   }
-<<<<<<< HEAD
-=======
-  #rf-aux-div #rf-container .rf-search-results {
-    width: 100%;
-  }
-  #rf-aux-div #rf-container .rf-search-results h1 {
-    font-size: 1.5rem;
-    white-space: nowrap;
-  }
-  #rf-aux-div #rf-container .rf-search-results .rf-results-container {
-    grid-template-columns: 1fr;
-  }
-  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-results-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-results-gallery.bill-summary-mode {
-    display: none;
-  }
-  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-booking-summary {
-    padding: 0rem 1rem;
-  }
->>>>>>> 85e15e743acf5ddc2b8c254929fc78363f29b6ff
   #main #sector1 #s1-imagem {
     height: 50rem;
   }

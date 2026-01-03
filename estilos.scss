@@ -79,8 +79,6 @@
 }
 
 @mixin grid-general-config{
-    //Column gap muda no primeiro break
-    //column-gap              : 1rem;
     column-gap              : 1.5rem;
     row-gap                 : 2.5rem;
 }
@@ -169,7 +167,6 @@ body {
     flex-direction      : column;
     position            : relative ;
     align-items         : center;
-    background-color    : green;
     line-height         : 1.5;
 }
 
@@ -216,7 +213,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     }
 
     .sandwich{
-        //padding-left: 5.5%; //espaçamento do icon para a
         position: relative;
         display: flex;
         align-items: center;
@@ -230,7 +226,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             font-size:1.5rem; //aumenta o icon
             cursor: pointer;
             color: #ffffff;
-            //width: fit-content;
         }
 
         .open-btn{
@@ -272,20 +267,20 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         .menu-header {
             display: flex;
             align-items: center;
-            justify-content: flex-start; /* Alinha à esquerda */
-            padding-bottom: 2rem; /* Espaço antes dos links começarem */
-            border-bottom: none; /* Remove a linha de baixo se tiveres */
+            justify-content: flex-start; 
+            padding-bottom: 2rem; 
+            border-bottom: none; 
             gap: 0.5rem;
             
             .close-btn {
-                font-size: 2rem;   /* Tamanho grande */
-                font-weight: 1;  /* Mais fino */
+                font-size: 2rem;   
+                font-weight: 1;  
                 color: #191919;     
                 line-height: 1;
-                display: block;    /* Para aceitar transforms se preciso */
+                display: block; 
                 
                 &:hover {
-                    color: #191919 /* Laranja no hover */
+                    color: #191919;
                 }
             }
         }
@@ -315,9 +310,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             }
 
             &:hover {
-                color: #ff5000; /* Laranja no hover */
-
-                //adicionar javascript para colocar a laranja o item seleccionado que corresponde ao tipo de rentar (car, truck)
+                color: #ff5000; 
             }
         }
     }
@@ -353,8 +346,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 display:none;
                 position: absolute;
                 top: 100%;
-                // left: 50%; //alinha ao centro do item do nav
-                //transform: translateX(-50%); //centraliza o menu dropdown
                 background-color: white;
                 max-width: 7rem;
                 padding: 0.5rem 0;
@@ -422,7 +413,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             //Formatação do botão do form booking - next
             button {
                 width: 100%;
-                background-color: $sixt-orange; //laranja sixt
+                background-color: $sixt-orange; 
                 color: white;
                 border: none;
                 padding: 1rem;
@@ -432,7 +423,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 margin-top: 0.5rem;
 
                 &:hover {
-                    background-color: #e04e00; //laranja mais escuro quando se faz over0
+                    background-color: #e04e00; 
                 }
             }
         
@@ -459,7 +450,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 
                 li{
                     padding: 0.40rem 1rem;
-                    color: #191919; /* Texto preto */
+                    color: #191919; 
                     font-weight: normal;
                     white-space: nowrap;
                     cursor: pointer;
@@ -506,7 +497,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     font-size: 1rem;
                     border-radius: 4px;
                     margin-top: 0.5rem;
-                    //transition: background 0.2s;
 
                     &:hover {
                         background-color: #e04e00;
@@ -529,7 +519,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 
                     span {
                         padding: 0 10px;
-                        background-color: white; /* Garante que a linha não passa por trás do texto */
+                        background-color: white; 
                     }
 
                 }
@@ -547,7 +537,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     text-align: center;
                     text-decoration: none;
                     box-sizing: border-box;
-                    //transition: background 0.2s;
 
                     &:hover {
                         background-color: #f5f5f5;
@@ -578,7 +567,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     position    : sticky;
     top         : 0rem;
     margin-top  : $rf-margin-top ;
-    padding     : 0 5rem; //overide so sector-common
+    padding     : 0 5rem; //overide do sector-common
     width       : 100%;
     z-index     : 100;
     align-items : center;
@@ -661,7 +650,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         div#rf-calendar-container{
             //calendar grid step size
 
-            background-color    : white;//            :                       red;
+            background-color    : white;
             position            : absolute;
             top                 : 9.75rem; 
             width               : 85%;
@@ -672,17 +661,8 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             overflow            : hidden;
             border-radius       : 1rem;
             box-shadow          : 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-
-            /*############################################################################################
-            ##############################################################################################
-            #############################################################################################*/
             
             display: flex;
-
-
-            /*############################################################################################
-            ##############################################################################################
-            #############################################################################################*/
 
             justify-content: space-between;
 
@@ -724,12 +704,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     grid-template-rows: 0.75fr repeat(6,1fr);
 
 
-                    /*
-                    :nth-child(7n+2) {
-                        color: $sixt-placeholder-gray;
-                    }
-                    */
-
                     .month-year{
                         grid-row: 1/2;
                         grid-column: 1/8;
@@ -757,7 +731,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 
                         @include font-HelveticaNow-700;
                         font-size: 0.9rem;
-                        //transform: scale(1.025,1);
 
                         cursor: pointer;
 
@@ -955,7 +928,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 
                 .rf-location-return{
                     display: none;
-                    //display : flex;
                 }
                 
                 .rf-cbx-diff-loc{
@@ -990,7 +962,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 
             >span{
                 width           : 100%;
-                display         : inline-flex; //necessário para atribuir height
+                display         : inline-flex; 
                 align-items     : flex-end;
                 height          : 1.5rem;
                 margin-bottom   : 0.25rem;
@@ -1144,8 +1116,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     div.rf-results-container{
         display                 : grid;
         width                   : 100%;
-        //height                  : $rf-results-container-height;
-        //overflow: scroll;  --------------------------->salvaçao emergencia
         grid-template-columns   : 1fr 0fr;
         
         &.bill-summary-mode{
@@ -1169,7 +1139,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             .car-card {
                 position        : relative;
                 box-sizing      : border-box;
-                //height          : $rf-results-container-height;
                 width           : 100%;
                 border-radius   : 1rem;
                 overflow        : hidden;
@@ -1271,7 +1240,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                         
                         img {
                             width       : 100%;
-                            height      : 10rem; // alterei de auto para fixo senao os trucks ficavam mais pequenos
+                            height      : 10rem;
                         }
                     }
             
@@ -1368,8 +1337,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 align-self : flex-start;
 
                 &.underlined{
-                    //text-decoration: underline;
-                    //text-underline-offset: 1px;
                     border-bottom: 1px solid $sixt-placeholder-gray;
                 }
             }
@@ -1400,7 +1367,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 }
 
                 &.bill-total{
-                    //padding-top: .5rem;
                     @include font-HelveticaNow-900;
                     font-size: 1.25rem; 
                 }
@@ -1441,10 +1407,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     display         : flex;
     flex-direction  : column;
     align-items     : center;
-    width           : 100%; // espalha por toda a largura do container
-    //max-width       : 160rem; //mas nao mais que 160rem
-    //border: 5px double black
-
+    width           : 100%; 
 
     #sector1 {
         
@@ -1484,14 +1447,11 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 width: 100%;
                 height: 11.9%;
                 background: linear-gradient(to bottom, rgba(0,0,0,.7),rgba(0,0,0,0));
-                
-                //border-radius: 100%;
                 position: absolute;
                 top: 0; left: 0;
             }
         }
         
-        //Falta fazerem wrap responsivo!!!!
         
         #s1-barra-fundo{
             height          : 14rem; //altura fixa em todos os cenários
@@ -1501,9 +1461,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         
         
             #s1-barra-fundo-titulo{
-                //display: flex;
-                //flex-direction: column;
-                //align-items: center;
                 margin-bottom: 0.5rem;
                 
                 @include font-HelveticaNow-900;
@@ -1534,13 +1491,10 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             #s2-cards-topo{
                 display : flex;
                 margin  : 0 -0.25rem 5rem -0.25rem;
-                //background-color: aqua;
         
                 > div {
                     height: 6.3rem;
-                    //border: 1px solid red;
                 }
-                //border: 5px double blue;
             }
         
             .s2-card{
@@ -1583,7 +1537,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 }
         
                 #s2-img1 img {
-                    //esta imagem tem um zoom e posicionamento esquesito
+                    //esta imagem tem um zoom e posicionamento específico
                     transform: scale(1.375) translateX(-13.5%);
                 }
         
@@ -1614,7 +1568,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                             background-size:contain;
                             position: relative; 
                             margin-bottom: 2rem;
-                            //MUITO IMPORTANTE - Altura e largura da div que contem o frame como background;
                             width: 10rem;
                             height:8.5rem;
                             margin-bottom: 0rem;
@@ -1674,8 +1627,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                         p{
                             @include font-HelveticaNow-400;
                             color: white;
-                            //margin: 1.5rem 0;
-                        
+
                         } 
                         
                         button{
@@ -1690,7 +1642,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                             font-size: 0.75rem;
                             line-height: 1.5;
                             text-align: center;
-                            //font-weight: bold;
                             
                             white-space: nowrap;
                         }
@@ -1798,7 +1749,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 font-size   : 0.75rem;
                 line-height : 1.5;
                 text-align  : center;
-                //font-weight: bold;
                 
                 white-space: nowrap;
             }
@@ -1836,7 +1786,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                         &:first-child img {
                             transform: rotate(180deg);
                             transform-origin: center
-                        //transform: rotate(180deg);
                         }
 
                         &.disabled-arrow { opacity: 0.3; pointer-events: none; cursor: default; }
@@ -1887,12 +1836,10 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             height  : 100%;
             padding : 12rem 5rem 2rem 5rem;
             box-sizing: border-box;
-            //background-color: red
-            //border: 1px solid red;
 
             display: flex;
             flex-direction: column;
-            //justify-content:space-between; //Para que a grid e os botoes se separem entre o topo e fundo, ajustado posteriormente com padding
+
             #s4-carrossel{
                 display                 : grid;
                 grid-template-rows      : 1fr;
@@ -2166,12 +2113,12 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     
             #s6-app{
                 display     : flex;
-                margin-top  : auto; //fica auto??
+                margin-top  : auto; 
                 gap         : 1rem;
                 padding-top : 2.5rem;
     
                 img{
-                    width   : auto; //fica auto??
+                    width   : auto; 
                     height  : 2.5rem;
                 }
             }
@@ -2191,7 +2138,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             padding             : 2.5rem 5rem;
             min-height          : 6.5rem;
             flex: 1;   
-            //align-items: center; - À partida não é necessário
         
             ul{
                 display         : flex;
@@ -2202,7 +2148,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             }
             
         
-            li{ //Propriedades das letras iguais aos li do sector6
+            li{ 
                 @include font-HelveticaNow-700;   
                 font-size   : 0.875rem;
                 color       : #FFFFFF;
@@ -2272,7 +2218,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         
     }
     
-    //aumenta a primeira imagem do site para nao ficar escondida
 
     #main{
         
@@ -2284,18 +2229,15 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             min-height: 100rem;
             
             div.sector-container{
-
-                //padding: 3rem 1.5rem;
           
                 #s2-galeria{
                     grid-template-columns   : 1fr ;
-                    //min-height              : 100rem;
                     width: 100%;
                     max-height: 160rem;
                     row-gap: 2.5rem;
 
                     div:first-child {
-                        grid-column: 1; //reseta a posição na grid da primeira imagem
+                        grid-column: 1; //reset à posição na grid da primeira imagem
                         
                     }
 
@@ -2326,9 +2268,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             padding-bottom: 2rem;
             
             div.sector-container {
-                //justify-content: space-between;
-                //align-items: flex-start;
-                //width: 100%;
                 height: 100%;
                 padding-bottom: 1rem;
 
@@ -2336,10 +2275,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 #s5-textboxdiv, 
                 #s5-tabsdiv{
                     flex: 1 1;
-                    //max-width: 50%;
-                    //box-sizing: border-box;
-
-
                 }
 
                 #s5-textboxdiv {
@@ -2354,7 +2289,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                         flex-direction: column;
                     }
 
-                    // Ajuste da grid da lista para 2 colunas
                     ul {
                         grid-template-columns: repeat(2, 1fr);
                         grid-template-rows: repeat(11, 1fr) 3.25rem;
@@ -2470,7 +2404,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 
         #sector3{
             div.sector-container {
-            //Ajusta a grid para mostrar apenas 2 colunas
+     
                 #s3-carrossel {
                 grid-template-columns: repeat(2, 1fr);
                 }
@@ -2483,20 +2417,15 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             padding-bottom: 2rem;
             
             div.sector-container {
-                //justify-content: space-between;
-                //align-items: flex-start;
-                //width: 100%;
+
                 padding: 4rem 2rem;
                 flex-direction: column;
                 height: auto;
-                //padding-top: 1rem;
-                //padding-bottom: 1rem;
 
           
               
                 #s5-tabsdiv {
                     padding-left: 0;
-                    // Ajuste da grid da lista para 2 colunas
                     ul {
                         grid-template-columns: repeat(3, 1fr);
                         grid-template-rows: repeat(7, 1fr) 2.25rem;
@@ -2699,7 +2628,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         #sector3{
             div.sector-container {
                 padding:2.5rem 1rem;
-            //Ajusta a grid para mostrar apenas 2 colunas
                 #s3-carrossel {
                 grid-template-columns: repeat(1, 1fr);
                 }
@@ -2755,19 +2683,14 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             padding-bottom: 2rem;
             
             div.sector-container {
-                //justify-content: space-between;
-                //align-items: flex-start;
-                //width: 100%;
+
                 padding: 2rem 1rem;
                 height: auto;
-                //padding-top: 1rem;
-                //padding-bottom: 1rem;
 
-        
             
                 #s5-tabsdiv {
                     padding-left: 0rem;
-                    // Ajuste da grid da lista para 2 colunas
+ 
                     ul {
                         grid-template-columns: repeat(2, 1fr);
                         grid-template-rows: repeat(12, 1fr) 2.25rem;
