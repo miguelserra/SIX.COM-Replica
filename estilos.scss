@@ -637,6 +637,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     z-index     : 100;
     align-items : center;
 
+
     #rf-form-container {
         position            : relative;
         display             : flex;
@@ -2444,6 +2445,9 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 
     
     #rf-aux-div{
+
+        height:auto;
+
         #rf-container{
             #rf-form-container{
                 
@@ -2458,6 +2462,38 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                         }
                     }
                 }
+            }
+
+             .rf-search-results{
+                width: 100%;
+
+                h1{
+                    font-size: 1.5rem;
+                    white-space: nowrap;
+                }
+                
+                .rf-results-container{
+                    grid-template-columns: 1fr;
+                    
+                    .rf-results-gallery{
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-rows: repeat(2, 1fr) ;
+                        gap: 1rem;
+                        
+                        
+                        &.bill-summary-mode{
+                            display: none ; 
+                        }
+
+                        
+                    }
+                    .rf-booking-summary{
+                        padding: 0rem 1rem;
+
+                    }
+                }
+
+
             }
         }
     }
