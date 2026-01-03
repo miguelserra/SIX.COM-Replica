@@ -157,7 +157,8 @@
                                         </span>
                                         <div class="rf-input-location  rf-location-pickup">
                                             <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                            <input type="text" id="input-pickup-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
+                                            <input type="text" id="input-pickup-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none"
+                                            value = "Porto Airport">
                                         </div>
                                     </div>
                                 </div>
@@ -243,7 +244,8 @@
                                         </span>
                                         <div class="rf-input-location  rf-location-pickup">
                                             <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                            <input type="text" id="input-pickup-trucks" name="pickup-trucks-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
+                                            <input type="text" id="input-pickup-trucks" name="pickup-trucks-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none"
+                                            value = "Porto Airport">
                                         </div>
                                     </div>
                                 </div>
@@ -391,7 +393,7 @@
                     <h2>Opening Times: 8:30 AM - 7:00 PM</h3>
                     <h3>Time slots available</h2>
                     <div class="timeslots-grid">
-                        <div class="timeslot" tabindex="1"> 8:30 AM</div>
+                        <div class="timeslot"> 8:30 AM</div>
                         <div class="timeslot"> 9:00 AM</div>
                         <div class="timeslot"> 9:30 AM</div>
                         <div class="timeslot">10:00 AM</div>
@@ -423,7 +425,7 @@
                     <h2>Opening Times: 8:30 AM - 7:00 PM</h3>
                     <h3>Time slots available</h2>
                     <div class="timeslots-grid">
-                        <div class="timeslot" tabindex="1"> 8:30 AM</div>
+                        <div class="timeslot"> 8:30 AM</div>
                         <div class="timeslot"> 9:00 AM</div>
                         <div class="timeslot"> 9:30 AM</div>
                         <div class="timeslot">10:00 AM</div>
@@ -721,7 +723,37 @@
                     </div>
 
                     <div class="rf-booking-summary">
-                        <h2>Booking Summary</h2>
+                        <h1>Booking Summary</h1>
+                        <h5></h5>
+                        <h2>Booking Period</h2>
+                        <h5></h5>
+                        <h3 class="underlined">Total number of days</h3>
+                        <h5 class="subtotal">DD</h5>
+                        <h2>Weekdays</h2>
+                        <h5></h5>
+                        <h3>Full days</h3>
+                        <h5>DD</h5>
+                        <h3>Weekday Rate</h3>
+                        <h5>XX€</h5>
+                        <h3 class="underlined">Subtotal</h3>
+                        <h5 class="subtotal">XXX€</h5>
+                        <h2>Weekend days</h2>
+                        <h3>Full days</h3>
+                        <h5>DD</h5>
+                        <h3>Weekend Rate</h3>
+                        <h5>XX€</h5>
+                        <h3 class="underlined">Subtotal</h3>
+                        <h5 class="subtotal">XXX€</h5>
+                        <h2>Different Return Location</h2>
+                        <h3 class="underlined">Fee</h3>
+                        <h5 class="subtotal">XX€</h5>
+                        <h2>Corporate Discount</h2>
+                        <h3>Rate</h3>
+                        <h5>XX%</h5>
+                        <h3 class="underlined">Discount value</h3>
+                        <h5 class="subtotal">XXX€</h5>
+                        <h4>Final Amount</h4>
+                        <h5 class="total">XXX€</h5>
                     </div>
                 </div>
 
@@ -734,6 +766,7 @@
                 <h1>Your results are here. Pick your ride!</h1>
                     <div class="rf-results-container">
                         <div class="rf-results-gallery">
+
                             <div class="car-card" id="truck-card-0">
                                 <div class="card-background">
                                     <img src="media/cards-background.webp">
