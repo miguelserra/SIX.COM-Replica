@@ -2020,12 +2020,14 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   color: #8D9299;
 }
 
+@media only screen and (max-width: 1200px) {
 @media only screen and (max-width: 1240px) {
   .rf-form {
     flex-wrap: wrap;
   }
   .rf-form .rf-location-input {
     padding-bottom: 1rem;
+    white-space: nowrap;
   }
   .rf-form .rf-location-input:first-child {
     flex: 3;
@@ -2047,5 +2049,184 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   }
   .rf-form .rf-dates-div .rf-time-pickup-btn, .rf-form .rf-dates-div .rf-time-return-btn {
     flex: 1 0;
+  }
+  #main #s1-imagem {
+    height: 50rem;
+  }
+  #main #sector2 {
+    min-height: 100rem;
+  }
+  #main #sector2 div.sector-container #s2-galeria {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-height: 160rem;
+    row-gap: 2.5rem;
+  }
+  #main #sector2 div.sector-container #s2-galeria div:first-child {
+    grid-column: 1;
+  }
+  #main #sector2 div.sector-container #s2-galeria #s2-img1 img {
+    transform: none;
+  }
+  #main #sector2 div.sector-container #s2-galeria .img-container {
+    width: 100%;
+    height: 30rem;
+  }
+  #main #sector2 div.sector-container #s2-galeria img {
+    width: 100%;
+    height: 100%;
+  }
+  #main #sector5 {
+    max-height: 42rem;
+    padding-bottom: 2rem;
+  }
+  #main #sector5 div.sector-container {
+    height: 100%;
+    padding-bottom: 1rem;
+  }
+  #main #sector5 div.sector-container #s5-textboxdiv,
+  #main #sector5 div.sector-container #s5-tabsdiv {
+    flex: 1 1;
+  }
+  #main #sector5 div.sector-container #s5-textboxdiv {
+    padding-right: 1.5rem;
+  }
+  #main #sector5 div.sector-container #s5-tabsdiv .tabs-window {
+    display: flex;
+    flex-direction: column;
+  }
+  #main #sector5 div.sector-container #s5-tabsdiv ul {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(11, 1fr) 3.25rem;
+  }
+  #main #sector5 div.sector-container #s5-tabsdiv a.link {
+    grid-row: -1;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #navbar #navbar-container #navbar-options .dropdown-trigger > div {
+    display: none;
+  }
+  #navbar #navbar-container #navbar-options .dropdown-menu.booking-form {
+    right: -7rem;
+  }
+  #navbar #navbar-container #navbar-options .dropdown-menu.language-list {
+    right: -3rem;
+  }
+  #main #sector1 #s1-imagem {
+    height: 50rem;
+  }
+  #main #sector1 #s1-barra-fundo #s1-barra-fundo-titulo {
+    font-size: 4rem;
+  }
+  #main #sector1 #s1-barra-fundo #s1-barra-fundo-subtitulo {
+    font-size: 1rem;
+  }
+  #main #sector2 div.sector-container {
+    padding-top: 2rem;
+  }
+  #main #sector2 div.sector-container #s2-cards-topo {
+    margin-bottom: 1.5rem;
+  }
+  #main #sector2 div.sector-container #s2-cards-topo .s2-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 15rem;
+  }
+  #main #sector2 div.sector-container #s2-cards-topo .s2-card .s2-card-title {
+    white-space: nowrap;
+  }
+  #main #sector3 div.sector-container #s3-carrossel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #main #sector5 {
+    max-height: 46rem;
+    padding-bottom: 2rem;
+  }
+  #main #sector5 div.sector-container {
+    padding: 4rem 2rem;
+    flex-direction: column;
+    height: auto;
+  }
+  #main #sector5 div.sector-container #s5-tabsdiv {
+    padding-left: 0;
+  }
+  #main #sector5 div.sector-container #s5-tabsdiv ul {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr) 2.25rem;
+  }
+  #main #sector5 div.sector-container #s5-tabsdiv a.link {
+    grid-row: -1;
+    white-space: nowrap;
+  }
+}
+@media only screen and (max-width: 650px) {
+  #main #sector2 div.sector-container {
+    padding: 2.5rem 1rem;
+  }
+  #main #sector2 div.sector-container #s2-cards-topo {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  #main #sector2 div.sector-container #s2-cards-topo .s2-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 8rem;
+    padding: 0;
+  }
+  #main #sector2 div.sector-container #s2-cards-topo .s2-card .s2-card-title {
+    white-space: nowrap;
+  }
+  #main #sector3 div.sector-container {
+    padding: 2.5rem 1rem;
+  }
+  #main #sector3 div.sector-container #s3-carrossel {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #main #sector3 div.sector-container #s3-footer {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  #main #sector4 {
+    height: 30rem;
+  }
+  #main #sector4 div.sector-container {
+    padding: 5rem 1rem 2rem 1rem;
+    height: auto;
+  }
+  #main #sector4 div.sector-container #s4-carrossel {
+    height: auto;
+  }
+  #main #sector4 div.sector-container #s4-carrossel h1 {
+    font-size: 2rem;
+  }
+  #main #sector4 div.sector-container .s4-txt-main {
+    height: 10rem;
+    padding-bottom: 1rem;
+  }
+  #main #sector4 div.sector-container #s4-footer {
+    width: 100%;
+    justify-content: flex-end;
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+  }
+  #main #sector5 {
+    max-height: 95rem;
+    padding-bottom: 2rem;
+  }
+  #main #sector5 div.sector-container {
+    padding: 2rem 1rem;
+    height: auto;
+  }
+  #main #sector5 div.sector-container #s5-tabsdiv {
+    padding-left: 0rem;
+  }
+  #main #sector5 div.sector-container #s5-tabsdiv ul {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(12, 1fr) 2.25rem;
   }
 }/*# sourceMappingURL=estilos.css.map */

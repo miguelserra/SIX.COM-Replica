@@ -1750,6 +1750,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 font-size: 3.125rem;
                 letter-spacing: 0.0375em;
                 text-align: center;
+                
             }
         
             #s3-carrossel{
@@ -1802,6 +1803,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 font-size       : 1.875rem;
                 color           : white;
                 text-transform  : uppercase;
+                
         
                 &.smaller{
                     font-size   : 1.875rem;
