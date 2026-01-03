@@ -1041,6 +1041,8 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 .rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-header {
   width: 100%;
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 .rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-header h3 {
   font-family: "HelveticaNow", sans-serif;
@@ -1049,18 +1051,17 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   line-height: 1;
   font-size: 1.1rem;
   text-transform: uppercase;
-  margin-bottom: 0.25rem;
   color: white;
 }
-.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-header h3 span {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-header span {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
+  margin-bottom: 0.25rem;
   font-size: 0.8rem;
   color: #999;
   text-transform: none;
-  margin-left: 0.3rem;
 }
 .rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-header p {
   font-family: "HelveticaNow", sans-serif;

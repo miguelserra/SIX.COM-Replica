@@ -1178,7 +1178,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         display                 : grid;
         width                   : 100%;
         height                  : 100%;
-        grid-template-columns   : 1fr 0fr; 
+        grid-template-columns   : 1fr 0fr;
         
         &.bill-summary-mode{
             grid-template-columns   : 1fr 2fr; ; 
@@ -1191,7 +1191,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             grid-auto-rows          : 0;
             overflow                : hidden;
             gap                     : 0 1rem;
-            padding-top: 0.5rem;
+            padding-top             : 0.5rem;
 
             &.bill-summary-mode{
                 grid-template-columns   : repeat(1, 1fr); 
@@ -1238,19 +1238,21 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     .card-header {
                         width           : 100%;
                         margin-bottom   : 1rem;
+
+                        display: flex;
+                        flex-direction: column;
                         h3 {
                             @include font-HelveticaNow-900;
                             font-size       : 1.1rem;
                             text-transform  : uppercase;
-                            margin-bottom   : 0.25rem;
                             color           : white;
-                            span {
-                                @include font-HelveticaNow-400;
-                                font-size       : 0.8rem;
-                                color           : #999;
-                                text-transform  : none;
-                                margin-left     : 0.3rem;
-                            }
+                        }
+                        span {
+                            @include font-HelveticaNow-400;
+                            margin-bottom   : 0.25rem;
+                            font-size       : 0.8rem;
+                            color           : #999;
+                            text-transform  : none;
                         }
                         p {
                             @include font-HelveticaNow-400;

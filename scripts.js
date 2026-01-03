@@ -121,7 +121,7 @@ const objBill = {
     billTotal           : 0,
 
 
-    handleRentingDays : function() {
+    calcBookingFullDays : function() {
         let tsStart = this.pickupDateTS + (this.pickupHours*3600 + this.pickupMinutes*60)*1000;
         let tsEnd = this.returnDateTS + (this.returnHours*3600 + this.returnMinutes*60)*1000;
 
@@ -156,8 +156,7 @@ const objBill = {
         
     },
 
-    handleBilling : function() {
-
+    generate : function() {
         let weekRate     = 0;
         let weekendRate  = 0;
         let discountRate = 0;
@@ -205,7 +204,6 @@ function delay(time) {
   return new Promise(resolve => setTimeout(resolve, time*1000));
 }
 
-
 //evento que abre e fecha div do calendário ao clicar nos botões pickdate
 objCalendarContainer.bindBtns(btnsDatePick);
 
@@ -229,11 +227,27 @@ document.body.addEventListener('click', function (event) {
     objShowTrucksContainer.checkClickOutside(target, [btnShowTrucks]);
 });
 
-//faz reset ao sandwich através de clicks no main
-divMain.addEventListener("click", function(event){
-    document.getElementById("toggle").checked = false;
-});
+//activa modo de vista de resultados do aluguer
+function activateResultsMode()
+{
 
+    //começa a fazer os calculos
+    objBill.calcBookingFullDays();
+    objBill.generate();
+
+
+    let divsResults = document.querySelectorAll(".rf-results-container");
+    divsResults.forEach(el => el.classList.add("bill-summary-mode"));
+
+    let divsResGallery = document.querySelectorAll(".rf-results-gallery");
+    divsResGallery.forEach(el => el.classList.add("bill-summary-mode"));
+
+    let divsSummary = document.querySelectorAll(".rf-booking-summary");
+    divsSummary.forEach(el => el.classList.add("bill-summary-mode"));
+
+    let divsResultsDiv = document.querySelectorAll(".rf-search-results");
+    divsResultsDiv.forEach(el => el.classList.add("bill-summary-mode"));
+}
 
 //reset às grids dos resultados
 function resetResultsGrids(resetSelectedVehicle = false){
@@ -243,10 +257,23 @@ function resetResultsGrids(resetSelectedVehicle = false){
     let divsResGallery = document.querySelectorAll(".rf-results-gallery");
     divsResGallery.forEach(el => el.classList.remove("bill-summary-mode"));
 
+    let divsSummary = document.querySelectorAll(".rf-booking-summary");
+    divsSummary.forEach(el => el.classList.remove("bill-summary-mode"));
+
+    let divsResultsDiv = document.querySelectorAll(".rf-search-results");
+    divsResultsDiv.forEach(el => el.classList.remove("bill-summary-mode"));
+
     if(resetSelectedVehicle){
         divsCards.forEach(card => card.style.order = "");
     }
 }
+
+//faz reset ao sandwich através de clicks no main
+divMain.addEventListener("click", function(event){
+    document.getElementById("toggle").checked = false;
+});
+
+
     
 
 /* #############
@@ -547,34 +574,29 @@ function timeslotsEventListeners(){
     });
 }
 
+
+//##################################################################################REVER CODIGO GERADO IA
 function handleTimeClick(e) {
-    const timeSlot = e.currentTarget;
+    let tslot = e.currentTarget;
     
     // 1. Descobrir em que container estamos (Pickup ou Return)
-    const parentContainer = timeSlot.closest('.rf-time-container');
-    const isPickup = parentContainer.id.includes('pickup');
-    const type = isPickup ? 'pickup' : 'return';
+    let parentContainer = tslot.closest('.rf-time-container');
+    let isParentPickup = parentContainer.id.includes('pickup');
+    let type = isParentPickup ? 'pickup' : 'return';
 
     // 2. Limpar a formatação APENAS dos slots dentro deste container específico
     parentContainer.querySelectorAll(".timeslot").forEach(t => {
         t.classList.remove("selected-timeslot");
     });
 
-    // 3. Atribuir formatação ao slot clicado
-    timeSlot.classList.add("selected-timeslot");
+    tslot.classList.add("selected-timeslot");
 
-    // 4. Atualizar o texto nos spans correspondentes do formulário
-    const spansToUpdate = document.querySelectorAll("." + type + "-time");
-    spansToUpdate.forEach(span => {
-        span.textContent = timeSlot.textContent.trim();
-        span.classList.add("selected-timeslot"); // Opcional: dar cor ao texto no botão
+    let spans = document.querySelectorAll("." + type + "-time");
+    spans.forEach(s => {
+        s.textContent = tslot.textContent.trim();
     });
 
-    // 5. Guardar a hora no objeto objBill para cálculos futuros
-    const timeValue = timeSlot.textContent.trim(); // ex: "9:00 AM"
-    // Aqui podes adicionar a lógica de converter string para horas/minutos se precisares
-
-    if (isPickup) {
+    if (isParentPickup) {
         delay(0.5).then( () => objPickupTimeContainer.hide() );
     } else {
         delay(0.5).then( () => objReturnTimeContainer.hide() );
@@ -597,6 +619,7 @@ function showSearchResults(type) {
     
     divsCards.forEach(card => card.addEventListener('click', handleCardClick));
 
+  
     function handleCardClick(e) {
         
         let card = e.currentTarget;
@@ -608,27 +631,7 @@ function showSearchResults(type) {
             card.style.order = "-1";
             objBill.active = true;
         }
-
-        let divsResults = document.querySelectorAll(".rf-results-container");
-        divsResults.forEach(el => {
-            el.classList.add("bill-summary-mode");
-        });
-
-        let divsResGallery = document.querySelectorAll(".rf-results-gallery");
-        divsResGallery.forEach(el => {
-            el.classList.add("bill-summary-mode");
-        });
-
-        let divsSummary = document.querySelectorAll(".rf-booking-summary");
-        divsSummary.forEach(el => {
-            el.classList.add("bill-summary-mode");
-        });
-
-        let divsResultsDiv = document.querySelectorAll(".rf-search-results");
-        divsResultsDiv.forEach(el => {
-            el.classList.add("bill-summary-mode");
-        });
-
+        activateResultsMode();
     }
 
     function randomizeVehicleCards(type) {
@@ -654,10 +657,9 @@ function showSearchResults(type) {
     
 }
 
+
 btnShowCars.addEventListener("click", () => showSearchResults('car'));
 btnShowTrucks.addEventListener("click", () => showSearchResults('truck'));
-
-
 
 
 
