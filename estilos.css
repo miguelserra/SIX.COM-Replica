@@ -552,7 +552,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   letter-spacing: 0.0086em;
   cursor: pointer;
 }
-#rf-container #rf-form-container #rf-tabs-window a {
+#rf-container #rf-form-container #rf-tabs-window .tab + form + label {
   display: inline-block;
   width: 100%;
   font-family: "HelveticaNow", sans-serif;
@@ -560,6 +560,18 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 1rem;
   line-height: 1.5;
   font-size: 0.75rem;
+}
+#rf-container #rf-form-container #rf-tabs-window .tab span.check {
+  display: none;
+  margin-left: 0.5rem;
+  color: #00ff00;
+  scale: 1.25 1;
+}
+#rf-container #rf-form-container #rf-tabs-window .tab .cbx-apply-discount {
+  display: none;
+}
+#rf-container #rf-form-container #rf-tabs-window .tab .cbx-apply-discount:checked + label + span {
+  display: inline-flex;
 }
 #rf-container #rf-form-container #rf-tabs-window input[type=radio]:checked + label {
   color: #f4f5f6;

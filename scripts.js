@@ -71,7 +71,11 @@ const btnShowCars   = document.querySelector("#rf-btn-show-cars");
 const btnShowTrucks = document.querySelector("#rf-btn-show-trucks");
 
 //car cards
-const divsCards = document.querySelectorAll(".car-card")
+const divsCards = document.querySelectorAll(".car-card");
+
+//Discount checkboxes
+const cbxDiscountCars = document.getElementById("apply-discount-cars");
+const cbxDiscountTrucks = document.getElementById("apply-discount-trucks");
 
 const months = [
     'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
@@ -100,9 +104,9 @@ const objBill = {
     diffReturn      : false,
     diffReturnFee   : 30,
 
-    applyCorpRate   : false,
-    tier1DiscRate   : 0.1,
-    tier2DiscRate   : 0.2,
+    applyDiscount   : false,
+    tier1DiscRate   : 10,
+    tier2DiscRate   : 20,
 
     weekCarRate     : 6,
     weekendCarRate  : 15,
@@ -177,11 +181,11 @@ const objBill = {
             this.billBeforeDiscount += this.diffReturnFee;
         }
 
-        if (this.applyCorpRate){
+        if (this.applyDiscount){
             if (this.numWeekDays + this.numWeekendDays < 3){
-                discountRate = this.tier1DiscRate;
+                discountRate = this.tier1DiscRate/100;
             }else{
-                discountRate = this.tier2DiscRate;
+                discountRate = this.tier2DiscRate/100;
             }
         }else{
             discountRate = 0;
@@ -227,15 +231,20 @@ document.body.addEventListener('click', function (event) {
     objShowTrucksContainer.checkClickOutside(target, [btnShowTrucks]);
 });
 
-//activa modo de vista de resultados do aluguer
-function activateResultsMode()
-{
-
-    //começa a fazer os calculos
+function prepareBill(){
+    
+    //calculos
     objBill.calcBookingFullDays();
     objBill.generate();
 
+    
 
+}
+
+
+//activa modo de vista de resultados do aluguer
+function activateResultsMode()
+{
     let divsResults = document.querySelectorAll(".rf-results-container");
     divsResults.forEach(el => el.classList.add("bill-summary-mode"));
 
@@ -604,6 +613,27 @@ function handleTimeClick(e) {
 }
 
 
+/* ############
+## DESCONTOS ##
+############ */
+
+function applyDiscount(type){
+
+    if (type == "car"){
+        cbxDiscountTrucks.checked = cbxDiscountCars.checked;
+    }else{
+        cbxDiscountCars.checked = cbxDiscountTrucks.checked;
+    }
+
+    //define ferdadeiro ou falo: cbx verdadeiro -> 
+    objBill.applyDiscount = cbxDiscountCars.checked ;
+
+}
+
+cbxDiscountCars.addEventListener("change", () => applyDiscount('car'));
+cbxDiscountTrucks.addEventListener("change", () => applyDiscount('truck'));
+
+
 /* #####################
 ## DIVS DE RESULTADOS ##
 ##################### */
@@ -619,7 +649,6 @@ function showSearchResults(type) {
     
     divsCards.forEach(card => card.addEventListener('click', handleCardClick));
 
-  
     function handleCardClick(e) {
         
         let card = e.currentTarget;
@@ -653,10 +682,8 @@ function showSearchResults(type) {
             card.dataset.cardIntID = pos[i];
         }
     }
-
     
 }
-
 
 btnShowCars.addEventListener("click", () => showSearchResults('car'));
 btnShowTrucks.addEventListener("click", () => showSearchResults('truck'));
