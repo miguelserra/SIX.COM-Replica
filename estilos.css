@@ -125,7 +125,6 @@ body {
   flex-direction: column;
   position: relative;
   align-items: center;
-  background-color: green;
   line-height: 1.5;
 }
 
@@ -452,7 +451,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 }
 #navbar #navbar-options .navbar-options-item .separator span {
   padding: 0 10px;
-  background-color: white; /* Garante que a linha não passa por trás do texto */
+  background-color: white;
 }
 #navbar #navbar-options .navbar-options-item .btn-register {
   display: block;
@@ -613,11 +612,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: 0.75fr repeat(6, 1fr);
-  /*
-  :nth-child(7n+2) {
-      color: $sixt-placeholder-gray;
-  }
-  */
 }
 #rf-container #rf-form-container div#rf-calendar-container div#rf-calendars .calendar .month-year {
   grid-row: 1/2;
