@@ -688,11 +688,26 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 cursor: pointer;
             }
 
-            a{
+            .tab + form + label{
                 display         : inline-block;
                 width           : 100%;
                 @include        font-HelveticaNow-700;
                 font-size       : 0.75rem;
+            }
+
+            .tab span.check {
+                display: none;
+                margin-left: 0.5rem;
+                color: #00ff00;
+                scale: 1.25 1;
+            }
+
+            .tab .cbx-apply-discount{
+                display : none;
+                
+                &:checked + label + span{
+                    display:inline-flex;              
+                }
             }
 
             input[type="radio"]:checked + label {
@@ -823,7 +838,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             }
         }
 
-        
         .rf-time-container{
             background-color: white;
             position        : absolute;
@@ -907,9 +921,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     
     display : flex;
     gap : 0 0.5rem;
-    
-    
-    
+
     .rf-locations-div{
         flex-grow: 1;
         display: flex;
@@ -1007,10 +1019,10 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                         display : flex;
                     }
                 }
+
             }
             
         }
-        
     }
     
     .rf-dates-div{
@@ -1178,7 +1190,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         display                 : grid;
         width                   : 100%;
         height                  : 100%;
-        grid-template-columns   : 1fr 0fr; 
+        grid-template-columns   : 1fr 0fr;
         
         &.bill-summary-mode{
             grid-template-columns   : 1fr 2fr; ; 
@@ -1191,7 +1203,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             grid-auto-rows          : 0;
             overflow                : hidden;
             gap                     : 0 1rem;
-            padding-top: 0.5rem;
+            padding-top             : 0.5rem;
 
             &.bill-summary-mode{
                 grid-template-columns   : repeat(1, 1fr); 
@@ -1238,19 +1250,21 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     .card-header {
                         width           : 100%;
                         margin-bottom   : 1rem;
+
+                        display: flex;
+                        flex-direction: column;
                         h3 {
                             @include font-HelveticaNow-900;
                             font-size       : 1.1rem;
                             text-transform  : uppercase;
-                            margin-bottom   : 0.25rem;
                             color           : white;
-                            span {
-                                @include font-HelveticaNow-400;
-                                font-size       : 0.8rem;
-                                color           : #999;
-                                text-transform  : none;
-                                margin-left     : 0.3rem;
-                            }
+                        }
+                        span {
+                            @include font-HelveticaNow-400;
+                            margin-bottom   : 0.25rem;
+                            font-size       : 0.8rem;
+                            color           : #999;
+                            text-transform  : none;
                         }
                         p {
                             @include font-HelveticaNow-400;
@@ -1323,11 +1337,11 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                                 font-size: 1rem; 
                             }
                             
-                            &.week{
+                            &.grandtotal{
                                 color       : white;
                             }
 
-                            &.weekend{
+                            &.full-days{
                                 color       : #888;
                                 margin-top  : 0.2rem;
                                 font-size   : 1.25rem;
@@ -1351,9 +1365,11 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             @include flex-center-center;
             display: none;
             grid-template-columns: 2fr 1fr;
-            grid-template-rows: 1fr repeat(14, 0.5fr);
+            grid-template-rows: 1fr repeat(18, 0.5fr);
 
             h1, h2, h3, h4 {
+                box-sizing: border-box;
+                display: flex;
                 height: 100%;
                 grid-column: 1/2;
             }
@@ -1366,12 +1382,20 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 padding-top: 0.5rem;
                 align-self: flex-start;
                 @include font-HelveticaNow-900;
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
 
             h2{
-                margin-top: 0.5rem;
-                @include font-HelveticaNow-700;          
+                margin-top: 0.75rem;
+                @include font-HelveticaNow-700;  
+
+                &.total-no-discount{
+                    margin-top: 0;
+                    padding-left: 0;
+                    align-items: flex-end;;
+                    align-self: flex-start;
+                    border-bottom: 1px solid $sixt-placeholder-gray;
+                }        
             }
 
             h3{
@@ -1387,17 +1411,17 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             }
 
             h4{
-                align-self: flex-start;
-                padding-top: 0.75rem;
                 @include font-HelveticaNow-900;
                 font-size: 1.5rem;
+                align-items: center;
             }
 
             h5{
+                display: flex;
                 height : 100%;
                 align-self: center;
                 grid-column: 2/3;
-                text-align: end;
+                justify-content: flex-end;
                 
                 @include font-HelveticaNow-400;
                 font-size: 0.875rem;
@@ -1407,10 +1431,15 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     border-bottom: 1px solid $sixt-placeholder-gray;  
                 }
 
-                &.total{
+                &.bill-total{
                     padding-top: 1rem;
                     @include font-HelveticaNow-900;
                     font-size: 1.75rem; 
+                }
+
+                &.bill-without-discount{
+                    height: 2rem;
+                    align-items: flex-end;
                 }
             }
 
