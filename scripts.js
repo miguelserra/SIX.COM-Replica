@@ -101,10 +101,12 @@ const objBill = {
     returnLocation  : "",
 
     pickupDateTS    : 0,
+    pickupTimeStr   : 0,
     pickupHours     : 0,
     pickupMinutes   : 0, 
-
+    
     returnDateTS    : 0,
+    returnTimeStr   : 0,
     returnHours     : 0,
     returnMinutes   : 0,
     
@@ -253,7 +255,8 @@ function prepareBill(){
     objBill.calcBookingFullDays();
     objBill.generate();
 
-    let totNumDaysTxt = document.querySelectorAll(".bill-tot-num-days");
+    let txtPickupLocAndTime = document.querySelectorAll(".bill-pickup");
+    let txtReturnLocAndTime = document.querySelectorAll(".bill-return");
     let numWeekdaysTxt = document.querySelectorAll(".bill-weekdays");
     let numWeekendsTxt = document.querySelectorAll(".bill-weekend");
     let rateWeekdayTxt = document.querySelectorAll(".bill-weekday-rate");
@@ -265,11 +268,9 @@ function prepareBill(){
     let valueDiscount = document.querySelectorAll(".bill-discount-value");
     let totalBillNoDisc = document.querySelectorAll(".bill-without-discount");
     let totalBill = document.querySelectorAll(".bill-total");
-
-    let cardTotal = document.querySelectorAll(".grandtotal");
-    let cardTotDays = document.querySelectorAll(".full-days");
     
-    totNumDaysTxt.forEach(el => el.textContent = objBill.numTotalDays);
+    txtPickupLocAndTime.forEach(el => el.textContent = objBill.pickupLocation + "by" + objBill.pickupTimeStr);
+    txtReturnLocAndTime.forEach(el => el.textContent = objBill.returnLocation + "by" + objBill.returnTimeStr);
     numWeekdaysTxt.forEach(el => el.textContent = objBill.numWeekDays);
     numWeekendsTxt.forEach(el => el.textContent = objBill.numWeekendDays);
     rateWeekdayTxt.forEach(el => el.textContent = objBill.weekRate.toFixed(2) + "€");
@@ -282,6 +283,10 @@ function prepareBill(){
     totalBillNoDisc.forEach(el => el.textContent = objBill.billBeforeDiscount.toFixed(2) + "€");
     totalBill.forEach(el => el.textContent = objBill.billTotal.toFixed(2) + "€");
     
+    
+    let cardTotal = document.querySelectorAll(".grandtotal");
+    let cardTotDays = document.querySelectorAll(".full-days");
+
     cardTotal.forEach(el => {
         let intDigits = Math.floor(objBill.billTotal)
         let decDigits = Math.round( ((objBill.billTotal - intDigits)*100) * 100) / 100
@@ -338,8 +343,6 @@ divMain.addEventListener("click", function(event){
     document.getElementById("toggle").checked = false;
 });
 
-
-    
 
 /* #############
 ## CARROUSELS ##
@@ -497,6 +500,27 @@ function initSector4Carousel() {
 let currentDate = new Date();
 let today = new Date();
 
+function getDateMonthDayFormat(timestamp){
+    let date = new Date(timestamp);
+    let month = months[date.getMonth()].substring(0,3);
+    let day = date.getDate().toString();
+    return month + " " + day;
+}
+
+function setStartDate(timestamp){
+    pickupDateDivs.forEach(el => {
+        el.textContent = getDateMonthDayFormat(timestamp);
+    });
+    objBill.pickupDateTS = timestamp;
+}
+
+function setEndDate(timestamp){
+    returnDateDivs.forEach(el => {
+        el.textContent = getDateMonthDayFormat(timestamp);
+    });
+    objBill.returnDateTS = timestamp;
+}
+
 function handleCalendar(date) {
 
     //limpa dias dos 3 calendarios através da classe
@@ -521,14 +545,14 @@ function handleCalendar(date) {
     
         // cria "slots" em branco para posicionar o primeiro dia do mes 
         for (let i = firstDay; i > 0; i--) {
-            const dayDiv = document.createElement('div');
+            let dayDiv = document.createElement('div');
             dayDiv.classList.add("day-number");
             calendar.appendChild(dayDiv);
         }
     
         // insere dias do mes desejado
         for (let i = 1; i <= lastDay; i++) {
-            const dayDiv = document.createElement('div');
+            let dayDiv = document.createElement('div');
             dayDiv.textContent = i;
 
             //precisamos disto para guardar um timestamp no div
@@ -541,27 +565,6 @@ function handleCalendar(date) {
             
             calendar.appendChild(dayDiv);
         }
-    }
-
-    function getDateMonthDayFormat(timestamp){
-        let date = new Date(timestamp);
-        let month = months[date.getMonth()].substring(0,3);
-        let day = date.getDate().toString();
-        return month + " " + day;
-    }
-
-    function setStartDate(timestamp){
-        pickupDateDivs.forEach(el => {
-            el.textContent = getDateMonthDayFormat(timestamp);
-        });
-        objBill.pickupDateTS = timestamp;
-    }
-
-    function setEndDate(timestamp){
-        returnDateDivs.forEach(el => {
-            el.textContent = getDateMonthDayFormat(timestamp);
-        });
-        objBill.returnDateTS = timestamp;
     }
 
     function handleDateClick(e) {
@@ -633,20 +636,54 @@ function handleCalendar(date) {
 ## SELECÇAO DE HORAS DE RECOLHA E ENTREGA ##
 ##########################################*/
 
+function parseTimeStr(strTime) {
+    
+    let auxArr = strTime.split(" ");
+    let arr_hhmm = auxArr[0].split(":");
+    let meridiem = auxArr[1];
+
+    let hours = +arr_hhmm[0]
+    let mins  = +arr_hhmm[1]
+
+    if(meridiem == "PM" && hours < 12){
+        hours += 12; //serve para a gama de horarios que temos
+    }
+
+    return [hours, mins];
+}
+
 function timeslotsEventListeners(){
     btnsTimePick.forEach(slot => {
         slot.addEventListener('click', handleTimeClick);
     });
 }
 
+function setTime(strTime, ocasion){
+    let spans = document.querySelectorAll("." + ocasion + "-time");
+    spans.forEach(s => {
+        s.textContent = strTime;
+    });
 
-//##################################################################################REVER CODIGO GERADO IA
+    arrTime = parseTimeStr(strTime);
+    if (ocasion == "pickup"){
+        objBill.pickupTimeStr = strTime;
+        objBill.pickupHours   = arrTime[0];
+        objBill.pickupMinutes = arrTime[1];
+    }else{
+        objBill.returnTimeStr = strTime;
+        objBill.returnHours   = arrTime[0];
+        objBill.returnMinutes = arrTime[1];
+    }
+
+}
+
+
 function handleTimeClick(e) {
     let tslot = e.currentTarget;
     
     let parentContainer = tslot.closest('.rf-time-container');
     let isParentPickup = parentContainer.id.includes('pickup');
-    let type = isParentPickup ? 'pickup' : 'return';
+    let ocasion = isParentPickup ? 'pickup' : 'return';
 
     parentContainer.querySelectorAll(".timeslot").forEach(t => {
         t.classList.remove("selected-timeslot");
@@ -654,16 +691,15 @@ function handleTimeClick(e) {
 
     tslot.classList.add("selected-timeslot");
 
-    let spans = document.querySelectorAll("." + type + "-time");
-    spans.forEach(s => {
-        s.textContent = tslot.textContent.trim();
-    });
+    let strTime = tslot.textContent.trim();
+    setTime(strTime, ocasion);
 
     if (isParentPickup) {
         delay(0.5).then( () => objPickupTimeContainer.hide() );
     } else {
         delay(0.5).then( () => objReturnTimeContainer.hide() );
     }
+
 }
 
 
@@ -715,9 +751,8 @@ cbxDiffLocTrucks.addEventListener("change", () => setDifferentReturnLoc('truck')
 
 function showSearchResults(type) {
 
-    prepareBill();
-
     objBill.vehicleType = type;
+    prepareBill(); //IMPORTANTE!!!!!!!!
 
     //impede alterar o veiculo já seleccionado (randomizar muda o index)
     if (!objBill.active){
@@ -768,9 +803,6 @@ btnShowCars.addEventListener("click", () => showSearchResults('car'));
 btnShowTrucks.addEventListener("click", () => showSearchResults('truck'));
 
 
-
-
-
 /*INICIALIZAÇAO DA PAGINA*/
 
 function init(){
@@ -781,7 +813,15 @@ function init(){
     timeslotsEventListeners();
     initSector3Carousel();
     initSector4Carousel();
-    
+
+    setStartDate(today.getTime())
+    setEndDate(today.getTime() + 3*24*3600*1000)
+
+    setTime("12:00 PM", "pickup");
+    setTime("12:00 PM", "return");
+
+    console.log(parseTimeStr("1:00 PM"));
+
 }
 
 init()
