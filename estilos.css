@@ -1067,6 +1067,15 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   text-transform: uppercase;
   color: white;
 }
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-header h4 {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 900;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: white;
+}
 .rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-header span {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;

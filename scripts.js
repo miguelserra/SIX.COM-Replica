@@ -262,7 +262,7 @@ function prepareBill(){
     //calculos
     objBill.calcBookingFullDays();
     objBill.generate();
-
+    
     let txtPickupLocAndTime = document.querySelectorAll(".bill-pickup");
     let txtReturnLocAndTime = document.querySelectorAll(".bill-return");
     let numWeekdaysTxt = document.querySelectorAll(".bill-weekdays");
@@ -276,7 +276,6 @@ function prepareBill(){
     let valueDiscount = document.querySelectorAll(".bill-discount-value");
     let totalBillNoDisc = document.querySelectorAll(".bill-without-discount");
     let totalBill = document.querySelectorAll(".bill-total");
-
     
     txtPickupLocAndTime.forEach(el => el.textContent = objBill.pickupLocation + " at " + objBill.pickupTimeStr);
     txtReturnLocAndTime.forEach(el => el.textContent = objBill.returnLocation + " at " + objBill.returnTimeStr);
@@ -291,7 +290,6 @@ function prepareBill(){
     valueDiscount.forEach(el => el.textContent = objBill.billDiscount.toFixed(2) + "€");
     totalBillNoDisc.forEach(el => el.textContent = objBill.billBeforeDiscount.toFixed(2) + "€");
     totalBill.forEach(el => el.textContent = objBill.billTotal.toFixed(2) + "€");
-    
     
     let cardTotal = document.querySelectorAll(".grandtotal");
     let cardTotDays = document.querySelectorAll(".full-days");
@@ -829,9 +827,13 @@ function showSearchResults(type) {
     
         //devolve visibilidade aos cards escolhidos
         for (let i = 0; i < 4; i++){
+            
             let card = document.querySelector("#" + type + "-card-" + pos[i]) ;
             card.classList.remove("inactive");
-            card.dataset.cardID = i+1;
+            
+            let query = "#" + type + "-card-" + pos[i] + " .vehicle-id";
+            let txtCardId = document.querySelector(query);
+            txtCardId.textContent = type + "-" + (i+1);
             card.dataset.cardIntID = pos[i];
         }
     }

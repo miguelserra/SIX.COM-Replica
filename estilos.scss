@@ -1265,6 +1265,14 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                             text-transform  : uppercase;
                             color           : white;
                         }
+
+                        h4{
+                            @include font-HelveticaNow-900;
+                            font-size       : 0.9rem;
+                            text-transform  : uppercase;
+                            color           : white;
+                        }
+
                         span {
                             @include font-HelveticaNow-400;
                             margin-bottom   : 0.25rem;
@@ -1272,6 +1280,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                             color           : #999;
                             text-transform  : none;
                         }
+
                         p {
                             @include font-HelveticaNow-400;
                             font-size   : 0.8rem;
