@@ -240,7 +240,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     top: $s1-textbar-height; // distancia ao topo da pagina
     z-index: 1000;
     
-
     #navbar-container{
         display: flex;
         flex-direction: row;
