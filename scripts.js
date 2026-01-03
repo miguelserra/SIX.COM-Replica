@@ -56,6 +56,12 @@ const objReturnTimeContainer = new ToggleContainer('rf-div-return-timeslots');
 const objShowCarsContainer = new ToggleContainer('rf-search-results-cars');
 const objShowTrucksContainer = new ToggleContainer('rf-search-results-trucks');
 
+//input forms
+const inpPickupLoc = document.querySelectorAll(".input-loc-pickup");
+const inpReturnLoc = document.querySelectorAll(".input-loc-return");
+const lblPickpup   = document.querySelectorAll(".rf-lbl-pickup");
+const lblReturn    = document.querySelectorAll(".rf-lbl-return");
+
 //botoes que ativam o calendario
 const btnsDatePick = document.querySelectorAll(".rf-date-pick-btn");
 
@@ -192,7 +198,6 @@ const objBill = {
         this.billWeekendDays    = this.numWeekendDays * this.weekendRate;
         this.billBeforeDiscount = this.billWeekDays + this.billWeekendDays;
         
-        
         if (this.diffReturnLoc){
             this.billBeforeDiscount += this.diffReturnFee;
         }else{
@@ -213,6 +218,9 @@ const objBill = {
 
         this.billTotal = this.billBeforeDiscount - this.billDiscount;
 
+        if (this.returnLocation == ""){
+            this.returnLocation = this.pickupLocation;
+        }
     }
 
 } 
@@ -268,9 +276,10 @@ function prepareBill(){
     let valueDiscount = document.querySelectorAll(".bill-discount-value");
     let totalBillNoDisc = document.querySelectorAll(".bill-without-discount");
     let totalBill = document.querySelectorAll(".bill-total");
+
     
-    txtPickupLocAndTime.forEach(el => el.textContent = objBill.pickupLocation + "by" + objBill.pickupTimeStr);
-    txtReturnLocAndTime.forEach(el => el.textContent = objBill.returnLocation + "by" + objBill.returnTimeStr);
+    txtPickupLocAndTime.forEach(el => el.textContent = objBill.pickupLocation + " at " + objBill.pickupTimeStr);
+    txtReturnLocAndTime.forEach(el => el.textContent = objBill.returnLocation + " at " + objBill.returnTimeStr);
     numWeekdaysTxt.forEach(el => el.textContent = objBill.numWeekDays);
     numWeekendsTxt.forEach(el => el.textContent = objBill.numWeekendDays);
     rateWeekdayTxt.forEach(el => el.textContent = objBill.weekRate.toFixed(2) + "€");
@@ -620,7 +629,7 @@ function handleCalendar(date) {
             if (dayTimestamp === tempEnd) 
                 dayDiv.classList.add('end-node');
     
-            //caso o star e end sejam os memos atribui este especial
+            //caso o start e end sejam os memos atribui este especial
             if (objBill.pickupDateTS && tempEnd) {
                 let min = Math.min(objBill.pickupDateTS, tempEnd);
                 let max = Math.max(objBill.pickupDateTS, tempEnd);
@@ -652,18 +661,14 @@ function parseTimeStr(strTime) {
     return [hours, mins];
 }
 
-function timeslotsEventListeners(){
-    btnsTimePick.forEach(slot => {
-        slot.addEventListener('click', handleTimeClick);
-    });
-}
 
 function setTime(strTime, ocasion){
+    
     let spans = document.querySelectorAll("." + ocasion + "-time");
     spans.forEach(s => {
         s.textContent = strTime;
     });
-
+    
     arrTime = parseTimeStr(strTime);
     if (ocasion == "pickup"){
         objBill.pickupTimeStr = strTime;
@@ -674,9 +679,12 @@ function setTime(strTime, ocasion){
         objBill.returnHours   = arrTime[0];
         objBill.returnMinutes = arrTime[1];
     }
-
+    
 }
 
+btnsTimePick.forEach(slot => {
+    slot.addEventListener('click', handleTimeClick);
+});
 
 function handleTimeClick(e) {
     let tslot = e.currentTarget;
@@ -699,6 +707,8 @@ function handleTimeClick(e) {
     } else {
         delay(0.5).then( () => objReturnTimeContainer.hide() );
     }
+
+    resetResultsGrids(true);
 
 }
 
@@ -724,9 +734,9 @@ cbxDiscountCars.addEventListener("change", () => applyDiscount('car'));
 cbxDiscountTrucks.addEventListener("change", () => applyDiscount('truck'));
 
 
-/* ##########################
-## DEVOLUÇAO EM LOCAL DIFF ##
-########################## */
+/* ########################################
+## RECOLHA e DEVOLUÇAO (e EM LOCAL DIFF) ##
+######################################## */
 
 function setDifferentReturnLoc(type){
 
@@ -738,11 +748,40 @@ function setDifferentReturnLoc(type){
 
     //define verdadeiro ou falso: cbx verdadeiro -> diff return verdadeiro 
     objBill.diffReturnLoc = cbxDiffLocCars.checked ;
-
 }
 
 cbxDiffLocCars.addEventListener("change", () => setDifferentReturnLoc('car'));
 cbxDiffLocTrucks.addEventListener("change", () => setDifferentReturnLoc('truck'));
+
+
+const setPickupLoc = txtValue => objBill.pickupLocation = txtValue;
+const setReturnLoc = txtValue => objBill.returnLocation = txtValue;
+
+function handleLocationInput(e){
+
+    let inpBox = e.currentTarget;
+    
+    let isPickup = inpBox.id.includes('pickup');
+    let type = isPickup ? 'pickup' : 'return';
+
+    if(type == "pickup"){
+        inpPickupLoc.forEach( el => el.value = inpBox.value);
+        setPickupLoc(inpBox.value);
+    }else{
+        inpReturnLoc.forEach( el => el.value = inpBox.value);
+        setReturnLoc(inpBox.value);
+    }
+
+}
+
+inpPickupLoc.forEach(inp => {
+    inp.addEventListener('input', handleLocationInput);
+});
+
+inpReturnLoc.forEach(inp => {
+    inp.addEventListener('input', handleLocationInput);
+});
+
 
 
 /* #####################
@@ -803,14 +842,16 @@ btnShowCars.addEventListener("click", () => showSearchResults('car'));
 btnShowTrucks.addEventListener("click", () => showSearchResults('truck'));
 
 
-/*INICIALIZAÇAO DA PAGINA*/
+
+/* ##########################
+## INICIALIZAÇAO DA PAGINA ##
+########################## */
 
 function init(){
     objCalendarContainer.hide();
     objPickupTimeContainer.hide();
     objReturnTimeContainer.hide();        
     handleCalendar(currentDate);
-    timeslotsEventListeners();
     initSector3Carousel();
     initSector4Carousel();
 
@@ -822,6 +863,7 @@ function init(){
 
     console.log(parseTimeStr("1:00 PM"));
 
+    setPickupLoc(inpPickupLoc[0].value);
 }
 
 init()
