@@ -1337,11 +1337,11 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                                 font-size: 1rem; 
                             }
                             
-                            &.week{
+                            &.grandtotal{
                                 color       : white;
                             }
 
-                            &.weekend{
+                            &.full-days{
                                 color       : #888;
                                 margin-top  : 0.2rem;
                                 font-size   : 1.25rem;
@@ -1365,9 +1365,11 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             @include flex-center-center;
             display: none;
             grid-template-columns: 2fr 1fr;
-            grid-template-rows: 1fr repeat(14, 0.5fr);
+            grid-template-rows: 1fr repeat(18, 0.5fr);
 
             h1, h2, h3, h4 {
+                box-sizing: border-box;
+                display: flex;
                 height: 100%;
                 grid-column: 1/2;
             }
@@ -1380,12 +1382,20 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 padding-top: 0.5rem;
                 align-self: flex-start;
                 @include font-HelveticaNow-900;
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
 
             h2{
-                margin-top: 0.5rem;
-                @include font-HelveticaNow-700;          
+                margin-top: 0.75rem;
+                @include font-HelveticaNow-700;  
+
+                &.total-no-discount{
+                    margin-top: 0;
+                    padding-left: 0;
+                    align-items: flex-end;;
+                    align-self: flex-start;
+                    border-bottom: 1px solid $sixt-placeholder-gray;
+                }        
             }
 
             h3{
@@ -1401,17 +1411,17 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             }
 
             h4{
-                align-self: flex-start;
-                padding-top: 0.75rem;
                 @include font-HelveticaNow-900;
                 font-size: 1.5rem;
+                align-items: center;
             }
 
             h5{
+                display: flex;
                 height : 100%;
                 align-self: center;
                 grid-column: 2/3;
-                text-align: end;
+                justify-content: flex-end;
                 
                 @include font-HelveticaNow-400;
                 font-size: 0.875rem;
@@ -1421,10 +1431,15 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     border-bottom: 1px solid $sixt-placeholder-gray;  
                 }
 
-                &.total{
+                &.bill-total{
                     padding-top: 1rem;
                     @include font-HelveticaNow-900;
                     font-size: 1.75rem; 
+                }
+
+                &.bill-without-discount{
+                    height: 2rem;
+                    align-items: flex-end;
                 }
             }
 

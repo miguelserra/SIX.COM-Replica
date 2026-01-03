@@ -1154,10 +1154,10 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 .rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-footer .price span {
   font-size: 1rem;
 }
-.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-footer .price.week {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-footer .price.grandtotal {
   color: white;
 }
-.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-footer .price.weekend {
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-footer .price.full-days {
   color: #888;
   margin-top: 0.2rem;
   font-size: 1.25rem;
@@ -1172,9 +1172,11 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   align-items: center;
   display: none;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr repeat(14, 0.5fr);
+  grid-template-rows: 1fr repeat(18, 0.5fr);
 }
 .rf-search-results div.rf-results-container div.rf-booking-summary h1, .rf-search-results div.rf-results-container div.rf-booking-summary h2, .rf-search-results div.rf-results-container div.rf-booking-summary h3, .rf-search-results div.rf-results-container div.rf-booking-summary h4 {
+  box-sizing: border-box;
+  display: flex;
   height: 100%;
   grid-column: 1/2;
 }
@@ -1188,14 +1190,21 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-weight: 900;
   font-size: 3.75rem;
   line-height: 1;
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 .rf-search-results div.rf-results-container div.rf-booking-summary h2 {
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.5;
+}
+.rf-search-results div.rf-results-container div.rf-booking-summary h2.total-no-discount {
+  margin-top: 0;
+  padding-left: 0;
+  align-items: flex-end;
+  align-self: flex-start;
+  border-bottom: 1px solid #d7dadc;
 }
 .rf-search-results div.rf-results-container div.rf-booking-summary h3 {
   font-family: "HelveticaNow", sans-serif;
@@ -1209,19 +1218,19 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   border-bottom: 1px solid #d7dadc;
 }
 .rf-search-results div.rf-results-container div.rf-booking-summary h4 {
-  align-self: flex-start;
-  padding-top: 0.75rem;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
   line-height: 1;
   font-size: 1.5rem;
+  align-items: center;
 }
 .rf-search-results div.rf-results-container div.rf-booking-summary h5 {
+  display: flex;
   height: 100%;
   align-self: center;
   grid-column: 2/3;
-  text-align: end;
+  justify-content: flex-end;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -1235,13 +1244,17 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   line-height: 1.5;
   border-bottom: 1px solid #d7dadc;
 }
-.rf-search-results div.rf-results-container div.rf-booking-summary h5.total {
+.rf-search-results div.rf-results-container div.rf-booking-summary h5.bill-total {
   padding-top: 1rem;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
   line-height: 1;
   font-size: 1.75rem;
+}
+.rf-search-results div.rf-results-container div.rf-booking-summary h5.bill-without-discount {
+  height: 2rem;
+  align-items: flex-end;
 }
 .rf-search-results div.rf-results-container div.rf-booking-summary.bill-summary-mode {
   display: grid;

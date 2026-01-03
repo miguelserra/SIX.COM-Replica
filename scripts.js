@@ -77,6 +77,10 @@ const divsCards = document.querySelectorAll(".car-card");
 const cbxDiscountCars = document.getElementById("apply-discount-cars");
 const cbxDiscountTrucks = document.getElementById("apply-discount-trucks");
 
+//Diff Location
+const cbxDiffLocCars = document.getElementById("rf-cbx-diff-loc-cars");
+const cbxDiffLocTrucks = document.getElementById("rf-cbx-diff-loc-trucks");
+
 const months = [
     'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
 ];
@@ -93,6 +97,9 @@ const objBill = {
     vehicleType     : "car",
     vehicleID       : 0,
 
+    pickupLocation  : "", //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    returnLocation  : "",
+
     pickupDateTS    : 0,
     pickupHours     : 0,
     pickupMinutes   : 0, 
@@ -101,7 +108,7 @@ const objBill = {
     returnHours     : 0,
     returnMinutes   : 0,
     
-    diffReturn      : false,
+    diffReturnLoc   : false,
     diffReturnFee   : 30,
 
     applyDiscount   : false,
@@ -116,6 +123,11 @@ const objBill = {
     
     numWeekDays     : 0,
     numWeekendDays  : 0,
+    numTotalDays    : 0,
+
+    weekRate        : 0,
+    weekendRate     : 0,
+    discountRate    : 0,
 
     billWeekDays    : 0,
     billWeekendDays : 0,
@@ -157,41 +169,45 @@ const objBill = {
 
         this.numWeekDays    = Math.ceil(timeWeek / (1000 * 3600 * 24)) //converte timestamp de milisec para dias
         this.numWeekendDays = Math.ceil(timeWeekend / (1000 * 3600 * 24 ));
+        this.numTotalDays = this.numWeekDays + this.numWeekendDays;
         
     },
 
     generate : function() {
-        let weekRate     = 0;
-        let weekendRate  = 0;
-        let discountRate = 0;
+        this.weekRate     = 0;
+        this.weekendRate  = 0;
+        this.discountRate = 0;
 
-        if (this.vehicle == "car"){
-            weekRate    = this.weekCarRate;
-            weekendRate = this.weekendCarRate;
+        if (this.vehicleType == "car"){
+            this.weekRate    = this.weekCarRate;
+            this.weekendRate = this.weekendCarRate;
         } else {
-            weekRate    = this.weekTruckRate;
-            weekendRate = this.weekendTruckRate;
+            this.weekRate    = this.weekTruckRate;
+            this.weekendRate = this.weekendTruckRate;
         }
         
-        this.billWeekDays       = this.numWeekDays * weekRate;
-        this.billWeekendDays    = this.numWeekDays * weekendRate;
+        this.billWeekDays       = this.numWeekDays * this.weekRate;
+        this.billWeekendDays    = this.numWeekendDays * this.weekendRate;
         this.billBeforeDiscount = this.billWeekDays + this.billWeekendDays;
         
-        if (this.diffReturn){
+        
+        if (this.diffReturnLoc){
             this.billBeforeDiscount += this.diffReturnFee;
+        }else{
+            this.diffReturnFee = 0;
         }
 
         if (this.applyDiscount){
             if (this.numWeekDays + this.numWeekendDays < 3){
-                discountRate = this.tier1DiscRate/100;
+                this.discountRate = this.tier1DiscRate;
             }else{
-                discountRate = this.tier2DiscRate/100;
+                this.discountRate = this.tier2DiscRate;
             }
         }else{
-            discountRate = 0;
+            this.discountRate = 0;
         }
 
-        this.billDiscount = this.billTotal * discountRate;
+        this.billDiscount = this.billTotal * this.discountRate / 100;
 
         this.billTotal = this.billBeforeDiscount - this.billDiscount;
 
@@ -237,7 +253,47 @@ function prepareBill(){
     objBill.calcBookingFullDays();
     objBill.generate();
 
+    let totNumDaysTxt = document.querySelectorAll(".bill-tot-num-days");
+    let numWeekdaysTxt = document.querySelectorAll(".bill-weekdays");
+    let numWeekendsTxt = document.querySelectorAll(".bill-weekend");
+    let rateWeekdayTxt = document.querySelectorAll(".bill-weekday-rate");
+    let rateWeekendsTxt = document.querySelectorAll(".bill-weekend-rate");
+    let subtotalWeekdayTxt = document.querySelectorAll(".bill-weekday-subtotal");
+    let subtotalWeekendsTxt = document.querySelectorAll(".bill-weekend-subtotal");
+    let feeDiffLoc = document.querySelectorAll(".bill-diff-loc-fee");
+    let rateDiscount = document.querySelectorAll(".bill-discount-rate");
+    let valueDiscount = document.querySelectorAll(".bill-discount-value");
+    let totalBillNoDisc = document.querySelectorAll(".bill-without-discount");
+    let totalBill = document.querySelectorAll(".bill-total");
+
+    let cardTotal = document.querySelectorAll(".grandtotal");
+    let cardTotDays = document.querySelectorAll(".full-days");
     
+    totNumDaysTxt.forEach(el => el.textContent = objBill.numTotalDays);
+    numWeekdaysTxt.forEach(el => el.textContent = objBill.numWeekDays);
+    numWeekendsTxt.forEach(el => el.textContent = objBill.numWeekendDays);
+    rateWeekdayTxt.forEach(el => el.textContent = objBill.weekRate.toFixed(2) + "€");
+    rateWeekendsTxt.forEach(el => el.textContent = objBill.weekendRate.toFixed(2) + "€");
+    subtotalWeekdayTxt.forEach(el => el.textContent = objBill.billWeekDays.toFixed(2) + "€");
+    subtotalWeekendsTxt.forEach(el => el.textContent = objBill.billWeekendDays.toFixed(2) + "€");
+    feeDiffLoc.forEach(el => el.textContent = objBill.diffReturnFee.toFixed(2) + "€");
+    rateDiscount.forEach(el => el.textContent = objBill.discountRate + "%");
+    valueDiscount.forEach(el => el.textContent = objBill.billDiscount.toFixed(2) + "€");
+    totalBillNoDisc.forEach(el => el.textContent = objBill.billBeforeDiscount.toFixed(2) + "€");
+    totalBill.forEach(el => el.textContent = objBill.billTotal.toFixed(2) + "€");
+    
+    cardTotal.forEach(el => {
+        let intDigits = Math.floor(objBill.billTotal)
+        let decDigits = Math.round( ((objBill.billTotal - intDigits)*100) * 100) / 100
+        decDigits = decDigits.toString().padStart(2, '0');
+        el.innerHTML ="Total: €" + intDigits + "<span>." + decDigits + "</span>"
+    });
+        
+    cardTotDays.forEach(el => 
+        el.innerHTML = "<span>for&nbsp;</span>" +  objBill.numTotalDays + "<span>&nbsp;days rental</span>"
+    );
+
+    console.log(objBill)
 
 }
 
@@ -588,12 +644,10 @@ function timeslotsEventListeners(){
 function handleTimeClick(e) {
     let tslot = e.currentTarget;
     
-    // 1. Descobrir em que container estamos (Pickup ou Return)
     let parentContainer = tslot.closest('.rf-time-container');
     let isParentPickup = parentContainer.id.includes('pickup');
     let type = isParentPickup ? 'pickup' : 'return';
 
-    // 2. Limpar a formatação APENAS dos slots dentro deste container específico
     parentContainer.querySelectorAll(".timeslot").forEach(t => {
         t.classList.remove("selected-timeslot");
     });
@@ -625,7 +679,7 @@ function applyDiscount(type){
         cbxDiscountCars.checked = cbxDiscountTrucks.checked;
     }
 
-    //define ferdadeiro ou falo: cbx verdadeiro -> 
+    //define ferdadeiro ou falo: cbx verdadeiro -> discount baby!!
     objBill.applyDiscount = cbxDiscountCars.checked ;
 
 }
@@ -634,11 +688,34 @@ cbxDiscountCars.addEventListener("change", () => applyDiscount('car'));
 cbxDiscountTrucks.addEventListener("change", () => applyDiscount('truck'));
 
 
+/* ##########################
+## DEVOLUÇAO EM LOCAL DIFF ##
+########################## */
+
+function setDifferentReturnLoc(type){
+
+    if (type == "car"){
+        cbxDiscountTrucks.checked = cbxDiffLocCars.checked;
+    }else{
+        cbxDiffLocCars.checked = cbxDiscountTrucks.checked;
+    }
+
+    //define verdadeiro ou falso: cbx verdadeiro -> diff return verdadeiro 
+    objBill.diffReturnLoc = cbxDiffLocCars.checked ;
+
+}
+
+cbxDiffLocCars.addEventListener("change", () => setDifferentReturnLoc('car'));
+cbxDiffLocTrucks.addEventListener("change", () => setDifferentReturnLoc('truck'));
+
+
 /* #####################
 ## DIVS DE RESULTADOS ##
 ##################### */
 
 function showSearchResults(type) {
+
+    prepareBill();
 
     objBill.vehicleType = type;
 
@@ -660,6 +737,8 @@ function showSearchResults(type) {
             card.style.order = "-1";
             objBill.active = true;
         }
+
+        /*!!!!!   MUITO IMPORTANTE !!!!!!!!!!!!!!!!!!!!!!!!!!!*/
         activateResultsMode();
     }
 
