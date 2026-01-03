@@ -2093,6 +2093,39 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   #navbar #navbar-container #navbar-options .dropdown-menu.language-list {
     right: -3rem;
   }
+  #rf-aux-div {
+    height: auto;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container {
+    width: 95%;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars {
+    justify-content: center;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars #rf-calendar-1 {
+    display: none;
+  }
+  #rf-aux-div #rf-container .rf-search-results {
+    width: 100%;
+  }
+  #rf-aux-div #rf-container .rf-search-results h1 {
+    font-size: 1.5rem;
+    white-space: nowrap;
+  }
+  #rf-aux-div #rf-container .rf-search-results .rf-results-container {
+    grid-template-columns: 1fr;
+  }
+  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-results-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-results-gallery.bill-summary-mode {
+    display: none;
+  }
+  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-booking-summary {
+    padding: 0rem 1rem;
+  }
   #main #sector1 #s1-imagem {
     height: 50rem;
   }
@@ -2142,6 +2175,98 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   }
 }
 @media only screen and (max-width: 650px) {
+  #navbar #navbar-container {
+    padding: 0 1rem;
+  }
+  #navbar #navbar-container .sandwich .menu {
+    width: 100%;
+    align-items: left;
+    padding-left: 1rem;
+  }
+  #navbar #navbar-container #navbar-options .navbar-options-item.dropdown-parent .dropdown-menu.booking-form {
+    min-width: 17rem;
+  }
+  #navbar #navbar-container #navbar-options .navbar-options-item.dropdown-parent .dropdown-menu.login-form {
+    min-width: 17rem;
+    white-space: wrap;
+  }
+  #rf-aux-div {
+    height: auto;
+  }
+  #rf-aux-div #rf-container {
+    padding: 0 1rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window {
+    margin: 1rem 0.2rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window label {
+    margin-right: 0.1rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .rf-form .rf-locations-div {
+    flex-direction: column;
+    padding: 0 0.7rem;
+    gap: 0rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .rf-form .rf-locations-div .rf-location-input {
+    padding-bottom: 0rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .rf-form .rf-dates-div {
+    flex-direction: column;
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .rf-form .rf-dates-div > div {
+    flex-basis: 1rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .rf-form .rf-dates-div .rf-btn-show {
+    flex-basis: 3rem;
+    align-self: center;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .link {
+    margin-left: 0.75rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container {
+    width: 95%;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars {
+    justify-content: center;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars #rf-calendar-1, #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars #rf-calendar-2 {
+    display: none;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-div-pickup-timeslots {
+    right: 0rem;
+  }
+  #rf-aux-div #rf-container #rf-form-container #rf-div-return-timeslots {
+    right: 0rem;
+  }
+  #rf-aux-div #rf-container .rf-search-results {
+    width: 100%;
+  }
+  #rf-aux-div #rf-container .rf-search-results h1 {
+    font-size: 1.5rem;
+    white-space: nowrap;
+  }
+  #rf-aux-div #rf-container .rf-search-results .rf-results-container {
+    grid-template-columns: 1fr;
+  }
+  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-results-gallery {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-results-gallery.bill-summary-mode {
+    display: none;
+  }
+  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-booking-summary {
+    padding: 0rem 1rem;
+  }
+  #main #sector1 #s1-barra-fundo #s1-barra-fundo-titulo {
+    height: 5rem;
+    font-size: 2.5rem;
+  }
   #main #sector2 div.sector-container {
     padding: 2.5rem 1rem;
   }
@@ -2208,5 +2333,13 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   #main #sector5 div.sector-container #s5-tabsdiv ul {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(12, 1fr) 2.25rem;
+  }
+  #main #sector6 div.sector-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  #main #sector7 div.sector-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }/*# sourceMappingURL=estilos.css.map */
