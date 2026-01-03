@@ -270,7 +270,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     }
 
     .sandwich{
-        //padding-left: 5.5%; //espaçamento do icon para a
         position: relative;
         display: flex;
         align-items: center;
@@ -284,7 +283,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             font-size:1.5rem; //aumenta o icon
             cursor: pointer;
             color: #ffffff;
-            //width: fit-content;
+            
         }
 
         .open-btn{
@@ -370,8 +369,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 
             &:hover {
                 color: #ff5000; /* Laranja no hover */
-
-                //adicionar javascript para colocar a laranja o item seleccionado que corresponde ao tipo de rentar (car, truck)
             }
         }
     }
