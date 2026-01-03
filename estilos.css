@@ -1900,4 +1900,34 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   line-height: 1.5;
   font-size: 0.875rem;
   color: #8D9299;
+}
+
+@media only screen and (max-width: 1240px) {
+  .rf-form {
+    flex-wrap: wrap;
+  }
+  .rf-form .rf-location-input {
+    padding-bottom: 1rem;
+  }
+  .rf-form .rf-location-input:first-child {
+    flex: 3;
+  }
+  .rf-form .rf-location-input:last-child {
+    flex: 1;
+  }
+  .rf-form:has(.rf-cbx-diff-loc:checked) .rf-location-input {
+    flex: 1 1;
+  }
+  .rf-form .rf-dates-div {
+    width: 100%;
+  }
+  .rf-form .rf-dates-div div {
+    justify-content: left;
+  }
+  .rf-form .rf-dates-div .rf-date-pick-btn {
+    flex: 2 1;
+  }
+  .rf-form .rf-dates-div .rf-time-pickup-btn, .rf-form .rf-dates-div .rf-time-return-btn {
+    flex: 1 0;
+  }
 }/*# sourceMappingURL=estilos.css.map */

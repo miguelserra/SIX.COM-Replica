@@ -539,6 +539,11 @@ cbxShowCars.addEventListener("click", () => showSearchResults('car'));
 cbxShowTrucks.addEventListener("click", () => showSearchResults('truck'));
 
 
+
+
+
+
+
 /*INICIALIZAÇAO DA PAGINA*/
 
 function init(){
