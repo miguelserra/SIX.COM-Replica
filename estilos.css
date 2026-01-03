@@ -912,12 +912,13 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   overflow: hidden;
 }
 .rf-btn > img {
-  padding-left: 0.75rem;
+  scale: 0.9;
+  padding-left: 0.7rem;
 }
 .rf-btn > div {
   display: inline-block;
   box-sizing: border-box;
-  padding: 0 0.5rem;
+  padding: 0 0.25rem;
 }
 
 .rounded-left {
@@ -925,7 +926,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   flex-basis: 50%;
 }
 .rounded-left > div {
-  justify-content: center;
+  justify-content: start;
 }
 
 .rounded-right {
@@ -937,6 +938,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   justify-content: flex-start;
 }
 .rounded-right > div span {
+  padding-left: 0.25rem;
   text-align: start;
 }
 
@@ -958,6 +960,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 }
 
 .rf-search-results {
+  box-sizing: border-box;
   display: none;
   flex-direction: column;
   box-sizing: border-box;
@@ -969,14 +972,14 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   margin-bottom: 2rem;
 }
 .rf-search-results.bill-summary-mode {
-  width: 75%;
+  max-width: 58rem;
 }
 .rf-search-results > h1 {
   align-self: center;
   display: inline-flex;
-  margin-bottom: 1.5rem;
-  padding: 1rem 2rem;
-  border: 5px solid #d7dadc;
+  margin-bottom: 1rem;
+  padding: 0.75rem 2rem;
+  border: 4px solid #d7dadc;
   background-image: url("media/cards-background.webp");
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -986,14 +989,13 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-weight: 900;
   font-size: 3.75rem;
   line-height: 1;
-  font-size: 1.875rem;
+  font-size: 1.75rem;
   letter-spacing: 0.025em;
   text-transform: uppercase;
 }
 .rf-search-results div.rf-results-container {
   display: grid;
   width: 100%;
-  height: 100%;
   grid-template-columns: 1fr 0fr;
 }
 .rf-search-results div.rf-results-container.bill-summary-mode {
@@ -1004,6 +1006,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   grid-auto-rows: 0;
+  height: 100%;
   overflow: hidden;
   gap: 0 1rem;
   padding-top: 0.5rem;
@@ -1015,7 +1018,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
   border-radius: 1rem;
   overflow: hidden;
 }
@@ -1055,6 +1057,15 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 3.75rem;
   line-height: 1;
   font-size: 1.1rem;
+  text-transform: uppercase;
+  color: white;
+}
+.rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-header h4 {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 900;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-size: 0.9rem;
   text-transform: uppercase;
   color: white;
 }
@@ -1113,7 +1124,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 }
 .rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-image img {
   width: 100%;
-  height: 11.97rem;
+  height: 10rem;
 }
 .rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground .card-features {
   display: flex;
@@ -1164,8 +1175,8 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   justify-content: center;
   align-items: center;
   display: none;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr repeat(18, 0.5fr);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr repeat(17, 0.5fr) 1fr;
 }
 .rf-search-results div.rf-results-container div.rf-booking-summary h1, .rf-search-results div.rf-results-container div.rf-booking-summary h2, .rf-search-results div.rf-results-container div.rf-booking-summary h3, .rf-search-results div.rf-results-container div.rf-booking-summary h4 {
   box-sizing: border-box;
@@ -1183,18 +1194,20 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-weight: 900;
   font-size: 3.75rem;
   line-height: 1;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 }
 .rf-search-results div.rf-results-container div.rf-booking-summary h2 {
-  margin-top: 0.75rem;
+  padding-top: 0.25rem;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.5;
+  font-size: 0.875rem;
 }
 .rf-search-results div.rf-results-container div.rf-booking-summary h2.total-no-discount {
   margin-top: 0;
   padding-left: 0;
+  padding-top: 0.5rem;
   align-items: flex-end;
   align-self: flex-start;
   border-bottom: 1px solid #d7dadc;
@@ -1204,7 +1217,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   align-self: flex-start;
 }
 .rf-search-results div.rf-results-container div.rf-booking-summary h3.underlined {
@@ -1215,35 +1228,40 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-weight: 900;
   font-size: 3.75rem;
   line-height: 1;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   align-items: center;
 }
 .rf-search-results div.rf-results-container div.rf-booking-summary h5 {
-  display: flex;
-  height: 100%;
-  align-self: center;
   grid-column: 2/3;
+  display: flex;
   justify-content: flex-end;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 .rf-search-results div.rf-results-container div.rf-booking-summary h5.subtotal {
   font-family: "HelveticaNow", sans-serif;
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.5;
+  font-size: 0.8rem;
   border-bottom: 1px solid #d7dadc;
 }
+.rf-search-results div.rf-results-container div.rf-booking-summary h5.bill-pickup {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.8rem;
+}
 .rf-search-results div.rf-results-container div.rf-booking-summary h5.bill-total {
-  padding-top: 1rem;
   font-family: "HelveticaNow", sans-serif;
   font-weight: 900;
   font-size: 3.75rem;
   line-height: 1;
-  font-size: 1.75rem;
+  font-size: 1.25rem;
 }
 .rf-search-results div.rf-results-container div.rf-booking-summary h5.bill-without-discount {
   height: 2rem;
@@ -2075,15 +2093,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   #navbar #navbar-container #navbar-options .dropdown-menu.language-list {
     right: -3rem;
   }
-  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container {
-    width: 95%;
-  }
-  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars {
-    justify-content: center;
-  }
-  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars #rf-calendar-1 {
-    display: none;
-  }
   #main #sector1 #s1-imagem {
     height: 50rem;
   }
@@ -2133,98 +2142,6 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   }
 }
 @media only screen and (max-width: 650px) {
-  #navbar #navbar-container {
-    padding: 0 1rem;
-  }
-  #navbar #navbar-container .sandwich .menu {
-    width: 100%;
-    align-items: left;
-    padding-left: 1rem;
-  }
-  #navbar #navbar-container #navbar-options .navbar-options-item.dropdown-parent .dropdown-menu.booking-form {
-    min-width: 17rem;
-  }
-  #navbar #navbar-container #navbar-options .navbar-options-item.dropdown-parent .dropdown-menu.login-form {
-    min-width: 17rem;
-    white-space: wrap;
-  }
-  #rf-aux-div {
-    height: auto;
-  }
-  #rf-aux-div #rf-container {
-    padding: 0 1rem;
-  }
-  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window {
-    margin: 1rem 0.2rem;
-  }
-  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window label {
-    margin-right: 0.1rem;
-  }
-  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .rf-form .rf-locations-div {
-    flex-direction: column;
-    padding: 0 0.7rem;
-    gap: 0rem;
-  }
-  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .rf-form .rf-locations-div .rf-location-input {
-    padding-bottom: 0rem;
-  }
-  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .rf-form .rf-dates-div {
-    flex-direction: column;
-    margin-right: 0.75rem;
-    margin-left: 0.75rem;
-  }
-  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .rf-form .rf-dates-div > div {
-    flex-basis: 1rem;
-  }
-  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .rf-form .rf-dates-div .rf-btn-show {
-    flex-basis: 3rem;
-    align-self: center;
-    margin-top: 1rem;
-    width: 100%;
-  }
-  #rf-aux-div #rf-container #rf-form-container #rf-tabs-window div.tab .link {
-    margin-left: 0.75rem;
-  }
-  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container {
-    width: 95%;
-  }
-  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars {
-    justify-content: center;
-  }
-  #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars #rf-calendar-1, #rf-aux-div #rf-container #rf-form-container #rf-calendar-container div#rf-calendars #rf-calendar-2 {
-    display: none;
-  }
-  #rf-aux-div #rf-container #rf-form-container #rf-div-pickup-timeslots {
-    right: 0rem;
-  }
-  #rf-aux-div #rf-container #rf-form-container #rf-div-return-timeslots {
-    right: 0rem;
-  }
-  #rf-aux-div #rf-container .rf-search-results {
-    width: 100%;
-  }
-  #rf-aux-div #rf-container .rf-search-results h1 {
-    font-size: 1.5rem;
-    white-space: nowrap;
-  }
-  #rf-aux-div #rf-container .rf-search-results .rf-results-container {
-    grid-template-columns: 1fr;
-  }
-  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-results-gallery {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 1rem;
-  }
-  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-results-gallery.bill-summary-mode {
-    display: none;
-  }
-  #rf-aux-div #rf-container .rf-search-results .rf-results-container .rf-booking-summary {
-    padding: 0rem 1rem;
-  }
-  #main #sector1 #s1-barra-fundo #s1-barra-fundo-titulo {
-    height: 5rem;
-    font-size: 2.5rem;
-  }
   #main #sector2 div.sector-container {
     padding: 2.5rem 1rem;
   }
@@ -2291,13 +2208,5 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   #main #sector5 div.sector-container #s5-tabsdiv ul {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(12, 1fr) 2.25rem;
-  }
-  #main #sector6 div.sector-container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  #main #sector7 div.sector-container {
-    padding-left: 1rem;
-    padding-right: 1rem;
   }
 }/*# sourceMappingURL=estilos.css.map */

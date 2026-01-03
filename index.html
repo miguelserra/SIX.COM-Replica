@@ -155,9 +155,9 @@
                                         <span>
                                             <p class="rf-lbl-pickup">Pickup & return</p>
                                         </span>
-                                        <div class="rf-input-location  rf-location-pickup">
+                                        <div class="rf-input-location rf-location-pickup">
                                             <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                            <input type="text" id="input-pickup-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none"
+                                            <input type="text" id="input-pickup-cars" class="input-loc-pickup" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none"
                                             value = "Porto Airport">
                                         </div>
                                     </div>
@@ -166,7 +166,7 @@
                                 <div class="rf-location-input">
                                     <div>
                                         <span>
-                                            <p>Return</p>
+                                            <p class="rf-lbl-return">Return</p>
                                         </span>
 
                                         <input type="checkbox" class="rf-cbx-diff-loc" id="rf-cbx-diff-loc-cars">
@@ -178,7 +178,7 @@
 
                                         <div class="rf-input-location rf-location-return">
                                             <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                            <input type="text" id="input-return-cars" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
+                                            <input type="text" id="input-return-cars" class="input-loc-return" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
                                         </div>
                                     </div>
                                 </div>
@@ -246,7 +246,7 @@
                                         </span>
                                         <div class="rf-input-location  rf-location-pickup">
                                             <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                            <input type="text" id="input-pickup-trucks" name="pickup-trucks-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none"
+                                            <input type="text" id="input-pickup-trucks" class="input-loc-pickup" name="pickup-trucks-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none"
                                             value = "Porto Airport">
                                         </div>
                                     </div>
@@ -255,7 +255,7 @@
                                 <div class="rf-location-input">
                                     <div>
                                         <span>
-                                            <p>Return</p>
+                                            <p class="rf-lbl-return">Return</p>
                                         </span>
 
                                         <input type="checkbox" class="rf-cbx-diff-loc" id="rf-cbx-diff-loc-trucks">
@@ -267,7 +267,7 @@
 
                                         <div class="rf-input-location rf-location-return">
                                             <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                            <input type="text" id="input-return-trucks" name="pickup-trucks-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
+                                            <input type="text" id="input-return-trucks" class="input-loc-return" name="pickup-trucks-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
                                         </div>
                                     </div>
                                 </div>
@@ -472,6 +472,7 @@
                             </div>
                             <div class="card-foreground">
                                 <div class="card-header">
+                                    <h4 class="vehicle-id">Car-1</h4>
                                     <h3>FORD FOCUS STW </h3>
                                     <span>or similar</span>
                                     <p>Compact Station wagon Automatic</p>
@@ -506,6 +507,7 @@
                             </div>
                             <div class="card-foreground">
                                 <div class="card-header">
+                                    <h4 class="vehicle-id">Car-1</h4>
                                     <h3>NISSAN QASHQAI </h3>
                                     <span>or similar</span>
                                     <p>Midsize SUV Manual</p>
@@ -537,6 +539,7 @@
                             </div>
                             <div class="card-foreground">
                                 <div class="card-header">
+                                    <h4 class="vehicle-id">Car-1</h4>
                                     <h3>VW POLO </h3>
                                     <span>or similar</span>
                                     <p>Economy Sedan Automatic</p>
@@ -568,6 +571,7 @@
                             </div>
                             <div class="card-foreground">
                                 <div class="card-header">
+                                    <h4 class="vehicle-id">Car-1</h4>
                                     <h3>VW TAIGO </h3>
                                     <span>or similar</span>
                                     <p>Compact SUV Automatic</p>
@@ -599,6 +603,7 @@
                             </div>
                             <div class="card-foreground">
                                 <div class="card-header">
+                                    <h4 class="vehicle-id">Car-1</h4>
                                     <h3>KIA PICANTO </h3>
                                     <span>or similar</span>
                                     <p>Mini Sedan Manual</p>
@@ -632,6 +637,7 @@
                             </div>
                             <div class="card-foreground">
                                 <div class="card-header">
+                                    <h4 class="vehicle-id">Car-1</h4>
                                     <h3>RENAULT CAPTUR </h3>
                                     <span>or similar</span>
                                     <p>Compact SUV Manual</p>
@@ -663,6 +669,7 @@
                             </div>
                             <div class="card-foreground">
                                 <div class="card-header">
+                                    <h4 class="vehicle-id">Car-1</h4>
                                     <h3>PEUGEOT 308 </h3>
                                     <span>or similar</span>
                                     <p>Compact Sedan Automatic</p>
@@ -694,6 +701,7 @@
                             </div>
                             <div class="card-foreground">
                                 <div class="card-header">
+                                    <h4 class="vehicle-id">Car-1</h4>
                                     <h3>MERCEDES-BENZ A-CLASS </h3>
                                     <span>or similar</span>
                                     <p>Midsize Sedan Automatic</p>
@@ -723,10 +731,326 @@
                     <div class="rf-booking-summary">
                         <h1>Booking Summary</h1>
                         <h5></h5>
-                        <h2>Booking Period</h2>
+                        <h2>Locations</h2>
                         <h5></h5>
-                        <h3 class="underlined">Total number of days</h3>
-                        <h5 class="subtotal bill-tot-num-days">DD</h5>
+                        <h3>Pickup</h3>
+                        <h5 class="bill-pickup"></h5>
+                        <h3 class="underlined">Return</h3>
+                        <h5 class="subtotal bill-return"></h5>
+                        <h2>Weekdays</h2>
+                        <h5></h5>
+                        <h3>Full days</h3>
+                        <h5 class="bill-weekdays">DD</h5>
+                        <h3>Weekday Rate</h3>
+                        <h5 class="bill-weekday-rate">XX€</h5>
+                        <h3 class="underlined">Subtotal</h3>
+                        <h5 class="subtotal bill-weekday-subtotal">XXX€</h5>
+                        <h2>Weekend days</h2>
+                        <h3>Full days</h3>
+                        <h5 class="bill-weekend">DD</h5>
+                        <h3>Weekend Rate</h3>
+                        <h5 class="bill-weekend-rate">XX€</h5>
+                        <h3 class="underlined">Subtotal</h3>
+                        <h5 class="subtotal bill-weekend-subtotal">XXX€</h5>
+                        <h2>Different Return Location</h2>
+                        <h5></h5>
+                        <h3 class="underlined">Fee</h3>
+                        <h5 class="subtotal bill-diff-loc-fee">XX€</h5>
+                        <h2>Corporate Discount</h2>
+                        <h5></h5>
+                        <h3>Discount rate</h3>
+                        <h5 class="bill-discount-rate">XX%</h5>
+                        <h3 class="underlined">Discount value</h3>
+                        <h5 class="subtotal bill-discount-value">XXX€</h5>
+                        <h2 class="total-no-discount">Total before discount</h3>
+                        <h5 class="subtotal bill-without-discount">XXX€</h5>
+                        <h4>Final Amount</h4>
+                        <h5 class="bill-total">XXX€</h5>
+                    </div>
+
+                </div>
+            </div>
+            <!--fim dos resultados dos CAR-->
+    
+            <!--Inicio dos resultados dos TRUCKS-->
+            <div class="rf-search-results" id="rf-search-results-trucks">
+                
+                <h1>Your results are here. Pick your ride!</h1>
+                
+                <div class="rf-results-container">
+                    <div class="rf-results-gallery">
+
+                        <div class="car-card" id="truck-card-0">
+                            <div class="card-background">
+                                <img src="media/cards-background.webp">
+                            </div>
+                            <div class="card-foreground">
+                                <div class="card-header">
+                                    <h3>RENAULT KANGOO</h3>
+                                    <span>or similar</span>
+                                    <p>Small Cargo Van Manual</p>
+                                </div>
+                                    
+                                <div class="card-specs">
+                                    <span><img src="icons/ico_weight.svg"> 2270 kg</span>
+                                    <span><img src="icons/ico_van.svg"> 873 kg</span> 
+                                </div> <!--#############################-->
+            
+                                <div class="card-image">
+                                    <img src="media/trucks-renault-kangoo.png" alt="renault kangoo"> </div>
+            
+                                <div class="card-features">
+                                    <span class="check">✔</span> 6,625 kilometers included
+                                </div>
+                
+                                <div class="card-footer">
+                                    <div class="price grandtotal">
+                                        Total: €XXX<span>.00</span>
+                                    </div>
+                                    <div class="price full-days">
+                                        <span>for&nbsp;</span>DD<span>&nbsp;days rental</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="car-card" id="truck-card-1">
+                            <div class="card-background">
+                                <img src="media/cards-background.webp">
+                            </div>
+                            <div class="card-foreground">
+                                <div class="card-header">
+                                    <h4 class="vehicle-id">Car-1</h4>
+                                    <h3>OPEL COMBO</h3>
+                                    <span>or similar</span>
+                                    <p>Compact Delivery Van Manual</p>
+                                </div>
+                                <div class="card-specs">
+                                    <span><img src="icons/ico_weight.svg"> 2095 kg</span>
+                                    <span><img src="icons/ico_van.svg"> 610 kg</span>
+                                </div>
+                                <div class="card-image">
+                                    <img src="media/trucks-opel-combo.png" alt="Opel Combo">
+                                </div>
+                                <div class="card-features">
+                                    <span class="check">✔</span> 6,625 kilometers included
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price grandtotal">
+                                        Total: €XXX<span>.00</span>
+                                    </div>
+                                    <div class="price full-days">
+                                        <span>for&nbsp;</span>DD<span>&nbsp;days rental</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="car-card" id="truck-card-2">
+                            <div class="card-background">
+                                <img src="media/cards-background.webp">
+                            </div>
+                            <div class="card-foreground">
+                                <div class="card-header">
+                                    <h4 class="vehicle-id">Car-1</h4>
+                                    <h3>RENAULT TRAFIC L1H1</h3>
+                                    <span>or similar</span>
+                                    <p>Medium Cargo Van Manual</p>
+                                </div>
+                                <div class="card-specs">
+                                    <span><img src="icons/ico_weight.svg"> 2835 kg</span>
+                                    <span><img src="icons/ico_van.svg"> 1105 kg</span>
+                                </div>
+                                <div class="card-image">
+                                    <img src="media/trucks-renault-trafic.png" alt="Renault trafic L1H1">
+                                </div>
+                                <div class="card-features">
+                                    <span class="check">✔</span> 6,625 kilometers included
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price grandtotal">
+                                        Total: €XXX<span>.00</span>
+                                    </div>
+                                    <div class="price full-days">
+                                        <span>for&nbsp;</span>DD<span>&nbsp;days rental</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="car-card" id="truck-card-3">
+                            <div class="card-background">
+                                <img src="media/cards-background.webp">
+                            </div>
+                            <div class="card-foreground">
+                                <div class="card-header">
+                                    <h4 class="vehicle-id">Car-1</h4>
+                                    <h3>RENAULT MASTER L2H2 </h3>
+                                    <span>or similar</span>
+                                    <p>Large Panel Van Manual</p>
+                                </div>
+                                <div class="card-specs">
+                                    <span><img src="icons/ico_weight.svg"> 3500 kg</span>
+                                    <span><img src="icons/ico_van.svg"> 1620 kg</span>
+                                </div>
+                                <div class="card-image">
+                                    <img src="media/trucks-renault-master-l2h2.png" alt="Renault maste l2h2">
+                                </div>
+                                <div class="card-features">
+                                    <span class="check">✔</span> 6,625 kilometers included
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price grandtotal">
+                                        Total: €XXX<span>.00</span>
+                                    </div>
+                                    <div class="price full-days">
+                                        <span>for&nbsp;</span>DD<span>&nbsp;days rental</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="car-card" id="truck-card-4">
+                            <div class="card-background">
+                                <img src="media/cards-background.webp">
+                            </div>
+                            <div class="card-foreground">
+                                <div class="card-header">
+                                    <h4 class="vehicle-id">Car-1</h4>
+                                    <h3>RENAULT MASTER L3H2</h3>
+                                    <span>or similar</span>
+                                    <p>Extra Large Cargo Van Manual</p>
+                                </div>
+                                
+                                <div class="card-specs">
+                                    <span><img src="icons/ico_weight.svg"> 3500 kg</span>
+                                    <span><img src="icons/ico_van.svg"> 1530 kg</span> 
+                                </div> <!--#############################-->
+            
+                                <div class="card-image">
+                                    <img src="media/trucks-renault-master-l3h2.png" alt="renault master l3h2"> </div>
+            
+                                <div class="card-features">
+                                    <span class="check">✔</span> 6,625 kilometers included
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price grandtotal">
+                                        Total: €XXX<span>.00</span>
+                                    </div>
+                                    <div class="price full-days">
+                                        <span>for&nbsp;</span>DD<span>&nbsp;days rental</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="car-card" id="truck-card-5">
+                            <div class="card-background">
+                                <img src="media/cards-background.webp">
+                            </div>
+                            <div class="card-foreground">
+                                <div class="card-header">
+                                    <h4 class="vehicle-id">Car-1</h4>
+                                    <h3>RENAULT MASTER L4H2</h3>
+                                    <span>or similar</span>
+                                    <p>Maxi Cargo Van Manual</p>
+                                </div>
+                                <div class="card-specs">
+                                    <span><img src="icons/ico_weight.svg"> 3500 kg</span>
+                                    <span><img src="icons/ico_van.svg"> 1620 kg</span>
+                                </div>
+                                <div class="card-image">
+                                    <img src="media/trucks-renault-master-l4h2.png" alt="renault master l4h2">
+                                </div>
+                                <div class="card-features">
+                                    <span class="check">✔</span> 6,625 kilometers included
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price grandtotal">
+                                        Total: €XXX<span>.00</span>
+                                    </div>
+                                    <div class="price full-days">
+                                        <span>for&nbsp;</span>DD<span>&nbsp;days rental</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="car-card" id="truck-card-6">
+                            <div class="card-background">
+                                <img src="media/cards-background.webp">
+                            </div>
+                            <div class="card-foreground">
+                                <div class="card-header">
+                                    <h4 class="vehicle-id">Car-1</h4>
+                                    <h3>RENAULT MASTER CONTENTOR</h3>
+                                    <span>or similar</span>
+                                    <p>Box Truck with Lift Manual</p>
+                                </div>
+                                <div class="card-specs">
+                                    <span><img src="icons/ico_weight.svg"> 3500 kg</span>
+                                    <span><img src="icons/ico_van.svg"> 1846 kg</span>
+                                </div>
+                                <div class="card-image">
+                                    <img src="media/trucks-renault-master-cabcontentor.png" alt="renault master cabcontentor">
+                                </div>
+                                <div class="card-features">
+                                    <span class="check">✔</span> 6,625 kilometers included
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price grandtotal">
+                                        Total: €XXX<span>.00</span>
+                                    </div>
+                                    <div class="price full-days">
+                                        <span>for&nbsp;</span>DD<span>&nbsp;days rental</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="car-card" id="truck-card-7">
+                                <div class="card-background">
+                                    <img src="media/cards-background.webp">
+                                </div>
+                                <div class="card-foreground">
+                                    <div class="card-header">
+                                        <h4 class="vehicle-id">Car-1</h4>
+                                        <h3>RENAULT MASTER L3 SINGLE</h3>
+                                        <span>or similar</span>
+                                        <p>Flatbed Crew Cab Truck Manual</p>
+                                    </div>
+                                    <div class="card-specs">
+                                        <span><img src="icons/ico_weight.svg"> 3500 kg</span>
+                                        <span><img src="icons/ico_van.svg"> 1525 kg</span>
+                                    </div>
+                                    <div class="card-image">
+                                        <img src="media/trucks-renault-master-l3single.png" alt="renault master l3single">
+                                    </div>
+                                    <div class="card-features">
+                                        <span class="check">✔</span> 6,625 kilometers included
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="price grandtotal">
+                                            Total: €XXX<span>.00</span>
+                                        </div>
+                                        <div class="price full-days">
+                                            <span>for&nbsp;</span>DD<span>&nbsp;days rental</span>
+                                        </div>
+                                    </div>
+                             </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="rf-booking-summary">
+                        <h1>Booking Summary</h1>
+                        <h5></h5>
+                        <h2>Locations</h2>
+                        <h5></h5>
+                        <h3>Pickup</h3>
+                        <h5 class="bill-pickup"></h5>
+                        <h3 class="underlined">Return</h3>
+                        <h5 class="subtotal bill-return"></h5>
                         <h2>Weekdays</h2>
                         <h5></h5>
                         <h3>Full days</h3>
@@ -759,276 +1083,12 @@
                     </div>
                 </div>
 
-
             </div>
-            <!--fim dos resultados dos CAR-->
-    
-            <!--Inicio dos resultados dos TRUCKS-->
-            <div class="rf-search-results" id="rf-search-results-trucks">
-                <h1>Your results are here. Pick your ride!</h1>
-                    <div class="rf-results-container">
-                        <div class="rf-results-gallery">
-
-                            <div class="car-card" id="truck-card-0">
-                                <div class="card-background">
-                                    <img src="media/cards-background.webp">
-                                </div>
-                                <div class="card-foreground">
-                                    <div class="card-header">
-                                        <h3>RENAULT KANGOO</h3>
-                                        <span>or similar</span>
-                                        <p>Small Cargo Van Manual</p>
-                                    </div>
-                                    
-                                    <div class="card-specs">
-                                        <span><img src="icons/ico_weight.svg"> 2270 kg</span>
-                                        <span><img src="icons/ico_van.svg"> 873 kg</span> 
-                                    </div> <!--#############################-->
-                
-                                    <div class="card-image">
-                                        <img src="media/trucks-renault-kangoo.png" alt="renault kangoo"> </div>
-                
-                                    <div class="card-features">
-                                        <span class="check">✔</span> 6,625 kilometers included
-                                    </div>
-                
-                                    <div class="card-footer">
-                                        <div class="price grandtotal">
-                                            Total: €XXX<span>.00</span>
-                                        </div>
-                                        <div class="price full-days">
-                                            <span>for&nbsp;</span>DD<span>&nbsp;days rental</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <!--fim dos resultados dos TRUCKS-->
             
-                            <div class="car-card" id="truck-card-1">
-                                <div class="card-background">
-                                    <img src="media/cards-background.webp">
-                                </div>
-                                <div class="card-foreground">
-                                    <div class="card-header">
-                                        <h3>OPEL COMBO</h3>
-                                        <span>or similar</span>
-                                        <p>Compact Delivery Van Manual</p>
-                                    </div>
-                                    <div class="card-specs">
-                                        <span><img src="icons/ico_weight.svg"> 2095 kg</span>
-                                        <span><img src="icons/ico_van.svg"> 610 kg</span>
-                                    </div>
-                                    <div class="card-image">
-                                        <img src="media/trucks-opel-combo.png" alt="Opel Combo">
-                                    </div>
-                                    <div class="card-features">
-                                        <span class="check">✔</span> 6,625 kilometers included
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="price grandtotal">
-                                            Total: €XXX<span>.00</span>
-                                        </div>
-                                        <div class="price full-days">
-                                            <span>for&nbsp;</span>DD<span>&nbsp;days rental</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="car-card" id="truck-card-2">
-                                <div class="card-background">
-                                    <img src="media/cards-background.webp">
-                                </div>
-                                <div class="card-foreground">
-                                    <div class="card-header">
-                                        <h3>RENAULT TRAFIC L1H1</h3>
-                                        <span>or similar</span>
-                                        <p>Medium Cargo Van Manual</p>
-                                    </div>
-                                    <div class="card-specs">
-                                        <span><img src="icons/ico_weight.svg"> 2835 kg</span>
-                                        <span><img src="icons/ico_van.svg"> 1105 kg</span>
-                                    </div>
-                                    <div class="card-image">
-                                        <img src="media/trucks-renault-trafic.png" alt="Renault trafic L1H1">
-                                    </div>
-                                    <div class="card-features">
-                                        <span class="check">✔</span> 6,625 kilometers included
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="price grandtotal">
-                                            Total: €XXX<span>.00</span>
-                                        </div>
-                                        <div class="price full-days">
-                                            <span>for&nbsp;</span>DD<span>&nbsp;days rental</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="car-card" id="truck-card-3">
-                                <div class="card-background">
-                                    <img src="media/cards-background.webp">
-                                </div>
-                                <div class="card-foreground">
-                                    <div class="card-header">
-                                        <h3>RENAULT MASTER L2H2 </h3>
-                                        <span>or similar</span>
-                                        <p>Large Panel Van Manual</p>
-                                    </div>
-                                    <div class="card-specs">
-                                        <span><img src="icons/ico_weight.svg"> 3500 kg</span>
-                                        <span><img src="icons/ico_van.svg"> 1620 kg</span>
-                                    </div>
-                                    <div class="card-image">
-                                        <img src="media/trucks-renault-master-l2h2.png" alt="Renault maste l2h2">
-                                    </div>
-                                    <div class="card-features">
-                                        <span class="check">✔</span> 6,625 kilometers included
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="price grandtotal">
-                                            Total: €XXX<span>.00</span>
-                                        </div>
-                                        <div class="price full-days">
-                                            <span>for&nbsp;</span>DD<span>&nbsp;days rental</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="car-card" id="truck-card-4">
-                                <div class="card-background">
-                                    <img src="media/cards-background.webp">
-                                </div>
-                                <div class="card-foreground">
-                                    <div class="card-header">
-                                        <h3>RENAULT MASTER L3H2</h3>
-                                        <span>or similar</span>
-                                        <p>Extra Large Cargo Van Manual</p>
-                                    </div>
-                                    
-                                    <div class="card-specs">
-                                        <span><img src="icons/ico_weight.svg"> 3500 kg</span>
-                                        <span><img src="icons/ico_van.svg"> 1530 kg</span> 
-                                    </div> <!--#############################-->
-                
-                                    <div class="card-image">
-                                        <img src="media/trucks-renault-master-l3h2.png" alt="renault master l3h2"> </div>
-                
-                                    <div class="card-features">
-                                        <span class="check">✔</span> 6,625 kilometers included
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="price grandtotal">
-                                            Total: €XXX<span>.00</span>
-                                        </div>
-                                        <div class="price full-days">
-                                            <span>for&nbsp;</span>DD<span>&nbsp;days rental</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="car-card" id="truck-card-5">
-                                <div class="card-background">
-                                    <img src="media/cards-background.webp">
-                                </div>
-                                <div class="card-foreground">
-                                    <div class="card-header">
-                                        <h3>RENAULT MASTER L4H2</h3>
-                                        <span>or similar</span>
-                                        <p>Maxi Cargo Van Manual</p>
-                                    </div>
-                                    <div class="card-specs">
-                                        <span><img src="icons/ico_weight.svg"> 3500 kg</span>
-                                        <span><img src="icons/ico_van.svg"> 1620 kg</span>
-                                    </div>
-                                    <div class="card-image">
-                                        <img src="media/trucks-renault-master-l4h2.png" alt="renault master l4h2">
-                                    </div>
-                                    <div class="card-features">
-                                        <span class="check">✔</span> 6,625 kilometers included
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="price grandtotal">
-                                            Total: €XXX<span>.00</span>
-                                        </div>
-                                        <div class="price full-days">
-                                            <span>for&nbsp;</span>DD<span>&nbsp;days rental</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="car-card" id="truck-card-6">
-                                <div class="card-background">
-                                    <img src="media/cards-background.webp">
-                                </div>
-                                <div class="card-foreground">
-                                    <div class="card-header">
-                                        <h3>RENAULT MASTER CONTENTOR</h3>
-                                        <span>or similar</span>
-                                        <p>Box Truck with Lift Manual</p>
-                                    </div>
-                                    <div class="card-specs">
-                                        <span><img src="icons/ico_weight.svg"> 3500 kg</span>
-                                        <span><img src="icons/ico_van.svg"> 1846 kg</span>
-                                    </div>
-                                    <div class="card-image">
-                                        <img src="media/trucks-renault-master-cabcontentor.png" alt="renault master cabcontentor">
-                                    </div>
-                                    <div class="card-features">
-                                        <span class="check">✔</span> 6,625 kilometers included
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="price grandtotal">
-                                            Total: €XXX<span>.00</span>
-                                        </div>
-                                        <div class="price full-days">
-                                            <span>for&nbsp;</span>DD<span>&nbsp;days rental</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="car-card" id="truck-card-7">
-                                <div class="card-background">
-                                    <img src="media/cards-background.webp">
-                                </div>
-                                <div class="card-foreground">
-                                    <div class="card-header">
-                                        <h3>RENAULT MASTER L3 SINGLE</h3>
-                                        <span>or similar</span>
-                                        <p>Flatbed Crew Cab Truck Manual</p>
-                                    </div>
-                                    <div class="card-specs">
-                                        <span><img src="icons/ico_weight.svg"> 3500 kg</span>
-                                        <span><img src="icons/ico_van.svg"> 1525 kg</span>
-                                    </div>
-                                    <div class="card-image">
-                                        <img src="media/trucks-renault-master-l3single.png" alt="renault master l3single">
-                                    </div>
-                                    <div class="card-features">
-                                        <span class="check">✔</span> 6,625 kilometers included
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="price grandtotal">
-                                            Total: €XXX<span>.00</span>
-                                        </div>
-                                        <div class="price full-days">
-                                            <span>for&nbsp;</span>DD<span>&nbsp;days rental</span>
-                                        </div>
-                                    </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-                <!--fim dos resultados dos TRUCKS-->
-            
-            </div>
-
         </div>
+
+    </div>
     
     
     <div id="main">
