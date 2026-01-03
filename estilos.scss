@@ -886,6 +886,11 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     &:hover{
                         background-color : lightgrey;
                     }
+
+                    &.selected-timeslot{
+                        background-color: black;
+                        color: white;
+                    }
                 }
             }
 
@@ -1016,10 +1021,10 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         gap: 0 1rem;
 
         > div {
+            flex-basis : 13.5rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            width : 13.5rem;
 
             >span{
                 width           : 100%;
@@ -1145,12 +1150,16 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     border-radius   : 1rem;
     box-shadow      : 0 0 0 100vmax rgba(0, 0, 0, 0.5);
     margin-bottom   : $rf-shadow-size;
+
+    &.bill-summary-mode{
+        width: 75%;
+    }
     
     
     > h1{
         align-self      : center;
         display         : inline-flex;
-        margin-bottom   : 0.75rem;
+        margin-bottom   : 1.5rem;
         padding         : 1rem 2rem;
         border          : 5px solid $sixt-placeholder-gray;
         background-image: url("media/cards-background.webp");
@@ -1168,18 +1177,25 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     div.rf-results-container{
         display                 : grid;
         width                   : 100%;
+        height                  : 100%;
         grid-template-columns   : 1fr 0fr; 
-        //grid-template-columns   : 1fr 2fr; 
+        
+        &.bill-summary-mode{
+            grid-template-columns   : 1fr 2fr; ; 
+        }
 
         div.rf-results-gallery{
             display                 : grid;
             grid-template-columns   : repeat(4, 1fr); 
-            //grid-template-columns   : repeat(1, 1fr); 
             grid-template-rows      : 1fr; 
             grid-auto-rows          : 0;
             overflow                : hidden;
             gap                     : 0 1rem;
             padding-top: 0.5rem;
+
+            &.bill-summary-mode{
+                grid-template-columns   : repeat(1, 1fr); 
+            }
             
             .car-card {
                 position        : relative;
@@ -1201,6 +1217,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 div.card-background{
                     position: absolute;
                     height: 100%;
+                    width : 100%;
                 }
 
                 div.card-foreground{
@@ -1325,13 +1342,85 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         }
         
         div.rf-booking-summary{
+
+            box-sizing: border-box;
             height: 100%;
             width: 100%;
+            padding: 0.25rem 3rem 0.5rem 5rem;
+            
+            @include flex-center-center;
             display: none;
-            //display: flex;
-            flex-direction: column;
-            background-color: #00ff00;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr repeat(14, 0.5fr);
+
+            h1, h2, h3, h4 {
+                height: 100%;
+                grid-column: 1/2;
+            }
+
+            h2, h3 {
+                padding-left: 0.5rem;
+            }
+
+            h1{
+                padding-top: 0.5rem;
+                align-self: flex-start;
+                @include font-HelveticaNow-900;
+                font-size: 2rem;
+            }
+
+            h2{
+                margin-top: 0.5rem;
+                @include font-HelveticaNow-700;          
+            }
+
+            h3{
+                @include font-HelveticaNow-400;
+                font-size: 0.875rem;
+                align-self : flex-start;
+
+                &.underlined{
+                    //text-decoration: underline;
+                    //text-underline-offset: 1px;
+                    border-bottom: 1px solid $sixt-placeholder-gray;
+                }
+            }
+
+            h4{
+                align-self: flex-start;
+                padding-top: 0.75rem;
+                @include font-HelveticaNow-900;
+                font-size: 1.5rem;
+            }
+
+            h5{
+                height : 100%;
+                align-self: center;
+                grid-column: 2/3;
+                text-align: end;
+                
+                @include font-HelveticaNow-400;
+                font-size: 0.875rem;
+                
+                &.subtotal{
+                    @include font-HelveticaNow-700; 
+                    border-bottom: 1px solid $sixt-placeholder-gray;  
+                }
+
+                &.total{
+                    padding-top: 1rem;
+                    @include font-HelveticaNow-900;
+                    font-size: 1.75rem; 
+                }
+            }
+
+            
+            &.bill-summary-mode{
+                display: grid;
+            }
+                
         }
+        
     }
 
 }

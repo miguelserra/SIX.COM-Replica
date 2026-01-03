@@ -12,6 +12,7 @@ const returnDateDivs = document.querySelectorAll(".return-date");
 //classe para o controlo de mostrar/ocultar elementos
 class ToggleContainer {
     constructor(id) {
+        this.id = id;
         this.element = document.getElementById(id);
     }
 
@@ -62,12 +63,15 @@ const btnsDatePick = document.querySelectorAll(".rf-date-pick-btn");
 const btnsPickupTime = document.querySelectorAll(".rf-time-pickup-btn");
 const btnsReturnTime = document.querySelectorAll(".rf-time-return-btn");
 
+//botoes de horas
+const btnsTimePick = document.querySelectorAll(".timeslot");
+
 //botoes que apresentam os resultados
-const cbxShowCars   = document.querySelector("#rf-btn-show-cars");
-const cbxShowTrucks = document.querySelector("#rf-btn-show-trucks");
+const btnShowCars   = document.querySelector("#rf-btn-show-cars");
+const btnShowTrucks = document.querySelector("#rf-btn-show-trucks");
 
 //car cards
-const divCards = document.querySelectorAll(".car-card")
+const divsCards = document.querySelectorAll(".car-card")
 
 const months = [
     'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
@@ -79,6 +83,8 @@ const months = [
 ######################## */
 
 const objBill = {
+
+    active          : false,
 
     vehicleType     : "car",
     vehicleID       : 0,
@@ -164,8 +170,8 @@ const objBill = {
             weekendRate = this.weekendTruckRate;
         }
         
-        this.billWeekDays       = this.numWeekDays * this.weekCarRate;
-        this.billWeekendDays    = this.numWeekDays * this.weekendCarRate;
+        this.billWeekDays       = this.numWeekDays * weekRate;
+        this.billWeekendDays    = this.numWeekDays * weekendRate;
         this.billBeforeDiscount = this.billWeekDays + this.billWeekendDays;
         
         if (this.diffReturn){
@@ -199,6 +205,7 @@ function delay(time) {
   return new Promise(resolve => setTimeout(resolve, time*1000));
 }
 
+
 //evento que abre e fecha div do calendário ao clicar nos botões pickdate
 objCalendarContainer.bindBtns(btnsDatePick);
 
@@ -206,20 +213,41 @@ objCalendarContainer.bindBtns(btnsDatePick);
 objPickupTimeContainer.bindBtns(btnsPickupTime);
 objReturnTimeContainer.bindBtns(btnsReturnTime);
 
-objShowCarsContainer.bindBtns([cbxShowCars]);
-objShowTrucksContainer.bindBtns([cbxShowTrucks]);
+objShowCarsContainer.bindBtns([btnShowCars]);
+objShowTrucksContainer.bindBtns([btnShowTrucks]);
 
 
-//faz reset à visualização através de clicks no main
+//faz reset à visualização através de clicks no body
 document.body.addEventListener('click', function (event) {
+
     let target = event.target;
+
     objCalendarContainer.checkClickOutside(target, btnsDatePick);
     objPickupTimeContainer.checkClickOutside(target, btnsPickupTime);
     objReturnTimeContainer.checkClickOutside(target, btnsReturnTime);
-    objShowCarsContainer.checkClickOutside(target, [cbxShowCars]);
-    objShowTrucksContainer.checkClickOutside(target, [cbxShowTrucks]);
+    objShowCarsContainer.checkClickOutside(target, [btnShowCars]);
+    objShowTrucksContainer.checkClickOutside(target, [btnShowTrucks]);
 });
 
+//faz reset ao sandwich através de clicks no main
+divMain.addEventListener("click", function(event){
+    document.getElementById("toggle").checked = false;
+});
+
+
+//reset às grids dos resultados
+function resetResultsGrids(resetSelectedVehicle = false){
+    let divsResults = document.querySelectorAll(".rf-results-container");
+    divsResults.forEach(el => el.classList.remove("bill-summary-mode"));
+    
+    let divsResGallery = document.querySelectorAll(".rf-results-gallery");
+    divsResGallery.forEach(el => el.classList.remove("bill-summary-mode"));
+
+    if(resetSelectedVehicle){
+        divsCards.forEach(card => card.style.order = "");
+    }
+}
+    
 
 /* #############
 ## CARROUSELS ##
@@ -377,27 +405,6 @@ function initSector4Carousel() {
 let currentDate = new Date();
 let today = new Date();
 
-function getDateMonthDayFormat(timestamp){
-    
-    let date = new Date(timestamp);
-    let month = months[date.getMonth()].substring(0,3);
-    let day = date.getDate().toString();
-    
-    return month + " " + day;
-}
-
-function setStartDate(timestamp){
-    pickupDateDivs.forEach(el => {
-        el.textContent = getDateMonthDayFormat(timestamp);
-    });
-}
-
-function setEndDate(timestamp){
-    returnDateDivs.forEach(el => {
-        el.textContent = getDateMonthDayFormat(timestamp);
-    });
-}
-
 function handleCalendar(date) {
 
     //limpa dias dos 3 calendarios através da classe
@@ -443,66 +450,135 @@ function handleCalendar(date) {
             calendar.appendChild(dayDiv);
         }
     }
-}
 
-function handleDateClick(e) {
-    //console.log(e.currentTarget);
-    let clickedDayTimestamp = +e.currentTarget.dataset.dateValue;
+    function getDateMonthDayFormat(timestamp){
+        let date = new Date(timestamp);
+        let month = months[date.getMonth()].substring(0,3);
+        let day = date.getDate().toString();
+        return month + " " + day;
+    }
 
-    //se nada clicado (inicia) ou start e end clicados (termina)
-    if (!objBill.pickupDateTS || (objBill.pickupDateTS && objBill.returnDateTS)) {
-        objBill.pickupDateTS = clickedDayTimestamp;
-        objBill.returnDateTS = 0;
-    } else {
-        //se data de fim inferior ao start, troca, senao atribui enddate
-        if (clickedDayTimestamp < objBill.pickupDateTS) {
-            objBill.returnDateTS = objBill.pickupDateTS;
+    function setStartDate(timestamp){
+        pickupDateDivs.forEach(el => {
+            el.textContent = getDateMonthDayFormat(timestamp);
+        });
+        objBill.pickupDateTS = timestamp;
+    }
+
+    function setEndDate(timestamp){
+        returnDateDivs.forEach(el => {
+            el.textContent = getDateMonthDayFormat(timestamp);
+        });
+        objBill.returnDateTS = timestamp;
+    }
+
+    function handleDateClick(e) {
+        let clickedDayTimestamp = +e.currentTarget.dataset.dateValue;
+    
+        //se nada clicado (inicia) ou start e end clicados (termina)
+        if (!objBill.pickupDateTS || (objBill.pickupDateTS && objBill.returnDateTS)) {
             objBill.pickupDateTS = clickedDayTimestamp;
+            objBill.returnDateTS = 0;
         } else {
-            objBill.returnDateTS = clickedDayTimestamp;
-        }
-
-        setStartDate(objBill.pickupDateTS);
-        setEndDate(objBill.returnDateTS);
-        delay(0.75).then( () => objCalendarContainer.hide());
-
-    }
-    updateSelectionVisuals(0);
-}
-
-function handleMouseEnter(e) {
-    if (objBill.pickupDateTS && !objBill.returnDateTS) {
-        let hoverDateTimestamp = +e.currentTarget.dataset.dateValue;
-        updateSelectionVisuals(hoverDateTimestamp);
-    }
-}
-
-function updateSelectionVisuals(hoverDate) {
-    let allDays = document.querySelectorAll('.day-number');
-    let tempEnd = objBill.returnDateTS || hoverDate; //condiçao para dar no hover e end date ao mesmo tempo
-
-    allDays.forEach(dayDiv => 
-    {
-        let dayTimestamp = +dayDiv.dataset.dateValue;
-        
-        //limpa os estilos das divs por remocao de classes
-        dayDiv.classList.remove('in-range', 'start-node', 'end-node');
-
-        //atribui estilo ao start date e end date
-        if (dayTimestamp === objBill.pickupDateTS) 
-            dayDiv.classList.add('start-node');
-        if (dayTimestamp === tempEnd) 
-            dayDiv.classList.add('end-node');
-
-        //caso o star e end sejam os memos atribui este especial
-        if (objBill.pickupDateTS && tempEnd) {
-            let min = Math.min(objBill.pickupDateTS, tempEnd);
-            let max = Math.max(objBill.pickupDateTS, tempEnd);
-            if (dayTimestamp >= min && dayTimestamp <= max) {
-                dayDiv.classList.add('in-range');
+            //se data de fim inferior ao start, troca, senao atribui enddate
+            if (clickedDayTimestamp < objBill.pickupDateTS) {
+                objBill.returnDateTS = objBill.pickupDateTS;
+                objBill.pickupDateTS = clickedDayTimestamp;
+            } else {
+                objBill.returnDateTS = clickedDayTimestamp;
             }
+    
+            setStartDate(objBill.pickupDateTS);
+            setEndDate(objBill.returnDateTS);
+            delay(0.75).then( () => objCalendarContainer.hide() );
+    
         }
+        updateSelectionVisuals(0);
+    }
+    
+    function handleMouseEnter(e) {
+        if (objBill.pickupDateTS && !objBill.returnDateTS) {
+            let hoverDateTimestamp = +e.currentTarget.dataset.dateValue;
+            updateSelectionVisuals(hoverDateTimestamp);
+        }
+    }
+    
+    function updateSelectionVisuals(hoverDate) {
+
+        //a seleção de nova data  leva a limpar a pesquisa por veiculo
+        //restaura configuraçao de 4 viaturas e limpa escolha actual do veiculo
+        resetResultsGrids(true);
+
+        let allDays = document.querySelectorAll('.day-number');
+        let tempEnd = objBill.returnDateTS || hoverDate; //condiçao para dar no hover e end date ao mesmo tempo
+    
+        allDays.forEach(dayDiv => 
+        {
+            let dayTimestamp = +dayDiv.dataset.dateValue;
+            
+            //limpa os estilos das divs por remocao de classes
+            dayDiv.classList.remove('in-range', 'start-node', 'end-node');
+    
+            //atribui estilo ao start date e end date
+            if (dayTimestamp === objBill.pickupDateTS) 
+                dayDiv.classList.add('start-node');
+            if (dayTimestamp === tempEnd) 
+                dayDiv.classList.add('end-node');
+    
+            //caso o star e end sejam os memos atribui este especial
+            if (objBill.pickupDateTS && tempEnd) {
+                let min = Math.min(objBill.pickupDateTS, tempEnd);
+                let max = Math.max(objBill.pickupDateTS, tempEnd);
+                if (dayTimestamp >= min && dayTimestamp <= max) {
+                    dayDiv.classList.add('in-range');
+                }
+            }
+        });
+    }
+}
+
+/* #########################################
+## SELECÇAO DE HORAS DE RECOLHA E ENTREGA ##
+##########################################*/
+
+function timeslotsEventListeners(){
+    btnsTimePick.forEach(slot => {
+        slot.addEventListener('click', handleTimeClick);
     });
+}
+
+function handleTimeClick(e) {
+    const timeSlot = e.currentTarget;
+    
+    // 1. Descobrir em que container estamos (Pickup ou Return)
+    const parentContainer = timeSlot.closest('.rf-time-container');
+    const isPickup = parentContainer.id.includes('pickup');
+    const type = isPickup ? 'pickup' : 'return';
+
+    // 2. Limpar a formatação APENAS dos slots dentro deste container específico
+    parentContainer.querySelectorAll(".timeslot").forEach(t => {
+        t.classList.remove("selected-timeslot");
+    });
+
+    // 3. Atribuir formatação ao slot clicado
+    timeSlot.classList.add("selected-timeslot");
+
+    // 4. Atualizar o texto nos spans correspondentes do formulário
+    const spansToUpdate = document.querySelectorAll("." + type + "-time");
+    spansToUpdate.forEach(span => {
+        span.textContent = timeSlot.textContent.trim();
+        span.classList.add("selected-timeslot"); // Opcional: dar cor ao texto no botão
+    });
+
+    // 5. Guardar a hora no objeto objBill para cálculos futuros
+    const timeValue = timeSlot.textContent.trim(); // ex: "9:00 AM"
+    // Aqui podes adicionar a lógica de converter string para horas/minutos se precisares
+
+    if (isPickup) {
+        delay(0.5).then( () => objPickupTimeContainer.hide() );
+    } else {
+        delay(0.5).then( () => objReturnTimeContainer.hide() );
+    }
 }
 
 
@@ -510,33 +586,76 @@ function updateSelectionVisuals(hoverDate) {
 ## DIVS DE RESULTADOS ##
 ##################### */
 
-function randomizeVehicleCards(type) {
-    // esconde todas as cards
-    let cards = document.querySelectorAll(".car-card");
-    cards.forEach(card => card.classList.add("inactive"));
-    
-    // escolhe 4 indices aleatorios
-    let pos = [0,1,2,3,4,5,6,7]
-    for (let i = 0; i < 4; i++){
-        let idx = Math.floor(Math.random() * pos.length); 
-        pos.splice(idx, 1);
-    }
-
-    //devolve visibilidade aos cards escolhidos
-    for (let i = 0; i < 4; i++){
-        let card = document.querySelector("#" + type + "-card-" + pos[i]) ;
-        card.classList.remove("inactive");
-        card.dataset.cardID = "Car-" + (i+1);
-    }
-}
-
 function showSearchResults(type) {
-    randomizeVehicleCards(type);
+
     objBill.vehicleType = type;
+
+    //impede alterar o veiculo já seleccionado (randomizar muda o index)
+    if (!objBill.active){
+        randomizeVehicleCards(type);
+    }
+    
+    divsCards.forEach(card => card.addEventListener('click', handleCardClick));
+
+    function handleCardClick(e) {
+        
+        let card = e.currentTarget;
+
+        objBill.vehicleID = +card.dataset.cardID;
+
+        //impede alterar o veiculo já seleccionado (via order)
+        if (!objBill.active){
+            card.style.order = "-1";
+            objBill.active = true;
+        }
+
+        let divsResults = document.querySelectorAll(".rf-results-container");
+        divsResults.forEach(el => {
+            el.classList.add("bill-summary-mode");
+        });
+
+        let divsResGallery = document.querySelectorAll(".rf-results-gallery");
+        divsResGallery.forEach(el => {
+            el.classList.add("bill-summary-mode");
+        });
+
+        let divsSummary = document.querySelectorAll(".rf-booking-summary");
+        divsSummary.forEach(el => {
+            el.classList.add("bill-summary-mode");
+        });
+
+        let divsResultsDiv = document.querySelectorAll(".rf-search-results");
+        divsResultsDiv.forEach(el => {
+            el.classList.add("bill-summary-mode");
+        });
+
+    }
+
+    function randomizeVehicleCards(type) {
+        // esconde todas as cards
+        divsCards.forEach(card => card.classList.add("inactive"));
+        
+        // escolhe 4 indices aleatorios
+        let pos = [0,1,2,3,4,5,6,7]
+        for (let i = 0; i < 4; i++){
+            let idx = Math.floor(Math.random() * pos.length); 
+            pos.splice(idx, 1);
+        }
+    
+        //devolve visibilidade aos cards escolhidos
+        for (let i = 0; i < 4; i++){
+            let card = document.querySelector("#" + type + "-card-" + pos[i]) ;
+            card.classList.remove("inactive");
+            card.dataset.cardID = i+1;
+            card.dataset.cardIntID = pos[i];
+        }
+    }
+
+    
 }
 
-cbxShowCars.addEventListener("click", () => showSearchResults('car'));
-cbxShowTrucks.addEventListener("click", () => showSearchResults('truck'));
+btnShowCars.addEventListener("click", () => showSearchResults('car'));
+btnShowTrucks.addEventListener("click", () => showSearchResults('truck'));
 
 
 
@@ -551,9 +670,10 @@ function init(){
     objPickupTimeContainer.hide();
     objReturnTimeContainer.hide();        
     handleCalendar(currentDate);
+    timeslotsEventListeners();
     initSector3Carousel();
     initSector4Carousel();
+    
 }
-
 
 init()

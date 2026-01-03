@@ -736,6 +736,10 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 #rf-container #rf-form-container .rf-time-container .timeslots-grid .timeslot:hover {
   background-color: lightgrey;
 }
+#rf-container #rf-form-container .rf-time-container .timeslots-grid .timeslot.selected-timeslot {
+  background-color: black;
+  color: white;
+}
 
 .rf-form {
   padding: 1rem 0;
@@ -842,10 +846,10 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   gap: 0 1rem;
 }
 .rf-form .rf-dates-div > div {
+  flex-basis: 13.5rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  width: 13.5rem;
 }
 .rf-form .rf-dates-div > div > span {
   width: 100%;
@@ -959,10 +963,13 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
   margin-bottom: 2rem;
 }
+.rf-search-results.bill-summary-mode {
+  width: 75%;
+}
 .rf-search-results > h1 {
   align-self: center;
   display: inline-flex;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
   padding: 1rem 2rem;
   border: 5px solid #d7dadc;
   background-image: url("media/cards-background.webp");
@@ -981,7 +988,11 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 .rf-search-results div.rf-results-container {
   display: grid;
   width: 100%;
+  height: 100%;
   grid-template-columns: 1fr 0fr;
+}
+.rf-search-results div.rf-results-container.bill-summary-mode {
+  grid-template-columns: 1fr 2fr;
 }
 .rf-search-results div.rf-results-container div.rf-results-gallery {
   display: grid;
@@ -991,6 +1002,9 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   overflow: hidden;
   gap: 0 1rem;
   padding-top: 0.5rem;
+}
+.rf-search-results div.rf-results-container div.rf-results-gallery.bill-summary-mode {
+  grid-template-columns: repeat(1, 1fr);
 }
 .rf-search-results div.rf-results-container div.rf-results-gallery .car-card {
   position: relative;
@@ -1009,6 +1023,7 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
 .rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-background {
   position: absolute;
   height: 100%;
+  width: 100%;
 }
 .rf-search-results div.rf-results-container div.rf-results-gallery .car-card div.card-foreground {
   position: relative;
@@ -1135,11 +1150,88 @@ body:has(#toggle:checked) #navbar-options, body:has(#toggle:checked) #rf-contain
   font-size: 1.25rem;
 }
 .rf-search-results div.rf-results-container div.rf-booking-summary {
+  box-sizing: border-box;
   height: 100%;
   width: 100%;
+  padding: 0.25rem 3rem 0.5rem 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   display: none;
-  flex-direction: column;
-  background-color: #00ff00;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr repeat(14, 0.5fr);
+}
+.rf-search-results div.rf-results-container div.rf-booking-summary h1, .rf-search-results div.rf-results-container div.rf-booking-summary h2, .rf-search-results div.rf-results-container div.rf-booking-summary h3, .rf-search-results div.rf-results-container div.rf-booking-summary h4 {
+  height: 100%;
+  grid-column: 1/2;
+}
+.rf-search-results div.rf-results-container div.rf-booking-summary h2, .rf-search-results div.rf-results-container div.rf-booking-summary h3 {
+  padding-left: 0.5rem;
+}
+.rf-search-results div.rf-results-container div.rf-booking-summary h1 {
+  padding-top: 0.5rem;
+  align-self: flex-start;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 900;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-size: 2rem;
+}
+.rf-search-results div.rf-results-container div.rf-booking-summary h2 {
+  margin-top: 0.5rem;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.rf-search-results div.rf-results-container div.rf-booking-summary h3 {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  align-self: flex-start;
+}
+.rf-search-results div.rf-results-container div.rf-booking-summary h3.underlined {
+  border-bottom: 1px solid #d7dadc;
+}
+.rf-search-results div.rf-results-container div.rf-booking-summary h4 {
+  align-self: flex-start;
+  padding-top: 0.75rem;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 900;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-size: 1.5rem;
+}
+.rf-search-results div.rf-results-container div.rf-booking-summary h5 {
+  height: 100%;
+  align-self: center;
+  grid-column: 2/3;
+  text-align: end;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+.rf-search-results div.rf-results-container div.rf-booking-summary h5.subtotal {
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-bottom: 1px solid #d7dadc;
+}
+.rf-search-results div.rf-results-container div.rf-booking-summary h5.total {
+  padding-top: 1rem;
+  font-family: "HelveticaNow", sans-serif;
+  font-weight: 900;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-size: 1.75rem;
+}
+.rf-search-results div.rf-results-container div.rf-booking-summary.bill-summary-mode {
+  display: grid;
 }
 
 .sector-max-width {
