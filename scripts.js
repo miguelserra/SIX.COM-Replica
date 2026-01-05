@@ -244,8 +244,8 @@ function delay(time) {
 
 
 //troca de tabs
-tabCars.addEventListener("change", () => reactivateCards("cars"));
-tabTrucks.addEventListener("change", () => reactivateCards("trucks"));
+tabCars.addEventListener("change", () => reactivateCards("car"));
+tabTrucks.addEventListener("change", () => reactivateCards("truck"));
 
 //evento que abre e fecha div do calendário ao clicar nos botões pickdate
 objCalendarContainer.bindBtns(btnsDatePick);
@@ -337,7 +337,6 @@ function activateResultsMode()
 
     let divsResultsDiv = document.querySelectorAll(".rf-search-results");
     divsResultsDiv.forEach(el => el.classList.add("bill-summary-mode"));
-
 }
 
 //reset às grids dos resultados
@@ -794,8 +793,10 @@ inpReturnLoc.forEach(inp => {
 ## DIVS DE RESULTADOS ##
 ##################### */
 
-function reactivateCards() {
-    divsCards.forEach(card =>card.classList.remove("inactive"));
+function reactivateCards(type) {
+    divsCards.forEach(card => card.classList.remove("inactive"));
+    objBill.active = false;
+    randomizeVehicleCards(type);
     resetResultsGrids(false);
 }
 
@@ -827,30 +828,32 @@ function showSearchResults(type) {
         activateResultsMode();
     }
   
-    function randomizeVehicleCards(type) {
-        // esconde todas as cards
-        divsCards.forEach(card => card.classList.add("inactive"));
-        
-        // escolhe 4 indices aleatorios
-        let pos = [0,1,2,3,4,5,6,7]
-        for (let i = 0; i < 4; i++){
-            let idx = Math.floor(Math.random() * pos.length); 
-            pos.splice(idx, 1);
-        }
+}
+
+function randomizeVehicleCards(type) {
+    // esconde todas as cards
+    divsCards.forEach(card => card.classList.add("inactive"));
     
-        //devolve visibilidade aos cards escolhidos
-        for (let i = 0; i < 4; i++){
-            
-            let card = document.querySelector("#" + type + "-card-" + pos[i]) ;
-            card.classList.remove("inactive");
-            
-            let query = "#" + type + "-card-" + pos[i] + " .vehicle-id";
-            let txtCardId = document.querySelector(query);
-            txtCardId.textContent = type + "-" + (i+1);
-            card.dataset.cardIntID = pos[i];
-        }
+    // escolhe 4 indices aleatorios
+    let pos = [0,1,2,3,4,5,6,7]
+    for (let i = 0; i < 4; i++){
+        let idx = Math.floor(Math.random() * pos.length); 
+        pos.splice(idx, 1);
+    }
+
+    //devolve visibilidade aos cards escolhidos
+    for (let i = 0; i < 4; i++){
+        
+        let card = document.querySelector("#" + type + "-card-" + pos[i]) ;
+        card.classList.remove("inactive");
+        
+        let query = "#" + type + "-card-" + pos[i] + " .vehicle-id";
+        let txtCardId = document.querySelector(query);
+        txtCardId.textContent = type + "-" + (i+1);
+        card.dataset.cardIntID = pos[i];
     }
 }
+
 
 btnShowCars.addEventListener("click", () => showSearchResults('car'));
 btnShowTrucks.addEventListener("click", () => showSearchResults('truck'));
