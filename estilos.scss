@@ -184,7 +184,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     top: $s1-textbar-height; // distancia ao topo da pagina
     z-index: 1000;
     
-
     #navbar-container{
         display: flex;
         flex-direction: row;
@@ -226,6 +225,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             font-size:1.5rem; //aumenta o icon
             cursor: pointer;
             color: #ffffff;
+            
         }
 
         .open-btn{
@@ -310,7 +310,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             }
 
             &:hover {
-                color: #ff5000; 
+                color: #ff5000; /* Laranja no hover */
             }
         }
     }
@@ -497,6 +497,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     font-size: 1rem;
                     border-radius: 4px;
                     margin-top: 0.5rem;
+                   
 
                     &:hover {
                         background-color: #e04e00;
@@ -537,6 +538,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     text-align: center;
                     text-decoration: none;
                     box-sizing: border-box;
+                    
 
                     &:hover {
                         background-color: #f5f5f5;
@@ -567,7 +569,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     position    : sticky;
     top         : 0rem;
     margin-top  : $rf-margin-top ;
-    padding     : 0 5rem; //overide do sector-common
+    padding     : 0 5rem; //overide ao sector-common
     width       : 100%;
     z-index     : 100;
     align-items : center;
@@ -590,7 +592,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             flex-wrap: wrap;
             box-sizing: border-box;
             margin: 1rem 1.5rem;
-            //width: 100%;
+          
 
             @include font-HelveticaNow-700;
             font-size: 0.875rem;
@@ -704,6 +706,8 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                     grid-template-rows: 0.75fr repeat(6,1fr);
 
 
+               
+
                     .month-year{
                         grid-row: 1/2;
                         grid-column: 1/8;
@@ -731,6 +735,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 
                         @include font-HelveticaNow-700;
                         font-size: 0.9rem;
+                       
 
                         cursor: pointer;
 
@@ -928,6 +933,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 
                 .rf-location-return{
                     display: none;
+                    
                 }
                 
                 .rf-cbx-diff-loc{
@@ -1407,7 +1413,9 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
     display         : flex;
     flex-direction  : column;
     align-items     : center;
-    width           : 100%; 
+    width           : 100%; // espalha por toda a largura do container
+  
+
 
     #sector1 {
         
@@ -1494,7 +1502,9 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         
                 > div {
                     height: 6.3rem;
+                   
                 }
+               
             }
         
             .s2-card{
@@ -1626,8 +1636,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
         
                         p{
                             @include font-HelveticaNow-400;
-                            color: white;
-
+                            color: white;                        
                         } 
                         
                         button{
@@ -1641,8 +1650,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                             @include font-HelveticaNow-700;
                             font-size: 0.75rem;
                             line-height: 1.5;
-                            text-align: center;
-                            
+                            text-align: center;                          
                             white-space: nowrap;
                         }
                     }
@@ -1734,7 +1742,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             p{
                 @include font-HelveticaNow-400;
                 color: white;
-                //margin: 1.5rem 0;
             } 
             
             .s3-btn{
@@ -1748,8 +1755,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 @include font-HelveticaNow-700;
                 font-size   : 0.75rem;
                 line-height : 1.5;
-                text-align  : center;
-                
+                text-align  : center;              
                 white-space: nowrap;
             }
         
@@ -1839,7 +1845,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 
             display: flex;
             flex-direction: column;
-
             #s4-carrossel{
                 display                 : grid;
                 grid-template-rows      : 1fr;
@@ -1858,7 +1863,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 
            
 
-                div { //Formatação para ativar o slide desejado
+                div { 
                     display: none; // Esconde todos por defeito
                     &.active-slide {
                         display: block; 
@@ -2138,7 +2143,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             padding             : 2.5rem 5rem;
             min-height          : 6.5rem;
             flex: 1;   
-        
+                    
             ul{
                 display         : flex;
                 flex-direction  : row;
@@ -2243,7 +2248,7 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 
 
                     #s2-img1 img {
-                        transform: none; //retira o posicionamento anterior para centrar melhor a imagem
+                        transform: none; //retira o posicionamento do vp maior para centrar melhor a imagem
                     }
 
                     .img-container {
@@ -2417,12 +2422,10 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
             padding-bottom: 2rem;
             
             div.sector-container {
-
                 padding: 4rem 2rem;
                 flex-direction: column;
                 height: auto;
-
-          
+      
               
                 #s5-tabsdiv {
                     padding-left: 0;
@@ -2438,8 +2441,6 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
                 }
             }
         }
-
-
     }
 }
 
@@ -2686,11 +2687,10 @@ body:has(#toggle:checked) { //desativa o nav quando o menu está aberto
 
                 padding: 2rem 1rem;
                 height: auto;
-
-            
+      
                 #s5-tabsdiv {
                     padding-left: 0rem;
- 
+                    
                     ul {
                         grid-template-columns: repeat(2, 1fr);
                         grid-template-rows: repeat(12, 1fr) 2.25rem;
