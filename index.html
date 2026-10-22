@@ -148,7 +148,7 @@
                     
                     <div class="tab"> <!-- TAB CARS COMEÇA -->
                                   
-                        <form id="rf-form-cars" class="rf-form" autocomplete="on" method="dialog">
+                        <form id="rf-form-cars" class="rf-form" method="dialog">
                             <div class="rf-locations-div">
                                 <div class="rf-location-input">
                                     <div>
@@ -157,16 +157,8 @@
                                         </span>
                                         <div class="rf-input-location rf-location-pickup">
                                             <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                            <input type="search" id="input-pickup-cars" class="input-loc-pickup" list="datalist-cars-pickup" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none"
+                                            <input type="text" id="input-pickup-cars" class="input-loc-pickup" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none"
                                             value = "Porto Airport">
-                                            <datalist id="datalist-cars-pickup">
-                                                <option value="Lisbon Centre/Estafânia">
-                                                <option value="Lisbon North">
-                                                <option value="Porto Industrial Zone">
-                                                <option value="Lisbon Centre/Picoas">
-                                                <option value="Lisbon Airport">
-                                                <option value="Porto Boavista">
-                                            </datalist>
                                         </div>
                                     </div>
                                 </div>
@@ -174,7 +166,7 @@
                                 <div class="rf-location-input">
                                     <div>
                                         <span>
-                                            <p class="rf-lbl-return">Return</p>
+                                            <p class="rf-lbl-return"></p>
                                         </span>
 
                                         <input type="checkbox" class="rf-cbx-diff-loc" id="rf-cbx-diff-loc-cars">
@@ -186,15 +178,7 @@
 
                                         <div class="rf-input-location rf-location-return">
                                             <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                            <input type="search" id="input-return-cars" class="input-loc-return" list="datalist-cars-return" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
-                                            <datalist id="datalist-cars-return">
-                                                <option value="Lisbon Centre/Estafânia">
-                                                <option value="Lisbon North">
-                                                <option value="Porto Industrial Zone">
-                                                <option value="Lisbon Centre/Picoas">
-                                                <option value="Lisbon Airport">
-                                                <option value="Porto Boavista">
-                                            </datalist>
+                                            <input type="text" id="input-return-cars" class="input-loc-return" name="pickup-cars-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
                                         </div>
                                     </div>
                                 </div>
@@ -253,7 +237,7 @@
     
                     <div class="tab"> <!-- TAB TRUCKS COMEÇA -->
     
-                        <form id="rf-form-trucks" class="rf-form" autocomplete="on" method="dialog">
+                        <form id="rf-form-trucks" class="rf-form" method="dialog">
                             <div class="rf-locations-div">
                                 <div class="rf-location-input">
                                     <div>
@@ -262,16 +246,8 @@
                                         </span>
                                         <div class="rf-input-location  rf-location-pickup">
                                             <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                            <input type="search" id="input-pickup-trucks" class="input-loc-pickup" name="pickup-trucks-txt" list="datalist-trucks-pickup" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none"
+                                            <input type="text" id="input-pickup-trucks" class="input-loc-pickup" name="pickup-trucks-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none"
                                             value = "Porto Airport">
-                                            <datalist id="datalist-trucks-pickup">
-                                                <option value="Lisbon Centre/Estafânia">
-                                                <option value="Lisbon North">
-                                                <option value="Porto Industrial Zone">
-                                                <option value="Lisbon Centre/Picoas">
-                                                <option value="Lisbon Airport">
-                                                <option value="Porto Boavista">
-                                            </datalist>
                                         </div>
                                     </div>
                                 </div>
@@ -279,7 +255,7 @@
                                 <div class="rf-location-input">
                                     <div>
                                         <span>
-                                            <p class="rf-lbl-return">Return</p>
+                                            <p class="rf-lbl-return"></p>
                                         </span>
 
                                         <input type="checkbox" class="rf-cbx-diff-loc" id="rf-cbx-diff-loc-trucks">
@@ -291,15 +267,7 @@
 
                                         <div class="rf-input-location rf-location-return">
                                             <img class="icon" src="icons/ico_search.svg" alt="search"/>
-                                            <input type="search" id="input-return-trucks" class="input-loc-return" list="datalist-trucks-return" name="pickup-trucks-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
-                                            <datalist id="datalist-trucks-return">
-                                                <option value="Lisbon Centre/Estafânia">
-                                                <option value="Lisbon North">
-                                                <option value="Porto Industrial Zone">
-                                                <option value="Lisbon Centre/Picoas">
-                                                <option value="Lisbon Airport">
-                                                <option value="Porto Boavista">
-                                            </datalist>
+                                            <input type="text" id="input-return-trucks" class="input-loc-return" name="pickup-trucks-txt" placeholder="Airport, city or address" autocomplete="off" autocapitalize="none">
                                         </div>
                                     </div>
                                 </div>
@@ -368,8 +336,9 @@
                 <div id="rf-calendar-container" class="">
     
                     <div id="rf-calendar-btn-left" class="calendar-btn">
-    
-    
+                        <button id="prevMonth">
+                            <img src="icons/ico_greater.svg">
+                        </button>
                     </div>
     
                     <div id="rf-calendars">
@@ -420,7 +389,9 @@
                     </div>
     
                     <div id="rf-calendar-btn-right" class="calendar-btn">
-                        
+                        <button id="nextMonth">
+                            <img src="icons/ico_greater.svg">
+                        </button>
                     </div>
                 </div>
                 <!-- CALENDARIO ACABA -->
@@ -818,6 +789,7 @@
                             </div>
                             <div class="card-foreground">
                                 <div class="card-header">
+                                    <h4 class="vehicle-id">Car-1</h4>
                                     <h3>RENAULT KANGOO</h3>
                                     <span>or similar</span>
                                     <p>Small Cargo Van Manual</p>
